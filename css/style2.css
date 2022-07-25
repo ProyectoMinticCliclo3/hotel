@@ -14,7 +14,8 @@ header{
   flex-direction: row;
   justify-content: space-around;
   background-color: gray;
-  margin-top: 1rem;
+  margin-top: 0;
+  padding: 1rem;
 }
 .logo-img {
   /* filter: invert(21%) sepia(94%) saturate(1334%) hue-rotate(184deg)
