@@ -40,24 +40,32 @@ img {
 .imgs{
   background-color: red;
   margin: 1rem;
+  display: flex;
 }
 
 .galeria { 
-  width: 40%;
+  
   background-color: yellowgreen;
   display: flex;
-  position: relative;
+  width: 50%;
+  
+  
 }
 
 .galeria img {
-  position: absolute;
+  position: absolute;  
+  opacity: 0;
   transition: opacity 3s;
+  width: 40%;
+  margin-left: 3rem;
+  margin-top: 2rem;
  
 }
 
 .galeria input[type=radio] {
   position: relative;
-  bottom: calc(-300px - 1.5em);
+  margin-top: 18rem;
+  margin-left: 1rem;
   
 }
 
@@ -121,7 +129,37 @@ img {
 .nav-footer{
   list-style: none;
   display: flex;
+  justify-content: center;
+  background-color: #005596;
+  height: 4rem;
+}
+.nav-footer li{
+  justify-content: center;
+  margin-top: 1.5rem;
+  background-color: aqua;
+  margin-left: 1rem;
+}
+.social-media{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.social-media span{
+  margin-left: 1rem;
+}
+.social-media span a i{
+  color: #005596;
+  
+}
+.logo-footer {
+  display: flex;
   justify-content: space-around;
+  text-align: center;
+  background-color: aquamarine;
+}
+footer div h5{
+  color: #005596;
+  text-align: center;
 }
 
 
