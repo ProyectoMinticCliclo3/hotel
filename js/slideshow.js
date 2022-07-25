@@ -31,8 +31,8 @@ function showSlides(n) {
 
 // SIDEBAR
 function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("mySidebar").style.width = "16rem";
+  document.getElementById("main").style.marginLeft = "16rem";
 }
 
 function closeNav() {
