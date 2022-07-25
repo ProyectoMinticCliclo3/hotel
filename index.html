@@ -4,121 +4,249 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+
     <title>Hotel Rose Ryhaan by Rotana</title>
   </head>
   <body>
-    <h1>Hotel Rose Ryhann by Rotana</h1>
-    <header>
-      <div>
-        <img src="img/logo-rotana.svg" alt="Logo-Ryhaan" width="75" />
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="reviews.html">Reviews</a></li>
-          <li><a href="galeria.html">Galería</a></li>
-          <li><a href="reservas.html">Reservas</a></li>
-          <li>
-            <a href="#"
-              ><img
-                src="img/img-users/user.svg"
-                alt="Foto Usuario"
-                width="60"
-              />
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <button>
-          <img src="img/svg/login.svg" alt="icono logout" width="30" />login
-        </button>
-        <!--agregar login-->
-        <button>buscar</button>
-      </div>
-    </header>
-
-    <section>
-      <div>estrellas y calificaciones</div>
-
-      <div>
-        <img
-          src="img/img-habitacion/230031199.jpg"
-          alt="imagen torre del hotel"
-          height="350"
-        />
-        <ul>
-          <li>
-            <img
-              src="img/img-habitacion/233120309.jpg"
-              alt="imagen mujer cómoda en habitación"
-              height="150"
-            />
-          </li>
-          <li>
-            <img
-              src="img/img-habitacion/230220017.jpg"
-              alt="imagen cocina y lavadora habitación"
-              height="150"
-            />
-          </li>
-          <li>
-            <img
-              src="img/img-habitacion/230049217.jpg"
-              alt="imagen cocina habitación 2"
-              height="150"
-            />
-          </li>
-          <li>
-            <img
-              src="img/img-habitacion/230031947.jpg"
-              alt="imagen piscina"
-              height="150"
-            />
-          </li>
-          <li>
-            <img
-              src="img/img-habitacion/230203324.jpg"
-              alt="imagen restaurante hotel"
-              height="150"
-            />
-          </li>
-          <li>
-            <img
-              src="img/img-habitacion/230203934.jpg"
-              alt="imagen cama habitación"
-              height="150"
-            />
-          </li>
-        </ul>
+    <nav>
+      <!-- SIDEBAR -->
+      <div id="mySidebar" class="sidebar">
+        <div class="logo-img">
+          <a href="index.html">
+            <img src="img/svg/logo-ryhaan.svg" alt="Logo-Ryhaan" width="75" />
+          </a>
+        </div>
         <div>
-          <p>descripción</p>
-          <button>reservar</button>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >×</a
+          >
+          <a href="index.html">Inicio</a>
+          <a href="habitaciones.html">Habitaciones</a>
+          <a href="reservas.html">Reservas</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="nosotros.html">Sobre Nosotros</a>
+          <a href="#">
+            <img src="img/img-users/user.svg" alt="Foto Usuario" width="60" />
+          </a>
+          <button>
+            <img src="img/svg/login.svg" alt="icono logout" width="30" />login
+          </button>
         </div>
       </div>
-    </section>
+    </nav>
 
-    <footer>
-      <ul>
-        <li>fotos</li>
-        <li>reviews</li>
-        <li>ubicacion</li>
-        <li>caracteristicas</li>
-        <li>contáctanos</li>
-        <li><a href="https://rotana.com">by Rotana</a></li>
-      </ul>
+    <div id="main">
+      <header>
+        <div>
+          <a href="index.html">
+            <img
+              src="img/svg/logo-ryhaan_dubai.svg"
+              alt="Rose Ryhaan Dubai"
+              height="35"
+            />
+          </a>
+        </div>
+        <!-- search bar right align -->
+        <div class="search">
+          <form action="#">
+            <input type="text" placeholder="Buscar" name="search" />
+            <button>búsqueda</button>
+          </form>
+        </div>
+        <!--agregar login-->
+      </header>
 
-      <p>precio</p>
+      <!-- AREA PRINCIPAL -->
+      <section>
+        <button class="openbtn" onclick="openNav()">☰</button>
+        <div>estrellas y calificaciones</div>
 
-      <div>
+        <!-- SLIDESHOW -->
+        <div class="slideshow-container">
+          <!-- Full-width images with number and caption text -->
+          <div class="slideGaleria fade">
+            <div class="numbertext">1 / 7</div>
+            <img
+              src="../img/img-habitacion/230031199.jpg"
+              alt="imagen torre del hotel"
+              style="width: 100%"
+            />
+            <div class="text">Hotel Rose Ryhaan by Rotana</div>
+          </div>
+
+          <div class="slideGaleria fade">
+            <div class="numbertext">2 / 7</div>
+            <img
+              src="../img/img-habitacion/233120309.jpg"
+              alt="imagen mujer en Spa"
+              style="width: 100%"
+            />
+            <div class="text">Spa Hotel</div>
+          </div>
+
+          <div class="slideGaleria fade">
+            <div class="numbertext">3 / 7</div>
+            <img
+              src="../img/img-habitacion/230220017.jpg"
+              alt="imagen cocina & comedor habitación"
+              style="width: 100%"
+            />
+            <div class="text">Cocina & Comedor Habitaciónes</div>
+          </div>
+
+          <div class="slideGaleria fade">
+            <div class="numbertext">4 / 7</div>
+            <img
+              src="../img/img-habitacion/230049217.jpg"
+              alt="imagen cocina habitación"
+              style="width: 100%"
+            />
+            <div class="text">Cocina Habitaciónes</div>
+          </div>
+
+          <div class="slideGaleria fade">
+            <div class="numbertext">5 / 7</div>
+            <img
+              src="../img/img-habitacion/230031947.jpg"
+              alt="imagen piscina"
+              style="width: 100%"
+            />
+            <div class="text">Piscina</div>
+          </div>
+
+          <div class="slideGaleria fade">
+            <div class="numbertext">6 / 7</div>
+            <img
+              src="../img/img-habitacion/230203324.jpg"
+              alt="imagen restaurante hotel"
+              style="width: 100%"
+            />
+            <div class="text">Restaurante Ryhaan</div>
+          </div>
+
+          <div class="slideGaleria fade">
+            <div class="numbertext">7 / 7</div>
+            <img
+              src="../img/img-habitacion/230203934.jpg"
+              alt="imagen dormitorio habitación"
+              style="width: 100%"
+            />
+            <div class="text">Dormitorio</div>
+          </div>
+
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br />
+
+        <!-- The dots/circles -->
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <article>
+          <h2>Descripción</h2>
+          <p>
+            El Rose Rayhaan by Rotana está situado en la carretera Sheikh Zayed,
+            a 3 minutos del Centro Financiero Internacional de Dubái (DIFC) y a
+            un paso de la estación de metro Financial Centre. También se
+            proporciona recepción 24 horas, servicio de habitaciones y WiFi
+            gratuita en todo el establecimiento, entre otras comodidades. El
+            establecimiento alberga piscina al aire libre, centro de fitness,
+            hammam y restaurante.
+          </p>
+          <p>
+            El hotel ofrece 462 habitaciones y suites con vistas panorámicas a
+            Dubái y al Burj Khalifa. Los alojamientos disponen de hervidor de
+            agua. Todas las habitaciones del Rose Rayhaan Rotana Dubai están
+            equipadas con baño privado con bañera.
+          </p>
+          <p>
+            El Rose Rayhaan by Rotana alberga 3 sitios para comer, entre ellos
+            el restaurante Petals. Tiene capacidad para 160 personas y ofrece
+            comida durante todo el día para el desayuno, el almuerzo y la cena.
+          </p>
+          <p>
+            La zona de conferencias, ubicada en 2 plantas, cuenta con 7 salas de
+            reuniones, todas equipadas con las últimas instalaciones
+            audiovisuales, conexiones sin cable y opciones. La zona de ocio del
+            hotel, el Bodylines Fitness and Wellness Club, ofrece un gimnasio
+            totalmente equipado, piscina exterior climatizada para adultos y
+            niños en la azotea, salón de belleza, salas de tratamiento para
+            masajes y cuidado de la piel, sauna, sala de vapor y bañera de
+            hidromasaje.
+          </p>
+          <p>
+            El hotel está cerca del centro comercial Dubai Mall y a 15 minutos
+            en coche del aeropuerto internacional de Dubái.
+          </p>
+        </article>
+        <!-- INPUT RESERVAS -->
+        <div>
+          <h2>Reservar</h2>
+          <form action="#">
+            <label for="Check-In">Check-In:</label>
+            <input type="date" id="Check-In" name="Check-In" />
+            <label for="Check-Out">Check-Out:</label>
+            <input type="date" id="Check-Out" name="Check-Out" />
+            <!-- <label for="huespedes">Huespedes:</label>
+            <select id="huespedes" name="huespedes">
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select> -->
+            <!-- Huespedes -->
+            <label for="huespedes">Huespedes:</label>
+            <input type="number" id="huespedes" value="1" />
+            <!-- Habitaciones -->
+            <label for="habitaciones">Habitaciones:</label>
+            <input type="number" id="habitaciones" value="1" />
+
+            <!-- Boton Reservar -->
+            <input type="submit" name="botonReservar" value="Reservar" />
+          </form>
+        </div>
+      </section>
+
+      <footer>
         <ul>
-          <li>facebook</li>
-          <li>instagram</li>
-          <li>twitter</li>
+          <li>fotos</li>
+          <li>reviews</li>
+          <li>ubicacion</li>
+          <li>caracteristicas</li>
+          <li>contáctanos</li>
+          <li><a href="https://rotana.com">by Rotana</a></li>
         </ul>
-      </div>
 
-      <button>compartir</button>
-    </footer>
+        <p>precio</p>
+
+        <div>
+          <ul>
+            <li>facebook</li>
+            <li>instagram</li>
+            <li>twitter</li>
+          </ul>
+        </div>
+
+        <button>compartir</button>
+        <div>
+          <a href="index.html">
+            <img
+              src="img/svg/logo-ryhaan_dubai.svg"
+              alt="Logo Rose Ryhaan Dubai"
+              height="35"
+            />
+          </a>
+          <a href="https://rotana.com">
+            <img src="img/svg/logo-rotana.svg" alt="logo Rotana" height="35" />
+          </a>
+        </div>
+
+        <div><h6>&copy; Copyright 2022 Fake Rotana Hotels Corporation</h6></div>
+      </footer>
+    </div>
+    <script src="js/slideshow.js"></script>
   </body>
 </html>

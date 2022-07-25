@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="testing-css.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+      <h2>Collapsed Sidebar</h2>
+      <p>
+        Click on the hamburger menu/bar icon to open the sidebar, and push this
+        content to the right.
+      </p>
+    </div>
+
+    <!-- GALERIA -->
+    <script src="testing-js.js"></script>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+      <!-- Full-width images with number and caption text -->
+      <div class="slideGaleria fade">
+        <div class="numbertext">1 / 7</div>
+        <img
+          src="../img/img-habitacion/230031199.jpg"
+          alt="imagen torre del hotel"
+          style="width: 100%"
+        />
+        <div class="text">Hotel Rose Ryhaan by Rotana</div>
+      </div>
+
+      <div class="slideGaleria fade">
+        <div class="numbertext">2 / 7</div>
+        <img
+          src="../img/img-habitacion/233120309.jpg"
+          alt="imagen mujer en Spa"
+          style="width: 100%"
+        />
+        <div class="text">Spa Hotel</div>
+      </div>
+
+      <div class="slideGaleria fade">
+        <div class="numbertext">3 / 7</div>
+        <img
+          src="../img/img-habitacion/230220017.jpg"
+          alt="imagen cocina & comedor habitación"
+          style="width: 100%"
+        />
+        <div class="text">Cocina & Comedor Habitaciónes</div>
+      </div>
+
+      <div class="slideGaleria fade">
+        <div class="numbertext">4 / 7</div>
+        <img
+          src="../img/img-habitacion/230049217.jpg"
+          alt="imagen cocina habitación"
+          style="width: 100%"
+        />
+        <div class="text">Cocina Habitaciónes</div>
+      </div>
+
+      <div class="slideGaleria fade">
+        <div class="numbertext">5 / 7</div>
+        <img
+          src="../img/img-habitacion/230031947.jpg"
+          alt="imagen piscina"
+          style="width: 100%"
+        />
+        <div class="text">Piscina</div>
+      </div>
+
+      <div class="slideGaleria fade">
+        <div class="numbertext">6 / 7</div>
+        <img
+          src="../img/img-habitacion/230203324.jpg"
+          alt="imagen restaurante hotel"
+          style="width: 100%"
+        />
+        <div class="text">Restaurante Ryhaan</div>
+      </div>
+
+      <div class="slideGaleria fade">
+        <div class="numbertext">7 / 7</div>
+        <img
+          src="../img/img-habitacion/230203934.jpg"
+          alt="imagen dormitorio habitación"
+          style="width: 100%"
+        />
+        <div class="text">Dormitorio</div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+
+    <!-- The dots/circles -->
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- <td
+      style="background-color: #f0f0f1"
+      width="100%"
+      valign="top"
+      height="260"
+      align="center"
+    >
+      <table width="1010" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td>
+              <table width="1010" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                  <tr>
+                    <td height="10"></td>
+                  </tr>
+                  <tr>
+                    <td height="50" align="left">
+                      <table cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                border-right: 1px #b7b7b7 solid;
+                                width: 118px;
+                              "
+                              align="left"
+                            >
+                              <a href="https://www.rotana.com/"
+                                ><div class="rcsftlogo-10"></div
+                              ></a>
+                            </td>
+                            <td align="left">
+                              <a
+                                href="https://www.rotana.com/rotanahotelandresorts"
+                                ><div class="rcsftlogo-11"></div
+                              ></a>
+                            </td>
+                            <td align="left">
+                              <a
+                                href="https://www.rotana.com/rayhaanhotelandresorts"
+                                ><div class="rcsftlogo-12"></div
+                              ></a>
+                            </td>
+                            <td align="left">
+                              <a
+                                href="https://www.rotana.com/arjaanhotelapartments"
+                                ><div class="rcsftlogo-13"></div
+                              ></a>
+                            </td>
+                            <td align="left">
+                              <a href="https://www.rotana.com/centrohotels"
+                                ><div class="rcsftlogo-14"></div
+                              ></a>
+                            </td>
+                            <td align="left">
+                              <a href="https://www.rotana.com/edge"
+                                ><div class="rcsftlogo-20"></div
+                              ></a>
+                            </td>
+                            <td align="left">
+                              <a href="https://www.rotana.com/theresidences"
+                                ><div class="rcsftlogo-15"></div
+                              ></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+
+                    <td height="50" align="right">
+                      <div
+                        class="rcsftlogoap"
+                        onclick="doNALitebox('https://www.rotana.com/rotanamobileapp/inline',11,0)"
+                      ></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="20"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                  <tr valign="top">
+                    <td
+                      style="width: 600px; height: 22px"
+                      class="footerMain"
+                      width="600"
+                      align="left"
+                    >
+                      ABOUT ROTANA
+                    </td>
+                    <td width="22"></td>
+                    <td class="footerMain" align="left">ROTANA WEBSITES</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                  <tr valign="top">
+                    <td class="footerUrl" width="200" align="left">
+                      <a
+                        href="https://www.rotana.com/aboutrotana"
+                        class="footerUrl"
+                        >HISTORY</a
+                      ><br /><a
+                        href="https://www.rotana.com/aboutrotana/brandmark"
+                        class="footerUrl"
+                        >BRANDMARK</a
+                      ><br /><a
+                        href="https://www.rotana.com/aboutrotana/milestones"
+                        class="footerUrl"
+                        >MILESTONES</a
+                      ><br /><a
+                        href="https://www.rotana.com/aboutrotana/rotanavalues"
+                        class="footerUrl"
+                        >ROTANA VALUES</a
+                      ><br /><a
+                        href="https://www.rotana.com/aboutrotana/visionourbrandpromise"
+                        class="footerUrl"
+                        >VISION / BRAND PROMISE</a
+                      ><br /><a
+                        href="https://www.rotana.com/aboutrotana/boardofdirectors"
+                        class="footerUrl"
+                        >BOARD OF DIRECTORS</a
+                      ><br /><a
+                        href="https://www.rotana.com/aboutrotana/corporateexecutives"
+                        class="footerUrl"
+                        >CORPORATE EXECUTIVES</a
+                      >
+                    </td>
+                    <td
+                      style="width: 20px; border-left: 1px #b7b7b7 solid"
+                    ></td>
+                    <td class="footerUrl" width="180" align="left">
+                      <a
+                        href="https://www.rotana.com/development"
+                        class="footerUrl"
+                        >HOTEL DEVELOPMENT</a
+                      ><br /><a
+                        href="https://www.rotana.com/upcomingopenings"
+                        class="footerUrl"
+                        >UPCOMING OPENINGS</a
+                      ><br /><a
+                        href="https://www.rotana.com/industrypartners"
+                        class="footerUrl"
+                        >INDUSTRY PARTNERS</a
+                      ><br /><a
+                        href="https://www.rotana.com/salesoffices/national"
+                        class="footerUrl"
+                        >SALES OFFICES &amp; GDS</a
+                      ><br /><a
+                        href="https://www.rotana.com/econnect"
+                        class="footerUrl"
+                        >CORPORATE GUESTS</a
+                      ><br /><a
+                        href="https://www.rotanaearth.com"
+                        class="footerUrl"
+                        target="_blank"
+                        >ROTANA EARTH / CSR</a
+                      >
+                    </td>
+                    <td
+                      style="width: 20px; border-left: 1px #b7b7b7 solid"
+                    ></td>
+                    <td class="footerUrl" width="180" align="left">
+                      <a
+                        href="https://www.rotana.com/newsroom"
+                        class="footerUrl"
+                        >NEWS ROOM</a
+                      ><br /><a
+                        href="https://www.rotana.com/awards"
+                        class="footerUrl"
+                        >OUR AWARDS</a
+                      ><br /><a
+                        href="https://www.rotana.com/pressandmedia"
+                        class="footerUrl"
+                        >PRESS &amp; MEDIA</a
+                      ><br /><a
+                        href="javascript: doNALitebox('https://www.rotana.com/medialibrary',8,0)"
+                        class="footerUrl"
+                        >MEDIA LIBRARY</a
+                      >
+                    </td>
+                    <td
+                      style="width: 20px; border-left: 1px #b7b7b7 solid"
+                    ></td>
+                    <td class="footerWeb" width="200" align="left">
+                      <a href="https://www.rotana.com" class="footerWeb"
+                        >www.rotana.com</a
+                      ><br /><a
+                        href="https://www.rotanatimes.com"
+                        class="footerWeb"
+                        target="_blank"
+                        >www.rotanatimes.com</a
+                      ><br /><a
+                        href="https://www.rotanaearth.com"
+                        class="footerWeb"
+                        target="_blank"
+                        >www.rotanaearth.com</a
+                      ><br /><a
+                        href="http://www.rotanacareers.com"
+                        class="footerWeb"
+                        target="_blank"
+                        >www.rotanacareers.com</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td> -->
+  </body>
+</html>
