@@ -6,35 +6,28 @@
 body {
   font-family: 'Be Vietnam Pro', sans-serif;
   margin: 0;
-}
-
-title { 
-  color: #005596;
-}
-
-h1 {
-  
-  color: #005596;
-}
-
-h2 {
   
 }
 
-h6 {
-  font-size: 9px;
- 
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: gray;
+  margin-top: 1rem;
 }
-
-p {
-  
-}
-
 .logo-img {
   /* filter: invert(21%) sepia(94%) saturate(1334%) hue-rotate(184deg)
     brightness(100%) contrast(102%); */
   filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
-    brightness(119%) contrast(94%);
+    brightness(119%) contrast(94%);    
+}
+.base-main{  
+  background-color: yellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-flow: row wrap;
 }
 
 .slideGaleria {
@@ -44,92 +37,93 @@ img {
   vertical-align: middle;
 }
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
+.imgs{
+  background-color: red;
+  margin: 1rem;
+}
+
+.galeria { 
+  width: 40%;
+  background-color: yellowgreen;
+  display: flex;
   position: relative;
-  margin: auto;
 }
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
+.galeria img {
   position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  transition: opacity 3s;
+ 
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.galeria input[type=radio] {
+  position: relative;
+  bottom: calc(-300px - 1.5em);
+  
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.galeria input[type=radio]:nth-of-type(1):checked ~ img:nth-of-type(1) {
+  opacity: 1;
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+.galeria input[type=radio]:nth-of-type(2):checked ~ img:nth-of-type(2) {
+  opacity: 1;
 }
 
-/* Number text (1/7 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+.galeria input[type=radio]:nth-of-type(3):checked ~ img:nth-of-type(3) {
+  opacity: 1;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+.galeria input[type=radio]:nth-of-type(4):checked ~ img:nth-of-type(4) {
+  opacity: 1;
 }
-
-.active,
-.dot:hover {
-  background-color: #717171;
+.galeria input[type=radio]:nth-of-type(5):checked ~ img:nth-of-type(5) {
+  opacity: 1;
 }
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+.galeria input[type=radio]:nth-of-type(6):checked ~ img:nth-of-type(6) {
+  opacity: 1;
 }
-
+.galeria input[type=radio]:nth-of-type(7):checked ~ img:nth-of-type(7) {
+  opacity: 1;
+}
 .information{
   display: flex;
   flex-direction: column;
-  padding: 0%, 20%;
   background-color: aqua;
+  margin-left: 40%;
+  
+  
+}
+.information h2{
+  background-color: yellow;
+  text-align: center;
 
 }
+.information p{
+  margin: 0rem 3rem;
+  text-align: justify;
+}
+
+.reserve{
+  display: flex;
+  flex-direction: column;  
+  background-color: yellow;
+  justify-content: center;
+}
+.reserve h2{
+  text-align: center;
+}
+.reserve form{
+  justify-content: center;
+  margin: 0rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-footer{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
 
 @keyframes fade {
   from {

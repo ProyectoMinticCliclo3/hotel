@@ -7,8 +7,27 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Hotel Rose Ryhaan by Rotana</title>
   </head>
-  
+
   <body>
+    <header>
+      <div>
+        <a href="index.html">
+          <img
+            src="img/svg/logo-ryhaan_dubai.svg"
+            alt="Rose Ryhaan Dubai"
+            height="35"
+          />
+        </a>
+      </div>
+      <!-- search bar right align -->
+      <div class="search">
+        <form action="#">
+          <input type="text" placeholder="Buscar" name="search" />
+          <button>búsqueda</button>
+        </form>
+      </div>
+      <!--agregar login-->
+    </header>
     <!-- SIDEBAR -->
     <nav>
       <div id="mySidebar" class="sidebar">
@@ -96,35 +115,14 @@
       </div>
     </nav>
     <!-- SECCION PRINCIPAL -->
-    <div id="main">
-      <header>
-        <div>
-          <a href="index.html">
-            <img
-              src="img/svg/logo-ryhaan_dubai.svg"
-              alt="Rose Ryhaan Dubai"
-              height="35"
-            />
-          </a>
-        </div>
-        <!-- search bar right align -->
-        <div class="search">
-          <form action="#">
-            <input type="text" placeholder="Buscar" name="search" />
-            <button>búsqueda</button>
-          </form>
-        </div>
-        <!--agregar login-->
-      </header>
-
+    <div class="base-main">
       <!-- AREA PRINCIPAL -->
-      <section>
+      <section class="imgs">
         <button class="openbtn" onclick="openNav()">☰</button>
-        <div>estrellas y calificaciones</div>
 
         <!-- SLIDESHOW -->
-        <div class="slideshow-container">
-          <!-- Full-width images with number and caption text -->
+        <!-- <div class="slideshow-container">
+          Full-width images with number and caption text 
           <div class="slideGaleria fade">
             <div class="numbertext">1 / 7</div>
             <img
@@ -194,19 +192,70 @@
             />
             <div class="text">Dormitorio</div>
           </div>
-
-          <!-- Next and previous buttons -->
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <br />
-
-        <!-- The dots/circles -->
         <div style="text-align: center">
           <span class="dot" onclick="currentSlide(1)"></span>
           <span class="dot" onclick="currentSlide(2)"></span>
           <span class="dot" onclick="currentSlide(3)"></span>
+        </div>-->
+
+        <div class="galeria">
+          <input type="radio" name="navegacion" id="_1" checked />
+          <input type="radio" name="navegacion" id="_2" />
+          <input type="radio" name="navegacion" id="_3" />
+          <input type="radio" name="navegacion" id="_4" />
+          <input type="radio" name="navegacion" id="_5" />
+          <input type="radio" name="navegacion" id="_6" />
+          <input type="radio" name="navegacion" id="_7" />
+          
+          <img
+            src="img/img-habitacion/230031199.jpg"
+            width="500"
+            height="300"
+            alt="Galeria CSS 1"
+          />
+          <img
+            src="img/img-habitacion/230031947.jpg"
+            width="500"
+            height="300"
+            alt="Galeria CSS 2"
+          />
+          <img
+            src="img/img-habitacion/233120309.jpg"
+            width="500"
+            height="300"
+            alt="Galeria CSS 3"
+          />
+          <img
+            src="img/img-habitacion/230032549.jpg"
+            width="500"
+            height="300"
+            alt="Galeria CSS 4"
+          />
+          <img
+            src="img/img-habitacion/230049217.jpg"
+            width="500"
+            height="300"
+            alt="Galeria CSS 5"
+          />
+          <img
+            src="img/img-habitacion/230203324.jpg"
+            width="500"
+            height="300"
+            alt="Galeria CSS 6"
+          />
+          <img
+            src="img/img-habitacion/230203934.jpg"
+            width="260"
+            height="300"
+            alt="Galeria CSS 7"
+          />
         </div>
+        <!-- Next and previous buttons -->
+
         <article class="information">
           <h2>Descripción</h2>
           <p>
@@ -245,7 +294,7 @@
           </p>
         </article>
         <!-- INPUT RESERVAS -->
-        <div>
+        <div class="reserve">
           <h2>Reservar</h2>
           <form action="#">
             <label for="Check-In">Check-In:</label>
@@ -269,44 +318,45 @@
           </form>
         </div>
       </section>
-
-      <footer>
-        <ul>
-          <li>fotos</li>
-          <li>reviews</li>
-          <li>ubicacion</li>
-          <li>caracteristicas</li>
-          <li>contáctanos</li>
-          <li><a href="https://rotana.com">by Rotana</a></li>
-        </ul>
-
-        <p>precio</p>
-
-        <div>
-          <ul>
-            <li>facebook</li>
-            <li>instagram</li>
-            <li>twitter</li>
-          </ul>
-        </div>
-
-        <button>compartir</button>
-        <div>
-          <a href="index.html">
-            <img
-              src="img/svg/logo-ryhaan_dubai.svg"
-              alt="Logo Rose Ryhaan Dubai"
-              height="35"
-            />
-          </a>
-          <a href="https://rotana.com">
-            <img src="img/svg/logo-rotana.svg" alt="logo Rotana" height="35" />
-          </a>
-        </div>
-
-        <div><h6>&copy; Copyright 2022 Fake Rotana Hotels Corporation</h6></div>
-      </footer>
     </div>
+    <div>
+      <ul class="nav-footer">
+        <li>fotos</li>
+        <li>reviews</li>
+        <li>ubicacion</li>
+        <li>caracteristicas</li>
+        <li>contáctanos</li>
+        <li><a href="https://rotana.com">by Rotana</a></li>
+      </ul>
+
+      <p>precio</p>
+    </div>
+    <footer>
+      <div>
+        <ul>
+          <li>facebook</li>
+          <li>instagram</li>
+          <li>twitter</li>
+        </ul>
+      </div>
+
+      <button>compartir</button>
+      <div>
+        <a href="index.html">
+          <img
+            src="img/svg/logo-ryhaan_dubai.svg"
+            alt="Logo Rose Ryhaan Dubai"
+            height="35"
+          />
+        </a>
+        <a href="https://rotana.com">
+          <img src="img/svg/logo-rotana.svg" alt="logo Rotana" height="35" />
+        </a>
+      </div>
+
+      <div><h6>&copy; Copyright 2022 Fake Rotana Hotels Corporation</h6></div>
+    </footer>
+
     <script src="js/slideshow.js"></script>
   </body>
 </html>
