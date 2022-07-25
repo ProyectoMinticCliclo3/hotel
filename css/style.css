@@ -51,6 +51,7 @@ img {
 
 .galeria img {
   position: absolute;
+  opacity: 0;
   transition: opacity 3s;
  
 }
