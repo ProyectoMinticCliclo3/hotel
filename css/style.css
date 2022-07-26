@@ -1,133 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   margin: 0;
-  
 }
 
-header{
+header {
+  margin-top: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: gray;
-  
 }
-.logo-top{
-  margin-top: 0.5rem;
+
+.openbtn {
+  margin: 0.5rem;
+  border-radius: 50%;
+}
+.logo-top {
+  margin-top: 1rem;
 }
 .logo-img {
   /* filter: invert(21%) sepia(94%) saturate(1334%) hue-rotate(184deg)
     brightness(100%) contrast(102%); */
   filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
-    brightness(119%) contrast(94%);    
+    brightness(119%) contrast(94%);
 }
-.search{
+.search {
   display: flex;
 }
-.search form button{
-  border-radius: 5%;
+.search form button {
+  border-radius: 50%;
+  padding: 0.3rem 0.35rem;
   margin-left: 0.5rem;
+  margin-top: 0.5rem;
 }
-.base-main{   
+.base-main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-flow: row wrap;
 }
 
-
-
-
-.imgs{
+.imgs {
   margin-top: 0.5rem;
   display: flex;
   width: 90%;
 }
 
-.galeria { 
-  
-  
+.galeria {
   display: flex;
   width: 100%;
-  
-  
 }
 
 .galeria img {
-  position: absolute;  
+  position: absolute;
   opacity: 0;
   transition: opacity 3s;
   width: 45%;
   margin-left: 5%;
   margin-top: 15%;
- 
 }
 
-.galeria input[type=radio] {
+.galeria input[type="radio"] {
   position: sticky;
-  margin-top:50%;
+  margin-top: 50%;
   margin-left: 5rem;
-  
 }
 
-.galeria input[type=radio]:nth-of-type(1):checked ~ img:nth-of-type(1) {
-  opacity: 1;
-}
-
-.galeria input[type=radio]:nth-of-type(2):checked ~ img:nth-of-type(2) {
+.galeria input[type="radio"]:nth-of-type(1):checked ~ img:nth-of-type(1) {
   opacity: 1;
 }
 
-.galeria input[type=radio]:nth-of-type(3):checked ~ img:nth-of-type(3) {
+.galeria input[type="radio"]:nth-of-type(2):checked ~ img:nth-of-type(2) {
   opacity: 1;
 }
 
-.galeria input[type=radio]:nth-of-type(4):checked ~ img:nth-of-type(4) {
+.galeria input[type="radio"]:nth-of-type(3):checked ~ img:nth-of-type(3) {
   opacity: 1;
 }
-.galeria input[type=radio]:nth-of-type(5):checked ~ img:nth-of-type(5) {
+
+.galeria input[type="radio"]:nth-of-type(4):checked ~ img:nth-of-type(4) {
   opacity: 1;
 }
-.galeria input[type=radio]:nth-of-type(6):checked ~ img:nth-of-type(6) {
+.galeria input[type="radio"]:nth-of-type(5):checked ~ img:nth-of-type(5) {
   opacity: 1;
 }
-.galeria input[type=radio]:nth-of-type(7):checked ~ img:nth-of-type(7) {
+.galeria input[type="radio"]:nth-of-type(6):checked ~ img:nth-of-type(6) {
   opacity: 1;
 }
-.information{
+.galeria input[type="radio"]:nth-of-type(7):checked ~ img:nth-of-type(7) {
+  opacity: 1;
+}
+.information {
   display: flex;
   flex-direction: column;
   margin-left: 1.5rem;
-  
-  
 }
-.information h2{  
+.information h2 {
   text-align: center;
 }
-.information p{
+.information p {
   text-align: justify;
 }
 
-.reserve{
+.reserve {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: center;
   width: 100%;
 }
-.reserve h2{
+.reserve h2 {
   text-align: center;
 }
-.reserve form{  
+.reserve form {
   text-align: center;
   display: flex;
   justify-content: space-around;
   margin-left: 1rem;
 }
-.nav-footer{
+.nav-footer {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -135,34 +130,31 @@ header{
   height: 4rem;
   color: #f8f8f2;
 }
-.nav-footer li{
+.nav-footer li {
   justify-content: center;
   margin-top: 1.5rem;
   margin-left: 1rem;
 }
-.social-media{
+.social-media {
   display: flex;
   text-align: center;
   justify-content: center;
-  
 }
-.social-media span{
+.social-media span {
   margin-left: 1rem;
 }
-.social-media span a i{
+.social-media span a i {
   color: #005596;
-  
 }
 .logo-footer {
   display: flex;
   justify-content: space-around;
   text-align: center;
 }
-footer div h5{
+footer div h5 {
   color: #005596;
   text-align: center;
 }
-
 
 @keyframes fade {
   from {
@@ -203,21 +195,21 @@ footer div h5{
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #f8f8f2;
+  font-size: 16px;
+  color: #d9d9d9;
   display: block;
   transition: 0.3s;
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
+  color: #f8f8f2;
 }
 
 .sidebar .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 24px;
   margin-left: 50px;
 }
 
@@ -225,7 +217,7 @@ footer div h5{
   font-size: 20px;
   cursor: pointer;
   background-color: #005596;
-  color: #f8f8f2;
+  color: #d9d9d9;
   padding: 10px 15px;
   border: none;
 }
@@ -237,7 +229,6 @@ footer div h5{
 
 #main {
   transition: margin-left 0.5s;
-  padding: 16px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -273,4 +264,153 @@ footer div h5{
   font-size: 12px;
   border: none;
   cursor: pointer;
+}
+
+/* FIXME MODAL LOGIN BOX */
+/*set border to the form*/
+/* OPCIONAL */
+/* form {
+  border: 3px solid #f1f1f1;
+} */
+/*assign full width inputs*/
+/* TEXT BOX FORMULARIO LOGIN */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/*set a style for the buttons*/
+/* BOTON MODAL LOGIN */
+.sidebar button {
+  background-color: #f8f8f2;
+  color: #005596;
+  padding: 1rem 2rem;
+  margin: 4rem 0rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+/* set a hover effect for the button*/
+.modal-login {
+  width: 100%;
+  margin: 0rem 1rem;
+  color: #005596;
+}
+
+button:hover {
+  /*FIXME ALL BUTTONS HOVER*/
+  opacity: 0.8;
+}
+/*set extra style for the cancel button*/
+/* BOTON CANCELAR LOGIN */
+.modal-cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #282a36;
+  color: #f8f8f2;
+  font-weight: bold;
+}
+/*centre the display image inside the container*/
+
+.modal-imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+/*set image properties*/
+
+img.modal-avatar {
+  width: 10%;
+  border-radius: 50%;
+}
+/*set padding to the container*/
+
+.modal-container {
+  padding: 16px;
+}
+
+/*set the forgot password text*/
+
+span.modal-psw {
+  float: center;
+  padding-top: 16px;
+}
+/*set styles for span and cancel button on small screens*/
+
+/*set the Modal background*/
+/* FONDO MODAL LOGIN BOX */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+/*style the model content box*/
+.modal-content {
+  background-color: #005596;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/*style the close button*/
+.modal-close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #f8f8f2;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #282a36;
+  cursor: pointer;
+}
+/* add zoom animation*/
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  span.modal-psw {
+    display: block;
+    float: none;
+  }
+  .modal-cancelbtn {
+    width: 100%;
+  }
 }
