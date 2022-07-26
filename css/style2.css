@@ -53,8 +53,9 @@ img {
 .galeria img {
   position: absolute;
   opacity: 0;
-  transition: opacity 3s;
- 
+  transition: opacity 2s;
+  width: 500px;
+  height: 300px;
 }
 
 .galeria input[type=radio] {
