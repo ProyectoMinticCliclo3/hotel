@@ -14,7 +14,10 @@ header{
   flex-direction: row;
   justify-content: space-around;
   background-color: gray;
-  margin-top: 1rem;
+  
+}
+.logo-top{
+  margin-top: 0.5rem;
 }
 .logo-img {
   /* filter: invert(21%) sepia(94%) saturate(1334%) hue-rotate(184deg)
@@ -22,32 +25,34 @@ header{
   filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
     brightness(119%) contrast(94%);    
 }
-.base-main{  
-  background-color: yellow;
+.search{
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+}
+.search form button{
+  border-radius: 5%;
+  margin-left: 0.5rem;
+}
+.base-main{   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-flow: row wrap;
 }
 
-.slideGaleria {
-  display: none;
-}
-img {
-  vertical-align: middle;
-}
+
+
 
 .imgs{
-  background-color: red;
-  margin: 1rem;
+  margin-top: 0.5rem;
   display: flex;
+  width: 90%;
 }
 
 .galeria { 
   
-  background-color: yellowgreen;
+  
   display: flex;
-  width: 50%;
+  width: 100%;
   
   
 }
@@ -56,16 +61,16 @@ img {
   position: absolute;  
   opacity: 0;
   transition: opacity 3s;
-  width: 40%;
-  margin-left: 3rem;
-  margin-top: 2rem;
+  width: 45%;
+  margin-left: 5%;
+  margin-top: 15%;
  
 }
 
 .galeria input[type=radio] {
-  position: relative;
-  margin-top: 18rem;
-  margin-left: 1rem;
+  position: sticky;
+  margin-top:50%;
+  margin-left: 5rem;
   
 }
 
@@ -96,35 +101,31 @@ img {
 .information{
   display: flex;
   flex-direction: column;
-  background-color: aqua;
-  margin-left: 40%;
+  margin-left: 1.5rem;
   
   
 }
-.information h2{
-  background-color: yellow;
+.information h2{  
   text-align: center;
-
 }
 .information p{
-  margin: 0rem 3rem;
   text-align: justify;
 }
 
 .reserve{
   display: flex;
   flex-direction: column;  
-  background-color: yellow;
   justify-content: center;
+  width: 100%;
 }
 .reserve h2{
   text-align: center;
 }
-.reserve form{
-  justify-content: center;
-  margin: 0rem 1rem;
+.reserve form{  
+  text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-left: 1rem;
 }
 .nav-footer{
   list-style: none;
@@ -132,17 +133,18 @@ img {
   justify-content: center;
   background-color: #005596;
   height: 4rem;
+  color: #f8f8f2;
 }
 .nav-footer li{
   justify-content: center;
   margin-top: 1.5rem;
-  background-color: aqua;
   margin-left: 1rem;
 }
 .social-media{
   display: flex;
   text-align: center;
   justify-content: center;
+  
 }
 .social-media span{
   margin-left: 1rem;
@@ -155,7 +157,6 @@ img {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  background-color: aquamarine;
 }
 footer div h5{
   color: #005596;
