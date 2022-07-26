@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -39,66 +41,40 @@ header {
   margin-top: 0.5rem;
 }
 .base-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-flow: row wrap;
-}
-
-.imgs {
-  margin-top: 0.5rem;
-  display: flex;
-  width: 90%;
+  /* background-color: firebrick; */
 }
 
 .galeria {
-  display: flex;
+  /* background-color: cadetblue; */
+}
+
+.galeria .img-principal img {
+  width: 100rem;
+}
+
+/* TODO CSS TEST OBJECT FIT */
+#img-test {
   width: 100%;
+  height: 50rem;
+  object-fit: cover;
+}
+/* TODO END TEST */
+
+.img-mini {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
-.galeria img {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 3s;
-  width: 45%;
-  margin-left: 5%;
-  margin-top: 15%;
+.img-mini img {
+  width: 17rem;
+  height: 13rem;
 }
 
-.galeria input[type="radio"] {
-  position: sticky;
-  margin-top: 50%;
-  margin-left: 5rem;
-}
-
-.galeria input[type="radio"]:nth-of-type(1):checked ~ img:nth-of-type(1) {
-  opacity: 1;
-}
-
-.galeria input[type="radio"]:nth-of-type(2):checked ~ img:nth-of-type(2) {
-  opacity: 1;
-}
-
-.galeria input[type="radio"]:nth-of-type(3):checked ~ img:nth-of-type(3) {
-  opacity: 1;
-}
-
-.galeria input[type="radio"]:nth-of-type(4):checked ~ img:nth-of-type(4) {
-  opacity: 1;
-}
-.galeria input[type="radio"]:nth-of-type(5):checked ~ img:nth-of-type(5) {
-  opacity: 1;
-}
-.galeria input[type="radio"]:nth-of-type(6):checked ~ img:nth-of-type(6) {
-  opacity: 1;
-}
-.galeria input[type="radio"]:nth-of-type(7):checked ~ img:nth-of-type(7) {
-  opacity: 1;
-}
 .information {
   display: flex;
   flex-direction: column;
-  margin-left: 1.5rem;
+  margin: 1.5rem;
 }
 .information h2 {
   text-align: center;
@@ -107,16 +83,16 @@ header {
   text-align: justify;
 }
 
-.reserve {
+.booking {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
 }
-.reserve h2 {
+.booking h2 {
   text-align: center;
 }
-.reserve form {
+.booking form {
   text-align: center;
   display: flex;
   justify-content: space-around;
@@ -225,10 +201,6 @@ footer div h5 {
 .openbtn:hover {
   background-color: #282a36;
   color: #f8f8f2;
-}
-
-#main {
-  transition: margin-left 0.5s;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
