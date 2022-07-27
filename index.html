@@ -35,27 +35,62 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
             >×</a
           >
-          <a href="index.html">Inicio</a>
-          <a href="habitaciones.html">Habitaciones</a>
-          <a href="reservas.html">Reservas</a>
-          <a href="contacto.html">Contacto</a>
-          <a href="nosotros.html">Sobre Nosotros</a>
+          <a href="index.html"
+            ><img
+              src="img/svg/fa/bell-concierge-solid.svg"
+              alt="concierge bell icon"
+              width="50"
+            />
+            Inicio</a
+          >
+          <a href="habitaciones.html"
+            ><img src="img/svg/fa/bed-solid.svg" alt="bed icon" width="50" />
+            Habitaciones</a
+          >
+          <a href="reservas.html"
+            ><img
+              src="img/svg/fa/book-solid.svg"
+              alt="booking icon"
+              width="50"
+            />
+            Reservas</a
+          >
+          <a href="contacto.html"
+            ><img
+              src="img/svg/fa/phone-solid.svg"
+              alt="phone icon"
+              width="50"
+            />
+            Contacto</a
+          >
+          <a href="nosotros.html"
+            ><img
+              src="img/svg/fa/id-badge-solid.svg"
+              alt="id-card icon"
+              width="50"
+            />
+            Sobre Nosotros</a
+          >
           <a href="#">
             <img
               src="img/img-users/user.svg"
               alt="Foto Usuario"
-              width="60"
+              width="75"
               onclick="document.getElementById('modal-id01').style.display='block'"
             />
           </a>
 
-          <!-- BOTON MODAL LOGIN BOX -->
+          <!-- BOTON SIDEBAR ingreso a MODAL LOGIN BOX -->
           <div>
             <button
               class="modal-login"
               onclick="document.getElementById('modal-id01').style.display='block'"
             >
-              <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              <img
+                src="img/svg/fa/right-to-bracket-solid.svg"
+                alt="login icon"
+                width="40"
+              />
               Iniciar Sesión
             </button>
           </div>
@@ -64,7 +99,7 @@
         <!-- MODAL LOGIN BOX -->
         <div id="modal-id01" class="modal">
           <form class="modal-content animate" action="/action_page.php">
-            <div class="modal-imgcontainer">
+            <!-- <div class="modal-imgcontainer">
               <span
                 onclick="document.getElementById('modal-id01').style.display='none'"
                 class="modal-close"
@@ -76,9 +111,10 @@
                 alt="Avatar"
                 class="modal-avatar"
               />
-            </div>
+            </div> -->
 
             <div class="modal-container">
+              <label><h1>Login</h1></label>
               <label><b>Usuario</b></label>
               <input
                 type="text"
@@ -94,27 +130,35 @@
                 name="psw"
                 required
               />
-
-              <button type="submit">
-                <img src="img/svg/login.svg" alt="icono logout" width="30" />
-                Login
-              </button>
               <input type="checkbox" checked="checked" /> Recordarme
             </div>
 
-            <div class="modal-container" style="background-color: #282a36">
+            <div class="modal-container-button">
+              <button type="submit" class="modal-confirmbtn">
+                Confirmar
+                <img
+                  src="img/svg/fa/check-solid.svg"
+                  alt="icono logout"
+                  height="30"
+                />
+              </button>
+
               <button
                 type="button"
                 onclick="document.getElementById('modal-id01').style.display='none'"
                 class="modal-cancelbtn"
               >
-                Cancelar
+                Cancelar<img
+                  src="img/svg/fa/xmark-solid.svg"
+                  alt="icono logout"
+                  height="30"
+                />
               </button>
-              <br />
-              <span class="modal-psw"
-                >Ha olvidado su <a href="#">Contraseña</a>?</span
-              >
             </div>
+            <span class="modal-psw"
+              ><a href="#">¿Ha olvidado su Contraseña?</a></span
+            >
+            <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span>
           </form>
         </div>
       </div>
