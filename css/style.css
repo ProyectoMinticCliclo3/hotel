@@ -163,6 +163,7 @@ header {
 /* TODO REVISAR MAIN QUE NO DEJA HACER BORDES OTRA VEZ */
 /* MAIN */
 #main {
+  /* position: fixed; */
   /* position: absolute; */
   /* width: calc(100% - 18rem); */
   /* left: 18rem; */
@@ -240,20 +241,22 @@ button:hover {
 .information {
   display: flex;
   flex-direction: column;
-  margin: 4rem 1.5rem;
+  margin: 4rem 4rem;
 }
 .information h3 {
   text-align: center;
+  margin-bottom: 1rem;
 }
-.text{
+.text {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .text p {
-  text-align: justify;
-  margin: 0 1rem;
+  text-align: center;
+  margin: 1rem;
+  padding: 0 3rem;
 }
-.booking-principal{
+.booking-principal {
   display: flex;
   flex-direction: row;
   background-color: #005596;
@@ -264,7 +267,6 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  
 }
 .booking h3 {
   text-align: center;
@@ -278,14 +280,14 @@ button:hover {
   margin-left: 1rem;
   margin-bottom: 1rem;
 }
-.booking form label{
+.booking form label {
   color: #f8f8f2;
 }
-.booking form input{
+.booking form input {
   border-radius: 0.5rem;
   border-color: #f8f8f2;
 }
-.little-input{
+.little-input {
   width: 2rem;
 }
 .booking form span {
@@ -293,12 +295,12 @@ button:hover {
   color: #f8f8f2;
   margin-top: 0.2rem;
 }
-.btn-booking{
+.btn-booking {
   background-color: #005596;
   color: #f8f8f2;
   padding: 0.3rem;
 }
-.btn-share{
+/* .btn-share {
   background-color: #005596;
   color: #f8f8f2;
   padding: 0.3rem;
@@ -306,13 +308,12 @@ button:hover {
   border-color: #f8f8f2;
   margin-top: 1.7rem;
   margin-right: 0.5rem;
-}
+} */
 
 .social-media {
   display: flex;
   text-align: center;
   justify-content: center;
-  
 }
 .social-media span {
   margin-left: 1rem;
@@ -320,9 +321,8 @@ button:hover {
 }
 .social-media span a i {
   color: black;
-  
 }
-footer{
+footer {
   background-color: #ccc;
   color: black;
 }
@@ -331,14 +331,11 @@ footer{
   display: flex;
   justify-content: space-around;
   height: 4rem;
-  
-  
 }
 .nav-footer li {
   justify-content: center;
   margin-top: 1.5rem;
   margin-left: 1rem;
-  
 }
 .logo-footer {
   display: flex;
@@ -346,8 +343,8 @@ footer{
   text-align: center;
 }
 footer div h5 {
-  color: black;
   text-align: center;
+  padding-bottom: 2rem;
 }
 
 /* @keyframes fade {
