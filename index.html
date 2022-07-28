@@ -25,7 +25,10 @@
   <body>
     <div class="container">
       <!-- SIDEBAR note: sidebar == navigation-->
+      
+      
       <nav id="mySidebar" class="sidebar">
+        <span class = sidebar-content>
         <ul>
           <li>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
@@ -125,6 +128,7 @@
             </a>
           </li>
         </ul>
+        
       </nav>
       <!-- 
       
@@ -260,35 +264,34 @@
         </form>
       </div>
       <!-- END MODAL BOX -->
+      <header class="topbar">
+        <!-- FIXME incluir boton de open del sidebar dentro, y aumentar el width para que se vean solamente los iconos del sidebar -->
+        <!-- SIDEBAR - BOTON OPEN -->
+        <div class="toggle">
+          <!-- <button class="openbtn" onclick="openNav()">☰</button> -->
+          <button class="openbtn" onclick="openNav()">☰</button>
+        </div>
+        <div class="logo-top">
+          <a href="index.html">
+            <img
+              src="img/svg/logo-ryhaan_dubai.svg"
+              alt="Rose Ryhaan Dubai"
+              height="35"
+            />
+          </a>
+        </div>
+        <!-- search bar right align -->
+        <div class="search">
+          <form action="#">
+            <input type="text" placeholder="Buscar" name="search" />
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <!--agregar login-->
+      </header>
       <div id="main">
-        <header class="topbar">
-          <!-- FIXME incluir boton de open del sidebar dentro, y aumentar el width para que se vean solamente los iconos del sidebar -->
-          <!-- SIDEBAR - BOTON OPEN -->
-          <div class="toggle">
-            <!-- <button class="openbtn" onclick="openNav()">☰</button> -->
-            <button class="openbtn" onclick="openNav()">☰</button>
-          </div>
-          <div class="logo-top">
-            <a href="index.html">
-              <img
-                src="img/svg/logo-ryhaan_dubai.svg"
-                alt="Rose Ryhaan Dubai"
-                height="35"
-              />
-            </a>
-          </div>
-          <!-- search bar right align -->
-          <div class="search">
-            <form action="#">
-              <input type="text" placeholder="Buscar" name="search" />
-              <button type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </form>
-          </div>
-          <!--agregar login-->
-        </header>
-
         <!-- SECCION PRINCIPAL -->
         <div class="base-main">
           <!-- GALERIA DE IMAGENES -->
