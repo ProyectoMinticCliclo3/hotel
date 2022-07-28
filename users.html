@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/contacto.css" />
+    <link rel="stylesheet" href="css/user.css"/>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -45,7 +45,7 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
             >×</a
           >
-          <a href="usuario.html">Inicio</a>
+          <a href="index.html">Inicio</a>
           <a href="habitaciones.html">Habitaciones</a>
           <a href="reservas.html">Reservas</a>
           <a href="contacto.html">Contacto</a>
@@ -124,13 +124,10 @@
     <div class="base-main">
       <!-- AREA PRINCIPAL -->
       <section class="dataUser">
-        <!-- <input type="text" placeholder="Buscar por cédula" name="searchAdmin" />
-        <button>Buscar Administrador</button> -->
-        <h2>Contáctanos</h2>
-        <!-- search bar right align -->
+        <h2>Datos de Usuario</h2>
         <form action="#" class="inputs_dataUser">
-          <label for="correo">Correo</label>
-          <input type="email" name="correo" id="correo">
+          <label for="cedula">Cédula</label>
+          <input type="text" name="cedula" id="cedula">
           <br>
           <label for="nombre">Nombre</label>
           <input type="text" name="nombre" id="nombre">
@@ -138,23 +135,71 @@
           <label for="apellido">Apellido</label>
           <input type="text" name="apellido" id="apellido">
           <br>
-          <!-- <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          <label for="fechaNacimiento">Fecha de Nacimiento</label>
           <input type="date" name="fechaNacimiento" id="fechaNacimiento">
-          <br> -->
-          <label for="asunto">Asunto</label>
-          <input type="text" name="asunto" id="asunto">
           <br>
-          <label for="mensaje">Mensaje</label>
-          <textarea name="mensaje" id="mensaje" maxlength="630" cols="30" rows="10"></textarea>
-          <!-- <br>
-          <label for="estado">Estado</label>
-          <select name="estado" id="estado">
-            <option value="a">Activo</option>
-            <option value="i">Inactivo</option>
-          </select> -->
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" name="correo" id="correo">
+          <br>
+          <label for="celular">Celular</label>
+          <input type="phone" name="celular" id="celular">
         </form>
-        <input class="btnEnviar" type="submit" name="botonEnviar" value="Enviar" />
+        <input class="btnGuardar" type="submit" name="botonGuardar" value="Guardar" />
       </section>
+      <!-- LISTA RESERVAS -->
+      <div class="reserves">
+        <h2>Listado de Reservas</h2>
+        <table class="reservesTable">
+          <thead>
+          <tr>
+            <caption>Se presentan todas las reservas activas e inactivas</caption>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Entrada</th>
+            <th>Salida</th>
+            <th>Huespedes</th>
+            <th>$ Valor</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+        </table>
+        <h4>¿Quieres realizar cambios? <strong><a href="#">Contáctanos</a></strong></h4>
+      </div>
+      <!-- LISTA COMENTARIOS -->
+      <div class="reviews">
+        <h2>Comentarios Realizados</h2>
+        <div>
+        <table class="reviewsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Comentario</th>
+                <th>All<input type="checkbox" name="check[]" value="0" id="chk0"></th>
+              </tr>
+            </thead>
+            <tbody style="cursor:pointer">
+              <tr onclick="seleccionar(this,1)">
+                <td>DFG555</td>
+                <td>24/07/2022</td>
+                <td>El hotel es increíble, totalmente recomendado</td>
+                <td onclick="seleccionar(this,1)"><input type="checkbox" name="check[]" value="1" id="chk1"></td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+        <div>
+        <input class="btnEditar" type="submit" name="botonEditar" value="Editar Comentario" />
+        <h4><strong><a href="#">Borrar Comentario</a></strong></h4>
+        </div>
+      </div>
     </div>
     <div>
       <ul class="nav-footer">
@@ -203,6 +248,32 @@
 
       <div><h5>&copy; Copyright 2022 Fake Rotana Hotels Corporation</h5></div>
     </footer>
-    <script src="js/slideshow.js"></script>
+
+    <script>
+      function seleccionar(tr, value){
+          this.chk1.click();
+          //console.log("javi")
+          // if(this.chk1.value==1){
+          //   console.log("torres");
+          //   this.chk1.value = 2;
+
+          // }else{
+          //   console.log("vargas");
+          //   this.chk1.value = 1;
+          // }
+          /*if($("#chk"+value).attr("checked") == "checked"){
+            $("#chk"+value).removeAttr("checked");
+            $(tr).css("background-color","#FFFFFF");
+          }else{
+            $("#chk"+value).attr("checked","true");
+            $("#chk"+value).prop("checked","true");
+            $(tr).css("background-color","#BEDAE8");
+          }*/
+        
+      }
+    </script>
+    <script src="js/slideshow.js">
+      
+    </script>
   </body>
 </html>

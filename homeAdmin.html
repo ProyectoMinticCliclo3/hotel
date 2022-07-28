@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/contacto.css" />
+    <link rel="stylesheet" href="css/homeAdmin.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -123,39 +123,86 @@
     <!-- SECCION PRINCIPAL -->
     <div class="base-main">
       <!-- AREA PRINCIPAL -->
-      <section class="dataUser">
-        <!-- <input type="text" placeholder="Buscar por cédula" name="searchAdmin" />
-        <button>Buscar Administrador</button> -->
-        <h2>Contáctanos</h2>
-        <!-- search bar right align -->
-        <form action="#" class="inputs_dataUser">
-          <label for="correo">Correo</label>
-          <input type="email" name="correo" id="correo">
-          <br>
-          <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" id="nombre">
-          <br>
-          <label for="apellido">Apellido</label>
-          <input type="text" name="apellido" id="apellido">
-          <br>
-          <!-- <label for="fechaNacimiento">Fecha de Nacimiento</label>
-          <input type="date" name="fechaNacimiento" id="fechaNacimiento">
-          <br> -->
-          <label for="asunto">Asunto</label>
-          <input type="text" name="asunto" id="asunto">
-          <br>
-          <label for="mensaje">Mensaje</label>
-          <textarea name="mensaje" id="mensaje" maxlength="630" cols="30" rows="10"></textarea>
-          <!-- <br>
-          <label for="estado">Estado</label>
-          <select name="estado" id="estado">
-            <option value="a">Activo</option>
-            <option value="i">Inactivo</option>
-          </select> -->
-        </form>
-        <input class="btnEnviar" type="submit" name="botonEnviar" value="Enviar" />
-      </section>
+      <!-- LISTA HABITACIONES -->
+      <input class="buscador" type="text" placeholder="Buscar por ID" name="searchRoom" />
+        <button class="btnBuscar">Buscar Habitación</button>
+        <br>
+        <button class="btnDescripcion">Editar Descripción y Valor</button>
+        <h2>Habitaciones</h2>
+        <!-- <input class="btnEditar" type="submit" name="botonEditar" value="Editar Descripción y Valor" /> -->
+      <div class="rooms">
+        <div>
+        <table class="roomsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Estado</th>
+                <th>Ult.Ocup.</th>
+                <th>Tipo</th>
+                <th>$(USD)</th>
+                <th>All<input type="checkbox" name="check[]" value="0" id="chk0"></th>
+              </tr>
+            </thead>
+            <tbody style="cursor:pointer">
+              <tr onclick="seleccionar(this,1)">
+                <td>HE-1</td>
+                <td>Desocupada</td>
+                <td>24/07/2022</td>
+                <td>Estándar</td>
+                <td>$400</td>
+                <td onclick="seleccionar(this,1)"><input type="checkbox" name="check[]" value="1" id="chk1"></td>
+              </tr>
+              <tr onclick="seleccionar(this,2)">
+                <td>HE-2</td>
+                <td>Desocupada</td>
+                <td>02/07/2022</td>
+                <td>Estándar</td>
+                <td>$400</td>
+                <td onclick="seleccionar(this,2)"><input type="checkbox" name="check[]" value="2" id="chk2"></td>
+              </tr>
+              <tr onclick="seleccionar(this,3)">
+                <td>HE-3</td>
+                <td>Desocupada</td>
+                <td>25/07/2022</td>
+                <td>Estándar</td>
+                <td>$400</td>
+                <td onclick="seleccionar(this,3)"><input type="checkbox" name="check[]" value="3" id="chk3"></td>
+              </tr>
+              <tr onclick="seleccionar(this,4)">
+                <td>HE-4</td>
+                <td>Desocupada</td>
+                <td>18/07/2022</td>
+                <td>Estándar</td>
+                <td>$400</td>
+                <td onclick="seleccionar(this,4)"><input type="checkbox" name="check[]" value="4" id="chk4"></td>
+              </tr>
+              <tr onclick="seleccionar(this,5)">
+                <td>HE-5</td>
+                <td>Desocupada</td>
+                <td>29/06/2022</td>
+                <td>Estándar</td>
+                <td>$400</td>
+                <td onclick="seleccionar(this,5)"><input type="checkbox" name="check[]" value="5" id="chk5"></td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+        <div>
+            <input class="btnEditar" type="submit" name="botonEditar" value="Agregar Habitación" />
+            <br>
+            <select name="estado" id="estado">
+                <option value="d">Desocupada</option>
+                <option value="o">Ocupada</option>
+                <option value="m">Mantenimiento</option>
+                <option value="i">Inactiva</option>
+              </select>
+            <h4><strong><a href="#">Eliminar Habitación</a></strong></h4>
+            <input class="btnEditar" type="submit" name="botonEditar" value="Guardar Cambios" />
+        </div>
+      </div>
     </div>
+
+
     <div>
       <ul class="nav-footer">
         <li>fotos</li>
@@ -203,6 +250,15 @@
 
       <div><h5>&copy; Copyright 2022 Fake Rotana Hotels Corporation</h5></div>
     </footer>
+
+    <script>
+      function seleccionar(tr, id){
+        // var habitacion = "chk"+id;
+        // // console.log(id);
+        // console.log(habitacion);
+        // this.chk1.click();        
+      }
+    </script>
     <script src="js/slideshow.js"></script>
   </body>
 </html>
