@@ -1,204 +1,191 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+:root {
+  --blue: #005596;
+  --white: #f8f8f2;
+  --grey: #d9d9d9;
+  --black1: #282a36;
+  --black2: #999;
 }
 
 body {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  margin: 0;
-  
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-header{
+header {
+  margin-top: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: gray;
-  margin-top: 1rem;
-}
-.logo-img {
-  /* filter: invert(21%) sepia(94%) saturate(1334%) hue-rotate(184deg)
-    brightness(100%) contrast(102%); */
-  filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
-    brightness(119%) contrast(94%);    
-}
-.base-main{  
-  background-color: yellow;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  flex-flow: row wrap;
-}
-
-.slideGaleria {
-  display: none;
-}
-img {
-  vertical-align: middle;
-}
-
-.imgs{
-  background-color: red;
-  margin: 1rem;
-}
-
-.galeria { 
-  width: 40%;
-  background-color: yellowgreen;
-  display: flex;
-  position: relative;
-}
-
-.galeria img {
-  position: absolute;
-  transition: opacity 3s;
- 
-}
-
-.galeria input[type=radio] {
-  position: relative;
-  bottom: calc(-300px - 1.5em);
-  
-}
-
-.galeria input[type=radio]:nth-of-type(1):checked ~ img:nth-of-type(1) {
-  opacity: 1;
-}
-
-.galeria input[type=radio]:nth-of-type(2):checked ~ img:nth-of-type(2) {
-  opacity: 1;
-}
-
-.galeria input[type=radio]:nth-of-type(3):checked ~ img:nth-of-type(3) {
-  opacity: 1;
-}
-
-.galeria input[type=radio]:nth-of-type(4):checked ~ img:nth-of-type(4) {
-  opacity: 1;
-}
-.galeria input[type=radio]:nth-of-type(5):checked ~ img:nth-of-type(5) {
-  opacity: 1;
-}
-.galeria input[type=radio]:nth-of-type(6):checked ~ img:nth-of-type(6) {
-  opacity: 1;
-}
-.galeria input[type=radio]:nth-of-type(7):checked ~ img:nth-of-type(7) {
-  opacity: 1;
-}
-.information{
-  display: flex;
-  flex-direction: column;
-  background-color: aqua;
-  margin-left: 40%;
-  
-  
-}
-.information h2{
-  background-color: yellow;
-  text-align: center;
-
-}
-.information p{
-  margin: 0rem 3rem;
-  text-align: justify;
-}
-
-.reserve{
-  display: flex;
-  flex-direction: column;  
-  background-color: yellow;
-  justify-content: center;
-}
-.reserve h2{
-  text-align: center;
-}
-.reserve form{
-  justify-content: center;
-  margin: 0rem 1rem;
-  display: flex;
+  /* flex-direction: row; */
   justify-content: space-between;
-}
-.nav-footer{
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
+  align-items: center;
+  padding: 0.2rem 1rem;
+  /* background-color: gray; */
 }
 
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+.container {
+  position: relative;
+  width: 100%;
 }
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev,
-  .next,
-  .text {
-    font-size: 11px;
-  }
-}
-
 /* SIDEBAR */
 /* body {
     font-family: "Lato", sans-serif;
   }
    */
 .sidebar {
-  height: 100%;
-  width: 0;
   position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #005596;
-  overflow-x: hidden;
+  width: 20rem;
+  height: 100%;
+  background: #005596;
+  border-left: 0.7rem solid #005596;
   transition: 0.5s;
-  padding-top: 60px;
+  overflow: hidden;
 }
 
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #f8f8f2;
-  display: block;
-  transition: 0.3s;
+.sidebar.active {
+  width: 80px;
 }
 
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.sidebar .closebtn {
+.sidebar ul {
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  left: 0;
+  width: 100%;
 }
 
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #005596;
-  color: #f8f8f2;
-  padding: 10px 15px;
-  border: none;
+.sidebar ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 }
 
-.openbtn:hover {
-  background-color: #282a36;
-  color: #f8f8f2;
+.sidebar ul li:hover,
+.sidebar ul li.hovered {
+  background: var(--white);
+}
+.sidebar ul li:nth-child(1) {
+  position: absolute;
+  left: 14rem;
+}
+.sidebar ul li:nth-child(2) {
+  margin-bottom: 2.5rem;
+  pointer-events: none;
 }
 
+.sidebar ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.sidebar ul li:hover a,
+.sidebar ul li.hovered a {
+  color: var(--blue);
+}
+
+.sidebar ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 3.75rem;
+  height: 3.75rem;
+  line-height: 5rem;
+  text-align: center;
+}
+/* TODO FIX HOVER Y COLOR DE ICONOS */
+/* .sidebar ul li a .icon:hover {
+  filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
+    brightness(119%) contrast(94%);
+} */
+
+.sidebar ul li a img {
+  height: 2.25rem;
+  max-width: 2.25rem;
+}
+
+.sidebar ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 0.625rem;
+  height: 3.75rem;
+  line-height: 3.75rem;
+  overflow: hidden;
+}
+
+/* Curva afuera */
+.sidebar ul li:hover a::before,
+.sidebar ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -3.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 2.25rem 2.25rem 0 0.625rem var(--white);
+  pointer-events: none;
+}
+
+.sidebar ul li:hover a::after,
+.sidebar ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -3.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 2.25rem -2.25rem 0 0.625rem var(--white);
+  pointer-events: none;
+}
+/* TODO REVISAR MAIN QUE NO DEJA HACER BORDES OTRA VEZ */
+/* MAIN */
 #main {
-  transition: margin-left 0.5s;
-  padding: 16px;
+  /* position: absolute; */
+  /* width: calc(100% - 18rem); */
+  /* left: 18rem; */
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+
+#main.active {
+  /* width: calc(100% -5rem); */
+  /* left: 5rem; */
+}
+
+/*FIXME ALL BUTTONS HOVER*/
+button:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+.toggle button {
+  display: flex;
+  position: relative;
+  width: 2.25rem;
+  height: 2.25rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  background-color: var(--blue);
+  color: var(--white);
+  margin: 0.5rem;
+  border-radius: 50%;
+  text-decoration: none;
+  border: none;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -211,27 +198,344 @@ img {
   }
 }
 
-/* BOTON BUSCAR */
-/* styling search bar */
-.search input[type="text"] {
-  width: 300px;
-  height: 25px;
-  border-radius: 25px;
-  border: none;
+/* .logo-img {
+
+  filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
+    brightness(119%) contrast(94%);
+} */
+
+.galeria .img-principal img {
+  width: 100rem;
 }
 
-.search {
-  float: right;
-  margin: 7px;
+/* TODO CSS TEST OBJECT FIT */
+#img-test {
+  width: 100%;
+  height: 50rem;
+  object-fit: cover;
+}
+/* TODO END TEST */
+
+.img-mini {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
-.search button {
+.img-mini img {
+  width: 17rem;
+  height: 13rem;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem;
+}
+.information h2 {
+  text-align: center;
+}
+
+.information p {
+  text-align: justify;
+}
+
+.booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.booking h2 {
+  text-align: center;
+}
+.booking form {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 1rem;
+}
+.nav-footer {
+  list-style: none;
+  display: flex;
+  justify-content: center;
   background-color: #005596;
-  color: #f2f2f2;
-  float: right;
-  padding: 5px 10px;
-  margin-right: 16px;
-  font-size: 12px;
+  height: 4rem;
+  color: #f8f8f2;
+}
+.nav-footer li {
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+}
+.social-media {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.social-media span {
+  margin-left: 1rem;
+}
+.social-media span a i {
+  color: #005596;
+}
+.logo-footer {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+footer div h5 {
+  color: #005596;
+  text-align: center;
+}
+
+/* @keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+
+/* On smaller screens, decrease text size */
+/* @media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+} */
+
+/* BOTON BUSCAR */
+.search form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  /* flex-wrap: wrap; */
+}
+
+/* styling search bar */
+.search form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 1rem;
   border: none;
   cursor: pointer;
+  position: absolute;
+  text-decoration: none;
+  /* margin-left: 0.5rem; */
+  /* margin-top: 0.5rem; */
+}
+
+.search input[type="text"] {
+  width: 18rem;
+  height: 2rem;
+  border-radius: 2rem;
+  border-color: var(--black1);
+}
+
+/* FIXME Sidebar -> MODAL LOGIN BOX */
+/*set a style for the buttons*/
+/* BOTON INICIAR SESION SIDEBAR a MODAL BOX */
+/* .sidebar .modal-login {
+  background-color: #f8f8f2;
+  color: #005596;
+  padding: 1rem 2rem;
+  margin: 4rem 0rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+} */
+
+/* FONDO MODAL LOGIN BOX */
+.modal {
+  flex-direction: column;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: auto; */
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  /* padding: 0 4rem; */
+  /* margin: 1.5rem; */
+}
+
+/* set padding to the container*/
+.modal {
+  overflow: hidden;
+  display: flex;
+  padding: 2rem;
+  /* margin: 10rem; */
+}
+
+.modal-container {
+  padding: 1.5rem;
+  /* margin: 1rem 1rem; */
+  /* width: 5%; */
+}
+
+/*style the model content box*/
+/* ESTILO MODAL BOX */
+.modal .modal-content {
+  background-color: #d9d9d9;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  min-width: 10rem;
+  width: 30%;
+  /* height: 30rem; */
+}
+
+.modal-container-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0.5rem;
+  /* text-decoration: none; */
+}
+
+/* style the close button */
+/* .modal-close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #005596;
+  font-size: 10rem;
+  font-weight: bold;
+} */
+
+/* .modal-close:hover,
+.modal-close:focus {
+  color: #282a36;
+  cursor: pointer;
+} */
+
+/*set border to the form*/
+/* OPCIONAL */
+/* form {
+  border: 3px solid #f1f1f1;
+} */
+/*assign full width inputs*/
+/* TEXT BOX FORMULARIO LOGIN */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: flex;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/*set extra style for the cancel button*/
+/* BOTON CANCELAR LOGIN */
+#modal-id01 .modal-container-button button {
+  /* width: auto; */
+  /* margin: 1rem 1rem; */
+  background-color: #d9d9d9;
+  /* background-color: none; */
+  border: none;
+  border-radius: 0.5rem;
+  /* justify-content: center; */
+  /* margin: 0.5rem; */
+  /* padding: 1rem 3rem; */
+  color: #005596;
+  padding: 0.78rem 1rem;
+  font-weight: bold;
+}
+
+/* .modal-container-button button:hover {
+  background-color: #005596;
+  color: #f8f8f2;
+  text-decoration: underline;
+} */
+
+#modal-id01 .modal-container-button .modal-confirmbtn {
+  background-color: #005596;
+  color: #f8f8f2;
+}
+
+.modal-container-button .modal-cancelbtn:hover {
+  /* background-color: #005596; */
+  /* border-style: dotted; */
+  color: #282a36;
+}
+
+/*centre the display image inside the container*/
+
+/* FIXME BORRAR después. ya no tiene la imagen */
+/* .modal-imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+} */
+/*set image properties*/
+/* 
+img.modal-avatar {
+  width: 10%;
+  border-radius: 50%;
+} */
+
+/* FIXME END */
+
+/*set the forgot password text*/
+
+.modal .modal-psw a {
+  display: flex;
+  /* float: center; */
+  color: #005596;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal .modal-psw a:hover {
+  text-decoration: underline;
+}
+/*set styles for span and cancel button on small screens*/
+
+/* add zoom animation*/
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  span.modal-psw {
+    display: block;
+    float: none;
+  }
+  .modal-cancelbtn {
+    /* FIXME  */
+    /* width: 100%; */
+  }
 }
