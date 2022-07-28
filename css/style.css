@@ -230,54 +230,102 @@ button:hover {
 .information {
   display: flex;
   flex-direction: column;
-  margin: 1.5rem;
+  margin: 4rem 1.5rem;
 }
-.information h2 {
+.information h3 {
   text-align: center;
 }
-
-.information p {
-  text-align: justify;
+.text{
+  display: flex;
+  flex-direction: row;
 }
-
+.text p {
+  text-align: justify;
+  margin: 0 1rem;
+}
+.booking-principal{
+  display: flex;
+  flex-direction: row;
+  background-color: #005596;
+  margin-top: 4rem;
+}
 .booking {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  
 }
-.booking h2 {
+.booking h3 {
   text-align: center;
+  color: #f8f8f2;
+  margin-bottom: 0.3rem;
 }
 .booking form {
   text-align: center;
   display: flex;
   justify-content: space-around;
   margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.booking form label{
+  color: #f8f8f2;
+}
+.booking form input{
+  border-radius: 0.5rem;
+  border-color: #f8f8f2;
+}
+.booking form span {
+  border-color: #f8f8f2;
+  color: #f8f8f2;
+  margin-top: 0.2rem;
+}
+.btn-booking{
+  background-color: #005596;
+  color: #f8f8f2;
+  padding: 0.3rem;
+}
+.btn-share{
+  background-color: #005596;
+  color: #f8f8f2;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  border-color: #f8f8f2;
+  margin-top: 1.7rem;
+  margin-right: 0.5rem;
+}
+
+.social-media {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  
+}
+.social-media span {
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+.social-media span a i {
+  color: black;
+  
+}
+footer{
+  background-color: #ccc;
+  color: black;
 }
 .nav-footer {
   list-style: none;
   display: flex;
-  justify-content: center;
-  background-color: #005596;
+  justify-content: space-around;
   height: 4rem;
-  color: #f8f8f2;
+  
+  
 }
 .nav-footer li {
   justify-content: center;
   margin-top: 1.5rem;
   margin-left: 1rem;
-}
-.social-media {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-.social-media span {
-  margin-left: 1rem;
-}
-.social-media span a i {
-  color: #005596;
+  
 }
 .logo-footer {
   display: flex;
@@ -285,7 +333,7 @@ button:hover {
   text-align: center;
 }
 footer div h5 {
-  color: #005596;
+  color: black;
   text-align: center;
 }
 
