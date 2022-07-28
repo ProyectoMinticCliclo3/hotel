@@ -20,7 +20,7 @@ body {
 }
 
 header {
-  position: fixed;
+  /* position: fixed; */
   margin-top: 0;
   display: flex;
   width: 100%;
@@ -52,9 +52,6 @@ header {
   transition: 0.5s;
   overflow: hidden;
   margin-top: 3.6rem;
-}
-
-.container .sidebar .sidebar-content {
 }
 
 .sidebar.active {
@@ -208,107 +205,6 @@ button:hover {
     font-size: 18px;
   }
 }
-
-/* .logo-img {
-
-  filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
-    brightness(119%) contrast(94%);
-} */
-
-.galeria .img-principal img {
-  width: 100rem;
-}
-
-/* TODO CSS TEST OBJECT FIT */
-#img-test {
-  width: 100%;
-  height: 50rem;
-  object-fit: cover;
-}
-/* TODO END TEST */
-
-.img-mini {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.img-mini img {
-  width: 17rem;
-  height: 13rem;
-}
-
-.information {
-  display: flex;
-  flex-direction: column;
-  margin: 4rem 4rem;
-}
-.information h3 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.text {
-  display: flex;
-  flex-direction: column;
-}
-.text p {
-  text-align: center;
-  margin: 1rem;
-  padding: 0 3rem;
-}
-.booking-principal {
-  display: flex;
-  flex-direction: row;
-  background-color: #005596;
-  margin-top: 4rem;
-}
-.booking {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-}
-.booking h3 {
-  text-align: center;
-  color: #f8f8f2;
-  margin-bottom: 0.3rem;
-}
-.booking form {
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-}
-.booking form label {
-  color: #f8f8f2;
-}
-.booking form input {
-  border-radius: 0.5rem;
-  border-color: #f8f8f2;
-}
-.little-input {
-  width: 2rem;
-}
-.booking form span {
-  border-color: #f8f8f2;
-  color: #f8f8f2;
-  margin-top: 0.2rem;
-}
-.btn-booking {
-  background-color: #005596;
-  color: #f8f8f2;
-  padding: 0.3rem;
-}
-/* .btn-share {
-  background-color: #005596;
-  color: #f8f8f2;
-  padding: 0.3rem;
-  border-radius: 0.5rem;
-  border-color: #f8f8f2;
-  margin-top: 1.7rem;
-  margin-right: 0.5rem;
-} */
 
 .social-media {
   display: flex;

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style-login.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <!-- <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -25,110 +25,141 @@
   <body>
     <div class="container">
       <!-- SIDEBAR note: sidebar == navigation-->
-      
-      
+      <!-- END MODAL BOX -->
+      <header class="topbar">
+        <!-- FIXME incluir boton de open del sidebar dentro, y aumentar el width para que se vean solamente los iconos del sidebar -->
+        <!-- SIDEBAR - BOTON OPEN -->
+        <div class="toggle">
+          <!-- <button class="openbtn" onclick="openNav()">☰</button> -->
+          <button class="openbtn" onclick="openNav()">☰</button>
+        </div>
+        <div class="logo-top">
+          <a href="index.html">
+            <img
+              src="img/svg/logo-ryhaan_dubai.svg"
+              alt="Rose Ryhaan Dubai"
+              height="35"
+            />
+          </a>
+        </div>
+        <!-- search bar right align -->
+        <div class="search">
+          <form action="#">
+            <input type="text" placeholder="Buscar" name="search" />
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <!--agregar login-->
+      </header>
+
       <nav id="mySidebar" class="sidebar">
-        <span class = sidebar-content>
-        <ul>
-          <li>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-              >×</a
-            >
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon">
-                <img src="img/svg/logo-ryhaan.svg" alt="Logo-Ryhaan" />
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="index.html">
-              <span class="icon"
-                ><img
-                  src="img/svg/fa/bell-concierge-solid.svg"
-                  alt="concierge bell icon"
-                  width="50"
-                />
-              </span>
-              <span class="title">Inicio</span>
-            </a>
-          </li>
-          <li>
-            <a href="habitaciones.html">
-              <span class="icon">
-                <img src="img/svg/fa/bed-solid.svg" alt="bed icon" width="50" />
-              </span>
-              <span class="title">Habitaciones</span>
-            </a>
-          </li>
-          <li>
-            <a href="reservas.html">
-              <span class="icon">
-                <img
-                  src="img/svg/fa/book-solid.svg"
-                  alt="booking icon"
-                  width="50"
-                />
-              </span>
-              <span class="title">Reservas</span>
-            </a>
-          </li>
-          <li>
-            <a href="contacto.html">
-              <span class="icon"
-                ><img
-                  src="img/svg/fa/phone-solid.svg"
-                  alt="phone icon"
-                  width="50"
-              /></span>
-              <span class="title">Contacto</span>
-            </a>
-          </li>
-          <li>
-            <a href="nosotros.html">
-              <span class="icon"
-                ><img
-                  src="img/svg/fa/id-badge-solid.svg"
-                  alt="id-card icon"
-                  width="50"
-              /></span>
-              <span class="title">Sobre Nosotros</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon"
-                ><img
-                  src="img/img-users/user.svg"
-                  alt="Foto Usuario"
-                  width="75"
-                  onclick="document.getElementById('modal-id01').style.display='block'"
-              /></span>
-              <span
-                class="title"
-                onclick="document.getElementById('modal-id01').style.display='block'"
-                >Usuario</span
+        <span class="sidebar-content">
+          <ul>
+            <li>
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+                >×</a
               >
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon"
-                ><img
-                  src="img/svg/fa/right-to-bracket-solid.svg"
-                  alt="id-card icon"
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <img src="img/svg/logo-ryhaan.svg" alt="Logo-Ryhaan" />
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                <span class="icon"
+                  ><img
+                    src="img/svg/fa/bell-concierge-solid.svg"
+                    alt="concierge bell icon"
+                    width="50"
+                  />
+                </span>
+                <span class="title">Inicio</span>
+              </a>
+            </li>
+            <li>
+              <a href="habitaciones.html">
+                <span class="icon">
+                  <img
+                    src="img/svg/fa/bed-solid.svg"
+                    alt="bed icon"
+                    width="50"
+                  />
+                </span>
+                <span class="title">Habitaciones</span>
+              </a>
+            </li>
+            <li>
+              <a href="reservas.html">
+                <span class="icon">
+                  <img
+                    src="img/svg/fa/book-solid.svg"
+                    alt="booking icon"
+                    width="50"
+                  />
+                </span>
+                <span class="title">Reservas</span>
+              </a>
+            </li>
+            <li>
+              <a href="contacto.html">
+                <span class="icon"
+                  ><img
+                    src="img/svg/fa/phone-solid.svg"
+                    alt="phone icon"
+                    width="50"
+                /></span>
+                <span class="title">Contacto</span>
+              </a>
+            </li>
+            <li>
+              <a href="nosotros.html">
+                <span class="icon"
+                  ><img
+                    src="img/svg/fa/id-badge-solid.svg"
+                    alt="id-card icon"
+                    width="50"
+                /></span>
+                <span class="title">Sobre Nosotros</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"
+                  ><img
+                    src="img/img-users/user.svg"
+                    alt="Foto Usuario"
+                    width="75"
+                    onclick="document.getElementById('modal-id01').style.display='block'"
+                /></span>
+                <span
+                  class="title"
                   onclick="document.getElementById('modal-id01').style.display='block'"
-              /></span>
-              <span
-                class="title"
-                onclick="document.getElementById('modal-id01').style.display='block'"
-                >Iniciar Sesión</span
-              >
-            </a>
-          </li>
-        </ul>
-        
+                  >Usuario</span
+                >
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"
+                  ><img
+                    src="img/svg/fa/right-to-bracket-solid.svg"
+                    alt="id-card icon"
+                    onclick="document.getElementById('modal-id01').style.display='block'"
+                /></span>
+                <span
+                  class="title"
+                  onclick="document.getElementById('modal-id01').style.display='block'"
+                  >Iniciar Sesión</span
+                >
+              </a>
+            </li>
+          </ul>
+        </span>
       </nav>
       <!-- 
       
@@ -263,35 +294,6 @@
           <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span>
         </form>
       </div>
-      <!-- END MODAL BOX -->
-      <header class="topbar">
-        <!-- FIXME incluir boton de open del sidebar dentro, y aumentar el width para que se vean solamente los iconos del sidebar -->
-        <!-- SIDEBAR - BOTON OPEN -->
-        <div class="toggle">
-          <!-- <button class="openbtn" onclick="openNav()">☰</button> -->
-          <button class="openbtn" onclick="openNav()">☰</button>
-        </div>
-        <div class="logo-top">
-          <a href="index.html">
-            <img
-              src="img/svg/logo-ryhaan_dubai.svg"
-              alt="Rose Ryhaan Dubai"
-              height="35"
-            />
-          </a>
-        </div>
-        <!-- search bar right align -->
-        <div class="search">
-          <form action="#">
-            <input type="text" placeholder="Buscar" name="search" />
-            <button type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-        </div>
-        <!--agregar login-->
-      </header>
-
 
       <!-- SECCION PRINCIPAL DE CONTENIDO -->
       <div id="main">
@@ -316,12 +318,10 @@
               <img src="img/img-habitacion/230049217.jpg" alt="Galeria CSS 5" />
               <img src="img/img-habitacion/230203324.jpg" alt="Galeria CSS 6" />
               <img src="img/img-habitacion/230203934.jpg" alt="Galeria CSS 7" /> -->
-            <!-- </div> -->
+          <!-- </div> -->
           <!-- </div> -->
 
           <!-- Next and previous buttons -->
-
-          
 
           <!-- INPUT RESERVAS -->
           <div class="booking-principal">
@@ -334,18 +334,32 @@
                 <input type="date" id="Check-Out" name="Check-Out" />
                 <!-- Huespedes -->
                 <label for="huespedes">Huespedes:</label>
-                <input class="little-input" type="number" id="huespedes" value="1" />
+                <input
+                  class="little-input"
+                  type="number"
+                  id="huespedes"
+                  value="1"
+                />
                 <!-- Habitaciones -->
                 <label for="habitaciones">Habitaciones:</label>
-                <input class="little-input" type="number" id="habitaciones" value="1" />
+                <input
+                  class="little-input"
+                  type="number"
+                  id="habitaciones"
+                  value="1"
+                />
                 <span>$$$$</span>
                 <!-- Boton Reservar -->
-                <input class="btn-booking" type="submit" name="botonReservar" value="Reservar" />
+                <input
+                  class="btn-booking"
+                  type="submit"
+                  name="botonReservar"
+                  value="Reservar"
+                />
                 <button class="btn-share">Compartir</button>
               </form>
               <!--Boton Compartir-->
-              <span>
-              </span>
+              <span> </span>
             </div>
           </div>
           <div class="information">
@@ -362,16 +376,16 @@
                 libre, centro de fitness, hammam y restaurante.
               </p>-->
               <p>
-                El hotel ofrece 462 habitaciones y suites con vistas panorámicas a
-                Dubái y al Burj Khalifa. Los alojamientos disponen de hervidor de
-                agua. Todas las habitaciones del Rose Rayhaan Rotana Dubai están
-                equipadas con baño privado con bañera.
+                El hotel ofrece 462 habitaciones y suites con vistas panorámicas
+                a Dubái y al Burj Khalifa. Los alojamientos disponen de hervidor
+                de agua. Todas las habitaciones del Rose Rayhaan Rotana Dubai
+                están equipadas con baño privado con bañera.
               </p>
               <p>
-                El Rose Rayhaan by Rotana alberga 3 sitios para comer, entre ellos
-                el restaurante Petals. Tiene capacidad para 160 personas y ofrece
-                comida durante todo el día para el desayuno, el almuerzo y la
-                cena.
+                El Rose Rayhaan by Rotana alberga 3 sitios para comer, entre
+                ellos el restaurante Petals. Tiene capacidad para 160 personas y
+                ofrece comida durante todo el día para el desayuno, el almuerzo
+                y la cena.
               </p>
               <!-- <p>
                 La zona de conferencias, ubicada en 2 plantas, cuenta con 7 salas
@@ -384,13 +398,13 @@
                 vapor y bañera de hidromasaje.
               </p>-->
               <p>
-                El hotel está cerca del centro comercial Dubai Mall y a 15 minutos
-                en coche del aeropuerto internacional de Dubái.
+                El hotel está cerca del centro comercial Dubai Mall y a 15
+                minutos en coche del aeropuerto internacional de Dubái.
               </p>
             </div>
           </div>
         </div>
-        
+
         <footer>
           <div class="social-media">
             <span>
@@ -418,9 +432,8 @@
               <li>contáctanos</li>
               <li><a href="https://rotana.com">by Rotana</a></li>
             </ul>
-            </div>
+          </div>
 
-          
           <div class="logo-footer">
             <a href="index.html">
               <img
