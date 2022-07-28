@@ -20,7 +20,7 @@ body {
 }
 
 header {
-  /* position: fixed; */
+  position: fixed;
   margin-top: 0;
   display: flex;
   width: 100%;
