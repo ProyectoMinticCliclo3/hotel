@@ -275,6 +275,9 @@ button:hover {
   border-radius: 0.5rem;
   border-color: #f8f8f2;
 }
+.little-input{
+  width: 2rem;
+}
 .booking form span {
   border-color: #f8f8f2;
   color: #f8f8f2;
