@@ -1,7 +1,9 @@
 
 
 /*Rooms section*/
+
 .buscador{
+  margin-top: 9rem;
     margin-left: 42%;
     margin-bottom: 1rem;
     margin-right: 1rem;
@@ -27,7 +29,7 @@
     background-color: #005596;
     color: #f2f2f2;
     cursor: pointer;
-    margin-left: 53%;
+    margin-left: 20%;
     margin-top: 2rem;
     height: 2.5rem;
     font-weight: bold;
@@ -35,9 +37,8 @@
 }
 
 .base-main h2{
-  margin-left: 20%;
   width: 14rem;
-  margin-top: 0%;
+  margin: 4rem 0% 1.5rem 20%;
 }
 
 .rooms{
@@ -58,6 +59,7 @@
   
   .roomsTable th{
     width: 8rem;
+    padding-bottom: 1rem;
     text-align: center;
     border-bottom-style:double;
   }
@@ -68,6 +70,7 @@
   }
   
   .roomsTable td{
+    padding-top: 1rem;
     text-align: center;
   }
   .rooms div:last-child{
@@ -96,6 +99,7 @@
   
   .rooms h4{
     margin-top: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
     font-weight: lighter;
   }
