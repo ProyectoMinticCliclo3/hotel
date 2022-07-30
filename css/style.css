@@ -45,7 +45,7 @@ header {
    */
 .sidebar {
   position: fixed;
-  width: 20rem;
+  width: 5rem;
   height: 100%;
   background: var(--blue);
   border-left: 0.7rem solid var(--blue);
@@ -325,11 +325,20 @@ footer div h5 {
   background-color: rgba(0, 0, 0, 0.4);
   /* padding: 0 4rem; */
   /* margin: 1.5rem; */
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal.is-visible{
+  visibility: visible;
+  opacity:1;
 }
 
 /* set padding to the container*/
 .modal {
-  overflow: hidden;
+  /* overflow: hidden; */
+
+
   display: flex;
   padding: 2rem;
   /* margin: 10rem; */
@@ -492,4 +501,11 @@ img.modal-avatar {
     /* FIXME  */
     /* width: 100%; */
   }
+}
+
+
+
+.open-modal{
+  display: flex;
+  width: 5rem;
 }

@@ -20,7 +20,7 @@
   <title>Hotel Rose Ryhaan by Rotana</title>
 </head>
 
-<body onload="closeNav()">
+<body>
   <div class="container">
     <!-- SIDEBAR note: sidebar == navigation-->
     <header class="topbar">
@@ -28,7 +28,7 @@
       <!-- SIDEBAR - BOTON OPEN -->
       <div class="toggle">
         <!-- <button class="openbtn" onclick="openNav()">☰</button> -->
-        <button class="openbtn" onclick="openNav()">☰</button>
+        <button class="openbtn" onclick="openOrClose(value)" value="0" id="openbtn">☰</button>
       </div>
       <div class="logo-top">
         <a href="index.html">
@@ -97,17 +97,19 @@
           </li>
           <li>
             <a href="#">
-              <span class="icon"><img src="img/img-users/user.svg" alt="Foto Usuario" width="75"
-                  onclick="document.getElementById('modal-id01').style.display='block'" /></span>
-              <span class="title" onclick="document.getElementById('modal-id01').style.display='block'">Usuario</span>
+              <span class="icon"><img src="img/img-users/user.svg" alt="Foto Usuario" width="75"></span>
+              <span class="title"
+                onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01">Usuario</span>
             </a>
           </li>
           <li>
             <a href="#">
               <span class="icon"><img src="img/svg/fa/right-to-bracket-solid.svg" alt="id-card icon"
-                  onclick="document.getElementById('modal-id01').style.display='block'" /></span>
-              <span class="title" onclick="document.getElementById('modal-id01').style.display='block'">Iniciar
+                  onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01"></span>
+              <span class="title"
+                onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01">Iniciar
                 Sesión</span>
+              <!-- <button type="button" class="open-modal" data-open="modal-id01">boton</button> -->
             </a>
           </li>
         </ul>
