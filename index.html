@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <!-- <link rel="stylesheet" href="css/index.css" /> -->
     <!-- <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -25,13 +26,19 @@
   <body>
     <div class="container">
       <!-- SIDEBAR note: sidebar == navigation-->
-      <!-- END MODAL BOX -->
       <header class="topbar">
         <!-- FIXME incluir boton de open del sidebar dentro, y aumentar el width para que se vean solamente los iconos del sidebar -->
         <!-- SIDEBAR - BOTON OPEN -->
         <div class="toggle">
           <!-- <button class="openbtn" onclick="openNav()">☰</button> -->
-          <button class="openbtn" onclick="openNav()">☰</button>
+          <button
+            class="openbtn"
+            onclick="openOrClose(value)"
+            value="0"
+            id="openbtn"
+          >
+            ☰
+          </button>
         </div>
         <div class="logo-top">
           <a href="index.html">
@@ -57,11 +64,9 @@
       <nav id="mySidebar" class="sidebar">
         <span class="sidebar-content">
           <ul>
-            <li>
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-                >×</a
-              >
-            </li>
+            <!-- <li>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          </li> -->
             <li>
               <a href="#">
                 <span class="icon">
@@ -134,11 +139,11 @@
                     src="img/img-users/user.svg"
                     alt="Foto Usuario"
                     width="75"
-                    onclick="document.getElementById('modal-id01').style.display='block'"
                 /></span>
                 <span
                   class="title"
                   onclick="document.getElementById('modal-id01').style.display='block'"
+                  data-open="modal-id01"
                   >Usuario</span
                 >
               </a>
@@ -150,12 +155,15 @@
                     src="img/svg/fa/right-to-bracket-solid.svg"
                     alt="id-card icon"
                     onclick="document.getElementById('modal-id01').style.display='block'"
+                    data-open="modal-id01"
                 /></span>
                 <span
                   class="title"
                   onclick="document.getElementById('modal-id01').style.display='block'"
+                  data-open="modal-id01"
                   >Iniciar Sesión</span
                 >
+                <!-- <button type="button" class="open-modal" data-open="modal-id01">boton</button> -->
               </a>
             </li>
           </ul>
@@ -244,7 +252,9 @@
       <div id="modal-id01" class="modal">
         <form class="modal-content animate" action="/action_page.php">
           <div class="modal-container">
-            <label><h1>Login</h1></label>
+            <label>
+              <h1>Login</h1>
+            </label>
             <label><b>Usuario</b></label>
             <input
               type="text"
@@ -294,6 +304,7 @@
           <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span>
         </form>
       </div>
+      <!-- END MODAL BOX -->
 
       <!-- SECCION PRINCIPAL DE CONTENIDO -->
       <div id="main">
