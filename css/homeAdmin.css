@@ -3,10 +3,7 @@
 /*Rooms section*/
 
 .buscador{
-  margin-top: 9rem;
-    margin-left: 42%;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
+    margin: 9rem 1rem 1rem 32%;
     height: 35px;
     border-radius: 25px;
     text-align: center;
@@ -29,7 +26,7 @@
     background-color: #005596;
     color: #f2f2f2;
     cursor: pointer;
-    margin-left: 20%;
+    margin-left: 10%;
     margin-top: 2rem;
     height: 2.5rem;
     font-weight: bold;
@@ -38,11 +35,11 @@
 
 .base-main h2{
   width: 14rem;
-  margin: 4rem 0% 1.5rem 20%;
+  margin: 4rem 0% 1.5rem 10%;
 }
 
 .rooms{
-    margin-left: 20%;
+    margin-left: 10%;
 }
 
 

@@ -114,7 +114,7 @@
     font-weight: lighter;
   }
   
-  /*Reviews Section*/
+/*Sección de Comentarios*/
 .reviews{
     margin-left: 10%;
     margin-bottom: 10rem;
@@ -122,9 +122,9 @@
   .reviews h2{
     margin-top: 5rem;
   }
-  .reviews div{
+  /* .reviews div{
     display:inline-block;
-  }
+  } */
   
   .reviewsTable{
     border-collapse: separate;
@@ -136,6 +136,7 @@
   
   .reviewsTable th{
     width: 8rem;
+    padding-bottom: 1rem;
     text-align: center;
     border-bottom-style:double;
   }
@@ -148,11 +149,12 @@
   }
   
   .reviewsTable td{
+    padding-top: 1rem;
     text-align: center;
   }
   .reviews div:last-child{
     margin-top: 2.5rem;
-    margin-left: 3rem;
+    margin-left: 9rem;
     vertical-align: top;
   }
   
@@ -162,16 +164,25 @@
     border: none;
     width: 12rem;
     height: 2.5rem;
-    margin-left: 0;
     font-weight: bold;
     font-size: 1rem;
-    
   }
-  .reviews h4{
-    margin-top: 6rem;
+  
+  .btnEliminar{
+    background-color: #005596;
+    color: #f2f2f2;
+    border: none;
+    width: 12rem;
+    margin-left: 6rem;
+    height: 2.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  /* .reviews h4{
     text-align: center;
     font-weight: lighter;
-  }
+  } */
 
 
 

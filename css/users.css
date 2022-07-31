@@ -1,0 +1,326 @@
+
+/* Datos de usuario */
+.dataUser h2{
+  margin-left: 10%;
+  margin-top: 0;
+  padding-top: 10rem;
+}
+
+.inputs_dataUser{
+  margin-left:20%;
+  padding: 1rem;
+}
+.inputs_dataUser label{
+  width: 12rem;
+  display:inline-block;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.inputs_dataUser input{
+  height: 2rem;
+}
+
+.inputs_dataUser input:nth-of-type(-n+3){
+  width: 15rem;
+}
+.inputs_dataUser input:nth-of-type(+n+5){
+  width: 15rem;
+}
+
+.btnGuardar{
+  background-color: #005596;
+  color: #f2f2f2;
+  border: none;
+  width: 6rem;
+  height: 2.5rem;
+  margin-left: 33%;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  
+}
+
+/* Listado de Reservas */
+.reserves h2{
+  margin-top: 5rem;
+  margin-left: 10%;
+}
+
+.reservesTable{
+  margin-left: 10%;
+  border-collapse: separate;
+  border: black 1px solid;
+  background-color:lightgray;
+  padding-bottom: 10rem;
+}
+
+.reservesTable th{
+  width: 8rem;
+  text-align: center;
+  border-bottom-style:double;
+}
+.reservesTable td{
+  text-align: center;
+}
+
+.reserves h4{
+  margin-top: 0;
+  text-align: center;
+  font-weight: lighter;
+}
+
+/*Sección de Comentarios*/
+.reviews{
+  margin-left: 10%;
+  margin-bottom: 10rem;
+}
+.reviews h2{
+  margin-top: 5rem;
+}
+/* .reviews div{
+  display:inline-block;
+} */
+
+.reviewsTable{
+  border-collapse: separate;
+  border: black 1px solid;
+  background-color:lightgray;
+  /* padding-bottom: 10rem; */
+  margin-bottom: 0.4rem;
+}
+
+.reviewsTable th{
+  width: 8rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  border-bottom-style:double;
+}
+.reviewsTable th:nth-child(3){
+  width: 30rem;
+}
+.reviewsTable th:last-child{
+  width: 3rem;
+  border-bottom-style:none;
+}
+
+.reviewsTable td{
+  padding-top: 1rem;
+  text-align: center;
+}
+.reviews div:last-child{
+  margin-top: 2.5rem;
+  margin-left: 9rem;
+  vertical-align: top;
+}
+
+.btnEditar{
+  background-color: #005596;
+  color: #f2f2f2;
+  border: none;
+  width: 12rem;
+  height: 2.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btnEliminar{
+  background-color: #005596;
+  color: #f2f2f2;
+  border: none;
+  width: 12rem;
+  margin-left: 6rem;
+  height: 2.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* .reviews h4{
+  text-align: center;
+  font-weight: lighter;
+} */
+
+
+
+/* FONDO modal-others LOGIN BOX */
+.modal-others {
+  flex-direction: column;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: auto; */
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  /* padding: 0 4rem; */
+  /* margin: 1.5rem; */
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-others.is-visible{
+  visibility: visible;
+  opacity:1;
+}
+
+/* set padding to the container*/
+.modal-others {
+  /* overflow: hidden; */
+
+
+  display: flex;
+  padding: 2rem;
+  /* margin: 10rem; */
+}
+
+.modal-others-container {
+  padding: 1.5rem;
+  /* margin: 1rem 1rem; */
+  /* width: 5%; */
+}
+
+/*style the modal content box*/
+/* ESTILO modal-others BOX */
+.modal-others .modal-others-content {
+  background-color: #d9d9d9;
+  margin: auto auto auto auto;
+  border: 1px solid #888;
+  min-width: 10rem;
+  width: 30%;
+  /* height: 30rem; */
+}
+
+.modal-others-container-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0.5rem;
+  /* text-decoration: none; */
+}
+
+/* style the close button */
+/* .modal-others-close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #005596;
+  font-size: 10rem;
+  font-weight: bold;
+} */
+
+/* .modal-others-close:hover,
+.modal-others-close:focus {
+  color: #282a36;
+  cursor: pointer;
+} */
+
+/*set border to the form*/
+/* OPCIONAL */
+/* form {
+  border: 3px solid #f1f1f1;
+} */
+/*assign full width inputs*/
+/* TEXT BOX FORMULARIO LOGIN */
+input[type="text"],
+.fecha-comentario,
+input[type="password"],
+.confirmar-comentario
+ {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: flex;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  resize: none;
+}
+
+/*set extra style for the cancel button*/
+/* BOTON CANCELAR LOGIN */
+.modal-others-container-button button {
+  /* width: auto; */
+  /* margin: 1rem 1rem; */
+  background-color: #d9d9d9;
+  /* background-color: none; */
+  border: none;
+  border-radius: 0.5rem;
+  /* justify-content: center; */
+  /* margin: 0.5rem; */
+  /* padding: 1rem 3rem; */
+  color: #005596;
+  padding: 0.78rem 1rem;
+  font-weight: bold;
+}
+
+/* .modal-others-container-button button:hover {
+  background-color: #005596;
+  color: #f8f8f2;
+  text-decoration: underline;
+} */
+
+.modal-others-container-button .modal-others-confirmbtn {
+  background-color: #005596;
+  color: #f8f8f2;
+}
+
+.modal-others-container-button .modal-others-cancelbtn:hover {
+  /* background-color: #005596; */
+  /* border-style: dotted; */
+  color: #282a36;
+}
+
+/*centre the display image inside the container*/
+
+/* FIXME BORRAR después. ya no tiene la imagen */
+/* .modal-others-imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+} */
+/*set image properties*/
+/* 
+img.modal-others-avatar {
+  width: 10%;
+  border-radius: 50%;
+} */
+
+/* FIXME END */
+
+/*set the forgot password text*/
+
+/*set styles for span and cancel button on small screens*/
+
+/* add zoom animation*/
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+.open-modal{
+  display: flex;
+  width: 5rem;
+}
