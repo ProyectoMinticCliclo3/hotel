@@ -357,7 +357,7 @@ footer div h5 {
 /* ESTILO MODAL BOX */
 .modal .modal-content {
   background-color: #d9d9d9;
-  margin: 5% auto 15% auto;
+  margin: auto;
   border: 1px solid #888;
   min-width: 10rem;
   width: 30%;
@@ -396,7 +396,9 @@ footer div h5 {
 /*assign full width inputs*/
 /* TEXT BOX FORMULARIO LOGIN */
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+.campo-modal
+{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -407,7 +409,7 @@ input[type="password"] {
 
 /*set extra style for the cancel button*/
 /* BOTON CANCELAR LOGIN */
-#modal-id01 .modal-container-button button {
+.modal-container-button button {
   /* width: auto; */
   /* margin: 1rem 1rem; */
   background-color: #d9d9d9;
@@ -428,7 +430,7 @@ input[type="password"] {
   text-decoration: underline;
 } */
 
-#modal-id01 .modal-container-button .modal-confirmbtn {
+.modal-container-button .modal-confirmbtn {
   background-color: #005596;
   color: #f8f8f2;
 }

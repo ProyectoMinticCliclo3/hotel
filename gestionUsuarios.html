@@ -98,16 +98,16 @@
           <li>
             <a href="#">
               <span class="icon"><img src="img/img-users/user.svg" alt="Foto Usuario" width="75"></span>
-              <span class="title"
-                onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01">Usuario</span>
+              <span class="title" onclick="document.getElementById('modal-id01').style.display='block'"
+                data-open="modal-id01">Usuario</span>
             </a>
           </li>
           <li>
             <a href="#">
               <span class="icon"><img src="img/svg/fa/right-to-bracket-solid.svg" alt="id-card icon"
                   onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01"></span>
-              <span class="title"
-                onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01">Iniciar
+              <span class="title" onclick="document.getElementById('modal-id01').style.display='block'"
+                data-open="modal-id01">Iniciar
                 Sesión</span>
               <!-- <button type="button" class="open-modal" data-open="modal-id01">boton</button> -->
             </a>
@@ -229,7 +229,128 @@
     </div>
     <!-- END MODAL BOX -->
 
+    <!-- MODAL EDIT REVIEW -->
+    <div id="modal-id02" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-container">
+          <label>
+            <h1>Edición de Comentario</h1>
+          </label>
+          <label><b>ID del Comentario</b></label>
+          <input type="text" disabled />
 
+          <label><b>Fecha</b></label>
+          <input type="date" class="campo-modal" disabled />
+
+          <label><b>Comentario</b></label>
+          <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30"
+            rows="10"></textarea>
+          <!-- <input type="text" placeholder="Comentario" /> -->
+
+          <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+        </div>
+
+        <div class="modal-container-button">
+          <div>
+            <button type="submit" class="modal-confirmbtn">
+              Confirmar
+              <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+          <div>
+            <button type="button" onclick="document.getElementById('modal-id02').style.display='none'"
+              class="modal-cancelbtn">
+              Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+        </div>
+        <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+      </form>
+    </div>
+    <!-- END MODAL EDIT REVIEW -->
+
+    <!-- MODAL DELETE REVIEW -->
+    <div id="modal-id03" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-container">
+          <label>
+            <h1>Eliminar Comentario?</h1>
+          </label>
+          <label><b>ID del Comentario</b></label>
+          <input type="text" disabled />
+
+          <label><b>Fecha</b></label>
+          <input type="date" class="campo-modal" disabled />
+
+          <label><b>Comentario</b></label>
+          <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10"
+            disabled></textarea>
+          <!-- <input type="text" placeholder="Comentario" /> -->
+
+          <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+        </div>
+
+        <div class="modal-container-button">
+          <div>
+            <button type="submit" class="modal-confirmbtn">
+              Confirmar
+              <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+          <div>
+            <button type="button" onclick="document.getElementById('modal-id03').style.display='none'"
+              class="modal-cancelbtn">
+              Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+        </div>
+        <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+      </form>
+    </div>
+    <!-- END MODAL DELETE REVIEW -->
+
+    <!-- MODAL SAVE DATA-USERS -->
+    <div id="modal-id04" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-container">
+          <label>
+            <h2>¿Desea guardar las modificaciones realizadas en los datos de usuario?</h2>
+          </label>
+          <!-- <label><b>ID del Comentario</b></label>
+      <input type="text" disabled/>
+
+      <label><b>Fecha</b></label>
+      <input type="date" class="campo-modal" disabled/>
+
+      <label><b>Comentario</b></label>
+      <textarea class="campo-modal" placeholder="Comentario" 
+      maxlength="630" cols="30" rows="10" disabled></textarea> -->
+          <!-- <input type="text" placeholder="Comentario" /> -->
+
+          <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+        </div>
+
+        <div class="modal-container-button">
+          <div>
+            <button type="submit" class="modal-confirmbtn">
+              Confirmar
+              <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+          <div>
+            <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
+              class="modal-cancelbtn">
+              Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+        </div>
+        <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+      </form>
+    </div>
+    <!-- END MODAL SAVE DATA-USERS -->
 
     <!-- SECCION PRINCIPAL -->
     <div id="main">
@@ -259,7 +380,8 @@
             <label for="celular">Celular</label>
             <input type="phone" name="celular" id="celular">
           </form>
-          <input class="btnGuardar" type="submit" name="botonGuardar" value="Guardar" />
+          <input class="btnGuardar" type="submit" name="botonGuardar" value="Guardar"
+          onclick="document.getElementById('modal-id04').style.display='block'" data-open="modal-id04"/>
         </section>
         <!-- LISTA RESERVAS -->
         <div class="reserves">
@@ -314,24 +436,14 @@
             </table>
           </div>
           <div>
-            <input class="btnEditar" type="submit" name="botonEditar" value="Editar Comentario" />
-            <input class="btnEliminar" type="submit" name="botonEliminar" value="Borrar Comentario" />
+            <!-- <input class="btnEditar" type="submit" name="botonEditar" value="Editar Comentario" /> -->
+            <input class="btnEliminar" type="submit" name="botonEliminar" value="Eliminar Comentario" 
+            onclick="document.getElementById('modal-id03').style.display='block'" data-open="modal-id03"/>
             <!-- <h4><strong><a href="#">Borrar Comentario</a></strong></h4> -->
           </div>
         </div>
       </div>
-      <div>
-        <ul class="nav-footer">
-          <li>fotos</li>
-          <li>reviews</li>
-          <li>ubicacion</li>
-          <li>caracteristicas</li>
-          <li>contáctanos</li>
-          <li><a href="https://rotana.com">by Rotana</a></li>
-        </ul>
 
-        <p>precio</p>
-      </div>
 
       <footer>
         <div class="social-media">

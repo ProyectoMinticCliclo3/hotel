@@ -229,7 +229,46 @@
     </div>
     <!-- END MODAL BOX -->
 
+    <!-- MODAL MESSAGE SENDED -->
+    <div id="modal-id02" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-container">
+          <label>
+            <h2>Gracias por contactarnos. Responderemos pronto su mensaje al correo diligenciado</h2>
+          </label>
+          <!-- <label><b>ID del Comentario</b></label>
+          <input type="text" disabled/>
 
+          <label><b>Fecha</b></label>
+          <input type="date" class="campo-modal" disabled/>
+
+          <label><b>Comentario</b></label>
+          <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10"></textarea> -->
+          <!-- <input type="text" placeholder="Comentario" /> -->
+          
+          <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+        </div>
+
+        <div class="modal-container-button">
+          <div>
+            <button type="button" class="modal-confirmbtn"
+            onclick="document.getElementById('modal-id02').style.display='none'">
+              Aceptar
+              <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+          <!-- <div>
+            <button type="button" onclick="document.getElementById('modal-id02').style.display='none'"
+              class="modal-cancelbtn">
+              Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div> -->
+        </div>
+        <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+        <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+      </form>
+    </div>
+    <!-- END MODAL MESSAGE SENDED -->
 
     <!-- SECCION PRINCIPAL -->
     <div id="main">
@@ -265,7 +304,8 @@
             <option value="i">Inactivo</option>
           </select> -->
         </form>
-        <input class="btnEnviar" type="submit" name="botonEnviar" value="Enviar" />
+        <input class="btnEnviar" type="submit" name="botonEnviar" value="Enviar" 
+        onclick="document.getElementById('modal-id02').style.display='block'" data-open="modal-id02"/>
       </section>
     </div>
 

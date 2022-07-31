@@ -98,16 +98,16 @@
           <li>
             <a href="#">
               <span class="icon"><img src="img/img-users/user.svg" alt="Foto Usuario" width="75"></span>
-              <span class="title"
-                onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01">Usuario</span>
+              <span class="title" onclick="document.getElementById('modal-id01').style.display='block'"
+                data-open="modal-id01">Usuario</span>
             </a>
           </li>
           <li>
             <a href="#">
               <span class="icon"><img src="img/svg/fa/right-to-bracket-solid.svg" alt="id-card icon"
                   onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01"></span>
-              <span class="title"
-                onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01">Iniciar
+              <span class="title" onclick="document.getElementById('modal-id01').style.display='block'"
+                data-open="modal-id01">Iniciar
                 Sesión</span>
               <!-- <button type="button" class="open-modal" data-open="modal-id01">boton</button> -->
             </a>
@@ -229,7 +229,210 @@
     </div>
     <!-- END MODAL BOX -->
 
+    <!-- MODAL DESCRIPTION AND VALUE EDITION -->
+    <div id="modal-id02" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-container">
+          <label>
+            <h1>Edición de Descripción y Valor de las Habitaciones</h1>
+          </label>
+          <label><b>Valor de las Habitaciones</b></label>
+          <input type="number" class="campo-modal" min="1" />
 
+          <!-- <label><b>Fecha</b></label>
+          <input type="date" class="campo-modal" disabled /> -->
+
+          <label><b>Descripción</b></label>
+          <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10"></textarea>
+          <!-- <input type="text" placeholder="Comentario" /> -->
+
+          <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+        </div>
+
+        <div class="modal-container-button">
+          <div>
+            <button type="submit" class="modal-confirmbtn">
+              Confirmar
+              <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+          <div>
+            <button type="button" onclick="document.getElementById('modal-id02').style.display='none'"
+              class="modal-cancelbtn">
+              Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+        </div>
+        <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+      </form>
+    </div>
+    <!-- END MODAL DESCRIPTION AND VALUE EDITION -->
+
+    <!-- MODAL DELETE REVIEW -->
+    <div id="modal-id03" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-container">
+          <label>
+            <h1>Eliminar Comentario?</h1>
+          </label>
+          <label><b>ID del Comentario</b></label>
+          <input type="text" disabled />
+
+          <label><b>Fecha</b></label>
+          <input type="date" class="campo-modal" disabled />
+
+          <label><b>Comentario</b></label>
+          <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10"
+            disabled></textarea>
+          <!-- <input type="text" placeholder="Comentario" /> -->
+
+          <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+        </div>
+
+        <div class="modal-container-button">
+          <div>
+            <button type="submit" class="modal-confirmbtn">
+              Confirmar
+              <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+          <div>
+            <button type="button" onclick="document.getElementById('modal-id03').style.display='none'"
+              class="modal-cancelbtn">
+              Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+        </div>
+        <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+      </form>
+    </div>
+    <!-- END MODAL DELETE REVIEW -->
+
+    <!-- MODAL SAVE DATA-ROOMS -->
+    <div id="modal-id04" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-container">
+          <label>
+            <h2>¿Desea guardar las modificaciones realizadas en los datos de las habitaciones?</h2>
+          </label>
+          <!-- <label><b>ID del Comentario</b></label>
+      <input type="text" disabled/>
+
+      <label><b>Fecha</b></label>
+      <input type="date" class="campo-modal" disabled/>
+
+      <label><b>Comentario</b></label>
+      <textarea class="campo-modal" placeholder="Comentario" 
+      maxlength="630" cols="30" rows="10" disabled></textarea> -->
+          <!-- <input type="text" placeholder="Comentario" /> -->
+
+          <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+        </div>
+
+        <div class="modal-container-button">
+          <div>
+            <button type="submit" class="modal-confirmbtn">
+              Confirmar
+              <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+          <div>
+            <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
+              class="modal-cancelbtn">
+              Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+        </div>
+        <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+      </form>
+    </div>
+    <!-- END MODAL SAVE DATA-ROOMS -->
+
+    <!-- MODAL ADDING ROOM -->
+    <div id="modal-id05" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-container">
+          <label>
+            <h1>¿Cuántas habitaciones nuevas de tipo Estándar se van a crear?</h1>
+          </label>
+          <label><b>Valor de las Habitaciones</b></label>
+          <input type="number" class="campo-modal" min="1" />
+
+          <!-- <label><b>Fecha</b></label>
+          <input type="date" class="campo-modal" disabled /> -->
+
+          <!-- <label><b>Descripción</b></label>
+          <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30"
+            rows="10"></textarea> -->
+          <!-- <input type="text" placeholder="Comentario" /> -->
+
+          <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+        </div>
+
+        <div class="modal-container-button">
+          <div>
+            <button type="submit" class="modal-confirmbtn">
+              Confirmar
+              <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+          <div>
+            <button type="button" onclick="document.getElementById('modal-id05').style.display='none'"
+              class="modal-cancelbtn">
+              Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+        </div>
+        <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+      </form>
+    </div>
+    <!-- ADDING ROOM -->
+
+    <!-- MODAL DELETE ROOMS -->
+    <div id="modal-id06" class="modal">
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="modal-container">
+          <label>
+            <h2>¿Desea eliminar las habitaciones seleccionadas?</h2>
+            <h5> Una vez confirme no se podrán rehacer los cambios.</h5>
+          </label>
+          <!-- <label><b>ID del Comentario</b></label>
+      <input type="text" disabled/>
+
+      <label><b>Fecha</b></label>
+      <input type="date" class="campo-modal" disabled/>
+
+      <label><b>Comentario</b></label>
+      <textarea class="campo-modal" placeholder="Comentario" 
+      maxlength="630" cols="30" rows="10" disabled></textarea> -->
+          <!-- <input type="text" placeholder="Comentario" /> -->
+
+          <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+        </div>
+
+        <div class="modal-container-button">
+          <div>
+            <button type="submit" class="modal-confirmbtn">
+              Confirmar
+              <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+          <div>
+            <button type="button" onclick="document.getElementById('modal-id06').style.display='none'"
+              class="modal-cancelbtn">
+              Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+            </button>
+          </div>
+        </div>
+        <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+      </form>
+    </div>
+    <!-- END MODAL DELETE ROOMS -->
 
     <!-- SECCION PRINCIPAL -->
     <div id="main">
@@ -239,7 +442,9 @@
         <input class="buscador" type="email" placeholder="Buscar por ID" name="searchRoom" />
         <button class="btnBuscar">Buscar Habitación</button>
         <br>
-        <button class="btnDescripcion">Editar Descripción y Valor</button>
+        <button class="btnDescripcion" onclick="document.getElementById('modal-id02').style.display='block'"
+          data-open="modal-id02">
+          Editar Descripción y Valor</button>
         <h2>Habitaciones</h2>
         <!-- <input class="btnEditar" type="submit" name="botonEditar" value="Editar Descripción y Valor" /> -->
         <div class="rooms">
@@ -300,7 +505,8 @@
             </table>
           </div>
           <div>
-            <input class="btnEditar" type="submit" name="botonEditar" value="Agregar Habitación" />
+            <input class="btnEditar" type="submit" name="botonEditar" value="Agregar Habitación"
+              onclick="document.getElementById('modal-id05').style.display='block'" data-open="modal-id05" />
             <br>
             <select name="estado" id="estado">
               <option value="d">Desocupada</option>
@@ -308,8 +514,9 @@
               <option value="m">Mantenimiento</option>
               <option value="i">Inactiva</option>
             </select>
-            <h4><strong><a href="#">Eliminar Habitación</a></strong></h4>
-            <input class="btnEditar" type="submit" name="botonEditar" value="Guardar Cambios" />
+            <h4 onclick="document.getElementById('modal-id06').style.display='block'" data-open="modal-id06"><strong><a href="#">Eliminar Habitación</a></strong></h4>
+            <input class="btnEditar" type="submit" name="botonEditar" value="Guardar Cambios"
+            onclick="document.getElementById('modal-id04').style.display='block'" data-open="modal-id04"/>
           </div>
         </div>
       </div>
