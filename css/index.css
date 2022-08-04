@@ -1,16 +1,80 @@
-.galeria .img-principal img {
-  width: 100rem;
+:root {
+  --blue: #005596;
+  --white: #f8f8f2;
+  --grey: #d9d9d9;
+  --black1: #282a36;
+  --black2: #999;
 }
 
+/* .galeria .img-principal img {
+  width: 100rem;
+} */
+
 /* TODO CSS TEST OBJECT FIT */
-#img-test {
+/* #img-test {
   width: 100%;
   height: 50rem;
   object-fit: cover;
+} */
+/* TODO END TEST */
+/* TODO CSS TEST OBJECT FIT */
+#img-main {
+  padding: 0 1.68rem 1.68rem 1.68rem;
+  /* max-width: 80%; */
+  vertical-align: center;
+  width: 100%;
+  /* height: 50rem; */
+  /* height: 100%; */
+  object-fit: cover;
+  /* position: relative; */
 }
+
+/* ESCONDER IMAGENES POR DEFECTO */
+.galeria-img {
+  display: none;
+}
+
+/* BOTONES ANTERIOR Y SIGUIENTE */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* POSICION BOTON NEXT DERECHA */
+.next {
+  right: 1.68rem;
+  border-radius: 3px 0 0 3px;
+}
+
+/* HOVER BOTONES */
+.prev:hover,
+.next:hover {
+  background-color: var(--blue);
+}
+
+/* Number text (1/3 etc) */
+.img-numero {
+  color: var(--white);
+  font-size: 0.65rem;
+  padding: 0.75rem 1rem;
+  position: absolute;
+  top: 3rem;
+}
+
 /* TODO END TEST */
 
-.img-mini {
+/* .img-mini {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -19,7 +83,7 @@
 .img-mini img {
   width: 17rem;
   height: 13rem;
-}
+} */
 
 .information {
   display: flex;
@@ -31,30 +95,57 @@
   margin-bottom: 1rem;
 }
 .text {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  margin: 0.75rem; */
+  /* background-color: #005596; */
+
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: 2fr 1fr;
+  max-width: 50rem;
+  margin: 0 auto;
+  column-width: 20rem;
+  column-gap: 2.75rem;
+  column-rule: 1px solid #ccc;
+  align-items: start;
 }
 .text p {
+  /* flex-direction: column;
+  flex-wrap: wrap;
   text-align: center;
-  margin: 1rem;
-  padding: 0 3rem;
+  padding: 0 1rem; */
 }
+.text blockquote {
+  /* column-count: 2; */
+  /* font: 1.5em "JetBrains Mono"; */
+  font-size: 1.75rem;
+  margin: 1rem;
+  column-span: all;
+  text-align: center;
+}
+#text-col2 {
+  /* background-color: #005596; */
+  /* grid-gap: 1em; */
+}
+
 .booking-principal {
   display: flex;
   flex-direction: row;
   background-color: #005596;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
 }
 .booking {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   width: 100%;
 }
+
 .booking h3 {
   text-align: center;
-  color: #f8f8f2;
+  color: var(--white);
   margin-bottom: 0.3rem;
+  padding: 1rem 0;
 }
 .booking form {
   text-align: center;
@@ -71,24 +162,36 @@
   border-color: #f8f8f2;
 }
 .little-input {
-  width: 2rem;
+  width: 2.5rem;
+  height: 1.5rem;
 }
+
+/* PRECIO */
 .booking form span {
   border-color: #f8f8f2;
   color: #f8f8f2;
-  margin-top: 0.2rem;
+  /* margin-top: 0.2rem; */
+  /* align-items: center; */
 }
 .btn-booking {
+  background-color: firebrick;
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 0.4rem 3em;
+}
+
+.btn-booking:hover {
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+  /* padding: 0rem 3em; */
+}
+/* .btn-share {
   background-color: #005596;
   color: #f8f8f2;
   padding: 0.3rem;
-}
-/* .btn-share {
-    background-color: #005596;
-    color: #f8f8f2;
-    padding: 0.3rem;
-    border-radius: 0.5rem;
-    border-color: #f8f8f2;
-    margin-top: 1.7rem;
-    margin-right: 0.5rem;
-  } */
+  border-radius: 0.5rem;
+  border-color: #f8f8f2;
+  margin-top: 1.7rem;
+  margin-right: 0.5rem;
+} */
