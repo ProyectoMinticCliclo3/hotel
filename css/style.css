@@ -171,16 +171,11 @@ pasó de nth-child(2) a nth-child(1) */
   /* position: fixed; */
   position: inherit;
   /* width: calc(100% - 18rem); */
-<<<<<<< HEAD
-  /* left: 18rem; */
-  /* min-height: 100vh;
-=======
   /* left: 5rem; */
   /* margin-top: 1rem; */
   min-height: 100vh;
->>>>>>> 0340809d33e5dd1a0323e3cbc00e9341ae8128f8
   background: var(--white);
-  transition: 0.5s; */
+  transition: 0.5s;
 }
 
 #mainContent.active {
@@ -322,17 +317,10 @@ footer div h5 {
 
 /* .search input[type="text"] {
   width: 18rem;
-<<<<<<< HEAD
-  height: 2rem;
-  border-radius: 2rem;
-  border-color: var(--black1);
-} */
-=======
   height: 1.5rem;
   border-radius: 1.5rem;
   border-color: var(--blue);
 }
->>>>>>> 0340809d33e5dd1a0323e3cbc00e9341ae8128f8
 
 /* FIXME Sidebar -> MODAL LOGIN BOX */
 /*set a style for the buttons*/

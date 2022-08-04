@@ -26,20 +26,12 @@
   margin-top: 1rem;
   font-weight: bold;
 }
-<<<<<<< HEAD
-/* .inputs_dataUser input{
-=======
 .inputs_dataUser input {
->>>>>>> 0340809d33e5dd1a0323e3cbc00e9341ae8128f8
   height: 2rem;
   border-color: black;
 } */
 
-<<<<<<< HEAD
 /* .inputs_dataUser input:nth-of-type(-n+3){
-=======
-.inputs_dataUser input:nth-of-type(-n + 3) {
->>>>>>> 0340809d33e5dd1a0323e3cbc00e9341ae8128f8
   width: 15rem;
 }
 .inputs_dataUser input:nth-of-type(+ n + 5) {
