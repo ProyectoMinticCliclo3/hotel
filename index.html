@@ -63,46 +63,28 @@
         <!--agregar login-->
       </header>
 
+      <!-- MENU SIDEBAR -->
       <nav id="mySidebar" class="sidebar">
         <div class="sidebar-content">
           <ul>
             <!-- SIDEBAR - BOTON OPEN -->
-            <span class="toggle">
-              <button
-                class="openbtn"
-                onclick="openOrClose(value)"
-                value="0"
-                id="openbtn"
-              >
-                ☰
-              </button>
-            </span>
-            <!-- <li>
-              <a
-                href="javascript:void(0)"
-                class="toggle"
-                onclick="openOrClose(value)"
-                value="0"
-                >☰</a
-              >
-            </li> -->
-            <!-- <li>
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        </li> -->
-            <!-- <li>
-              <a href="#">
-                <span class="icon">
-                  <img src="img/svg/logo-ryhaan.svg" alt="Logo-Ryhaan" />
-                </span>
-              </a>
-            </li> -->
+            <button
+              class="toggle"
+              onclick="openOrClose(value)"
+              value="0"
+              id="openbtn"
+            >
+              ☰
+            </button>
+            <!-- ENLACES SIDEBAR -->
             <li>
               <a href="index.html">
-                <span class="icon"
-                  ><img
+                <span class="icon">
+                  <!-- <img
                     src="img/svg/fa/bell-concierge-solid-w.svg"
                     alt="concierge bell icon"
-                  />
+                  /> -->
+                  <i class="fa-solid fa-hotel"></i>
                 </span>
                 <span class="title">Inicio</span>
               </a>
@@ -110,7 +92,8 @@
             <li>
               <a href="habitaciones.html">
                 <span class="icon">
-                  <img src="img/svg/fa/bed-solid-w.svg" alt="bed icon" />
+                  <!-- <img src="img/svg/fa/bed-solid-w.svg" alt="bed icon" /> -->
+                  <i class="fa-solid fa-bed"></i>
                 </span>
                 <span class="title">Habitaciones</span>
               </a>
@@ -118,34 +101,41 @@
             <li>
               <a href="reservas.html">
                 <span class="icon">
-                  <img src="img/svg/fa/book-solid-w.svg" alt="booking icon" />
+                  <!-- <img src="img/svg/fa/book-solid-w.svg" alt="booking icon" /> -->
+                  <i class="fa-solid fa-book"></i>
                 </span>
                 <span class="title">Reservas</span>
               </a>
             </li>
             <li>
               <a href="contacto.html">
-                <span class="icon"
-                  ><img src="img/svg/fa/phone-solid-w.svg" alt="phone icon"
-                /></span>
+                <span class="icon">
+                  <!-- <img src="img/svg/fa/phone-solid-w.svg" alt="phone icon"
+                /> -->
+                  <i class="fa-solid fa-phone"></i>
+                </span>
                 <span class="title">Contacto</span>
               </a>
             </li>
             <li>
               <a href="nosotros.html">
-                <span class="icon"
-                  ><img
+                <span class="icon">
+                  <!-- <img
                     src="img/svg/fa/id-badge-solid-w.svg"
                     alt="id-card icon"
-                /></span>
+                  /> -->
+                  <i class="fa-solid fa-id-badge"></i>
+                </span>
                 <span class="title">Sobre Nosotros</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <span class="icon"
-                  ><img src="img/img-users/user-w.svg" alt="Foto Usuario"
-                /></span>
+                <span class="icon">
+                  <!-- <img src="img/img-users/user-w.svg" alt="Foto Usuario"
+                  /> -->
+                  <i class="fa-solid fa-circle-user"></i>
+                </span>
                 <span
                   class="title"
                   onclick="document.getElementById('modal-id01').style.display='block'"
@@ -156,13 +146,15 @@
             </li>
             <li>
               <a href="#">
-                <span class="icon"
-                  ><img
+                <span class="icon">
+                  <!-- <img
                     src="img/svg/fa/right-to-bracket-solid-w.svg"
                     alt="id-card icon"
                     onclick="document.getElementById('modal-id01').style.display='block'"
                     data-open="modal-id01"
-                /></span>
+                  /> -->
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                </span>
                 <span
                   class="title"
                   onclick="document.getElementById('modal-id01').style.display='block'"
@@ -214,7 +206,7 @@
               <button
                 type="button"
                 onclick="closeModal()"
-                class="modal-cancelbtn"
+                class="modal-cancelbtn text-button"
               >
                 Cancelar<img
                   src="img/svg/fa/xmark-solid.svg"
@@ -234,98 +226,6 @@
 
       <div id="mainContent">
         <main class="container">
-          <!-- SIDEBAR note: sidebar == navigation-->
-          <!-- 
-      
-        <div id="top-sidebar">
-          <div class="logo-img">
-            <a href="index.html">
-              <img src="img/svg/logo-ryhaan.svg" alt="Logo-Ryhaan" />
-            </a>
-          </div>
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-            >×</a
-          >
-        </div>
-        <div>
-          <a href="index.html"
-            ><img
-              src="img/svg/fa/bell-concierge-solid.svg"
-              alt="concierge bell icon"
-              class="sidebar-icons"
-            />
-            Inicio</a
-          >
-          <a href="habitaciones.html"
-            ><img
-              src="img/svg/fa/bed-solid.svg"
-              alt="bed icon"
-              class="sidebar-icons"
-            />
-            Habitaciones</a
-          >
-          <a href="reservas.html"
-            ><img
-              src="img/svg/fa/book-solid.svg"
-              alt="booking icon"
-              class="sidebar-icons"
-            />
-            Reservas</a
-          >
-          <a href="contacto.html"
-            ><img
-              src="img/svg/fa/phone-solid.svg"
-              alt="phone icon"
-              class="sidebar-icons"
-            />
-            Contacto</a
-          >
-          <a href="nosotros.html"
-            ><img
-              src="img/svg/fa/id-badge-solid.svg"
-              alt="id-card icon"
-              class="sidebar-icons"
-            />
-            Sobre Nosotros</a
-          >
-          <a href="#">
-            <img
-              src="img/img-users/user.svg"
-              alt="Foto Usuario"
-              class="sidebar-icons"
-              onclick="document.getElementById('modal-id01').style.display='block'"
-            />
-          </a>
-
-          BOTON SIDEBAR ingreso a MODAL LOGIN BOX
-          <div>
-            <button
-              class="modal-login"
-              onclick="document.getElementById('modal-id01').style.display='block'"
-            >
-              <img
-                src="img/svg/fa/right-to-bracket-solid.svg"
-                alt="login icon"
-                width="40"
-              />
-              Iniciar Sesión
-            </button>
-          </div>
-        </div>
-        -->
-
-          <!-- SECCION PRINCIPAL DE CONTENIDO -->
-
-          <!-- GALERIA DE IMAGENES -->
-
-          <!-- TODO TEST Este es un test que me funcionó del object fit en el CSS que posiblemente puede funcionar con los sliders -->
-          <!-- <img
-            id="img-test"
-            src="img/img-habitacion/230031199.jpg"
-            alt="Galeria CSS 6"
-          /> -->
-          <!-- TODO END TEST -->
-
           <!-- CONTENEDOR DE GALERIA -->
           <div id="img-main" class="galeria">
             <!-- IMAGENES CON NUMERACION -->
@@ -537,7 +437,7 @@
               <li><a href="#">Tours</a></li>
             </ul>
             <ul id="nav-footer-3" class="nav-footer">
-              WEBSITES ROTANA
+              <li>WEBSITES ROTANA</li>
               <li><a href="https://www.rotana.com/">rotana.com</a></li>
               <li>
                 <a href="https://www.rotanatimes.com/">rotanatimes.com</a>

@@ -24,8 +24,8 @@
 // list.forEach((item) => item.addEventListener("mouseover", activeLink));
 
 function openNav() {
-  document.getElementById("mySidebar").style.width = "14rem";
-  document.getElementById("mainContent").style.marginLeft = "14rem";
+  document.getElementById("mySidebar").style.width = "16rem";
+  document.getElementById("mainContent").style.marginLeft = "16rem";
 }
 
 function openOrClose(x) {

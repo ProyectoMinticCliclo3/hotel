@@ -40,6 +40,8 @@ header {
   /* padding: 0.3rem; */
 }
 
+/* SIDEBAR */
+/* NOTA: El ancho del sidebar se rige en el script */
 .sidebar {
   position: fixed;
   width: 5rem;
@@ -78,26 +80,47 @@ pasó de nth-child(2) a nth-child(1) */
 
 .sidebar ul li a {
   position: relative;
-  display: block;
+  /* display: block; */
   width: 100%;
   display: flex;
   text-decoration: none;
   color: var(--white);
 }
 
-.sidebar ul li a .icon {
+.sidebar ul li a i {
   position: relative;
-  display: block;
+  /* display: block; */
   min-width: 3.75rem;
-  height: 3.75rem;
-  line-height: 5rem;
+  /* height: 1.75rem; */
+  line-height: 4rem;
+  align-self: center;
   text-align: center;
+  font-size: 1.75rem;
   /* filter: invert(100%) sepia(52%) saturate(396%) hue-rotate(24deg)
     brightness(110%) contrast(95%); */
 }
+
+/* TEXTO SIDEBAR */
+.sidebar ul li a .title {
+  position: relative;
+  /* display: block; */
+  align-self: center;
+  padding: 0.5rem 0rem 0 0.75rem;
+  /* width: auto; */
+  /* height: 3.75rem; */
+  /* line-height: 3.75rem; */
+  overflow: hidden;
+}
+
+/* IMAGENES SIDEBAR */
+/* .sidebar ul li a i {
+  height: 1.75rem;
+  max-width: 1.75rem;
+} */
+
 .sidebar ul li:hover a,
 .sidebar ul li.hovered a {
-  color: #000;
+  color: var(--blue);
   /* filter: invert(18%) sepia(92%) saturate(1770%) hue-rotate(188deg)
     brightness(104%) contrast(103%); */
 }
@@ -107,21 +130,6 @@ pasó de nth-child(2) a nth-child(1) */
   filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
     brightness(119%) contrast(94%);
 } */
-
-/* IMAGENES SIDEBAR */
-.sidebar ul li a img {
-  height: 1.75rem;
-  max-width: 1.75rem;
-}
-/* TEXTO SIDEBAR */
-.sidebar ul li a .title {
-  position: relative;
-  display: block;
-  padding: 0 0.625rem;
-  height: 3.75rem;
-  line-height: 3.75rem;
-  overflow: hidden;
-}
 
 /* REDONDEADOS HOVER BLANCO */
 
@@ -170,7 +178,8 @@ pasó de nth-child(2) a nth-child(1) */
   /* position: fixed; */
   position: inherit;
   /* width: calc(100% - 18rem); */
-  /* left: 5rem; */
+  /* left: 5%; */
+  margin-left: 5rem;
   /* margin-top: 1rem; */
   min-height: 100vh;
   background: var(--white);
@@ -187,7 +196,7 @@ button:hover {
   opacity: 0.8;
   text-decoration: underline;
 }
-.toggle button {
+.toggle {
   display: flex;
   position: relative;
   width: 2.25rem;
@@ -204,13 +213,17 @@ button:hover {
   border: none;
 }
 
+.toggle:hover {
+  /* opacity: 0.8; */
+  text-decoration: none;
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {
     padding-top: 15px;
   }
   .sidebar a {
-    font-size: 18px;
+    font-size: 18rem;
   }
 }
 
