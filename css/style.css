@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: "Be Vietnam Pro", sans-serif;
+  /* border: none; */
 }
 
 :root {
@@ -20,7 +21,7 @@ body {
 }
 
 header {
-  position: fixed;
+  position:fixed;
   margin-top: 0;
   display: flex;
   width: 100%;
@@ -167,9 +168,9 @@ pasó de nth-child(2) a nth-child(1) */
   /* position: absolute; */
   /* width: calc(100% - 18rem); */
   /* left: 18rem; */
-  min-height: 100vh;
+  /* min-height: 100vh;
   background: var(--white);
-  transition: 0.5s;
+  transition: 0.5s; */
 }
 
 #main.active {
@@ -293,12 +294,12 @@ footer div h5 {
   /* margin-top: 0.5rem; */
 }
 
-.search input[type="text"] {
+/* .search input[type="text"] {
   width: 18rem;
   height: 2rem;
   border-radius: 2rem;
   border-color: var(--black1);
-}
+} */
 
 /* FIXME Sidebar -> MODAL LOGIN BOX */
 /*set a style for the buttons*/

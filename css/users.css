@@ -3,7 +3,17 @@
 .dataUser h2{
   margin-left: 10%;
   margin-top: 0;
-  padding-top: 10rem;
+  padding-top: 6rem;
+}
+.inputs_dataUser input[type="text"],
+.inputs_dataUser input[type="email"],
+.inputs_dataUser input[type="phone"]
+{
+  display: inline-block;
+  /* height: 2rem; */
+  width: 15rem;
+  border-color:black;
+  /* background-color: black; */
 }
 
 .inputs_dataUser{
@@ -17,16 +27,17 @@
   margin-top: 1rem;
   font-weight: bold;
 }
-.inputs_dataUser input{
+/* .inputs_dataUser input{
   height: 2rem;
-}
+  border-color: black;
+} */
 
-.inputs_dataUser input:nth-of-type(-n+3){
+/* .inputs_dataUser input:nth-of-type(-n+3){
   width: 15rem;
 }
 .inputs_dataUser input:nth-of-type(+n+5){
   width: 15rem;
-}
+} */
 
 .btnGuardar{
   background-color: #005596;
