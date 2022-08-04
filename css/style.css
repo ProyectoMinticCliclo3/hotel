@@ -24,25 +24,22 @@ header {
   margin-top: 0;
   display: flex;
   width: 100%;
+  padding: 0 1.75rem;
   /* max-width: 100%; */
   /* width: 100%; */
   /* justify-content: flex-end; */
   justify-content: space-between;
   align-items: center;
-  padding: 0.2rem 1rem;
-  background-color: var(--grey);
+  background-color: var(--white);
   /* box-sizing: border-box; */
 }
 
-.container {
-  position: relative;
-  width: 100%;
+.topbar .logo-top img {
+  height: 2rem;
+  /* align-items: center; */
+  /* padding: 0.3rem; */
 }
-/* SIDEBAR */
-/* body {
-    font-family: "Lato", sans-serif;
-  }
-   */
+
 .sidebar {
   position: fixed;
   width: 5rem;
@@ -51,32 +48,21 @@ header {
   border-left: 0.7rem solid var(--blue);
   transition: 0.5s;
   overflow: hidden;
-  margin-top: 3.6rem;
+  margin-top: 2.65rem;
+  /* border-left: #f8f8f2; */
 }
 
 .sidebar.active {
   width: 80px;
 }
 
-.sidebar ul {
+/* .sidebar ul {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-}
+} */
 
-.sidebar ul li {
-  position: relative;
-  width: 100%;
-  list-style: none;
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-}
-
-.sidebar ul li:hover,
-.sidebar ul li.hovered {
-  background: var(--white);
-}
 /* .sidebar ul li:nth-child(1) {
   position: absolute;
   left: 14rem;
@@ -99,11 +85,6 @@ pasó de nth-child(2) a nth-child(1) */
   color: var(--white);
 }
 
-.sidebar ul li:hover a,
-.sidebar ul li.hovered a {
-  color: var(--blue);
-}
-
 .sidebar ul li a .icon {
   position: relative;
   display: block;
@@ -111,18 +92,28 @@ pasó de nth-child(2) a nth-child(1) */
   height: 3.75rem;
   line-height: 5rem;
   text-align: center;
+  /* filter: invert(100%) sepia(52%) saturate(396%) hue-rotate(24deg)
+    brightness(110%) contrast(95%); */
 }
+.sidebar ul li:hover a,
+.sidebar ul li.hovered a {
+  color: #000;
+  /* filter: invert(18%) sepia(92%) saturate(1770%) hue-rotate(188deg)
+    brightness(104%) contrast(103%); */
+}
+
 /* TODO FIX HOVER Y COLOR DE ICONOS */
 /* .sidebar ul li a .icon:hover {
   filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
     brightness(119%) contrast(94%);
 } */
 
+/* IMAGENES SIDEBAR */
 .sidebar ul li a img {
-  height: 2.25rem;
-  max-width: 2.25rem;
+  height: 1.75rem;
+  max-width: 1.75rem;
 }
-
+/* TEXTO SIDEBAR */
 .sidebar ul li a .title {
   position: relative;
   display: block;
@@ -132,7 +123,20 @@ pasó de nth-child(2) a nth-child(1) */
   overflow: hidden;
 }
 
-/* Curva afuera */
+/* REDONDEADOS HOVER BLANCO */
+
+.sidebar ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+.sidebar ul li:hover,
+.sidebar ul li.hovered {
+  background: var(--white);
+}
+
 .sidebar ul li:hover a::before,
 .sidebar ul li.hovered a::before {
   content: "";
@@ -162,18 +166,19 @@ pasó de nth-child(2) a nth-child(1) */
 }
 /* TODO REVISAR MAIN QUE NO DEJA HACER BORDES OTRA VEZ */
 /* MAIN */
-#main {
+#mainContent {
   /* position: fixed; */
-  /* position: absolute; */
+  position: inherit;
   /* width: calc(100% - 18rem); */
-  /* left: 18rem; */
+  /* left: 5rem; */
+  /* margin-top: 1rem; */
   min-height: 100vh;
   background: var(--white);
   transition: 0.5s;
 }
 
-#main.active {
-  /* width: calc(100% -5rem); */
+#mainContent.active {
+  width: calc(100% -5rem);
   /* left: 5rem; */
 }
 
@@ -189,10 +194,10 @@ button:hover {
   height: 2.25rem;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   cursor: pointer;
-  background-color: var(--blue);
-  color: var(--white);
+  color: var(--blue);
+  background-color: var(--white);
   margin: 0.5rem;
   border-radius: 50%;
   text-decoration: none;
@@ -225,17 +230,6 @@ footer {
   background-color: #ccc;
   color: black;
 }
-.nav-footer {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  height: 4rem;
-}
-.nav-footer li {
-  justify-content: center;
-  margin-top: 1.5rem;
-  margin-left: 1rem;
-}
 .logo-footer {
   display: flex;
   justify-content: space-around;
@@ -246,6 +240,33 @@ footer div h5 {
   padding-bottom: 2rem;
 }
 
+/* .nav-footer {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 4rem;
+}
+.nav-footer li {
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+} */
+#nav-footer {
+  display: flex;
+  margin: 1rem 10rem;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  /* flex-flow: column; */
+}
+#nav-footer ul {
+  list-style: none;
+  margin: 0 2.5rem;
+  padding: 0.5rem 2.5rem;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+  /* flex-flow: column; */
+}
 /* @keyframes fade {
   from {
     opacity: 0.4;
@@ -279,12 +300,12 @@ footer div h5 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
-  background-color: var(--blue);
-  color: var(--white);
-  font-size: 1rem;
+  color: var(--blue);
+  /* background-color: var(--white); */
+  font-size: 0.75rem;
   border: none;
   cursor: pointer;
   position: absolute;
@@ -295,9 +316,9 @@ footer div h5 {
 
 .search input[type="text"] {
   width: 18rem;
-  height: 2rem;
-  border-radius: 2rem;
-  border-color: var(--black1);
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  border-color: var(--blue);
 }
 
 /* FIXME Sidebar -> MODAL LOGIN BOX */
@@ -318,12 +339,13 @@ footer div h5 {
 .modal {
   flex-direction: column;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   /* overflow: auto; */
+  /* BACKGROUND */
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
   /* padding: 0 4rem; */
@@ -332,15 +354,14 @@ footer div h5 {
   opacity: 0;
 }
 
-.modal.is-visible{
+.modal.is-visible {
   visibility: visible;
-  opacity:1;
+  opacity: 1;
 }
 
 /* set padding to the container*/
 .modal {
   /* overflow: hidden; */
-
 
   display: flex;
   padding: 2rem;
@@ -397,8 +418,7 @@ footer div h5 {
 /* TEXT BOX FORMULARIO LOGIN */
 input[type="text"],
 input[type="password"],
-.campo-modal
-{
+.campo-modal {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -508,9 +528,7 @@ img.modal-avatar {
   }
 }
 
-
-
-.open-modal{
+.open-modal {
   display: flex;
   width: 5rem;
 }

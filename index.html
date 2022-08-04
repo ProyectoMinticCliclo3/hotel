@@ -24,29 +24,31 @@
   </head>
 
   <body>
-    <div class="container">
-      <!-- SIDEBAR note: sidebar == navigation-->
+    <div id="mainContainer">
       <header class="topbar">
         <!-- FIXME incluir boton de open del sidebar dentro, y aumentar el width para que se vean solamente los iconos del sidebar -->
         <!-- SIDEBAR - BOTON OPEN -->
-        <div class="toggle">
-          <!-- <button class="openbtn" onclick="openNav()">☰</button> -->
-          <button
-            class="openbtn"
-            onclick="openOrClose(value)"
-            value="0"
-            id="openbtn"
-          >
-            ☰
-          </button>
+        <!-- <div class="toggle">
+
+        <button
+          class="openbtn"
+          onclick="openOrClose(value)"
+          value="0"
+          id="openbtn"
+        >
+          ☰
+        </button>
+      </div> -->
+        <div class="logo-top">
+          <a href="#">
+            <span class="icon">
+              <img src="img/svg/logo-ryhaan.svg" alt="Logo-Ryhaan" />
+            </span>
+          </a>
         </div>
         <div class="logo-top">
           <a href="index.html">
-            <img
-              src="img/svg/logo-ryhaan_dubai.svg"
-              alt="Rose Ryhaan Dubai"
-              height="35"
-            />
+            <img src="img/svg/logo-ryhaan_dubai.svg" alt="Rose Ryhaan Dubai" />
           </a>
         </div>
         <!-- search bar right align -->
@@ -62,25 +64,44 @@
       </header>
 
       <nav id="mySidebar" class="sidebar">
-        <span class="sidebar-content">
+        <div class="sidebar-content">
           <ul>
+            <!-- SIDEBAR - BOTON OPEN -->
+            <span class="toggle">
+              <button
+                class="openbtn"
+                onclick="openOrClose(value)"
+                value="0"
+                id="openbtn"
+              >
+                ☰
+              </button>
+            </span>
             <!-- <li>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-          </li> -->
-            <li>
+              <a
+                href="javascript:void(0)"
+                class="toggle"
+                onclick="openOrClose(value)"
+                value="0"
+                >☰</a
+              >
+            </li> -->
+            <!-- <li>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        </li> -->
+            <!-- <li>
               <a href="#">
                 <span class="icon">
                   <img src="img/svg/logo-ryhaan.svg" alt="Logo-Ryhaan" />
                 </span>
               </a>
-            </li>
+            </li> -->
             <li>
               <a href="index.html">
                 <span class="icon"
                   ><img
-                    src="img/svg/fa/bell-concierge-solid.svg"
+                    src="img/svg/fa/bell-concierge-solid-w.svg"
                     alt="concierge bell icon"
-                    width="50"
                   />
                 </span>
                 <span class="title">Inicio</span>
@@ -89,11 +110,7 @@
             <li>
               <a href="habitaciones.html">
                 <span class="icon">
-                  <img
-                    src="img/svg/fa/bed-solid.svg"
-                    alt="bed icon"
-                    width="50"
-                  />
+                  <img src="img/svg/fa/bed-solid-w.svg" alt="bed icon" />
                 </span>
                 <span class="title">Habitaciones</span>
               </a>
@@ -101,11 +118,7 @@
             <li>
               <a href="reservas.html">
                 <span class="icon">
-                  <img
-                    src="img/svg/fa/book-solid.svg"
-                    alt="booking icon"
-                    width="50"
-                  />
+                  <img src="img/svg/fa/book-solid-w.svg" alt="booking icon" />
                 </span>
                 <span class="title">Reservas</span>
               </a>
@@ -113,10 +126,7 @@
             <li>
               <a href="contacto.html">
                 <span class="icon"
-                  ><img
-                    src="img/svg/fa/phone-solid.svg"
-                    alt="phone icon"
-                    width="50"
+                  ><img src="img/svg/fa/phone-solid-w.svg" alt="phone icon"
                 /></span>
                 <span class="title">Contacto</span>
               </a>
@@ -125,9 +135,8 @@
               <a href="nosotros.html">
                 <span class="icon"
                   ><img
-                    src="img/svg/fa/id-badge-solid.svg"
+                    src="img/svg/fa/id-badge-solid-w.svg"
                     alt="id-card icon"
-                    width="50"
                 /></span>
                 <span class="title">Sobre Nosotros</span>
               </a>
@@ -135,10 +144,7 @@
             <li>
               <a href="#">
                 <span class="icon"
-                  ><img
-                    src="img/img-users/user.svg"
-                    alt="Foto Usuario"
-                    width="75"
+                  ><img src="img/img-users/user-w.svg" alt="Foto Usuario"
                 /></span>
                 <span
                   class="title"
@@ -152,7 +158,7 @@
               <a href="#">
                 <span class="icon"
                   ><img
-                    src="img/svg/fa/right-to-bracket-solid.svg"
+                    src="img/svg/fa/right-to-bracket-solid-w.svg"
                     alt="id-card icon"
                     onclick="document.getElementById('modal-id01').style.display='block'"
                     data-open="modal-id01"
@@ -167,9 +173,69 @@
               </a>
             </li>
           </ul>
-        </span>
+        </div>
       </nav>
-      <!-- 
+
+      <!-- MODAL LOGIN BOX -->
+      <div id="modal-id01" class="modal">
+        <form class="modal-content animate" action="/action_page.php">
+          <div class="modal-container">
+            <label> Login </label>
+            <label>Usuario</label>
+            <input
+              type="text"
+              placeholder="Nombre de Usuario"
+              name="uname"
+              required
+            />
+
+            <label>Contraseña</label>
+            <input
+              type="password"
+              placeholder="Contraseña"
+              name="psw"
+              required
+            />
+            <input type="checkbox" checked="checked" /> Recordarme
+          </div>
+
+          <div class="modal-container-button">
+            <div>
+              <button type="submit" class="modal-confirmbtn">
+                Confirmar
+                <img
+                  src="img/svg/fa/check-solid.svg"
+                  alt="icono logout"
+                  height="30"
+                />
+              </button>
+            </div>
+            <div>
+              <button
+                type="button"
+                onclick="closeModal()"
+                class="modal-cancelbtn"
+              >
+                Cancelar<img
+                  src="img/svg/fa/xmark-solid.svg"
+                  alt="icono logout"
+                  height="30"
+                />
+              </button>
+            </div>
+          </div>
+          <span class="modal-psw"
+            ><a href="#">¿Ha olvidado su Contraseña?</a></span
+          >
+          <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span>
+        </form>
+      </div>
+      <!-- END MODAL BOX -->
+
+      <div id="mainContent">
+        <main class="container">
+          <!-- SIDEBAR note: sidebar == navigation-->
+          <!-- 
       
         <div id="top-sidebar">
           <div class="logo-img">
@@ -248,102 +314,94 @@
         </div>
         -->
 
-      <!-- MODAL LOGIN BOX -->
-      <div id="modal-id01" class="modal">
-        <form class="modal-content animate" action="/action_page.php">
-          <div class="modal-container">
-            <label>
-              <h1>Login</h1>
-            </label>
-            <label><b>Usuario</b></label>
-            <input
-              type="text"
-              placeholder="Nombre de Usuario"
-              name="uname"
-              required
-            />
+          <!-- SECCION PRINCIPAL DE CONTENIDO -->
 
-            <label><b>Contraseña</b></label>
-            <input
-              type="password"
-              placeholder="Contraseña"
-              name="psw"
-              required
-            />
-            <input type="checkbox" checked="checked" /> Recordarme
-          </div>
-
-          <div class="modal-container-button">
-            <div>
-              <button type="submit" class="modal-confirmbtn">
-                Confirmar
-                <img
-                  src="img/svg/fa/check-solid.svg"
-                  alt="icono logout"
-                  height="30"
-                />
-              </button>
-            </div>
-            <div>
-              <button
-                type="button"
-                onclick="document.getElementById('modal-id01').style.display='none'"
-                class="modal-cancelbtn"
-              >
-                Cancelar<img
-                  src="img/svg/fa/xmark-solid.svg"
-                  alt="icono logout"
-                  height="30"
-                />
-              </button>
-            </div>
-          </div>
-          <span class="modal-psw"
-            ><a href="#">¿Ha olvidado su Contraseña?</a></span
-          >
-          <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span>
-        </form>
-      </div>
-      <!-- END MODAL BOX -->
-
-      <!-- SECCION PRINCIPAL DE CONTENIDO -->
-      <div id="main">
-        <div class="base-main">
           <!-- GALERIA DE IMAGENES -->
 
           <!-- TODO TEST Este es un test que me funcionó del object fit en el CSS que posiblemente puede funcionar con los sliders -->
-          <img
+          <!-- <img
             id="img-test"
             src="img/img-habitacion/230031199.jpg"
             alt="Galeria CSS 6"
-          />
+          /> -->
           <!-- TODO END TEST -->
-          <!-- <div class="galeria">
-            <div class="img-principal">
-              <img src="img/img-habitacion/230031199.jpg" alt="Galeria CSS 1" />
-            </div>
-            <div class="img-mini">
-              <img src="img/img-habitacion/230031947.jpg" alt="Galeria CSS 2" />
-              <img src="img/img-habitacion/233120309.jpg" alt="Galeria CSS 3" />
-              <img src="img/img-habitacion/230032549.jpg" alt="Galeria CSS 4" />
-              <img src="img/img-habitacion/230049217.jpg" alt="Galeria CSS 5" />
-              <img src="img/img-habitacion/230203324.jpg" alt="Galeria CSS 6" />
-              <img src="img/img-habitacion/230203934.jpg" alt="Galeria CSS 7" /> -->
-          <!-- </div> -->
-          <!-- </div> -->
 
-          <!-- Next and previous buttons -->
+          <!-- CONTENEDOR DE GALERIA -->
+          <div id="img-main" class="galeria">
+            <!-- IMAGENES CON NUMERACION -->
+            <div class="galeria-img">
+              <div class="img-numero">1 / 7</div>
+              <img
+                src="img/img-habitacion/230031199.jpg"
+                alt="Galeria CSS 1"
+                style="width: 100%"
+              />
+            </div>
+            <div class="galeria-img">
+              <div class="img-numero">2 / 7</div>
+              <img
+                src="img/img-habitacion/230031947.jpg"
+                alt="Galeria CSS 2"
+                style="width: 100%"
+              />
+            </div>
+            <div class="galeria-img">
+              <div class="img-numero">3 / 7</div>
+              <img
+                src="img/img-habitacion/233120309.jpg"
+                alt="Galeria CSS 3"
+                style="width: 100%"
+              />
+            </div>
+            <div class="galeria-img">
+              <div class="img-numero">4 / 7</div>
+              <img
+                src="img/img-habitacion/230032549.jpg"
+                alt="Galeria CSS 4"
+                style="width: 100%"
+              />
+            </div>
+            <div class="galeria-img">
+              <div class="img-numero">5 / 7</div>
+              <img
+                src="img/img-habitacion/230049217.jpg"
+                alt="Galeria CSS 5"
+                style="width: 100%"
+              />
+            </div>
+            <div class="galeria-img">
+              <div class="img-numero">6 / 7</div>
+              <img
+                src="img/img-habitacion/230203324.jpg"
+                alt="Galeria CSS 6"
+                style="width: 100%"
+              />
+            </div>
+            <div class="galeria-img">
+              <div class="img-numero">7 / 7</div>
+              <img
+                src="img/img-habitacion/230203934.jpg"
+                alt="Galeria CSS 7"
+                style="width: 100%"
+              />
+            </div>
+            <!-- BOTONES DE SIGUIENTE Y ANTERIOR -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
 
           <!-- INPUT RESERVAS -->
           <div class="booking-principal">
             <div class="booking">
               <h3>Reservar</h3>
               <form action="#">
-                <label for="Check-In">Check-In:</label>
-                <input type="date" id="Check-In" name="Check-In" />
-                <label for="Check-Out">Check-Out:</label>
-                <input type="date" id="Check-Out" name="Check-Out" />
-                <!-- Huespedes -->
+                <div class="check-in-out">
+                  <label for="Check-In">Check-In:</label>
+                  <input type="date" id="Check-In" name="Check-In" />
+                  <label for="Check-Out">Check-Out:</label>
+                  <input type="date" id="Check-Out" name="Check-Out" />
+                  <!-- Huespedes -->
+                </div>
                 <label for="huespedes">Huespedes:</label>
                 <input
                   class="little-input"
@@ -359,15 +417,17 @@
                   id="habitaciones"
                   value="1"
                 />
-                <span>$$$$</span>
+                <span>$450.000,00 COP/noche</span>
                 <!-- Boton Reservar -->
+                <button class="btn-share" style="font-size: 0.75rem">
+                  Compartir <i class="fas fa-share-square"></i>
+                </button>
                 <input
                   class="btn-booking"
                   type="submit"
                   name="botonReservar"
                   value="Reservar"
                 />
-                <button class="btn-share">Compartir</button>
               </form>
               <!--Boton Compartir-->
               <span> </span>
@@ -376,47 +436,71 @@
           <div class="information">
             <h3>Descripción</h3>
             <div class="text">
-              <!--
-              <p>
-                El Rose Rayhaan by Rotana está situado en la carretera Sheikh
-                Zayed, a 3 minutos del Centro Financiero Internacional de Dubái
-                (DIFC) y a un paso de la estación de metro Financial Centre.
-                También se proporciona recepción 24 horas, servicio de
-                habitaciones y WiFi gratuita en todo el establecimiento, entre
-                otras comodidades. El establecimiento alberga piscina al aire
-                libre, centro de fitness, hammam y restaurante.
-              </p>-->
-              <p>
-                El hotel ofrece 462 habitaciones y suites con vistas panorámicas
-                a Dubái y al Burj Khalifa. Los alojamientos disponen de hervidor
-                de agua. Todas las habitaciones del Rose Rayhaan Rotana Dubai
-                están equipadas con baño privado con bañera.
-              </p>
-              <p>
-                El Rose Rayhaan by Rotana alberga 3 sitios para comer, entre
-                ellos el restaurante Petals. Tiene capacidad para 160 personas y
-                ofrece comida durante todo el día para el desayuno, el almuerzo
-                y la cena.
-              </p>
-              <!-- <p>
-                La zona de conferencias, ubicada en 2 plantas, cuenta con 7 salas
-                de reuniones, todas equipadas con las últimas instalaciones
-                audiovisuales, conexiones sin cable y opciones. La zona de ocio
-                del hotel, el Bodylines Fitness and Wellness Club, ofrece un
-                gimnasio totalmente equipado, piscina exterior climatizada para
-                adultos y niños en la azotea, salón de belleza, salas de
-                tratamiento para masajes y cuidado de la piel, sauna, sala de
-                vapor y bañera de hidromasaje.
-              </p>-->
-              <p>
-                El hotel está cerca del centro comercial Dubai Mall y a 15
-                minutos en coche del aeropuerto internacional de Dubái.
-              </p>
+              <div id="text-col1">
+                <p>
+                  <i style="font-size: 24px" class="fa">&#xf594;</i>
+                  El Rose Rayhaan by Rotana está situado en la carretera Sheikh
+                  Zayed, a 3 minutos del Centro Financiero Internacional de
+                  Dubái (DIFC) y a un paso de la estación de metro Financial
+                  Centre. También se proporciona recepción 24 horas, servicio de
+                  habitaciones y WiFi gratuita en todo el establecimiento, entre
+                  otras comodidades. El establecimiento alberga piscina al aire
+                  libre, centro de fitness, hammam y restaurante.
+                </p>
+                <br />
+                <p>
+                  <i style="font-size: 24px" class="fa">&#xf236;</i>
+                  El hotel ofrece 462 habitaciones y suites con vistas
+                  panorámicas a Dubái y al Burj Khalifa. Los alojamientos
+                  disponen de hervidor de agua. Todas las habitaciones del Rose
+                  Rayhaan Rotana Dubai están equipadas con baño privado con
+                  bañera.
+                </p>
+                <br />
+                <blockquote>
+                  <p>
+                    <em>"La mejor experiencia para la familia"</em>
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                  </p>
+                  - Bradley Cooper
+                </blockquote>
+                <br />
+                <p>
+                  <i style="font-size: 24px" class="fa">&#xf2e7;</i>
+                  El Rose Rayhaan by Rotana alberga 3 sitios para comer, entre
+                  ellos el restaurante Petals. Tiene capacidad para 160 personas
+                  y ofrece comida durante todo el día para el desayuno, el
+                  almuerzo y la cena.
+                </p>
+                <br />
+              </div>
+              <div id="text-col2">
+                <p>
+                  <i style="font-size: 24px" class="fa">&#xf0c0;</i>
+                  La zona de conferencias, ubicada en 2 plantas, cuenta con 7
+                  salas de reuniones, todas equipadas con las últimas
+                  instalaciones audiovisuales, conexiones sin cable y opciones.
+                </p>
+                <br />
+                <p>
+                  <i style="font-size: 24px" class="fa">&#xf5c4;</i>
+                  La zona de ocio del hotel, el Bodylines Fitness and Wellness
+                  Club, ofrece un gimnasio totalmente equipado, piscina exterior
+                  climatizada para adultos y niños en la azotea, salón de
+                  belleza, salas de tratamiento para masajes y cuidado de la
+                  piel, sauna, sala de vapor y bañera de hidromasaje.
+                </p>
+                <br />
+                <p>
+                  <i style="font-size: 24px" class="fa">&#xf041;</i>
+                  El hotel está cerca del centro comercial Dubai Mall y a 15
+                  minutos en coche del aeropuerto internacional de Dubái.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <footer>
+        </main>
+        <footer id="footer">
           <div class="social-media">
             <span>
               <a href="#"><i class="icon fab fa-2x fa-facebook-square"></i></a>
@@ -434,14 +518,36 @@
               <a href="#"><i class="icon fab fa-2x fa-instagram"></i></a>
             </span>
           </div>
-          <div>
-            <ul class="nav-footer">
-              <li>fotos</li>
-              <li>reviews</li>
-              <li>ubicacion</li>
-              <li>caracteristicas</li>
-              <li>contáctanos</li>
-              <li><a href="https://rotana.com">by Rotana</a></li>
+
+          <div id="nav-footer">
+            <ul id="nav-footer-1" class="nav-footer">
+              <li><a href="#">Historia</a></li>
+              <li><a href="#">Nuestra Marca</a></li>
+              <li><a href="#">Visión</a></li>
+              <li><a href="#">Metas</a></li>
+              <li><a href="#">Valores Rotana</a></li>
+              <li><a href="#">Ejecutivos Corporativos</a></li>
+            </ul>
+            <ul id="nav-footer-2" class="nav-footer">
+              <li><a href="#">Clientes Corporativos</a></li>
+              <li><a href="#">Noticias</a></li>
+              <li><a href="#">Premios</a></li>
+              <li><a href="#">Multimedia</a></li>
+              <li><a href="#">Aperturas</a></li>
+              <li><a href="#">Tours</a></li>
+            </ul>
+            <ul id="nav-footer-3" class="nav-footer">
+              WEBSITES ROTANA
+              <li><a href="https://www.rotana.com/">rotana.com</a></li>
+              <li>
+                <a href="https://www.rotanatimes.com/">rotanatimes.com</a>
+              </li>
+              <li>
+                <a href="https://www.rotanaearth.com/">rotanaearth.com</a>
+              </li>
+              <li>
+                <a href="http://www.rotanacareers.com/">rotanacareers.com</a>
+              </li>
             </ul>
           </div>
 
@@ -470,5 +576,6 @@
     </div>
     <!-- <script src="js/slideshow.js"></script> -->
     <script src="js/sidebar.js"></script>
+    <script src="js/slideshow.js"></script>
   </body>
 </html>
