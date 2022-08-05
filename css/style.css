@@ -24,49 +24,120 @@ header {
   margin-top: 0;
   display: flex;
   width: 100%;
+  padding: 0 1.75rem;
   /* max-width: 100%; */
   /* width: 100%; */
   /* justify-content: flex-end; */
   justify-content: space-between;
   align-items: center;
-  padding: 0.2rem 1rem;
   background-color: var(--white);
   /* box-sizing: border-box; */
 }
 
-.container {
-  position: relative;
-  width: 100%;
+.topbar .logo-top img {
+  height: 2rem;
+  /* blue filter */
+  filter: invert(15%) sepia(99%) saturate(2795%) hue-rotate(192deg)
+    brightness(98%) contrast(102%);
+  /* white filter */
+  /* filter: invert(100%) sepia(52%) saturate(396%) hue-rotate(24deg)
+    brightness(110%) contrast(95%); */
+  /* align-items: center; */
+  /* padding: 0.3rem; */
 }
+
 /* SIDEBAR */
-/* body {
-    font-family: "Lato", sans-serif;
-  }
-   */
+/* NOTA: El ancho del sidebar se rige en el script */
 .sidebar {
   position: fixed;
-  width: 20rem;
+  width: 5rem;
   height: 100%;
   background: var(--blue);
   border-left: 0.7rem solid var(--blue);
   transition: 0.5s;
   overflow: hidden;
-  margin-top: 3.6rem;
-}
-
-.container .sidebar .sidebar-content {
+  margin-top: 2.65rem;
+  /* border-left: #f8f8f2; */
 }
 
 .sidebar.active {
   width: 80px;
 }
 
-.sidebar ul {
+/* .sidebar ul {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+} */
+
+/* .sidebar ul li:nth-child(1) {
+  position: absolute;
+  left: 14rem;
+  font-size: 25px;
+} */
+
+/* Al quitar el boton de cerrar el siguiente estilo
+pasó de nth-child(2) a nth-child(1) */
+.sidebar ul li:nth-child(1) {
+  margin-bottom: 2.5rem;
+  pointer-events: none;
 }
+
+.sidebar ul li a {
+  position: relative;
+  /* display: block; */
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.sidebar ul li a i {
+  position: relative;
+  /* display: block; */
+  min-width: 3.75rem;
+  /* height: 1.75rem; */
+  line-height: 4rem;
+  align-self: center;
+  text-align: center;
+  font-size: 1.75rem;
+  /* filter: invert(100%) sepia(52%) saturate(396%) hue-rotate(24deg)
+    brightness(110%) contrast(95%); */
+}
+
+/* TEXTO SIDEBAR */
+.sidebar ul li a .title {
+  position: relative;
+  /* display: block; */
+  align-self: center;
+  padding: 0.5rem 0rem 0 0.75rem;
+  /* width: auto; */
+  /* height: 3.75rem; */
+  /* line-height: 3.75rem; */
+  overflow: hidden;
+}
+
+/* IMAGENES SIDEBAR */
+/* .sidebar ul li a i {
+  height: 1.75rem;
+  max-width: 1.75rem;
+} */
+
+.sidebar ul li:hover a,
+.sidebar ul li.hovered a {
+  color: var(--blue);
+  /* filter: invert(18%) sepia(92%) saturate(1770%) hue-rotate(188deg)
+    brightness(104%) contrast(103%); */
+}
+
+/* TODO FIX HOVER Y COLOR DE ICONOS */
+/* .sidebar ul li a .icon:hover {
+  filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
+    brightness(119%) contrast(94%);
+} */
+
+/* REDONDEADOS HOVER BLANCO */
 
 .sidebar ul li {
   position: relative;
@@ -75,64 +146,11 @@ header {
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
 }
-
 .sidebar ul li:hover,
 .sidebar ul li.hovered {
   background: var(--white);
 }
-.sidebar ul li:nth-child(1) {
-  position: absolute;
-  left: 14rem;
-  font-size: 25px;
-}
-.sidebar ul li:nth-child(2) {
-  margin-bottom: 2.5rem;
-  pointer-events: none;
-}
 
-.sidebar ul li a {
-  position: relative;
-  display: block;
-  width: 100%;
-  display: flex;
-  text-decoration: none;
-  color: var(--white);
-}
-
-.sidebar ul li:hover a,
-.sidebar ul li.hovered a {
-  color: var(--blue);
-}
-
-.sidebar ul li a .icon {
-  position: relative;
-  display: block;
-  min-width: 3.75rem;
-  height: 3.75rem;
-  line-height: 5rem;
-  text-align: center;
-}
-/* TODO FIX HOVER Y COLOR DE ICONOS */
-/* .sidebar ul li a .icon:hover {
-  filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
-    brightness(119%) contrast(94%);
-} */
-
-.sidebar ul li a img {
-  height: 2.25rem;
-  max-width: 2.25rem;
-}
-
-.sidebar ul li a .title {
-  position: relative;
-  display: block;
-  padding: 0 0.625rem;
-  height: 3.75rem;
-  line-height: 3.75rem;
-  overflow: hidden;
-}
-
-/* Curva afuera */
 .sidebar ul li:hover a::before,
 .sidebar ul li.hovered a::before {
   content: "";
@@ -162,194 +180,152 @@ header {
 }
 /* TODO REVISAR MAIN QUE NO DEJA HACER BORDES OTRA VEZ */
 /* MAIN */
-#main {
-  /* position: absolute; */
+#mainContent {
+  /* position: fixed; */
+  position: inherit;
   /* width: calc(100% - 18rem); */
-  /* left: 18rem; */
+  /* left: 5%; */
+  margin-left: 5rem;
+  /* margin-top: 1rem; */
   min-height: 100vh;
   background: var(--white);
   transition: 0.5s;
 }
 
-#main.active {
-  /* width: calc(100% -5rem); */
+#mainContent.active {
+  width: calc(100% -5rem);
   /* left: 5rem; */
 }
 
 /*FIXME ALL BUTTONS HOVER*/
 button:hover {
-  opacity: 0.8;
+  /* opacity: 0.8; */
   text-decoration: underline;
 }
-.toggle button {
+.toggle {
   display: flex;
   position: relative;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-self: center;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   cursor: pointer;
   background-color: var(--blue);
   color: var(--white);
-  margin: 0.5rem;
+  border: 3.75px solid var(--white);
+  margin: 1.5rem 0.75rem;
   border-radius: 50%;
   text-decoration: none;
-  border: none;
+  font-size: 1.5rem;
+  /* border: none; */
 }
 
+.toggle:hover {
+  /* opacity: 0.8; */
+  background-color: var(--white);
+  color: var(--blue);
+  text-decoration: none;
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {
     padding-top: 15px;
   }
   .sidebar a {
-    font-size: 18px;
+    font-size: 18rem;
   }
 }
 
-/* .logo-img {
-
-  filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
-    brightness(119%) contrast(94%);
-} */
-
-.galeria .img-principal img {
-  width: 100rem;
+/* FOOTER */
+/* SOCIAL MEDIA */
+footer {
+  margin: 5rem auto 1rem auto;
+  /* color: black; */
 }
-
-/* TODO CSS TEST OBJECT FIT */
-#img-test {
-  width: 100%;
-  height: 50rem;
-  object-fit: cover;
-}
-/* TODO END TEST */
-
-.img-mini {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.img-mini img {
-  width: 17rem;
-  height: 13rem;
-}
-
-.information {
-  display: flex;
-  flex-direction: column;
-  margin: 4rem 1.5rem;
-}
-.information h3 {
-  text-align: center;
-}
-.text{
-  display: flex;
-  flex-direction: row;
-}
-.text p {
-  text-align: justify;
-  margin: 0 1rem;
-}
-.booking-principal{
-  display: flex;
-  flex-direction: row;
-  background-color: #005596;
-  margin-top: 4rem;
-}
-.booking {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  
-}
-.booking h3 {
-  text-align: center;
-  color: #f8f8f2;
-  margin-bottom: 0.3rem;
-}
-.booking form {
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-}
-.booking form label{
-  color: #f8f8f2;
-}
-.booking form input{
-  border-radius: 0.5rem;
-  border-color: #f8f8f2;
-}
-.little-input{
-  width: 2rem;
-}
-.booking form span {
-  border-color: #f8f8f2;
-  color: #f8f8f2;
-  margin-top: 0.2rem;
-}
-.btn-booking{
-  background-color: #005596;
-  color: #f8f8f2;
-  padding: 0.3rem;
-}
-.btn-share{
-  background-color: #005596;
-  color: #f8f8f2;
-  padding: 0.3rem;
-  border-radius: 0.5rem;
-  border-color: #f8f8f2;
-  margin-top: 1.7rem;
-  margin-right: 0.5rem;
-}
-
 .social-media {
   display: flex;
   text-align: center;
   justify-content: center;
-  
 }
 .social-media span {
   margin-left: 1rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 .social-media span a i {
-  color: black;
-  
+  padding: 0 0.2rem;
+  color: var(--black2);
 }
-footer{
-  background-color: #ccc;
-  color: black;
+
+.social-media span a i:hover {
+  color: var(--blue);
 }
-.nav-footer {
-  list-style: none;
+
+footer .footer-bottom {
   display: flex;
+  margin-top: 0.5rem;
   justify-content: space-around;
-  height: 4rem;
-  
-  
-}
-.nav-footer li {
-  justify-content: center;
-  margin-top: 1.5rem;
-  margin-left: 1rem;
-  
 }
 .logo-footer {
   display: flex;
   justify-content: space-around;
   text-align: center;
-}
-footer div h5 {
-  color: black;
-  text-align: center;
+  /* filter: invert(67%) sepia(0%) saturate(4%) hue-rotate(284deg) brightness(91%)
+    contrast(95%); */
+  /* background-color: var(--black2); */
+  /* color: var(--white); */
 }
 
+.logo-footer a img:hover,
+.img:focus {
+  filter: invert(15%) sepia(99%) saturate(2795%) hue-rotate(192deg)
+    brightness(98%) contrast(102%);
+  /* fill: var(--blue); */
+}
+
+footer div h5 {
+  text-align: center;
+  padding-bottom: 2rem;
+  /* background-color: var(--black1); */
+  color: var(--black2);
+}
+
+/* .nav-footer {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 4rem;
+}
+.nav-footer li {
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+} */
+#nav-footer {
+  display: flex;
+  margin: 1rem 10rem;
+  justify-content: center;
+  color: var(--black2);
+  /* flex-wrap: wrap; */
+  /* flex-flow: column; */
+}
+#nav-footer ul {
+  list-style: none;
+  margin: 0 2.5rem;
+  padding: 0.5rem 2.5rem;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+  /* flex-flow: column; */
+}
+#nav-footer ul li a:hover {
+  color: var(--blue);
+}
+#nav-footer .nav-footer a {
+  color: inherit;
+  text-decoration: none;
+}
 /* @keyframes fade {
   from {
     opacity: 0.4;
@@ -383,12 +359,12 @@ footer div h5 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
-  background-color: var(--blue);
-  color: var(--white);
-  font-size: 1rem;
+  color: var(--blue);
+  /* background-color: var(--white); */
+  font-size: 0.75rem;
   border: none;
   cursor: pointer;
   position: absolute;
@@ -399,9 +375,9 @@ footer div h5 {
 
 .search input[type="text"] {
   width: 18rem;
-  height: 2rem;
-  border-radius: 2rem;
-  border-color: var(--black1);
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  border-color: var(--blue);
 }
 
 /* FIXME Sidebar -> MODAL LOGIN BOX */
@@ -422,21 +398,30 @@ footer div h5 {
 .modal {
   flex-direction: column;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   /* overflow: auto; */
+  /* BACKGROUND */
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
   /* padding: 0 4rem; */
   /* margin: 1.5rem; */
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* set padding to the container*/
 .modal {
-  overflow: hidden;
+  /* overflow: hidden; */
+
   display: flex;
   padding: 2rem;
   /* margin: 10rem; */
@@ -452,7 +437,7 @@ footer div h5 {
 /* ESTILO MODAL BOX */
 .modal .modal-content {
   background-color: #d9d9d9;
-  margin: 5% auto 15% auto;
+  margin: auto;
   border: 1px solid #888;
   min-width: 10rem;
   width: 30%;
@@ -491,7 +476,8 @@ footer div h5 {
 /*assign full width inputs*/
 /* TEXT BOX FORMULARIO LOGIN */
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+.campo-modal {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -502,7 +488,7 @@ input[type="password"] {
 
 /*set extra style for the cancel button*/
 /* BOTON CANCELAR LOGIN */
-#modal-id01 .modal-container-button button {
+.modal-container-button button {
   /* width: auto; */
   /* margin: 1rem 1rem; */
   background-color: #d9d9d9;
@@ -523,7 +509,7 @@ input[type="password"] {
   text-decoration: underline;
 } */
 
-#modal-id01 .modal-container-button .modal-confirmbtn {
+.modal-container-button .modal-confirmbtn {
   background-color: #005596;
   color: #f8f8f2;
 }
@@ -599,4 +585,9 @@ img.modal-avatar {
     /* FIXME  */
     /* width: 100%; */
   }
+}
+
+.open-modal {
+  display: flex;
+  width: 5rem;
 }

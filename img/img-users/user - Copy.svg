@@ -25,7 +25,7 @@
      inkscape:deskcolor="#505050"
      showgrid="false"
      inkscape:zoom="7.78"
-     inkscape:cx="64.974293"
+     inkscape:cx="14.138817"
      inkscape:cy="50"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
@@ -33,6 +33,13 @@
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg11" />
+  <circle
+     cx="50"
+     cy="50"
+     r="50"
+     fill="white"
+     id="circle2"
+     style="fill:#f8f8f2;fill-opacity:1" />
   <mask
      id="mask0_59_2329"
      style="mask-type:alpha"

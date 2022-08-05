@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/contacto.css" />
+  <link rel="stylesheet" href="css/gestionAdministradores.css" />
   <!-- <link rel="stylesheet" href="css/index.css" /> -->
   <!-- <link
       rel="stylesheet"
@@ -98,16 +98,16 @@
           <li>
             <a href="#">
               <span class="icon"><img src="img/img-users/user.svg" alt="Foto Usuario" width="75"></span>
-              <span class="title"
-                onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01">Usuario</span>
+              <span class="title" onclick="document.getElementById('modal-id01').style.display='block'"
+                data-open="modal-id01">Usuario</span>
             </a>
           </li>
           <li>
             <a href="#">
               <span class="icon"><img src="img/svg/fa/right-to-bracket-solid.svg" alt="id-card icon"
                   onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01"></span>
-              <span class="title"
-                onclick="document.getElementById('modal-id01').style.display='block'" data-open="modal-id01">Iniciar
+              <span class="title" onclick="document.getElementById('modal-id01').style.display='block'"
+                data-open="modal-id01">Iniciar
                 Sesión</span>
               <!-- <button type="button" class="open-modal" data-open="modal-id01">boton</button> -->
             </a>
@@ -229,139 +229,140 @@
     </div>
     <!-- END MODAL BOX -->
 
-    <!-- MODAL MESSAGE SENDED -->
-    <div id="modal-id02" class="modal">
+    <!-- MODAL SAVE DATA-ADMIN -->
+    <div id="modal-id04" class="modal">
       <form class="modal-content animate" action="/action_page.php">
         <div class="modal-container">
           <label>
-            <h2>Gracias por contactarnos. Responderemos pronto su mensaje al correo diligenciado</h2>
+            <h2>¿Desea guardar las modificaciones realizadas en los datos del administrador?</h2>
           </label>
           <!-- <label><b>ID del Comentario</b></label>
-          <input type="text" disabled/>
+      <input type="text" disabled/>
 
-          <label><b>Fecha</b></label>
-          <input type="date" class="campo-modal" disabled/>
+      <label><b>Fecha</b></label>
+      <input type="date" class="campo-modal" disabled/>
 
-          <label><b>Comentario</b></label>
-          <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10"></textarea> -->
+      <label><b>Comentario</b></label>
+      <textarea class="campo-modal" placeholder="Comentario" 
+      maxlength="630" cols="30" rows="10" disabled></textarea> -->
           <!-- <input type="text" placeholder="Comentario" /> -->
-          
+
           <!-- <input type="checkbox" checked="checked" /> Recordarme -->
         </div>
 
         <div class="modal-container-button">
           <div>
-            <button type="button" class="modal-confirmbtn"
-            onclick="document.getElementById('modal-id02').style.display='none'">
-              Aceptar
+            <button type="submit" class="modal-confirmbtn">
+              Confirmar
               <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
             </button>
           </div>
-          <!-- <div>
-            <button type="button" onclick="document.getElementById('modal-id02').style.display='none'"
+          <div>
+            <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
               class="modal-cancelbtn">
               Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
             </button>
-          </div> -->
+          </div>
         </div>
         <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
-        <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
       </form>
     </div>
-    <!-- END MODAL MESSAGE SENDED -->
+    <!-- END MODAL SAVE DATA-ADMIN -->
+
 
     <!-- SECCION PRINCIPAL -->
     <div id="main">
-    <div class="base-main">
-      <!-- AREA PRINCIPAL -->
-      <section class="dataUser">
-        <!-- <input type="text" placeholder="Buscar por cédula" name="searchAdmin" />
-        <button>Buscar Administrador</button> -->
-        <h2>Contáctanos</h2>
-        <!-- search bar right align -->
-        <form action="#" class="inputs_dataUser">
-          <label for="correo">Correo</label>
-          <input type="email" name="correo" id="correo">
-          <br>
-          <label for="nombre">Nombre</label>
-          <input type="email" name="nombre" id="nombre">
-          <br>
-          <label for="apellido">Apellido</label>
-          <input type="email" name="apellido" id="apellido">
-          <br>
-          <!-- <label for="fechaNacimiento">Fecha de Nacimiento</label>
-          <input type="date" name="fechaNacimiento" id="fechaNacimiento">
-          <br> -->
-          <label for="asunto">Asunto</label>
-          <input type="email" name="asunto" id="asunto">
-          <br>
-          <label for="mensaje">Mensaje</label>
-          <textarea name="mensaje" id="mensaje" maxlength="630" cols="30" rows="10"></textarea>
-          <!-- <br>
-          <label for="estado">Estado</label>
-          <select name="estado" id="estado">
-            <option value="a">Activo</option>
-            <option value="i">Inactivo</option>
-          </select> -->
-        </form>
-        <input class="btnEnviar" type="submit" name="botonEnviar" value="Enviar" 
-        onclick="document.getElementById('modal-id02').style.display='block'" data-open="modal-id02"/>
-      </section>
+      <div class="base-main">
+        <!-- AREA PRINCIPAL -->
+        <input class="buscador" type="email" placeholder="Buscar por cédula" name="searchUser" />
+        <button class="btnBuscar">Buscar Administrador</button>
+        <section class="dataUser">
+          <h2>Datos del Administrador</h2>
+          <!-- search bar right align -->
+          <form action="#" class="inputs_dataUser">
+            <label for="cedula">Cédula</label>
+            <input type="email" name="cedula" id="cedula">
+            <br>
+            <label for="nombre">Nombre</label>
+            <input type="email" name="nombre" id="nombre">
+            <br>
+            <label for="apellido">Apellido</label>
+            <input type="email" name="apellido" id="apellido">
+            <br>
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+            <br>
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" name="correo" id="correo">
+            <br>
+            <label for="celular">Celular</label>
+            <input type="phone" name="celular" id="celular">
+            <br>
+            <label for="estado">Estado</label>
+            <select name="estado" id="estado">
+              <option value="a">Activo</option>
+              <option value="i">Inactivo</option>
+            </select>
+          </form>
+          <input class="btnGuardar" type="submit" name="botonGuardar" value="Guardar" 
+          onclick="document.getElementById('modal-id04').style.display='block'" data-open="modal-id04"/>
+        </section>
+      </div>
+
+      <footer>
+        <div class="social-media">
+          <span>
+            <a href="#"><i class="icon fab fa-2x fa-facebook-square"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="icon fab fa-2x fa-youtube"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="icon fab fa-2x fa-twitter"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="icon fab fa-2x fa-pinterest"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="icon fab fa-2x fa-instagram"></i></a>
+          </span>
+        </div>
+        <div>
+          <ul class="nav-footer">
+            <li>fotos</li>
+            <li>reviews</li>
+            <li>ubicacion</li>
+            <li>caracteristicas</li>
+            <li>contáctanos</li>
+            <li><a href="https://rotana.com">by Rotana</a></li>
+          </ul>
+        </div>
+
+
+        <div class="logo-footer">
+          <a href="index.html">
+            <img src="img/svg/logo-ryhaan_dubai.svg" alt="Logo Rose Ryhaan Dubai" height="35" />
+          </a>
+          <a href="https://rotana.com">
+            <img src="img/svg/logo-rotana.svg" alt="logo Rotana" height="35" />
+          </a>
+        </div>
+
+        <div>
+          <h5>&copy; Copyright 2022 Fake Rotana Hotels Corporation</h5>
+        </div>
+      </footer>
     </div>
-
-    <footer>
-      <div class="social-media">
-        <span>
-          <a href="#"><i class="icon fab fa-2x fa-facebook-square"></i></a>
-        </span>
-        <span>
-          <a href="#"><i class="icon fab fa-2x fa-youtube"></i></a>
-        </span>
-        <span>
-          <a href="#"><i class="icon fab fa-2x fa-twitter"></i></a>
-        </span>
-        <span>
-          <a href="#"><i class="icon fab fa-2x fa-pinterest"></i></a>
-        </span>
-        <span>
-          <a href="#"><i class="icon fab fa-2x fa-instagram"></i></a>
-        </span>
-      </div>
-      <div>
-        <ul class="nav-footer">
-          <li>fotos</li>
-          <li>reviews</li>
-          <li>ubicacion</li>
-          <li>caracteristicas</li>
-          <li>contáctanos</li>
-          <li><a href="https://rotana.com">by Rotana</a></li>
-        </ul>
-      </div>
-
-
-      <div class="logo-footer">
-        <a href="index.html">
-          <img src="img/svg/logo-ryhaan_dubai.svg" alt="Logo Rose Ryhaan Dubai" height="35" />
-        </a>
-        <a href="https://rotana.com">
-          <img src="img/svg/logo-rotana.svg" alt="logo Rotana" height="35" />
-        </a>
-      </div>
-
-      <div>
-        <h5>&copy; Copyright 2022 Fake Rotana Hotels Corporation</h5>
-      </div>
-    </footer>
   </div>
-</div>
-</div>
-<!-- <script src="js/slideshow.js"></script> -->
-<script src="js/sidebar.js"></script>
-<script>
-  function seleccionar(tr, value) {
-    this.chk1.click();
-  }
-</script>
+  </div>
+  <!-- <script src="js/slideshow.js"></script> -->
+  <script src="js/sidebar.js"></script>
+  <script>
+    function seleccionar(tr, value) {
+      this.chk1.click();
+    }
+  </script>
 </body>
 
 </html>

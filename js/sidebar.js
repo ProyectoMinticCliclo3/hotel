@@ -25,17 +25,20 @@
 
 function openNav() {
   document.getElementById("mySidebar").style.width = "16rem";
-  document.getElementById("main").style.marginLeft = "16rem";
+  document.getElementById("mainContent").style.marginLeft = "16rem";
+}
+
+function openOrClose(x) {
+  if (x == 0) {
+    openNav();
+    openbtn.value = 1;
+  } else {
+    closeNav();
+    openbtn.value = 0;
+  }
 }
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "5rem";
-  document.getElementById("main").style.marginLeft = "5rem";
+  document.getElementById("mainContent").style.marginLeft = "5rem";
 }
-
-var modal = document.getElementById("modal-id01");
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
