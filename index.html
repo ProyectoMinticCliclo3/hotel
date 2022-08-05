@@ -295,39 +295,45 @@
           <!-- INPUT RESERVAS -->
           <div class="booking-principal">
             <div class="booking">
-              <h3>Reservar</h3>
+              <!-- <h3>Reservar</h3> -->
               <form action="#">
-                <div class="check-in-out">
-                  <label for="Check-In">Check-In:</label>
-                  <input type="date" id="Check-In" name="Check-In" />
-                  <label for="Check-Out">Check-Out:</label>
-                  <input type="date" id="Check-Out" name="Check-Out" />
-                  <!-- Huespedes -->
+                <div class="booking-left">
+                  <div class="check-in-out">
+                    <label for="Check-In">Check-In:</label>
+                    <input type="date" id="Check-In" name="Check-In" />
+                    <label for="Check-Out">Check-Out:</label>
+                    <input type="date" id="Check-Out" name="Check-Out" />
+                    <!-- Huespedes -->
+                  </div>
+                  <div class="select-hab">
+                    <label for="huespedes">Huespedes:</label>
+                    <input
+                      class="little-input"
+                      type="number"
+                      id="huespedes"
+                      value="1"
+                    />
+                    <!-- Habitaciones -->
+                    <label for="habitaciones">Habitaciones:</label>
+                    <input
+                      class="little-input"
+                      type="number"
+                      id="habitaciones"
+                      value="1"
+                    />
+                  </div>
                 </div>
-                <label for="huespedes">Huespedes:</label>
-                <input
-                  class="little-input"
-                  type="number"
-                  id="huespedes"
-                  value="1"
-                />
-                <!-- Habitaciones -->
-                <label for="habitaciones">Habitaciones:</label>
-                <input
-                  class="little-input"
-                  type="number"
-                  id="habitaciones"
-                  value="1"
-                />
-                <span>$450.000,00 COP/noche</span>
-                <!-- Boton Reservar -->
+                <div class="booking-right">
+                  <span>$450.000,00 COP/noche</span>
+                  <input
+                    class="btn-booking"
+                    type="submit"
+                    name="botonReservar"
+                    value="Reservar"
+                  />
+                </div>
 
-                <input
-                  class="btn-booking"
-                  type="submit"
-                  name="botonReservar"
-                  value="Reservar"
-                />
+                <!-- Boton Reservar -->
               </form>
               <!--Boton Compartir-->
               <span> </span>
@@ -340,7 +346,7 @@
             <div class="text">
               <div id="text-col1">
                 <p>
-                  <i style="font-size: 24px" class="fa">&#xf594;</i>
+                  <i style="font-size: 24px" class="fa icon-inf">&#xf594;</i>
                   El Rose Rayhaan by Rotana está situado en la carretera Sheikh
                   Zayed, a 3 minutos del Centro Financiero Internacional de
                   Dubái (DIFC) y a un paso de la estación de metro Financial
@@ -351,7 +357,7 @@
                 </p>
                 <br />
                 <p>
-                  <i style="font-size: 24px" class="fa">&#xf236;</i>
+                  <i style="font-size: 24px" class="fa icon-inf">&#xf236;</i>
                   El hotel ofrece 462 habitaciones y suites con vistas
                   panorámicas a Dubái y al Burj Khalifa. Los alojamientos
                   disponen de hervidor de agua. Todas las habitaciones del Rose
@@ -364,11 +370,11 @@
                     <em>"La mejor experiencia para la familia"</em>
                     &#9733;&#9733;&#9733;&#9733;&#9733;
                   </p>
-                  - Bradley Cooper
+                  <p>- Bradley Cooper</p>
                 </blockquote>
                 <br />
                 <p>
-                  <i style="font-size: 24px" class="fa">&#xf2e7;</i>
+                  <i style="font-size: 24px" class="fa icon-inf">&#xf2e7;</i>
                   El Rose Rayhaan by Rotana alberga 3 sitios para comer, entre
                   ellos el restaurante Petals. Tiene capacidad para 160 personas
                   y ofrece comida durante todo el día para el desayuno, el
@@ -378,14 +384,14 @@
               </div>
               <div id="text-col2">
                 <p>
-                  <i style="font-size: 24px" class="fa">&#xf0c0;</i>
+                  <i style="font-size: 24px" class="fa icon-inf">&#xf0c0;</i>
                   La zona de conferencias, ubicada en 2 plantas, cuenta con 7
                   salas de reuniones, todas equipadas con las últimas
                   instalaciones audiovisuales, conexiones sin cable y opciones.
                 </p>
                 <br />
                 <p>
-                  <i style="font-size: 24px" class="fa">&#xf5c4;</i>
+                  <i style="font-size: 24px" class="fa icon-inf">&#xf5c4;</i>
                   La zona de ocio del hotel, el Bodylines Fitness and Wellness
                   Club, ofrece un gimnasio totalmente equipado, piscina exterior
                   climatizada para adultos y niños en la azotea, salón de
@@ -394,7 +400,7 @@
                 </p>
                 <br />
                 <p>
-                  <i style="font-size: 24px" class="fa">&#xf041;</i>
+                  <i style="font-size: 24px" class="fa icon-inf">&#xf041;</i>
                   El hotel está cerca del centro comercial Dubai Mall y a 15
                   minutos en coche del aeropuerto internacional de Dubái.
                 </p>

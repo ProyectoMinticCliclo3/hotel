@@ -106,18 +106,22 @@
 
   display: grid;
   grid-gap: 2em;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.6fr 0.8fr;
   margin: 0 auto;
   /* column-width: 20rem; */
   column-gap: 2.75rem;
   column-rule: 1px solid #ccc;
   align-items: start;
 }
+.icon-inf{
+  color: var(--blue);
+}
 .text p {
   /* flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
   padding: 0 1rem; */
+  text-align: justify;
 }
 .text blockquote {
   /* column-count: 2; */
@@ -126,6 +130,7 @@
   margin: 1rem;
   column-span: all;
   text-align: center;
+  color: var(--blue);
 }
 #text-col2 {
   /* background-color: #005596; */
@@ -152,32 +157,46 @@
   padding: 1rem 0;
 }
 .booking form {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  
+}
+.booking-left{
+  margin-right: 8rem;
   display: flex;
   justify-content: space-around;
-  margin-left: 1rem;
+  flex-direction: column;
+  text-align: center;
+}
+.check-in-out{
   margin-bottom: 1rem;
 }
 .booking form label {
   color: #f8f8f2;
+  margin-right: 1rem;
 }
 .booking form input {
   text-align: center;
   border-radius: 0.5rem;
   border-color: #f8f8f2;
+  margin-right: 1rem;
 }
 .little-input {
   width: 2.5rem;
   height: 1.5rem;
 }
-
-/* PRECIO */
-.booking form span {
-  border-color: #f8f8f2;
-  color: #f8f8f2;
-  /* margin-top: 0.2rem; */
-  /* align-items: center; */
+.booking-right{
+  display: flex;
+  flex-direction: column;  
 }
+/* PRECIO */
+.booking-right span{
+  margin-bottom: 1rem;
+  border-color: var(--white);
+  color: var(--white);
+}
+
 .btn-booking {
   background-color: firebrick;
   color: var(--white);
