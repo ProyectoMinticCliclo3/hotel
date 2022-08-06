@@ -1,17 +1,15 @@
-
-
-.dataUser{
-    padding-top: 7rem;
+.dataUser {
+  /* padding-top: 7rem; */
 }
 
-.dataUser input:nth-child(1){
-    margin-left: 30%;
-    margin-bottom: 1rem;
-    width: 300px;
-    height: 35px;
-    border-radius: 25px;
+.dataUser input:nth-child(1) {
+  margin-left: 30%;
+  margin-bottom: 1rem;
+  width: 300px;
+  height: 35px;
+  border-radius: 25px;
 }
-.dataUser button{
+.dataUser button {
   width: 11rem;
   height: 2rem;
   text-align: center;
@@ -21,35 +19,35 @@
   cursor: pointer;
 }
 
-.dataUser h2{
+.dataUser h2 {
   margin-left: 20%;
   margin-top: 2rem;
 }
 
-.inputs_dataUser{
-  margin-left:30%;
+.inputs_dataUser {
+  margin-left: 30%;
   padding: 1rem;
 }
 
-.inputs_dataUser label{
+.inputs_dataUser label {
   width: 8rem;
-  display:flex;
+  display: flex;
   flex-direction: row;
   margin-right: 1rem;
   margin-top: 1rem;
   font-weight: bold;
 }
-.inputs_dataUser textarea{
-    resize: none;
-    width: 40rem;
-    height: 8rem;
-  }
+.inputs_dataUser textarea {
+  resize: none;
+  width: 40rem;
+  height: 8rem;
+}
 
-.inputs_dataUser input{
+.inputs_dataUser input {
   height: 2rem;
 }
 
-.inputs_dataUser input:nth-of-type(-n+4){
+.inputs_dataUser input:nth-of-type(-n + 4) {
   width: 20rem;
 }
 /* .inputs_dataUser input:last-child{
@@ -65,10 +63,10 @@
     content: top;
 } */
 
-.btnEnviar{
-    background-color: #005596;
-    color: #f2f2f2;
-    border: none;
+.btnEnviar {
+  background-color: #005596;
+  color: #f2f2f2;
+  border: none;
   width: 6rem;
   height: 2.5rem;
   margin-left: 70%;
@@ -76,4 +74,3 @@
   font-size: 1rem;
   margin-bottom: 6rem;
 }
-

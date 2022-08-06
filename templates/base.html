@@ -4,41 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% block head %}
+
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{ url_for('static', filename='css/style.css') }}"
+      href="{{ url_for('static', filename='css/base.css') }}"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='css/index.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='css/users.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='css/homeadmin.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='css/gestionUsuarios.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='css/gestionAdministradores.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='css/contacto.css') }}"
-    />
+    {% endblock %}
+
     <!-- FONTAWESOME OK -->
     <link
       rel="stylesheet"
@@ -68,7 +43,7 @@
     <div id="mainContainer">
       <header class="topbar">
         <div class="logo-top">
-          <a href="#">
+          <a href={{ url_for("home") }}>
             <span class="icon">
               <img
                 src="{{ url_for('static', filename='img/svg/logo-ryhaan.svg') }}"
@@ -78,7 +53,7 @@
           </a>
         </div>
         <div class="logo-top">
-          <a href="index.html">
+          <a href={{ url_for("home") }}>
             <img
               src="{{ url_for('static', filename='img/svg/logo-ryhaan_dubai.svg') }}"
               alt="Rose Ryhaan Dubai"
@@ -111,7 +86,7 @@
             </button>
             <!-- ENLACES SIDEBAR -->
             <li>
-              <a href="index.html">
+              <a href={{ url_for("home") }}>
                 <span class="icon">
                   <i class="fa-solid fa-hotel"></i>
                 </span>
@@ -119,7 +94,7 @@
               </a>
             </li>
             <li>
-              <a href="habitaciones.html">
+              <a href={{ url_for("rooms") }}>
                 <span class="icon">
                   <i class="fa-solid fa-bed"></i>
                 </span>
@@ -127,7 +102,7 @@
               </a>
             </li>
             <li>
-              <a href="reservas.html">
+              <a href={{ url_for("booking") }}>
                 <span class="icon">
                   <i class="fa-solid fa-book"></i>
                 </span>
@@ -135,7 +110,7 @@
               </a>
             </li>
             <li>
-              <a href="contacto.html">
+              <a href={{ url_for("contact") }}>
                 <span class="icon">
                   <i class="fa-solid fa-phone"></i>
                 </span>
@@ -143,7 +118,7 @@
               </a>
             </li>
             <li>
-              <a href="nosotros.html">
+              <a href={{ url_for("about") }}>
                 <span class="icon">
                   <i class="fa-solid fa-id-badge"></i>
                 </span>
@@ -151,7 +126,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href={{ url_for("user") }}>
                 <span
                   class="icon modal-btn"
                   onclick="openModal()"
@@ -237,7 +212,7 @@
         </form>
       </div>
       <!-- END MODAL BOX -->
-      {% block content %} {% endblock %}
+      <div id="mainContent">{% block content %} {% endblock %}</div>
     </div>
     <footer id="footer">
       <div id="nav-footer">

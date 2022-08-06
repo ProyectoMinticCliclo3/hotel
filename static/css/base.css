@@ -188,7 +188,8 @@ pasó de nth-child(2) a nth-child(1) */
   /* left: 5%; */
   margin-left: 5rem;
   /* margin-top: 1rem; */
-  min-height: 100vh;
+  /* FIXME min-height ¿será necesaria?*/
+  /* min-height: 100vh; */
   background: var(--white);
   transition: 0.5s;
 }

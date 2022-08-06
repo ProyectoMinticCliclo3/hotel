@@ -1,5 +1,15 @@
-{% extends "base.html" %} {% block content %}
-
+{% extends "base.html" %} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/homeAdmin.css') }}"
+/>
+{% endblock %} {% block content %}
 <!-- MODAL DESCRIPTION AND VALUE EDITION -->
 <div id="modal-id02" class="modal">
   <form class="modal-content animate" action="/action_page.php">
