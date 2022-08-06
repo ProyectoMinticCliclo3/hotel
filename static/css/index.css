@@ -113,7 +113,7 @@
   column-rule: 1px solid #ccc;
   align-items: start;
 }
-.icon-inf{
+.icon-inf {
   color: var(--blue);
 }
 .text p {
@@ -160,16 +160,15 @@
   display: flex;
   justify-content: center;
   margin: 1rem;
-  
 }
-.booking-left{
+.booking-left {
   margin-right: 8rem;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   text-align: center;
 }
-.check-in-out{
+.check-in-out {
   margin-bottom: 1rem;
 }
 .booking form label {
@@ -186,12 +185,12 @@
   width: 2.5rem;
   height: 1.5rem;
 }
-.booking-right{
+.booking-right {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 /* PRECIO */
-.booking-right span{
+.booking-right span {
   margin-bottom: 1rem;
   border-color: var(--white);
   color: var(--white);

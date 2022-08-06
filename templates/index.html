@@ -4,8 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/index.css') }}"
+    />
     <!-- <link rel="stylesheet" href="css/index.css" /> -->
     <!-- <link
       rel="stylesheet"
@@ -42,13 +50,19 @@
         <div class="logo-top">
           <a href="#">
             <span class="icon">
-              <img src="img/svg/logo-ryhaan.svg" alt="Logo-Ryhaan" />
+              <img
+                src="{{ url_for('static', filename='img/svg/logo-ryhaan.svg') }}"
+                alt="Logo-Ryhaan"
+              />
             </span>
           </a>
         </div>
         <div class="logo-top">
           <a href="index.html">
-            <img src="img/svg/logo-ryhaan_dubai.svg" alt="Rose Ryhaan Dubai" />
+            <img
+              src="{{ url_for('static', filename='img/svg/logo-ryhaan_dubai.svg') }}"
+              alt="Rose Ryhaan Dubai"
+            />
           </a>
         </div>
         <!-- search bar right align -->
@@ -80,10 +94,6 @@
             <li>
               <a href="index.html">
                 <span class="icon">
-                  <!-- <img
-                    src="img/svg/fa/bell-concierge-solid-w.svg"
-                    alt="concierge bell icon"
-                  /> -->
                   <i class="fa-solid fa-hotel"></i>
                 </span>
                 <span class="title">Inicio</span>
@@ -92,7 +102,6 @@
             <li>
               <a href="habitaciones.html">
                 <span class="icon">
-                  <!-- <img src="img/svg/fa/bed-solid-w.svg" alt="bed icon" /> -->
                   <i class="fa-solid fa-bed"></i>
                 </span>
                 <span class="title">Habitaciones</span>
@@ -101,7 +110,6 @@
             <li>
               <a href="reservas.html">
                 <span class="icon">
-                  <!-- <img src="img/svg/fa/book-solid-w.svg" alt="booking icon" /> -->
                   <i class="fa-solid fa-book"></i>
                 </span>
                 <span class="title">Reservas</span>
@@ -110,8 +118,6 @@
             <li>
               <a href="contacto.html">
                 <span class="icon">
-                  <!-- <img src="img/svg/fa/phone-solid-w.svg" alt="phone icon"
-                /> -->
                   <i class="fa-solid fa-phone"></i>
                 </span>
                 <span class="title">Contacto</span>
@@ -120,10 +126,6 @@
             <li>
               <a href="nosotros.html">
                 <span class="icon">
-                  <!-- <img
-                    src="img/svg/fa/id-badge-solid-w.svg"
-                    alt="id-card icon"
-                  /> -->
                   <i class="fa-solid fa-id-badge"></i>
                 </span>
                 <span class="title">Sobre Nosotros</span>
@@ -136,8 +138,6 @@
                   onclick="openModal()"
                   data-open="modal-id01"
                 >
-                  <!-- <img src="img/img-users/user-w.svg" alt="Foto Usuario"
-                  /> -->
                   <i class="fa-solid fa-circle-user"></i>
                 </span>
                 <span class="title" onclick="openModal()" data-open="modal-id01"
@@ -152,18 +152,11 @@
                   onclick="openModal()"
                   data-open="modal-id01"
                 >
-                  <!-- <img
-                    src="img/svg/fa/right-to-bracket-solid-w.svg"
-                    alt="id-card icon"
-                    onclick="document.getElementById('modal-id01').style.display='block'"
-                    data-open="modal-id01"
-                  /> -->
                   <i class="fa-solid fa-right-to-bracket"></i>
                 </span>
                 <span class="title" onclick="openModal()" data-open="modal-id01"
                   >Iniciar Sesión</span
                 >
-                <!-- <button type="button" class="open-modal" data-open="modal-id01">boton</button> -->
               </a>
             </li>
           </ul>
@@ -198,7 +191,7 @@
               <button type="submit" class="modal-confirmbtn">
                 Confirmar
                 <img
-                  src="img/svg/fa/check-solid.svg"
+                  src="{{ url_for('static', filename='img/svg/fa/check-solid.svg') }}"
                   alt="icono logout"
                   height="30"
                 />
@@ -211,7 +204,7 @@
                 class="modal-cancelbtn text-button"
               >
                 Cancelar<img
-                  src="img/svg/fa/xmark-solid.svg"
+                  src="{{ url_for('static', filename='img/svg/fa/xmark-solid.svg') }}"
                   alt="icono logout"
                   height="30"
                 />
@@ -234,7 +227,8 @@
             <div class="galeria-img">
               <div class="img-numero">1 / 7</div>
               <img
-                src="img/img-habitacion/230031199.jpg"
+                src="{{ url_for('static',
+              filename='img/img-habitacion/230031199.jpg') }}"
                 alt="Galeria CSS 1"
                 style="width: 100%"
               />
@@ -242,7 +236,7 @@
             <div class="galeria-img">
               <div class="img-numero">2 / 7</div>
               <img
-                src="img/img-habitacion/230031947.jpg"
+                src="{{ url_for('static', filename='img/img-habitacion/230031947.jpg') }}"
                 alt="Galeria CSS 2"
                 style="width: 100%"
               />
@@ -250,7 +244,7 @@
             <div class="galeria-img">
               <div class="img-numero">3 / 7</div>
               <img
-                src="img/img-habitacion/233120309.jpg"
+                src="{{ url_for('static', filename='img/img-habitacion/233120309.jpg') }}"
                 alt="Galeria CSS 3"
                 style="width: 100%"
               />
@@ -258,7 +252,7 @@
             <div class="galeria-img">
               <div class="img-numero">4 / 7</div>
               <img
-                src="img/img-habitacion/230032549.jpg"
+                src="{{ url_for('static', filename='img/img-habitacion/230032549.jpg') }}"
                 alt="Galeria CSS 4"
                 style="width: 100%"
               />
@@ -266,7 +260,7 @@
             <div class="galeria-img">
               <div class="img-numero">5 / 7</div>
               <img
-                src="img/img-habitacion/230049217.jpg"
+                src="{{ url_for('static', filename='img/img-habitacion/230049217.jpg') }}"
                 alt="Galeria CSS 5"
                 style="width: 100%"
               />
@@ -274,7 +268,7 @@
             <div class="galeria-img">
               <div class="img-numero">6 / 7</div>
               <img
-                src="img/img-habitacion/230203324.jpg"
+                src="{{ url_for('static', filename='img/img-habitacion/230203324.jpg') }}"
                 alt="Galeria CSS 6"
                 style="width: 100%"
               />
@@ -282,7 +276,8 @@
             <div class="galeria-img">
               <div class="img-numero">7 / 7</div>
               <img
-                src="img/img-habitacion/230203934.jpg"
+                src="{{ url_for('static',
+              filename='img/img-habitacion/230203934.jpg') }}"
                 alt="Galeria CSS 7"
                 style="width: 100%"
               />
@@ -342,7 +337,6 @@
 
           <!-- CONTENIDO DESCRIPCIÓN -->
           <div class="information">
-            <h3>Descripción</h3>
             <div class="text">
               <div id="text-col1">
                 <p>
@@ -448,14 +442,16 @@
           <div class="logo-footer">
             <a href="index.html">
               <img
-                src="img/svg/logo-ryhaan_dubai.svg"
+                src="{{ url_for('static',
+              filename='img/svg/logo-ryhaan_dubai.svg') }}"
                 alt="Logo Rose Ryhaan Dubai"
                 height="35"
               />
             </a>
             <a href="https://rotana.com">
               <img
-                src="img/svg/logo-rotana.svg"
+                src="{{ url_for('static',
+              filename='img/svg/logo-rotana.svg') }}"
                 alt="logo Rotana"
                 height="35"
               />
@@ -492,8 +488,8 @@
       </div>
     </div>
     <!-- <script src="js/slideshow.js"></script> -->
-    <script src="js/sidebar.js"></script>
-    <script src="js/slideshow.js"></script>
-    <script src="js/modal.js"></script>
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slideshow.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
   </body>
 </html>
