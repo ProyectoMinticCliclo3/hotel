@@ -10,6 +10,7 @@
   href="{{ url_for('static', filename='css/gestionAdministradores.css') }}"
 />
 {% endblock %} {% block content %}
+
 <!-- MODAL SAVE DATA-ADMIN -->
 <div id="modal-id04" class="modal">
   <form class="modal-content animate" action="/action_page.php">
@@ -64,57 +65,58 @@
   </form>
 </div>
 <!-- END MODAL SAVE DATA-ADMIN -->
-
-<!-- SECCION PRINCIPAL -->
-<div id="main">
-  <div class="base-main">
-    <!-- AREA PRINCIPAL -->
-    <input
-      class="buscador"
-      type="email"
-      placeholder="Buscar por cédula"
-      name="searchUser"
-    />
-    <button class="btnBuscar">Buscar Administrador</button>
-    <section class="dataUser">
-      <h2>Datos del Administrador</h2>
-      <!-- search bar right align -->
-      <form action="#" class="inputs_dataUser">
-        <label for="cedula">Cédula</label>
-        <input type="email" name="cedula" id="cedula" />
-        <br />
-        <label for="nombre">Nombre</label>
-        <input type="email" name="nombre" id="nombre" />
-        <br />
-        <label for="apellido">Apellido</label>
-        <input type="email" name="apellido" id="apellido" />
-        <br />
-        <label for="fechaNacimiento">Fecha de Nacimiento</label>
-        <input type="date" name="fechaNacimiento" id="fechaNacimiento" />
-        <br />
-        <label for="correo">Correo Electrónico</label>
-        <input type="email" name="correo" id="correo" />
-        <br />
-        <label for="celular">Celular</label>
-        <input type="phone" name="celular" id="celular" />
-        <br />
-        <label for="estado">Estado</label>
-        <select name="estado" id="estado">
-          <option value="a">Activo</option>
-          <option value="i">Inactivo</option>
-        </select>
-      </form>
-      <input
-        class="btnGuardar"
-        type="submit"
-        name="botonGuardar"
-        value="Guardar"
-        onclick="document.getElementById('modal-id04').style.display='block'"
-        data-open="modal-id04"
-      />
-    </section>
+<main class="container">
+  <!-- SECCION PRINCIPAL -->
+  <div id="main">
+    <div class="base-main">
+      <!-- AREA PRINCIPAL -->
+      <section class="dataUser">
+        <h2>Datos del Administrador</h2>
+        <input
+          class="buscador"
+          type="email"
+          placeholder="Buscar por cédula"
+          name="searchUser"
+        />
+        <button class="btnBuscar">Buscar Administrador</button>
+        <!-- search bar right align -->
+        <form action="#" class="inputs_dataUser">
+          <label for="cedula">Cédula</label>
+          <input type="email" name="cedula" id="cedula" />
+          <br />
+          <label for="nombre">Nombre</label>
+          <input type="email" name="nombre" id="nombre" />
+          <br />
+          <label for="apellido">Apellido</label>
+          <input type="email" name="apellido" id="apellido" />
+          <br />
+          <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          <input type="date" name="fechaNacimiento" id="fechaNacimiento" />
+          <br />
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" name="correo" id="correo" />
+          <br />
+          <label for="celular">Celular</label>
+          <input type="phone" name="celular" id="celular" />
+          <br />
+          <label for="estado">Estado</label>
+          <select name="estado" id="estado">
+            <option value="a">Activo</option>
+            <option value="i">Inactivo</option>
+          </select>
+        </form>
+        <input
+          class="btnGuardar"
+          type="submit"
+          name="botonGuardar"
+          value="Guardar"
+          onclick="document.getElementById('modal-id04').style.display='block'"
+          data-open="modal-id04"
+        />
+      </section>
+    </div>
   </div>
-</div>
+</main>
 
 <script>
   function seleccionar(tr, value) {

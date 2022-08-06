@@ -10,6 +10,7 @@
   href="{{ url_for('static', filename='css/contacto.css') }}"
 />
 {% endblock %} {% block content %}
+
 <!-- MODAL MESSAGE SENDED -->
 <div id="modal-id02" class="modal">
   <form class="modal-content animate" action="/action_page.php">
@@ -62,12 +63,10 @@
 <!-- END MODAL MESSAGE SENDED -->
 
 <!-- SECCION PRINCIPAL -->
-<div id="main">
+<main id="container">
   <div class="base-main">
     <!-- AREA PRINCIPAL -->
     <section class="dataUser">
-      <!-- <input type="text" placeholder="Buscar por cédula" name="searchAdmin" />
-        <button>Buscar Administrador</button> -->
       <h2>Contáctanos</h2>
       <!-- search bar right align -->
       <form action="#" class="inputs_dataUser">
@@ -111,7 +110,7 @@
       />
     </section>
   </div>
-</div>
+</main>
 <script>
   function seleccionar(tr, value) {
     this.chk1.click();

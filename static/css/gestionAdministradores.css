@@ -37,8 +37,9 @@
 }
 
 .dataUser h2 {
-  margin-left: 20%;
-  margin-top: 2rem;
+  margin-left: 10%;
+  margin-top: 0;
+  padding-top: 10rem;
 }
 
 .inputs_dataUser {
@@ -58,11 +59,11 @@
   height: 2rem;
 }
 
-.inputs_dataUser input:nth-of-type(-n+3) {
+.inputs_dataUser input:nth-of-type(-n + 3) {
   width: 15rem;
 }
 
-.inputs_dataUser input:nth-of-type(+n+5) {
+.inputs_dataUser input:nth-of-type(+ n + 5) {
   width: 15rem;
 }
 
