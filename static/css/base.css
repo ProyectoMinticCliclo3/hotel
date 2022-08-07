@@ -245,6 +245,7 @@ button:hover {
 footer {
   margin: 5rem auto 1rem auto;
   /* color: black; */
+  transition: 0.5s;
 }
 .social-media {
   display: flex;
@@ -382,20 +383,6 @@ footer div h5 {
   border-color: var(--blue);
 }
 
-/* FIXME Sidebar -> MODAL LOGIN BOX */
-/*set a style for the buttons*/
-/* BOTON INICIAR SESION SIDEBAR a MODAL BOX */
-/* .sidebar .modal-login {
-  background-color: #f8f8f2;
-  color: #005596;
-  padding: 1rem 2rem;
-  margin: 4rem 0rem;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  font-weight: bold;
-} */
-
 /* FONDO MODAL LOGIN BOX */
 .modal {
   flex-direction: column;
@@ -413,6 +400,7 @@ footer div h5 {
   /* margin: 1.5rem; */
   visibility: hidden;
   opacity: 0;
+  transition: 0.5s;
 }
 
 .modal.is-visible {

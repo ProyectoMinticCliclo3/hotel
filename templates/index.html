@@ -82,19 +82,21 @@
   <div class="booking-principal">
     <div class="booking">
       <!-- <h3>Reservar</h3> -->
-      <form action={{ url_for('booking' )}}>
+      <!-- FIXME no funciona bien llamando action ya que no lee el POST <form action="{{ url_for('booking') }}" method="POST"> -->
+      <form method="POST">
         <div class="booking-left">
           <div class="check-in-out">
-            <label for="Check-In">Check-In:</label>
-            <input type="date" id="Check-In" name="Check-In" />
-            <label for="Check-Out">Check-Out:</label>
-            <input type="date" id="Check-Out" name="Check-Out" />
+            <label for="check-in">Check-In:</label>
+            <input type="date" id="check-in" name="check-in" />
+            <label for="check-out">Check-Out:</label>
+            <input type="date" id="check-out" name="check-out" />
             <!-- Huespedes -->
           </div>
           <div class="select-hab">
             <label for="huespedes">Huespedes:</label>
             <input
               class="little-input"
+              name="huespedes"
               type="number"
               id="huespedes"
               value="1"
@@ -105,6 +107,7 @@
             <label for="habitaciones">Habitaciones:</label>
             <input
               class="little-input"
+              name="habitaciones"
               type="number"
               id="habitaciones"
               value="1"
@@ -116,12 +119,12 @@
         <div class="booking-right">
           <span>$450.000,00 COP/noche</span>
           <!-- Boton Reservar -->
-            <input
-              class="btn-booking"
-              type="submit"
-              name="botonReservar"
-              value="Reservar"
-            />
+          <input
+            class="btn-booking"
+            type="submit"
+            name="botonReservar"
+            value="Reservar"
+          />
         </div>
       </form>
       <!--Boton Compartir-->
@@ -191,7 +194,7 @@
         </p>
         <br />
         <button class="btn-share">
-          Compartir <i class="fas fa-share-square"></i>
+          Compartir <i class="fa-solid fa-share-nodes"></i>
         </button>
       </div>
     </div>

@@ -1,65 +1,99 @@
-from flask import Flask, render_template
+import datetime
+
+from flask import Flask, render_template, request, redirect, url_for
 
 
 app = Flask(__name__, static_url_path='/static')
 
+# Almacenamiento temporal de datos de reserva
+booking_entries = []
+review_entries = []
+
 
 @app.route('/test/')
 def hello():
-    return "Hello, Flask"
+    return "Hello, Esclavos del grupo 05 de MinTic Uninorte!!"
 
 
-@app.route('/')
+@app.route('/base/')
 def base():
     return render_template("base.html")
 
 
-@app.route('/home/')
+@app.route('/', methods=["GET", "POST"])
 def home():
-    return render_template("index.html")
+    if request.method == "POST":
+        # Obtiene fecha de hoy para referencia
+        formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
+        check_in = request.form.get("check-in")
+        check_out = request.form.get("check-out")
+        num_guest = request.form.get("huespedes")
+        num_room = request.form.get("habitaciones")
+
+        args = {"formatted_date": formatted_date, "check_in": check_in,
+                "check_out": check_out, "num_guest": num_guest, "num_room": num_room}
+
+        booking_entries.append(args)
+
+        print(formatted_date, check_in, check_out, num_guest, num_room)
+        print(booking_entries)
+        return redirect(url_for('booking'))
+    return render_template("index.html", booking_entries=booking_entries)
 
 
-@app.route('/user/')
+@ app.route('/booking/', methods=["GET", "POST"])
+def booking():
+    if request.method == "POST":
+        formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
+        review = request.form.get("review-content")
+        rating = request.form.get("rate")
+
+        # args = {"formatted_date": formatted_date,
+        #         "rating": rating, "review": review}
+
+        review_entries.append((formatted_date, rating, review))
+
+        print(review_entries)
+        print(review_entries[1])
+    return render_template("reservas.html", review_entries=review_entries)
+
+
+@ app.route('/user/')
 def user():
     return render_template("users.html")
 
 
-@app.route('/admin/')
+@ app.route('/admin/')
 def admins_home():
     return render_template("homeadmin.html")
 
 
-@app.route('/admin-users/')
+@ app.route('/admin-users/')
 def admin_users():
     return render_template("gestionUsuarios.html")
 
 
-@app.route('/admin-admins/')
+@ app.route('/admin-admins/')
 def admin_admins():
     return render_template("gestionAdministradores.html")
 
 
-@app.route('/contact/')
+@ app.route('/contact/')
 def contact():
     return render_template("contacto.html")
 
 
-@app.route('/about/')
+@ app.route('/about/')
 def about():
     return render_template("nosotros.html")
 
 
-@app.route('/booking/')
-def booking():
-    return render_template("reservas.html")
-
-
-@app.route('/rooms/')
+@ app.route('/rooms/')
 def rooms():
     return render_template("habitaciones.html")
 
 
-@app.route('/register/')
+@ app.route('/register/')
 def register():
     return render_template("registro.html")
 
