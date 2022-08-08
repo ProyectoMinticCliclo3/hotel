@@ -15,14 +15,13 @@
   href="{{ url_for('static', filename='css/reviews.css') }}"
 />
 {% endblock %} {% block content %}
-<h2>Reservas</h2>
 
 <main class="container">
+  <div class="page_title">
+    <h2>Reservas</h2>
+  </div>
   <section>
     <h1>Comentanos tu experiencia</h1>
-    <!-- <p><span class="fa fa-star rated-star"></span>
-      <span class="fa fa-star"></span></p> -->
-
     <form class="form" method="POST">
       <p class="star-rating">
         <input type="radio" id="star5" name="rate" value="5" />
@@ -49,25 +48,27 @@
     </form>
   </section>
   <section>
-    <h1>Recent posts</h1>
+    <h1>Comentarios Recientes</h1>
     {% for entry in review_entries %}
     <article class="entry">
       <div>
-        <p>
-          %} {% if entry[1] == '1' %}
-          <font color="orange">★</font>★★★★ {% elif entry[1] == '2' %}
-          <font color="orange">★★</font>★★★ {% elif entry[1] == '3' %}
-          <font color="orange">★★★</font>★★ {% elif entry[1] == '4' %}
-          <font color="orange">★★★★</font>★ {% elif entry[1] == '5' %}
-          <font color="orange">★★★★★</font>
-          {% else %} ★★★★★ {% endif %}
-        </p>
         <h2 class="entry__title">
-          {{ entry[2] | truncate(30, true) }} • {{ entry[1] }} de 5
+          {{ entry[1] | truncate(30, true) }} •
+          <span>
+            {% if entry[0] == '1' %}
+            <font color="orange">★</font>★★★★ {% elif entry[0] == '2' %}
+            <font color="orange">★★</font>★★★ {% elif entry[0] == '3' %}
+            <font color="orange">★★★</font>★★ {% elif entry[0] == '4' %}
+            <font color="orange">★★★★</font>★ {% elif entry[0] == '5' %}
+            <font color="orange">★★★★★</font>
+            {% else %} ★★★★★ {% endif %}
+          </span>
         </h2>
-        <time class="entry__date" datetime="24-10-2019">• {{ entry[0] }}</time>
+        <time class="entry__date" datetime="{{ entry[2] }}">
+          • {{ entry[3] }}
+        </time>
       </div>
-      <p class="entry__content">{{ entry[2] }}</p>
+      <p class="entry__content">{{ entry[1] }}</p>
     </article>
     {% endfor %}
   </section>

@@ -44,18 +44,25 @@ def home():
 @ app.route('/booking/', methods=["GET", "POST"])
 def booking():
     if request.method == "POST":
-        formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
         review = request.form.get("review-content")
         rating = request.form.get("rate")
+        formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
+        review_entries.append((rating, review, formatted_date))
 
-        # args = {"formatted_date": formatted_date,
-        #         "rating": rating, "review": review}
+    entries_with_date = [
+        (
+            entry[0],
+            entry[1],
+            entry[2],
+            datetime.datetime.strptime(
+                entry[2], "%Y-%m-%d").strftime("%b %d")
+        )
+        for entry in review_entries
+    ]
 
-        review_entries.append((formatted_date, rating, review))
+    print(entries_with_date)
 
-        print(review_entries)
-        print(review_entries[1])
-    return render_template("reservas.html", review_entries=review_entries)
+    return render_template("reservas.html", review_entries=entries_with_date)
 
 
 @ app.route('/user/')
