@@ -12,7 +12,7 @@ review_entries = []
 
 @app.route('/test/')
 def hello():
-    return "Hello, Esclavos del grupo 05 de MinTic Uninorte!!"
+    return "<h1>Hello, Esclavos del grupo 05 de MinTic Uninorte!!</h1>"
 
 
 @app.route('/base/')
@@ -65,9 +65,9 @@ def booking():
     return render_template("reservas.html", review_entries=entries_with_date)
 
 
-@ app.route('/user/')
-def user():
-    return render_template("users.html")
+@ app.route('/user/<name>')
+def user(name):
+    return render_template("users.html", name=name)
 
 
 @ app.route('/admin/')
@@ -105,5 +105,5 @@ def register():
     return render_template("registro.html")
 
 
-if __name__ == '__main__':
-    app.run(port=4995)
+# if __name__ == '__main__':
+#     app.run(port=4995)
