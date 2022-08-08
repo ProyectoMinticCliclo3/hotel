@@ -96,6 +96,7 @@ pasó de nth-child(2) a nth-child(1) */
   /* filter: invert(100%) sepia(52%) saturate(396%) hue-rotate(24deg)
     brightness(110%) contrast(95%); */
 }
+
 .sidebar ul li:hover a,
 .sidebar ul li.hovered a {
   color: #000;
@@ -176,6 +177,7 @@ pasó de nth-child(2) a nth-child(1) */
   min-height: 100vh;
   background: var(--white);
   transition: 0.5s;
+  margin-left:5rem;
 }
 
 #mainContent.active {
@@ -184,11 +186,16 @@ pasó de nth-child(2) a nth-child(1) */
 }
 
 /*FIXME ALL BUTTONS HOVER*/
+
+.toggle:hover{
+  text-decoration: none;
+}
+
 button:hover {
   opacity: 0.8;
   text-decoration: underline;
 }
-.toggle button {
+.toggle{
   display: flex;
   position: relative;
   width: 2.25rem;
@@ -315,7 +322,7 @@ footer div h5 {
   /* margin-top: 0.5rem; */
 }
 
-/* .search input[type="text"] {
+.search input[type="text"] {
   width: 18rem;
   height: 1.5rem;
   border-radius: 1.5rem;

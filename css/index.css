@@ -159,6 +159,7 @@
 }
 .booking form input {
   border-radius: 0.5rem;
+  text-align:center;
   border-color: #f8f8f2;
 }
 .little-input {
