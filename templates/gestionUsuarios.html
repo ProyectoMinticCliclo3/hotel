@@ -1,0 +1,310 @@
+{% extends "base.html" %} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/gestionUsuarios.css') }}"
+/>
+{% endblock %} {% block content %}
+<!-- MODAL EDIT REVIEW -->
+<div id="modal-id02" class="modal">
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="modal-container">
+      <label>
+        <h1>Edición de Comentario</h1>
+      </label>
+      <label><b>ID del Comentario</b></label>
+      <input type="text" disabled />
+
+      <label><b>Fecha</b></label>
+      <input type="date" class="campo-modal" disabled />
+
+      <label><b>Comentario</b></label>
+      <textarea
+        class="campo-modal"
+        placeholder="Comentario"
+        maxlength="630"
+        cols="30"
+        rows="10"
+      ></textarea>
+      <!-- <input type="text" placeholder="Comentario" /> -->
+
+      <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+    </div>
+
+    <div class="modal-container-button">
+      <div>
+        <button type="submit" class="modal-confirmbtn">
+          Confirmar
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
+        </button>
+      </div>
+      <div>
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id02').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
+        </button>
+      </div>
+    </div>
+    <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+  </form>
+</div>
+<!-- END MODAL EDIT REVIEW -->
+
+<!-- MODAL DELETE REVIEW -->
+<div id="modal-id03" class="modal">
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="modal-container">
+      <label>
+        <h1>Eliminar Comentario?</h1>
+      </label>
+      <label><b>ID del Comentario</b></label>
+      <input type="text" disabled />
+
+      <label><b>Fecha</b></label>
+      <input type="date" class="campo-modal" disabled />
+
+      <label><b>Comentario</b></label>
+      <textarea
+        class="campo-modal"
+        placeholder="Comentario"
+        maxlength="630"
+        cols="30"
+        rows="10"
+        disabled
+      ></textarea>
+      <!-- <input type="text" placeholder="Comentario" /> -->
+
+      <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+    </div>
+
+    <div class="modal-container-button">
+      <div>
+        <button type="submit" class="modal-confirmbtn">
+          Confirmar
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
+        </button>
+      </div>
+      <div>
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id03').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
+        </button>
+      </div>
+    </div>
+    <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+  </form>
+</div>
+<!-- END MODAL DELETE REVIEW -->
+
+<!-- MODAL SAVE DATA-USERS -->
+<div id="modal-id04" class="modal">
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="modal-container">
+      <label>
+        <h2>
+          ¿Desea guardar las modificaciones realizadas en los datos de usuario?
+        </h2>
+      </label>
+      <!-- <label><b>ID del Comentario</b></label>
+      <input type="text" disabled/>
+
+      <label><b>Fecha</b></label>
+      <input type="date" class="campo-modal" disabled/>
+
+      <label><b>Comentario</b></label>
+      <textarea class="campo-modal" placeholder="Comentario" 
+      maxlength="630" cols="30" rows="10" disabled></textarea> -->
+      <!-- <input type="text" placeholder="Comentario" /> -->
+
+      <!-- <input type="checkbox" checked="checked" /> Recordarme -->
+    </div>
+
+    <div class="modal-container-button">
+      <div>
+        <button type="submit" class="modal-confirmbtn">
+          Confirmar
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
+        </button>
+      </div>
+      <div>
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id04').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
+        </button>
+      </div>
+    </div>
+    <!-- <span class="modal-psw"><a href="#">¿Ha olvidado su Contraseña?</a></span>
+    <span class="modal-psw"><a href="#">¿Eres Nuevo Usuario?</a></span> -->
+  </form>
+</div>
+<!-- END MODAL SAVE DATA-USERS -->
+
+<main class="container">
+  <!-- SECCION PRINCIPAL -->
+  <div class="base-main">
+    <!-- AREA PRINCIPAL -->
+    <section class="dataUser">
+      <h2>Datos del Usuario</h2>
+      <input
+        class="buscador"
+        type="email"
+        placeholder="Buscar por cédula"
+        name="searchUser"
+      />
+      <button class="btnBuscar">Buscar Usuario</button>
+      <!-- search bar right align -->
+      <form action="#" class="inputs_dataUser">
+        <label for="cedula">Cédula</label>
+        <input type="email" name="cedula" id="cedula" />
+        <br />
+        <label for="nombre">Nombre</label>
+        <input type="email" name="nombre" id="nombre" />
+        <br />
+        <label for="apellido">Apellido</label>
+        <input type="email" name="apellido" id="apellido" />
+        <br />
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input type="date" name="fechaNacimiento" id="fechaNacimiento" />
+        <br />
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" name="correo" id="correo" />
+        <br />
+        <label for="celular">Celular</label>
+        <input type="phone" name="celular" id="celular" />
+      </form>
+      <input
+        class="btnGuardar"
+        type="submit"
+        name="botonGuardar"
+        value="Guardar"
+        onclick="document.getElementById('modal-id04').style.display='block'"
+        data-open="modal-id04"
+      />
+    </section>
+    <!-- LISTA RESERVAS -->
+    <div class="reserves">
+      <h2>Listado de Reservas</h2>
+      <table class="reservesTable">
+        <thead>
+          <tr>
+            <caption>
+              Se presentan todas las reservas activas e inactivas
+            </caption>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Entrada</th>
+            <th>Salida</th>
+            <th>Huespedes</th>
+            <th>$ Valor</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <section>
+        <input
+          class="btnEditar"
+          type="submit"
+          name="botonEditar"
+          value="Editar Reserva"
+        />
+        <h4>
+          <strong><a href="#">Borrar Reserva</a></strong>
+        </h4>
+      </section>
+    </div>
+    <!-- LISTA COMENTARIOS -->
+    <div class="reviews">
+      <h2>Comentarios Realizados</h2>
+      <div>
+        <table class="reviewsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Comentario</th>
+              <th>
+                All<input type="checkbox" name="check[]" value="0" id="chk0" />
+              </th>
+            </tr>
+          </thead>
+          <tbody style="cursor: pointer">
+            <tr onclick="seleccionar(this,1)">
+              <td>DFG555</td>
+              <td>24/07/2022</td>
+              <td>El hotel es increíble, totalmente recomendado</td>
+              <td onclick="seleccionar(this,1)">
+                <input type="checkbox" name="check[]" value="1" id="chk1" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <!-- <input class="btnEditar" type="submit" name="botonEditar" value="Editar Comentario" /> -->
+        <input
+          class="btnEliminar"
+          type="submit"
+          name="botonEliminar"
+          value="Eliminar Comentario"
+          onclick="document.getElementById('modal-id03').style.display='block'"
+          data-open="modal-id03"
+        />
+        <!-- <h4><strong><a href="#">Borrar Comentario</a></strong></h4> -->
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  function seleccionar(tr, value) {
+    this.chk1.click();
+  }
+</script>
+{% endblock %}

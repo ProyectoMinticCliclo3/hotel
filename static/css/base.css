@@ -18,6 +18,7 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: var(--white);
 }
 
 header {
@@ -37,10 +38,18 @@ header {
 
 .topbar .logo-top img {
   height: 2rem;
+  /* blue filter */
+  filter: invert(15%) sepia(99%) saturate(2795%) hue-rotate(192deg)
+    brightness(98%) contrast(102%);
+  /* white filter */
+  /* filter: invert(100%) sepia(52%) saturate(396%) hue-rotate(24deg)
+    brightness(110%) contrast(95%); */
   /* align-items: center; */
   /* padding: 0.3rem; */
 }
 
+/* SIDEBAR */
+/* NOTA: El ancho del sidebar se rige en el script */
 .sidebar {
   position: fixed;
   width: 5rem;
@@ -79,27 +88,50 @@ pasó de nth-child(2) a nth-child(1) */
 
 .sidebar ul li a {
   position: relative;
-  display: block;
+  /* display: block; */
   width: 100%;
   display: flex;
   text-decoration: none;
   color: var(--white);
 }
 
-.sidebar ul li a .icon {
+.sidebar ul li a i {
   position: relative;
-  display: block;
+  /* display: block; */
   min-width: 3.75rem;
-  height: 3.75rem;
-  line-height: 5rem;
+  /* height: 1.75rem; */
+  line-height: 4rem;
+  align-self: center;
   text-align: center;
+  font-size: 1.75rem;
   /* filter: invert(100%) sepia(52%) saturate(396%) hue-rotate(24deg)
     brightness(110%) contrast(95%); */
 }
 
+<<<<<<< HEAD:css/style.css
+=======
+/* TEXTO SIDEBAR */
+.sidebar ul li a .title {
+  position: relative;
+  /* display: block; */
+  align-self: center;
+  padding: 0.5rem 0rem 0 0.75rem;
+  /* width: auto; */
+  /* height: 3.75rem; */
+  /* line-height: 3.75rem; */
+  overflow: hidden;
+}
+
+/* IMAGENES SIDEBAR */
+/* .sidebar ul li a i {
+  height: 1.75rem;
+  max-width: 1.75rem;
+} */
+
+>>>>>>> 43c8b59d6c7b60d623183800d8f3d8f54193d3c8:static/css/base.css
 .sidebar ul li:hover a,
 .sidebar ul li.hovered a {
-  color: #000;
+  color: var(--blue);
   /* filter: invert(18%) sepia(92%) saturate(1770%) hue-rotate(188deg)
     brightness(104%) contrast(103%); */
 }
@@ -109,21 +141,6 @@ pasó de nth-child(2) a nth-child(1) */
   filter: invert(99%) sepia(55%) saturate(884%) hue-rotate(302deg)
     brightness(119%) contrast(94%);
 } */
-
-/* IMAGENES SIDEBAR */
-.sidebar ul li a img {
-  height: 1.75rem;
-  max-width: 1.75rem;
-}
-/* TEXTO SIDEBAR */
-.sidebar ul li a .title {
-  position: relative;
-  display: block;
-  padding: 0 0.625rem;
-  height: 3.75rem;
-  line-height: 3.75rem;
-  overflow: hidden;
-}
 
 /* REDONDEADOS HOVER BLANCO */
 
@@ -172,9 +189,11 @@ pasó de nth-child(2) a nth-child(1) */
   /* position: fixed; */
   position: inherit;
   /* width: calc(100% - 18rem); */
-  /* left: 5rem; */
+  /* left: 5%; */
+  margin-left: 5rem;
   /* margin-top: 1rem; */
-  min-height: 100vh;
+  /* FIXME min-height ¿será necesaria?*/
+  /* min-height: 100vh; */
   background: var(--white);
   transition: 0.5s;
   margin-left:5rem;
@@ -192,36 +211,56 @@ pasó de nth-child(2) a nth-child(1) */
 }
 
 button:hover {
-  opacity: 0.8;
+  /* opacity: 0.8; */
   text-decoration: underline;
 }
+<<<<<<< HEAD:css/style.css
 .toggle{
+=======
+.toggle {
+>>>>>>> 43c8b59d6c7b60d623183800d8f3d8f54193d3c8:static/css/base.css
   display: flex;
   position: relative;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-self: center;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--blue);
-  background-color: var(--white);
-  margin: 0.5rem;
+  background-color: var(--blue);
+  color: var(--white);
+  border: 3.75px solid var(--white);
+  margin: 1.5rem 0.75rem;
   border-radius: 50%;
   text-decoration: none;
-  border: none;
+  font-size: 1.5rem;
+  /* border: none; */
 }
 
+.toggle:hover {
+  /* opacity: 0.8; */
+  background-color: var(--white);
+  color: var(--blue);
+  text-decoration: none;
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {
     padding-top: 15px;
   }
   .sidebar a {
-    font-size: 18px;
+    font-size: 18rem;
   }
 }
 
+/* FOOTER */
+/* SOCIAL MEDIA */
+footer {
+  margin: 5rem auto 1rem auto;
+  /* color: black; */
+  transition: 0.5s;
+}
 .social-media {
   display: flex;
   text-align: center;
@@ -229,23 +268,44 @@ button:hover {
 }
 .social-media span {
   margin-left: 1rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 .social-media span a i {
-  color: black;
+  padding: 0 0.2rem;
+  color: var(--black2);
 }
-footer {
-  background-color: #ccc;
-  color: black;
+
+.social-media span a i:hover {
+  color: var(--blue);
+}
+
+footer .footer-bottom {
+  display: flex;
+  margin-top: 0.5rem;
+  justify-content: space-around;
 }
 .logo-footer {
   display: flex;
   justify-content: space-around;
   text-align: center;
+  /* filter: invert(67%) sepia(0%) saturate(4%) hue-rotate(284deg) brightness(91%)
+    contrast(95%); */
+  /* background-color: var(--black2); */
+  /* color: var(--white); */
 }
+
+.logo-footer a img:hover,
+.img:focus {
+  filter: invert(15%) sepia(99%) saturate(2795%) hue-rotate(192deg)
+    brightness(98%) contrast(102%);
+  /* fill: var(--blue); */
+}
+
 footer div h5 {
   text-align: center;
   padding-bottom: 2rem;
+  /* background-color: var(--black1); */
+  color: var(--black2);
 }
 
 /* .nav-footer {
@@ -264,6 +324,7 @@ footer div h5 {
   display: flex;
   margin: 1rem 10rem;
   justify-content: center;
+  color: var(--black2);
   /* flex-wrap: wrap; */
   /* flex-flow: column; */
 }
@@ -274,6 +335,13 @@ footer div h5 {
   /* flex-wrap: wrap; */
   /* flex-direction: column; */
   /* flex-flow: column; */
+}
+#nav-footer ul li a:hover {
+  color: var(--blue);
+}
+#nav-footer .nav-footer a {
+  color: inherit;
+  text-decoration: none;
 }
 /* @keyframes fade {
   from {
@@ -329,20 +397,6 @@ footer div h5 {
   border-color: var(--blue);
 }
 
-/* FIXME Sidebar -> MODAL LOGIN BOX */
-/*set a style for the buttons*/
-/* BOTON INICIAR SESION SIDEBAR a MODAL BOX */
-/* .sidebar .modal-login {
-  background-color: #f8f8f2;
-  color: #005596;
-  padding: 1rem 2rem;
-  margin: 4rem 0rem;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  font-weight: bold;
-} */
-
 /* FONDO MODAL LOGIN BOX */
 .modal {
   flex-direction: column;
@@ -360,6 +414,7 @@ footer div h5 {
   /* margin: 1.5rem; */
   visibility: hidden;
   opacity: 0;
+  transition: 0.5s;
 }
 
 .modal.is-visible {

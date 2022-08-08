@@ -15,7 +15,7 @@
   /* background-color: black; */
 }
 
-#main .inputs_dataUser {
+main .base-main .inputs_dataUser {
   margin-left: 20%;
   padding: 1rem;
 }

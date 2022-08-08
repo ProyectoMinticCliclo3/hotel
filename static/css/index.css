@@ -6,18 +6,6 @@
   --black2: #999;
 }
 
-/* .galeria .img-principal img {
-  width: 100rem;
-} */
-
-/* TODO CSS TEST OBJECT FIT */
-/* #img-test {
-  width: 100%;
-  height: 50rem;
-  object-fit: cover;
-} */
-/* TODO END TEST */
-/* TODO CSS TEST OBJECT FIT */
 #img-main {
   padding: 0 1.68rem 1.68rem 1.68rem;
   /* max-width: 80%; */
@@ -25,7 +13,7 @@
   width: 100%;
   /* height: 50rem; */
   /* height: 100%; */
-  object-fit: cover;
+  object-fit: contain;
   /* position: relative; */
 }
 
@@ -85,11 +73,16 @@
   height: 13rem;
 } */
 
+/* TEXTO DESCRIPCIÓN */
 .information {
   display: flex;
   flex-direction: column;
-  margin: 4rem 4rem;
+  /* margin: 4rem 4rem; */
+  margin: 2rem auto;
+  column-width: 14em;
+  max-width: 50rem;
 }
+/* TITULO */
 .information h3 {
   text-align: center;
   margin-bottom: 1rem;
@@ -101,19 +94,22 @@
 
   display: grid;
   grid-gap: 2em;
-  grid-template-columns: 2fr 1fr;
-  max-width: 50rem;
+  grid-template-columns: 1.6fr 0.8fr;
   margin: 0 auto;
-  column-width: 20rem;
+  /* column-width: 20rem; */
   column-gap: 2.75rem;
   column-rule: 1px solid #ccc;
   align-items: start;
+}
+.icon-inf {
+  color: var(--blue);
 }
 .text p {
   /* flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
   padding: 0 1rem; */
+  text-align: justify;
 }
 .text blockquote {
   /* column-count: 2; */
@@ -122,6 +118,7 @@
   margin: 1rem;
   column-span: all;
   text-align: center;
+  color: var(--blue);
 }
 #text-col2 {
   /* background-color: #005596; */
@@ -148,32 +145,46 @@
   padding: 1rem 0;
 }
 .booking form {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+.booking-left {
+  margin-right: 8rem;
   display: flex;
   justify-content: space-around;
-  margin-left: 1rem;
+  flex-direction: column;
+  text-align: center;
+}
+.check-in-out {
   margin-bottom: 1rem;
 }
 .booking form label {
   color: #f8f8f2;
+  margin-right: 1rem;
 }
 .booking form input {
+  text-align: center;
   border-radius: 0.5rem;
   text-align:center;
   border-color: #f8f8f2;
+  margin-right: 1rem;
 }
 .little-input {
   width: 2.5rem;
   height: 1.5rem;
 }
-
-/* PRECIO */
-.booking form span {
-  border-color: #f8f8f2;
-  color: #f8f8f2;
-  /* margin-top: 0.2rem; */
-  /* align-items: center; */
+.booking-right {
+  display: flex;
+  flex-direction: column;
 }
+/* PRECIO */
+.booking-right span {
+  margin-bottom: 1rem;
+  border-color: var(--white);
+  color: var(--white);
+}
+
 .btn-booking {
   background-color: firebrick;
   color: var(--white);
@@ -182,10 +193,24 @@
 }
 
 .btn-booking:hover {
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--blue);
   cursor: pointer;
   /* padding: 0rem 3em; */
+}
+
+.information .btn-share:hover {
+  background-color: firebrick;
+  color: var(--white);
+}
+.information .btn-share {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 0.4rem 3em;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-decoration: none;
 }
 /* .btn-share {
   background-color: #005596;

@@ -1,0 +1,99 @@
+/*Rooms section*/
+
+.buscador {
+  margin: 9rem 1rem 1rem 32%;
+  height: 35px;
+  border-radius: 25px;
+  text-align: center;
+}
+.btnBuscar {
+  width: 11rem;
+  height: 2rem;
+  text-align: center;
+  border: none;
+  background-color: #005596;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+.btnDescripcion {
+  width: 17rem;
+  height: 2rem;
+  text-align: center;
+  border: none;
+  background-color: #005596;
+  color: #f2f2f2;
+  cursor: pointer;
+  margin-left: 10%;
+  margin-top: 2rem;
+  height: 2.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.dataUser h2 {
+  margin-left: 10%;
+  margin-top: 0;
+  padding-top: 10rem;
+}
+
+.rooms {
+  margin-left: 10%;
+}
+
+.rooms div {
+  display: inline-block;
+}
+
+.roomsTable {
+  border-collapse: separate;
+  border: black 1px solid;
+  background-color: lightgray;
+  margin-bottom: 6rem;
+}
+
+.roomsTable th {
+  width: 8rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  border-bottom-style: double;
+}
+
+.roomsTable th:last-child {
+  width: 3rem;
+  border-bottom-style: none;
+}
+
+.roomsTable td {
+  padding-top: 1rem;
+  text-align: center;
+}
+.rooms div:last-child {
+  margin-left: 3rem;
+  vertical-align: top;
+}
+
+.btnEditar {
+  background-color: #005596;
+  color: #f2f2f2;
+  border: none;
+  width: 12rem;
+  height: 2.5rem;
+  margin-left: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.rooms div:last-child select {
+  margin-top: 3rem;
+  height: 2rem;
+  width: 12rem;
+  text-align: center;
+}
+
+.rooms h4 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: lighter;
+}
