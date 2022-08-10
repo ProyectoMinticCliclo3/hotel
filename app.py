@@ -65,9 +65,9 @@ def booking():
     return render_template("reservas.html", review_entries=entries_with_date)
 
 
-@ app.route('/user/<name>')
-def user(name):
-    return render_template("users.html", name=name)
+@ app.route('/user/')
+def user():
+    return render_template("users.html")
 
 
 @ app.route('/admin/')
@@ -105,5 +105,8 @@ def register():
     return render_template("registro.html")
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 # if __name__ == '__main__':
 #     app.run(port=4995)
