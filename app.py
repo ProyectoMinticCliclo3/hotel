@@ -1,6 +1,9 @@
-import datetime
 
-from flask import Flask, render_template, request, redirect, url_for
+import datetime
+import sqlite3
+import db.scripts as scripts
+
+from flask import Flask, jsonify, render_template, request, redirect, url_for
 
 
 app = Flask(__name__, static_url_path='/static')
@@ -77,12 +80,78 @@ def admins_home():
 
 @ app.route('/admin-users/')
 def admin_users():
-    return render_template("gestionUsuarios.html")
+    usuarios = scripts.obtener_usuario_tabla(1)
+    comentarios = scripts.obtener_comentarios_tabla()
+    return render_template("gestionUsuarios.html", usuarios=usuarios, comentarios=comentarios)
+    
+   
+# Edición de usuario cliente
+@ app.route('/eliminarReviewAdmin/<int:id>', methods=['POST', 'GET'])
+def editReviewAdmin(id):
+    if request.method == 'GET':
+        comentario = scripts.obtener_comentario_admin_id(id)
+        return render_template('eliminarReviewAdmin.html', comentario=comentario)
+    else:
+        comentario=request.form.to_dict(flat=True)
+        if request.form['gestion_comentario_admin'] == 'Eliminar Comentario':
+            scripts.eliminar_comentario_admin_id(id)
+        return redirect('/admin-users')
+
+
+
+# Edición de usuario cliente
+@ app.route('/editarUser/<int:id>', methods=['POST', 'GET'])
+def editUser(id):
+    if request.method == 'GET':
+        usuario = scripts.obtener_usuario_id(id)
+        return render_template('editarUser.html', usuario=usuario)
+    else:
+        usuario=request.form.to_dict(flat=True)
+        if request.form['gestion_usuario'] == 'Editar Usuario':
+            # usuario=request.form.to_dict(flat=True)
+            scripts.editar_usuario(id, usuario)
+        elif request.form['gestion_usuario'] == 'Eliminar Usuario':
+            # usuario=request.form.to_dict(flat=True)
+            scripts.eliminar_usuario(id)
+        return redirect('/admin-users')
 
 
 @ app.route('/admin-admins/')
 def admin_admins():
-    return render_template("gestionAdministradores.html")
+    usuarios = scripts.obtener_usuario_tabla(2)
+    return render_template("gestionAdministradores.html", usuarios=usuarios)
+
+# Creacion de usuario administrador
+@ app.route('/addAdmin', methods=['POST'])
+def addAdmin():
+    if request.form['gestion_admin'] == 'Crear Admin':
+        usuario=request.form.to_dict(flat=True)
+        scripts.insertar_usuario(usuario)
+        # return jsonify(usuario)
+    return redirect('/admin-admins')
+    
+
+# Edición de usuario administrador
+@ app.route('/editarAdmin/<int:id>', methods=['POST', 'GET'])
+def editAdmin(id):
+    if request.method == 'GET':
+        usuario = scripts.obtener_usuario_id(id)
+        return render_template('editarAdmin.html', usuario=usuario)
+    else:
+        usuario=request.form.to_dict(flat=True)
+        if request.form['gestion_usuario'] == 'Editar Admin':
+            # usuario=request.form.to_dict(flat=True)
+            scripts.editar_usuario(id, usuario)
+        elif request.form['gestion_usuario'] == 'Eliminar Admin':
+            # usuario=request.form.to_dict(flat=True)
+            scripts.eliminar_usuario(id)
+        return redirect('/admin-admins')
+        
+    # if request.form['gestion_admin'] == 'Editar Admin':
+    #     usuario=request.form.to_dict(flat=True)
+    #     scripts.insertar_usuario(usuario)
+        # return jsonify(usuario)
+    # return redirect('/admin-admins')
 
 
 @ app.route('/contact/')
@@ -110,3 +179,5 @@ def page_not_found(e):
     return render_template('404.html'), 404
 # if __name__ == '__main__':
 #     app.run(port=4995)
+
+

@@ -5,6 +5,15 @@
 //     modal.style.display = "none";
 //   }
 // };
+// <<<<<<< HEAD:js/sidebar.js
+// var modal = document.querySelector(".modal");
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display =  "none";
+//   }
+// };
+// =======
+// >>>>>>> 43c8b59d6c7b60d623183800d8f3d8f54193d3c8:static/js/modal.js
 
 // var modal = document.getElementById("modal-id02");
 // window.onclick = function (event) {

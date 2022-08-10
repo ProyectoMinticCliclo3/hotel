@@ -1,4 +1,4 @@
-.buscador {
+/* .buscador {
   margin-top: 9rem;
   margin-left: 42%;
   margin-bottom: 1rem;
@@ -15,9 +15,9 @@
   background-color: #005596;
   color: #f2f2f2;
   cursor: pointer;
-}
+} */
 
-.dataUser input:nth-child(1) {
+/* .dataUser input:nth-child(1) {
   margin-left: 30%;
   margin-bottom: 1rem;
   width: 300px;
@@ -32,19 +32,81 @@
   background-color: #005596;
   color: #f2f2f2;
   cursor: pointer;
+} */
+.dataUser{
+  padding-top: 9rem;
 }
 
-.dataUser h2 {
-  margin-left: 10%;
-  margin-top: 0;
-  padding-top: 10rem;
+h2 {
+  margin: 0 0 2rem 10%;
 }
-.inputs_dataUser {
+
+.table_reviews,
+.table_users {
+  margin-left: 10%;
+  border-collapse: separate;
+  border: black 1px solid;
+  background-color: lightgray;
+  margin-bottom: 0.4rem;
+}
+
+.table_reviews th:nth-child(1),
+.table_users th:nth-child(1) {
+  width:auto;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.table_reviews th,
+.table_users th {
+  width:auto;
+  min-width: 1rem;
+  padding: 0 2rem 1rem 2rem;
+  text-align: center;
+  border-bottom-style: double;
+}
+
+.table_reviews td,
+.table_users td {
+  padding: 0.5rem;
+  text-align: center;
+  vertical-align: center;
+}
+
+.dataUser form {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto 3rem 10%;
+}
+
+.dataUser label {
+  width: 16rem;
+  /* display: flex;
+  flex-direction: column; */
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+
+.input_user {
+  width: 20rem;
+  height: 1.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+}
+/* #cancel_user, */
+.inputs_review input[type="submit"] {
+  display: inline-block;
+  width: 12rem;
+  height: 1.5rem;
+  margin: 1.5rem 1.5rem 1rem 1.5rem;
+
+}
+/* .inputs_dataUser {
   margin-left: 20%;
   padding: 1rem;
-}
+} */
 
-.inputs_dataUser label {
+/* .inputs_dataUser label {
   width: 12rem;
   display: inline-block;
   margin-right: 1rem;
@@ -60,9 +122,9 @@
 }
 .inputs_dataUser input:nth-of-type(+ n + 5) {
   width: 15rem;
-}
+} */
 
-.btnGuardar {
+/* .btnGuardar {
   background-color: #005596;
   color: #f2f2f2;
   border: none;
@@ -73,9 +135,10 @@
   font-size: 1rem;
   margin-top: 1.5rem;
   margin-bottom: 6rem;
-}
+} */
 
 .reserves h2 {
+  margin-top: 5rem;
   margin-left: 10%;
 }
 
@@ -113,18 +176,18 @@
 }
 
 /*Sección de Comentarios*/
-.reviews {
+/* .reviews {
   margin-left: 10%;
   margin-bottom: 10rem;
 }
 .reviews h2 {
   margin-top: 5rem;
-}
+} */
 /* .reviews div{
     display:inline-block;
   } */
 
-.reviewsTable {
+/* .reviewsTable {
   border-collapse: separate;
   border: black 1px solid;
   background-color: lightgray;
@@ -175,9 +238,65 @@
   height: 2.5rem;
   font-weight: bold;
   font-size: 1rem;
-}
+} */
 
 /* .reviews h4{
     text-align: center;
     font-weight: lighter;
   } */
+
+  .btnEditar {
+    background-color: rgb(131, 176, 42);
+    color: #f2f2f2;
+    border: none;
+    width: 3.5rem;
+    height: 1.5rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    padding:0.25rem;
+    /* border-radius: 50%; */
+    /* font-size: 1rem; */
+  }
+  .btnEliminar {
+    background-color: rgb(191, 12, 12);
+    color: #f2f2f2;
+    border: none;
+    border-radius: 50%;
+    height: 1.5rem;
+    font-weight: bold;
+    padding:0.25rem;
+    /* font-size: 1rem; */
+  }
+  
+  .eliminar_review {
+    padding-top: 9rem;
+  }
+
+  .eliminar_review form{
+    display: flex;
+    flex-direction: column;
+    margin: auto auto 3rem 10%;
+  }
+
+  .eliminar_review label {
+    width: 16rem;
+    /* display: flex;
+    flex-direction: column; */
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+  
+  .input_review {
+    text-align: center;
+    width: 10rem;
+    height: 1.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+  }
+  
+  textarea{
+    resize:none;
+    width: 30rem;
+    height: 10rem;
+    /* max-block-size: 5rem; */
+  }

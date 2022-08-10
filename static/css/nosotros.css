@@ -1,0 +1,86 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 6rem;
+}
+
+.information h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+}
+
+.text p {
+    text-align: center;
+    margin: 1rem;
+    margin-left: 5rem;
+    margin-right: 3rem;
+    padding-left: 3rem;
+}
+
+.booking-principal {
+    display: flex;
+    flex-direction: row;
+    background-color: #005596;
+    margin-top: 4rem;
+}
+
+.booking {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.booking h3 {
+    text-align: center;
+    color: #f8f8f2;
+    margin-bottom: 0.3rem;
+}
+
+.booking form {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.booking form label {
+    color: #f8f8f2;
+}
+
+.booking form input {
+    border-radius: 0.5rem;
+    border-color: #f8f8f2;
+}
+
+.little-input {
+    width: 2rem;
+}
+
+.booking form span {
+    border-color: #f8f8f2;
+    color: #f8f8f2;
+    margin-top: 0.2rem;
+}
+
+.btn-booking {
+    background-color: #005596;
+    color: #f8f8f2;
+    padding: 0.3rem;
+}
+
+/* .btn-share {
+      background-color: #005596;
+      color: #f8f8f2;
+      padding: 0.3rem;
+      border-radius: 0.5rem;
+      border-color: #f8f8f2;
+      margin-top: 1.7rem;
+      margin-right: 0.5rem;
+    } */
