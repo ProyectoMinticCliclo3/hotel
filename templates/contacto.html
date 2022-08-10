@@ -1,15 +1,16 @@
-{% extends "base.html" %} {% block head %}
+{% extends "base.html" %} 
+
+{% block head %}
+
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/> -->
+
 <link
   rel="stylesheet"
   type="text/css"
-  href="{{ url_for('static', filename='css/base.css') }}"
-/>
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename='css/contacto.css') }}"
-/>
-{% endblock %} {% block content %}
+  href="{{ url_for('static', filename='css/contacto.css') }}"/>
+{% endblock %}
+
+{% block content %}
 
 <!-- MODAL MESSAGE SENDED -->
 <div id="modal-id02" class="modal">
@@ -67,27 +68,27 @@
   <div class="base-main">
     <!-- AREA PRINCIPAL -->
     <section class="dataUser">
-      <h2>Contáctanos</h2>
       <!-- search bar right align -->
-      <form class="form" action="/entry" method="POST" class="inputs_dataUser">
+      <form class="form" action="/entry" method="POST" >
+        <h2>Contáctanos</h2>
         <p>
           <label for="correo">Correo</label>
           <input type="email" name="correo" id="correo" />
         </p>
         <p>
           <label for="nombre">Nombre</label>
-          <input type="email" name="nombre" id="nombre" />
+          <input type="text" name="nombre" id="nombre" />
         </p>
         <p>
           <label for="apellido">Apellido</label>
-          <input type="email" name="apellido" id="apellido" />
+          <input type="text" name="apellido" id="apellido" />
         </p>
         <!-- <label for="fechaNacimiento">Fecha de Nacimiento</label>
           <input type="date" name="fechaNacimiento" id="fechaNacimiento">
           <br> -->
         <p>
           <label for="asunto">Asunto</label>
-          <input type="email" name="asunto" id="asunto" />
+          <input type="text" name="asunto" id="asunto" />
         </p>
         <p>
           <label for="mensaje">Mensaje</label>
@@ -119,10 +120,5 @@
     </section>
   </div>
 </main>
-<script>
-  function seleccionar(tr, value) {
-    this.chk1.click();
-  }
-</script>
 
 {% endblock %}

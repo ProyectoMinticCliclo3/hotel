@@ -1,14 +1,5 @@
 {% extends "base.html" %} {% block head %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename='css/base.css') }}"
-/>
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename='css/gestionUsuarios.css') }}"
-/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gestionUsuarios.css') }}" />
 {% endblock %} {% block content %}
 <!-- MODAL EDIT REVIEW -->
 <div id="modal-id02" class="modal">
@@ -24,13 +15,7 @@
       <input type="date" class="campo-modal" disabled />
 
       <label><b>Comentario</b></label>
-      <textarea
-        class="campo-modal"
-        placeholder="Comentario"
-        maxlength="630"
-        cols="30"
-        rows="10"
-      ></textarea>
+      <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10"></textarea>
       <!-- <input type="text" placeholder="Comentario" /> -->
 
       <!-- <input type="checkbox" checked="checked" /> Recordarme -->
@@ -40,24 +25,13 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img
-            src="img/svg/fa/check-solid.svg"
-            alt="icono logout"
-            height="30"
-          />
+          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
       <div>
-        <button
-          type="button"
-          onclick="document.getElementById('modal-id02').style.display='none'"
-          class="modal-cancelbtn"
-        >
-          Cancelar<img
-            src="img/svg/fa/xmark-solid.svg"
-            alt="icono logout"
-            height="30"
-          />
+        <button type="button" onclick="document.getElementById('modal-id02').style.display='none'"
+          class="modal-cancelbtn">
+          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
     </div>
@@ -81,14 +55,7 @@
       <input type="date" class="campo-modal" disabled />
 
       <label><b>Comentario</b></label>
-      <textarea
-        class="campo-modal"
-        placeholder="Comentario"
-        maxlength="630"
-        cols="30"
-        rows="10"
-        disabled
-      ></textarea>
+      <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10" disabled></textarea>
       <!-- <input type="text" placeholder="Comentario" /> -->
 
       <!-- <input type="checkbox" checked="checked" /> Recordarme -->
@@ -98,24 +65,13 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img
-            src="img/svg/fa/check-solid.svg"
-            alt="icono logout"
-            height="30"
-          />
+          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
       <div>
-        <button
-          type="button"
-          onclick="document.getElementById('modal-id03').style.display='none'"
-          class="modal-cancelbtn"
-        >
-          Cancelar<img
-            src="img/svg/fa/xmark-solid.svg"
-            alt="icono logout"
-            height="30"
-          />
+        <button type="button" onclick="document.getElementById('modal-id03').style.display='none'"
+          class="modal-cancelbtn">
+          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
     </div>
@@ -152,24 +108,13 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img
-            src="img/svg/fa/check-solid.svg"
-            alt="icono logout"
-            height="30"
-          />
+          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
       <div>
-        <button
-          type="button"
-          onclick="document.getElementById('modal-id04').style.display='none'"
-          class="modal-cancelbtn"
-        >
-          Cancelar<img
-            src="img/svg/fa/xmark-solid.svg"
-            alt="icono logout"
-            height="30"
-          />
+        <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
+          class="modal-cancelbtn">
+          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
     </div>
@@ -183,25 +128,102 @@
   <!-- SECCION PRINCIPAL -->
   <div class="base-main">
     <!-- AREA PRINCIPAL -->
+
     <section class="dataUser">
+      <h2>Gestion de Usuarios</h2>
+      <!-- <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button>
+      <div class="form_dataUser" id="form_dataUser">
+        <h4>Crear nuevo Usuario</h4>
+        <form action="/addAdmin" class="inputs_dataUser" method="post">
+          <label for="cedula">Cédula</label>
+          <input type="text" class="input_user" name="Cedula" id="cedula" placeholder="Cédula" />
+
+          <label for="nombre">Nombre</label>
+          <input type="text" class="input_user" name="Nombre" id="nombre" placeholder="Nombre" />
+
+          <label for="apellido">Apellido</label>
+          <input type="text" class="input_user" name="Apellidos" id="apellido" placeholder="Apellido" />
+
+          <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" />
+
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" class="input_user" name="Correo" id="correo" placeholder="Correo" />
+
+          <label for="celular">Celular</label>
+          <input type="phone" class="input_user" name="Celular" id="celular" placeholder="Celular" />
+
+          <label for="tipoUsuario">Tipo de Usuario</label>
+          <input type="text" class="input_user" name="TipoUsuario" id="TipoUsuario" placeholder="Tipo de Usuario" />
+          
+          <label for="celular">Contraseña</label>
+          <input type="text" class="input_user" name="Contrasena" id="Contrasena" placeholder="Contraseña" />
+
+
+          <div>
+            <input type="submit" name="gestion_admin" value="Crear Admin">
+            <input type="submit" name="gestion_admin" id="cancel_user" value="Cancelar Admin">
+          </div>
+        </form>
+
+      </div> -->
+      <table class="table_users" id="table_users">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Celular</th>
+            <th>Editar/Eliminar</th>
+            <!-- <th>
+                All<input type="checkbox" name="check[]" value="0" id="chk0" />
+              </th> -->
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for i in range(usuarios|length) %}
+
+          <tr>
+            <!-- <tbody style="cursor: pointer">
+            <tr onclick="seleccionar(this,1)"> -->
+            <td>{{ usuarios[i][0] }}</td>
+            <td>{{ usuarios[i][1] }}</td>
+            <td>{{ usuarios[i][2] }}</td>
+            <td>{{ usuarios[i][3] }}</td>
+            <td>{{ usuarios[i][6] }}</td>
+            <td>
+              <a href="/editarUser/{{usuarios[i][0]}}" class="btnEditar" id="btnEditarUser">Editar</a>
+              <!-- <a href="/eliminarAdmin/{{usuarios[i][0]}}" class="btnEliminar">Eliminar</a> -->
+            </td>
+            <!-- <td onclick="seleccionar(this,1)">
+                <input type="checkbox" name="check[]" value="1" id="chk1" />
+              </td> -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+      <!-- <input class="btnGuardar" type="submit" name="botonGuardar" value="Guardar"
+        onclick="document.getElementById('modal-id04').style.display='block'" data-open="modal-id04" /> -->
+    </section>
+
+    <!-- <section class="dataUser">
       <h2>Datos del Usuario</h2>
-      <input
-        class="buscador"
-        type="email"
-        placeholder="Buscar por cédula"
-        name="searchUser"
-      />
-      <button class="btnBuscar">Buscar Usuario</button>
-      <!-- search bar right align -->
-      <form action="#" class="inputs_dataUser">
+      <input class="buscador" type="email" placeholder="Buscar por cédula" name="searchUser" />
+      <button class="btnBuscar">Buscar Usuario</button> -->
+    <!-- search bar right align -->
+    <!-- <form action="#" class="inputs_dataUser">
         <label for="cedula">Cédula</label>
-        <input type="email" name="cedula" id="cedula" />
+        <input type="text" name="cedula" id="cedula" />
         <br />
         <label for="nombre">Nombre</label>
-        <input type="email" name="nombre" id="nombre" />
+        <input type="text" name="nombre" id="nombre" />
         <br />
         <label for="apellido">Apellido</label>
-        <input type="email" name="apellido" id="apellido" />
+        <input type="text" name="apellido" id="apellido" />
         <br />
         <label for="fechaNacimiento">Fecha de Nacimiento</label>
         <input type="date" name="fechaNacimiento" id="fechaNacimiento" />
@@ -212,15 +234,9 @@
         <label for="celular">Celular</label>
         <input type="phone" name="celular" id="celular" />
       </form>
-      <input
-        class="btnGuardar"
-        type="submit"
-        name="botonGuardar"
-        value="Guardar"
-        onclick="document.getElementById('modal-id04').style.display='block'"
-        data-open="modal-id04"
-      />
-    </section>
+      <input class="btnGuardar" type="submit" name="botonGuardar" value="Guardar"
+        onclick="document.getElementById('modal-id04').style.display='block'" data-open="modal-id04" />
+    </section> -->
     <!-- LISTA RESERVAS -->
     <div class="reserves">
       <h2>Listado de Reservas</h2>
@@ -247,55 +263,57 @@
           </tr>
         </tbody>
       </table>
-      <section>
-        <input
-          class="btnEditar"
-          type="submit"
-          name="botonEditar"
-          value="Editar Reserva"
-        />
+      <!-- <section>
+        <input class="btnEditar" type="submit" name="botonEditar" value="Editar Reserva" />
         <h4>
           <strong><a href="#">Borrar Reserva</a></strong>
         </h4>
-      </section>
+      </section> -->
     </div>
     <!-- LISTA COMENTARIOS -->
     <div class="reviews">
       <h2>Comentarios Realizados</h2>
       <div>
-        <table class="reviewsTable">
+        <table class="table_reviews" id="table_reviews">
           <thead>
             <tr>
-              <th>ID</th>
+              <th>Id</th>
+              <th>Id Usuario</th>
               <th>Fecha</th>
               <th>Comentario</th>
-              <th>
-                All<input type="checkbox" name="check[]" value="0" id="chk0" />
-              </th>
+              <th>Editar/Eliminar</th>
+              <!-- <th>
+                  All<input type="checkbox" name="check[]" value="0" id="chk0" />
+                </th> -->
             </tr>
           </thead>
-          <tbody style="cursor: pointer">
-            <tr onclick="seleccionar(this,1)">
-              <td>DFG555</td>
-              <td>24/07/2022</td>
-              <td>El hotel es increíble, totalmente recomendado</td>
-              <td onclick="seleccionar(this,1)">
-                <input type="checkbox" name="check[]" value="1" id="chk1" />
+          <tbody>
+
+            {% for i in range(comentarios|length) %}
+
+            <tr>
+              <!-- <tbody style="cursor: pointer">
+              <tr onclick="seleccionar(this,1)"> -->
+              <td>{{ comentarios[i][0] }}</td>
+              <td>{{ comentarios[i][1] }}</td>
+              <td>{{ comentarios[i][2] }}</td>
+              <td>{{ comentarios[i][3] }}</td>
+              <td>
+                <!-- <a href="/editarReview/{{comentarios[i][0]}}" class="btnEditar" id="btnEditarComentario">Editar</a> -->
+                <a href="/eliminarReviewAdmin/{{comentarios[i][0]}}" class="btnEliminar">Eliminar</a>
               </td>
+              <!-- <td onclick="seleccionar(this,1)">
+                  <input type="checkbox" name="check[]" value="1" id="chk1" />
+                </td> -->
             </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
       <div>
         <!-- <input class="btnEditar" type="submit" name="botonEditar" value="Editar Comentario" /> -->
-        <input
-          class="btnEliminar"
-          type="submit"
-          name="botonEliminar"
-          value="Eliminar Comentario"
-          onclick="document.getElementById('modal-id03').style.display='block'"
-          data-open="modal-id03"
-        />
+        <!-- <input class="btnEliminar" type="submit" name="botonEliminar" value="Eliminar Comentario"
+          onclick="document.getElementById('modal-id03').style.display='block'" data-open="modal-id03" /> -->
         <!-- <h4><strong><a href="#">Borrar Comentario</a></strong></h4> -->
       </div>
     </div>

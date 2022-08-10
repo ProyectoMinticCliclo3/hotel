@@ -55,91 +55,52 @@
     <div class="base-main">
       <!-- AREA PRINCIPAL -->
       <section class="dataUser">
-        <h2>Datos del Administrador</h2>
-        <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button>
-        <div class="form_dataUser" id="form_dataUser">
-          <h4>Crear Nuevo Administrador</h4>
+        <h2>Editar Administrador</h2>
+        <!-- <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button> -->
+        <div class="" id="">
+          <!-- <h4>Editar Administrador</h4> -->
 
-          <form action="/addAdmin" class="inputs_dataUser" method="post">
+          <form action="/editarAdmin/{{ usuario[0] }}" class="inputs_dataUser" method="post">
             <label for="cedula">Cédula</label>
-            <input type="text" class="input_user" name="Cedula" id="cedula" placeholder="Cédula" />
+            <input type="text" class="input_user" name="Cedula" id="cedula" value="{{ usuario[1] }}" >
 
             <label for="nombre">Nombre</label>
-            <input type="text" class="input_user" name="Nombre" id="nombre" placeholder="Nombre" />
+            <input type="text" class="input_user" name="Nombre" id="nombre" value="{{ usuario[2] }}" >
 
             <label for="apellido">Apellido</label>
-            <input type="text" class="input_user" name="Apellidos" id="apellido" placeholder="Apellido" />
+            <input type="text" class="input_user" name="Apellidos" id="apellido" value="{{ usuario[3] }}" >
 
             <label for="fechaNacimiento">Fecha de Nacimiento</label>
-            <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" />
+            <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" value={{ usuario[4] }}>
 
             <label for="correo">Correo Electrónico</label>
-            <input type="email" class="input_user" name="Correo" id="correo" placeholder="Correo" />
+            <input type="email" class="input_user" name="Correo" id="correo" value={{ usuario[5] }} >
 
             <label for="celular">Celular</label>
-            <input type="phone" class="input_user" name="Celular" id="celular" placeholder="Celular" />
+            <input type="phone" class="input_user" name="Celular" id="celular" value={{ usuario[6] }} >
             
             <label for="tipoUsuario">Tipo de Usuario</label>
-            <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value="2" readonly/>
+            <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value={{ usuario[7] }} readonly/>
             
             <!-- <label for="anteriorContrasena">Anterior Contraseña</label>
             <input type="password" class="input_user" name="Anterior_Contrasena" id="anteriorContrasena" placeholder="Anterior Contraseña" /> -->
             
             <label for="nuevaContrasena">Nueva Contraseña</label>
-            <input type="password" class="input_user" name="Nueva_Contrasena" id="nuevaContrasena" placeholder="Nueva Contraseña" />
+            <input type="password" class="input_user" name="Nueva_Contrasena" id="nuevaContrasena" value={{ usuario[8] }} />
             
             <!-- <label for="confirmarContrasena">Contraseña</label>
             <input type="password" class="input_user" name="Confirmar_Contrasena" id="confirmarContrasena" placeholder="Confirmar Contraseña" /> -->
-           
+            
             <div>
-              <input type="submit" name="gestion_admin" value="Crear Admin">
-              <input type="submit" name="gestion_admin" id="cancel_user" value="Cancelar Admin">
+              <input type="submit" name="gestion_usuario" value="Editar Admin">
+              <input type="submit" name="gestion_usuario" value="Eliminar Admin">
+              <input type="submit" name="gestion_usuario" id="cancel_user" value="Cancelar">
             </div>
           </form>
 
         </div>
-        <table class="table_admins" id="table_admins">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Cédula</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Celular</th>
-              <th>Editar/Eliminar</th>
-              <!-- <th>
-                  All<input type="checkbox" name="check[]" value="0" id="chk0" />
-                </th> -->
-            </tr>
-          </thead>
-          <tbody>
 
-          {% for i in range(usuarios|length) %}
-
-            <tr>
-              <!-- <tbody style="cursor: pointer">
-              <tr onclick="seleccionar(this,1)"> -->
-              <td>{{ usuarios[i][0] }}</td>
-              <td>{{ usuarios[i][1] }}</td>
-              <td>{{ usuarios[i][2] }}</td>
-              <td>{{ usuarios[i][3] }}</td>
-              <td>{{ usuarios[i][6] }}</td>
-              <td>
-                <a href="/editarAdmin/{{usuarios[i][0]}}" class="btnEditar" id="btnEditarAdmin">Editar</a>
-                <!-- <a href="/eliminarAdmin/{{usuarios[i][0]}}" class="btnEliminar">Eliminar</a> -->
-              </td>
-              <!-- <td onclick="seleccionar(this,1)">
-                  <input type="checkbox" name="check[]" value="1" id="chk1" />
-                </td> -->
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-
-
-        <!-- <input class="btnGuardar" type="submit" name="botonGuardar" value="Guardar"
-          onclick="document.getElementById('modal-id04').style.display='block'" data-open="modal-id04" /> -->
-      </section>
+       </section>
     </div>
   </div>
 </main>
