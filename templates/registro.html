@@ -2,14 +2,81 @@
 <link
   rel="stylesheet"
   type="text/css"
-  href="{{ url_for('static', filename='css/base.css') }}"
-/>
-<link
-  rel="stylesheet"
-  type="text/css"
   href="{{ url_for('static', filename='css/registro.css') }}"
 />
 {% endblock %} {% block content %}
-<h2>Registro</h2>
-<a href={{ url_for("home") }}>Home</a>
+
+<main id="main">
+  <div class="base-main">
+    <!-- AREA PRINCIPAL -->
+    <section class="dataUser">
+      <form class="form" action="/registerNew" method="POST">
+        <h2>Registro de Usuario</h2>
+        <p>
+          <label class="texto" for="cedula">Cédula</label>
+          <input type="text" name="Cedula" id="cedula" />
+        </p>
+        <p>
+          <label class="texto" for="nombre">Nombre</label>
+          <input type="text" name="Nombre" id="nombre" />
+        </p>
+        <p>
+          <label class="texto" for="apellido">Apellidos</label>
+          <input type="text" name="Apellidos" id="apellido" />
+        </p>
+        <p>
+          <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          <input type="date" name="Fecha_Nacimiento" id="fechaNacimiento" />
+        </p>
+        <p>
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" name="Correo" id="correo" />
+        </p>
+        <p>
+          <label for="celular">Celular</label>
+          <input type="phone" name="Celular" id="celular" />
+        </p>
+        <p>
+          <label for="tipoUsuario">Tipo de Usuario</label>
+          <input
+            type="text"
+            class="input_user"
+            name="Tipo_Usuario"
+            id="tipoUsuario"
+            value="1"
+            readonly
+          />
+        </p>
+        <p>
+          <label for="pw">Contraseña</label>
+          <input
+            type="password"
+            name="Nueva_Contrasena"
+            id="nuevaContrasena"
+            placeholder="Nueva Contraseña"
+          />
+        </p>
+        <p>
+          <label for="pw-validar">Confirmar Contraseña</label>
+          <input
+            type="password"
+            name="Nueva_Contrasena_Validar"
+            id="validarNuevaContrasena"
+          />
+        </p>
+
+        <p>
+          <input
+            class="btnConfirm"
+            type="submit"
+            name="botonConfirm"
+            value="Confirmar"
+            onclick="document.getElementById('modal-id04').style.display='block'"
+            data-open="modal-id04"
+          />
+        </p>
+      </form>
+    </section>
+  </div>
+</main>
 {% endblock %}

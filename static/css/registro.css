@@ -1,0 +1,38 @@
+.dataUser form {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto auto 20%;
+}
+.dataUser h2 {
+  margin-top: 10rem;
+  margin-bottom: 1rem;
+}
+.dataUser label {
+  width: 8rem;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.dataUser input {
+  width: 24rem;
+  height: 2rem;
+}
+.dataUser .btnConfirm {
+  background-color: #005596;
+  color: #f2f2f2;
+  border: none;
+  width: 8rem;
+  height: 2.5rem;
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 6rem;
+  cursor: pointer;
+}
+
+/* main .base-main .inputs_dataUser {
+  margin-left: 20%;
+  padding: 1rem;
+} */
