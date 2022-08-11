@@ -1,13 +1,9 @@
 {% extends "base.html" %} {% block head %}
+
 <link
   rel="stylesheet"
   type="text/css"
-  href="{{ url_for('static', filename='css/base.css') }}"
-/>
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename='css/homeAdmin.css') }}"
+  href="{{ url_for('static', filename='css/gestionHabitaciones.css') }}"
 />
 {% endblock %} {% block content %}
 <!-- MODAL DESCRIPTION AND VALUE EDITION -->
@@ -285,15 +281,15 @@
   </form>
 </div>
 <!-- END MODAL DELETE ROOMS -->
-<main class="container">
+<main id="container">
   <!-- SECCION PRINCIPAL -->
   <div id="main">
     <div class="base-main">
       <!-- AREA PRINCIPAL -->
       <section class="dataUser">
-        <h2>Gestión Administradores</h2>
+        <h2>Gestión Habitaciones</h2>
         <!-- LISTA HABITACIONES -->
-        <input
+        <!-- <input
           class="buscador"
           type="email"
           placeholder="Buscar por ID"
@@ -308,79 +304,36 @@
         >
           Editar Descripción y Valor
         </button>
-        <h2>Habitaciones</h2>
+        <h2>Habitaciones</h2> -->
         <!-- <input class="btnEditar" type="submit" name="botonEditar" value="Editar Descripción y Valor" /> -->
+
         <div class="rooms">
           <div>
             <table class="roomsTable">
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Estado</th>
-                  <th>Ult.Ocup.</th>
-                  <th>Tipo</th>
-                  <th>$(USD)</th>
-                  <th>
-                    All<input
-                      type="checkbox"
-                      name="check[]"
-                      value="0"
-                      id="chk0"
-                    />
-                  </th>
+                  <th>Capacidad</th>
+                  <th>Precio</th>
+                  <th>Gestionar</th>
                 </tr>
               </thead>
               <tbody style="cursor: pointer">
-                <tr onclick="seleccionar(this,1)">
-                  <td>HE-1</td>
-                  <td>Desocupada</td>
-                  <td>24/07/2022</td>
-                  <td>Estándar</td>
-                  <td>$400</td>
-                  <td onclick="seleccionar(this,1)">
-                    <input type="checkbox" name="check[]" value="1" id="chk1" />
+                {% for i in range(habitaciones|length) %}
+                <tr>
+                  <td>{{ habitaciones[i][0] }}</td>
+                  <td>{{ habitaciones[i][1] }}</td>
+                  <td>{{ habitaciones[i][2] }}</td>
+                  <td>
+                    <a
+                      href="/eliminarRoom/{{habitaciones[i][0]}}"
+                      class="btnEliminar"
+                      id="btnEliminarRoom"
+                      >Eliminar</a
+                    >
                   </td>
                 </tr>
-                <tr onclick="seleccionar(this,2)">
-                  <td>HE-2</td>
-                  <td>Desocupada</td>
-                  <td>02/07/2022</td>
-                  <td>Estándar</td>
-                  <td>$400</td>
-                  <td onclick="seleccionar(this,2)">
-                    <input type="checkbox" name="check[]" value="2" id="chk2" />
-                  </td>
-                </tr>
-                <tr onclick="seleccionar(this,3)">
-                  <td>HE-3</td>
-                  <td>Desocupada</td>
-                  <td>25/07/2022</td>
-                  <td>Estándar</td>
-                  <td>$400</td>
-                  <td onclick="seleccionar(this,3)">
-                    <input type="checkbox" name="check[]" value="3" id="chk3" />
-                  </td>
-                </tr>
-                <tr onclick="seleccionar(this,4)">
-                  <td>HE-4</td>
-                  <td>Desocupada</td>
-                  <td>18/07/2022</td>
-                  <td>Estándar</td>
-                  <td>$400</td>
-                  <td onclick="seleccionar(this,4)">
-                    <input type="checkbox" name="check[]" value="4" id="chk4" />
-                  </td>
-                </tr>
-                <tr onclick="seleccionar(this,5)">
-                  <td>HE-5</td>
-                  <td>Desocupada</td>
-                  <td>29/06/2022</td>
-                  <td>Estándar</td>
-                  <td>$400</td>
-                  <td onclick="seleccionar(this,5)">
-                    <input type="checkbox" name="check[]" value="5" id="chk5" />
-                  </td>
-                </tr>
+                {% endfor %}
               </tbody>
             </table>
           </div>
@@ -393,7 +346,7 @@
               onclick="document.getElementById('modal-id05').style.display='block'"
               data-open="modal-id05"
             />
-            <br />
+            <!-- <br />
             <select name="estado" id="estado">
               <option value="d">Desocupada</option>
               <option value="o">Ocupada</option>
@@ -413,7 +366,7 @@
               value="Guardar Cambios"
               onclick="document.getElementById('modal-id04').style.display='block'"
               data-open="modal-id04"
-            />
+            /> -->
           </div>
         </div>
       </section>

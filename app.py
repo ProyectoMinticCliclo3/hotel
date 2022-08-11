@@ -73,11 +73,6 @@ def user():
     return render_template("users.html")
 
 
-@ app.route('/admin/')
-def admins_home():
-    return render_template("homeadmin.html")
-
-
 @ app.route('/admin-users/')
 def admin_users():
     usuarios = scripts.obtener_usuario_tabla(1)
@@ -169,10 +164,20 @@ def about():
 def rooms():
     return render_template("habitaciones.html")
 
-# @ app.route('/admin-admins/')
-# def admin_admins():
-#     usuarios = scripts.obtener_usuario_tabla(2)
-#     return render_template("gestionAdministradores.html", usuarios=usuarios)
+
+@ app.route('/admin-rooms/')
+def admins_home():
+    habitaciones = scripts.obtener_habitacion_tabla()
+    return render_template("gestionHabitaciones.html", habitaciones=habitaciones)
+
+
+# @ app.route('/addRoom', methods=['POST'])
+# def add_room():
+#     if request.form['gestion_admin'] == 'Crear Admin':
+#         usuario = request.form.to_dict(flat=True)
+#         scripts.insertar_usuario(usuario)
+#         # return jsonify(usuario)
+#     return redirect('/admin-rooms')
 
 
 @app.route('/register')

@@ -1,14 +1,17 @@
 import sqlite3
 
+
 def conexion_bd():
     try:
-        conexion= sqlite3.connect('db/dbHotel.db')
+        conexion = sqlite3.connect('db/dbHotel.db')
         return conexion
     except:
         print('Error de conexion bd')
 
+
 def insertar_usuario(usuario):
-    query = "insert into User (Cedula, Nombre, Apellidos, Fecha_Nacimiento, Correo, Celular, Tipo_Usuario, Contrasena) values ('{}','{}','{}','{}','{}','{}','{}','{}');".format(usuario['Cedula'],usuario['Nombre'],usuario['Apellidos'],usuario['Fecha_Nacimiento'],usuario['Correo'],usuario['Celular'],usuario['Tipo_Usuario'],usuario['Nueva_Contrasena'])
+    query = "insert into User (Cedula, Nombre, Apellidos, Fecha_Nacimiento, Correo, Celular, Tipo_Usuario, Contrasena) values ('{}','{}','{}','{}','{}','{}','{}','{}');".format(
+        usuario['Cedula'], usuario['Nombre'], usuario['Apellidos'], usuario['Fecha_Nacimiento'], usuario['Correo'], usuario['Celular'], usuario['Tipo_Usuario'], usuario['Nueva_Contrasena'])
     # print(query)
     conexion = conexion_bd()
     # print(conexion)
@@ -16,10 +19,13 @@ def insertar_usuario(usuario):
     cursorObj.execute(query)
     conexion.commit()
     conexion.close()
- 
+
 # Funciona para administradores y clientes gracias al parámetro tipo
+
+
 def obtener_usuario_tabla(tipo):
-    query = 'select Id, Cedula, Nombre, Apellidos, Fecha_Nacimiento, Correo, Celular, Tipo_Usuario, Contrasena from User where Tipo_Usuario={};'.format(tipo)
+    query = 'select Id, Cedula, Nombre, Apellidos, Fecha_Nacimiento, Correo, Celular, Tipo_Usuario, Contrasena from User where Tipo_Usuario={};'.format(
+        tipo)
     # print(query)
     conexion = conexion_bd()
     cursorObj = conexion.cursor()
@@ -29,6 +35,7 @@ def obtener_usuario_tabla(tipo):
     conexion.close()
     # print(usuarios)
     return usuarios
+
 
 def obtener_usuario_id(id):
     query = 'select * from User where id={};'.format(id)
@@ -42,8 +49,10 @@ def obtener_usuario_id(id):
     # print(usuarios)
     return usuario
 
+
 def editar_usuario(id, usuario):
-    query = "update User set Cedula='{}', Nombre='{}', Apellidos='{}', Fecha_Nacimiento='{}', Correo='{}', Celular='{}', Tipo_Usuario='{}', Contrasena='{}' where id = {};".format(usuario['Cedula'],usuario['Nombre'],usuario['Apellidos'],usuario['Fecha_Nacimiento'],usuario['Correo'],usuario['Celular'],usuario['Tipo_Usuario'],usuario['Nueva_Contrasena'],id)
+    query = "update User set Cedula='{}', Nombre='{}', Apellidos='{}', Fecha_Nacimiento='{}', Correo='{}', Celular='{}', Tipo_Usuario='{}', Contrasena='{}' where id = {};".format(
+        usuario['Cedula'], usuario['Nombre'], usuario['Apellidos'], usuario['Fecha_Nacimiento'], usuario['Correo'], usuario['Celular'], usuario['Tipo_Usuario'], usuario['Nueva_Contrasena'], id)
     # print(query)
     conexion = conexion_bd()
     cursorObj = conexion.cursor()
@@ -52,7 +61,8 @@ def editar_usuario(id, usuario):
     conexion.close()
     # print(usuarios)
     # return usuarios
-    
+
+
 def eliminar_usuario(id):
     query = "delete from User where id = {};".format(id)
     # print(query)
@@ -75,6 +85,7 @@ def obtener_comentarios_tabla():
     # print(usuarios)
     return comentarios
 
+
 def obtener_comentario_admin_id(id):
     query = 'select * from Reviews where id={};'.format(id)
     # print(query)
@@ -95,3 +106,18 @@ def eliminar_comentario_admin_id(id):
     cursorObj.execute(query)
     conexion.commit()
     conexion.close()
+
+# Funciona para administradores y clientes gracias al parámetro tipo
+
+
+def obtener_habitacion_tabla():
+    query = 'select * from Room;'
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    habitaciones = cursorObj.execute(query)
+    habitaciones = cursorObj.fetchall()
+    conexion.commit()
+    conexion.close()
+    # print(usuarios)
+    return habitaciones
