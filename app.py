@@ -68,9 +68,9 @@ def booking():
     return render_template("reservas.html", review_entries=entries_with_date)
 
 
-@ app.route('/user/<name>')
-def user(name):
-    return render_template("users.html", name=name)
+@ app.route('/user/')
+def user():
+    return render_template("users.html")
 
 
 @ app.route('/admin/')
@@ -83,8 +83,8 @@ def admin_users():
     usuarios = scripts.obtener_usuario_tabla(1)
     comentarios = scripts.obtener_comentarios_tabla()
     return render_template("gestionUsuarios.html", usuarios=usuarios, comentarios=comentarios)
-    
-   
+
+
 # Edición de usuario cliente
 @ app.route('/eliminarReviewAdmin/<int:id>', methods=['POST', 'GET'])
 def editReviewAdmin(id):
@@ -92,11 +92,10 @@ def editReviewAdmin(id):
         comentario = scripts.obtener_comentario_admin_id(id)
         return render_template('eliminarReviewAdmin.html', comentario=comentario)
     else:
-        comentario=request.form.to_dict(flat=True)
+        comentario = request.form.to_dict(flat=True)
         if request.form['gestion_comentario_admin'] == 'Eliminar Comentario':
             scripts.eliminar_comentario_admin_id(id)
         return redirect('/admin-users')
-
 
 
 # Edición de usuario cliente
@@ -106,7 +105,7 @@ def editUser(id):
         usuario = scripts.obtener_usuario_id(id)
         return render_template('editarUser.html', usuario=usuario)
     else:
-        usuario=request.form.to_dict(flat=True)
+        usuario = request.form.to_dict(flat=True)
         if request.form['gestion_usuario'] == 'Editar Usuario':
             # usuario=request.form.to_dict(flat=True)
             scripts.editar_usuario(id, usuario)
@@ -122,14 +121,16 @@ def admin_admins():
     return render_template("gestionAdministradores.html", usuarios=usuarios)
 
 # Creacion de usuario administrador
+
+
 @ app.route('/addAdmin', methods=['POST'])
 def addAdmin():
     if request.form['gestion_admin'] == 'Crear Admin':
-        usuario=request.form.to_dict(flat=True)
+        usuario = request.form.to_dict(flat=True)
         scripts.insertar_usuario(usuario)
         # return jsonify(usuario)
     return redirect('/admin-admins')
-    
+
 
 # Edición de usuario administrador
 @ app.route('/editarAdmin/<int:id>', methods=['POST', 'GET'])
@@ -138,7 +139,7 @@ def editAdmin(id):
         usuario = scripts.obtener_usuario_id(id)
         return render_template('editarAdmin.html', usuario=usuario)
     else:
-        usuario=request.form.to_dict(flat=True)
+        usuario = request.form.to_dict(flat=True)
         if request.form['gestion_usuario'] == 'Editar Admin':
             # usuario=request.form.to_dict(flat=True)
             scripts.editar_usuario(id, usuario)
@@ -146,7 +147,7 @@ def editAdmin(id):
             # usuario=request.form.to_dict(flat=True)
             scripts.eliminar_usuario(id)
         return redirect('/admin-admins')
-        
+
     # if request.form['gestion_admin'] == 'Editar Admin':
     #     usuario=request.form.to_dict(flat=True)
     #     scripts.insertar_usuario(usuario)
@@ -168,13 +169,37 @@ def about():
 def rooms():
     return render_template("habitaciones.html")
 
+# @ app.route('/admin-admins/')
+# def admin_admins():
+#     usuarios = scripts.obtener_usuario_tabla(2)
+#     return render_template("gestionAdministradores.html", usuarios=usuarios)
 
-@ app.route('/register/')
+
+@app.route('/register')
 def register():
-    return render_template("registro.html")
+    usuarios = scripts.obtener_usuario_tabla(2)
+    return render_template("registro.html", usuarios=usuarios)
 
 
+@ app.route('/registerNew', methods=['POST'])
+def register_new():
+    if request.form['botonConfirm'] == 'Confirmar':
+        usuario = request.form.to_dict(flat=True)
+        scripts.insertar_usuario(usuario)
+    return redirect("/booking/")
+
+
+# @ app.route('/addAdmin', methods=['POST'])
+# def addAdmin():
+#     if request.form['gestion_admin'] == 'Crear Admin':
+#         usuario = request.form.to_dict(flat=True)
+#         scripts.insertar_usuario(usuario)
+#         # return jsonify(usuario)
+#     return redirect('/admin-admins')
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 # if __name__ == '__main__':
 #     app.run(port=4995)
-
-
