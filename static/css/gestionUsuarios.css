@@ -50,7 +50,7 @@ h2 {
   margin-bottom: 0.4rem;
 }
 
-.table_reviews th:nth-child(1),
+.table_reviews th:nth-child(-n+2),
 .table_users th:nth-child(1) {
   width:auto;
   padding: 0 1rem 1rem 1rem;
