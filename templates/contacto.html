@@ -1,16 +1,13 @@
-{% extends "base.html" %} 
-
-{% block head %}
+{% extends "base.html" %} {% block head %}
 
 <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/> -->
 
 <link
   rel="stylesheet"
   type="text/css"
-  href="{{ url_for('static', filename='css/contacto.css') }}"/>
-{% endblock %}
-
-{% block content %}
+  href="{{ url_for('static', filename='css/contacto.css') }}"
+/>
+{% endblock %} {% block content %}
 
 <!-- MODAL MESSAGE SENDED -->
 <div id="modal-id02" class="modal">
@@ -69,7 +66,7 @@
     <!-- AREA PRINCIPAL -->
     <section class="dataUser">
       <!-- search bar right align -->
-      <form class="form" action="/entry" method="POST" >
+      <form class="form" action="/entry" method="POST">
         <h2>Contáctanos</h2>
         <p>
           <label for="correo">Correo</label>
