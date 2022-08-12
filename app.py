@@ -2,6 +2,7 @@
 import datetime
 import sqlite3
 import db.scripts as scripts
+from werkzeug.security import generate_password_hash
 
 from flask import Flask, jsonify, render_template, request, redirect, url_for
 
@@ -138,6 +139,7 @@ def admin_admins():
 def addAdmin():
     if request.form['gestion_admin'] == 'Crear Admin':
         usuario = request.form.to_dict(flat=True)
+        usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
         scripts.insertar_usuario(usuario)
         # return jsonify(usuario)
     return redirect('/admin-admins')
@@ -206,6 +208,7 @@ def register():
 def register_new():
     if request.form['botonConfirm'] == 'Confirmar':
         usuario = request.form.to_dict(flat=True)
+        usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
         scripts.insertar_usuario(usuario)
     return redirect("/booking/")
 
