@@ -95,3 +95,36 @@ def eliminar_comentario_admin_id(id):
     cursorObj.execute(query)
     conexion.commit()
     conexion.close()
+
+def obtener_reservas_tabla():
+    query = 'select * from Reserva;'
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    reservas = cursorObj.execute(query)
+    reservas = cursorObj.fetchall()
+    conexion.commit()
+    conexion.close()
+    # print(usuarios)
+    return reservas
+
+def obtener_reserva_admin_id(id):
+    query = 'select * from Reserva where id={};'.format(id)
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    cursorObj.execute(query)
+    reserva = cursorObj.fetchone()
+    conexion.commit()
+    conexion.close()
+    return reserva
+
+def eliminar_reserva_admin_id(id):
+    query = "delete from Reserva where id = {};".format(id)
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    cursorObj.execute(query)
+    conexion.commit()
+    conexion.close()
+

@@ -81,21 +81,9 @@ def admins_home():
 @ app.route('/admin-users/')
 def admin_users():
     usuarios = scripts.obtener_usuario_tabla(1)
+    reservas = scripts.obtener_reservas_tabla()
     comentarios = scripts.obtener_comentarios_tabla()
-    return render_template("gestionUsuarios.html", usuarios=usuarios, comentarios=comentarios)
-
-
-# Edición de usuario cliente
-@ app.route('/eliminarReviewAdmin/<int:id>', methods=['POST', 'GET'])
-def editReviewAdmin(id):
-    if request.method == 'GET':
-        comentario = scripts.obtener_comentario_admin_id(id)
-        return render_template('eliminarReviewAdmin.html', comentario=comentario)
-    else:
-        comentario = request.form.to_dict(flat=True)
-        if request.form['gestion_comentario_admin'] == 'Eliminar Comentario':
-            scripts.eliminar_comentario_admin_id(id)
-        return redirect('/admin-users')
+    return render_template("gestionUsuarios.html", usuarios=usuarios, reservas=reservas, comentarios=comentarios)
 
 
 # Edición de usuario cliente
@@ -112,6 +100,34 @@ def editUser(id):
         elif request.form['gestion_usuario'] == 'Eliminar Usuario':
             # usuario=request.form.to_dict(flat=True)
             scripts.eliminar_usuario(id)
+        return redirect('/admin-users')
+
+# Edición de reserva cliente
+@ app.route('/eliminarReserveAdmin/<int:id>', methods=['POST', 'GET'])
+def editReserveAdmin(id):
+    if request.method == 'GET':
+        reserva = scripts.obtener_reserva_admin_id(id)
+        return render_template('eliminarReserveAdmin.html', reserva=reserva)
+    else:
+        reserva = request.form.to_dict(flat=True)
+        # if request.form['gestion_usuario'] == 'Editar Usuario':
+        #     # usuario=request.form.to_dict(flat=True)
+        #     scripts.editar_usuario(id, usuario)
+        if request.form['gestion_reserva_admin'] == 'Eliminar Reserva':
+            # usuario=request.form.to_dict(flat=True)
+            scripts.eliminar_reserva_admin_id(id)
+        return redirect('/admin-users')
+
+# Edición de comentario admin
+@ app.route('/eliminarReviewAdmin/<int:id>', methods=['POST', 'GET'])
+def editReviewAdmin(id):
+    if request.method == 'GET':
+        comentario = scripts.obtener_comentario_admin_id(id)
+        return render_template('eliminarReviewAdmin.html', comentario=comentario)
+    else:
+        comentario = request.form.to_dict(flat=True)
+        if request.form['gestion_comentario_admin'] == 'Eliminar Comentario':
+            scripts.eliminar_comentario_admin_id(id)
         return redirect('/admin-users')
 
 

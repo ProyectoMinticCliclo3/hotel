@@ -240,27 +240,41 @@
     <!-- LISTA RESERVAS -->
     <div class="reserves">
       <h2>Listado de Reservas</h2>
-      <table class="reservesTable">
+      <table class="table_reserves">
         <thead>
           <tr>
-            <caption>
-              Se presentan todas las reservas activas e inactivas
-            </caption>
-            <th>ID</th>
-            <th>Fecha</th>
-            <th>Entrada</th>
-            <th>Salida</th>
-            <th>Huespedes</th>
-            <th>$ Valor</th>
-            <th>Estado</th>
+            <th>Id</th>
+            <th>Id Usuario</th>
+            <th>Precio Total</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Ver/Eliminar</th>
+            <!-- <th>
+                All<input type="checkbox" name="check[]" value="0" id="chk0" />
+              </th> -->
           </tr>
         </thead>
         <tbody>
+
+          {% for i in range(reservas|length) %}
+
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <!-- <tbody style="cursor: pointer">
+            <tr onclick="seleccionar(this,1)"> -->
+            <td>{{ reservas[i][0] }}</td>
+            <td>{{ reservas[i][1] }}</td>
+            <td>{{ reservas[i][2] }}</td>
+            <td>{{ reservas[i][3] }}</td>
+            <td>{{ reservas[i][4] }}</td>
+            <td>
+              <!-- <a href="/editarReview/{{reservas[i][0]}}" class="btnEditar" id="btnEditarComentario">Editar</a> -->
+              <a href="/eliminarReserveAdmin/{{reservas[i][0]}}" class="btnEliminar">Eliminar</a>
+            </td>
+            <!-- <td onclick="seleccionar(this,1)">
+                <input type="checkbox" name="check[]" value="1" id="chk1" />
+              </td> -->
           </tr>
+          {% endfor %}
         </tbody>
       </table>
       <!-- <section>
@@ -281,7 +295,7 @@
               <th>Id Usuario</th>
               <th>Fecha</th>
               <th>Comentario</th>
-              <th>Editar/Eliminar</th>
+              <th>Ver/Eliminar</th>
               <!-- <th>
                   All<input type="checkbox" name="check[]" value="0" id="chk0" />
                 </th> -->
