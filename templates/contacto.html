@@ -1,12 +1,21 @@
 {% extends "base.html" %} {% block head %}
 
-<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/> -->
-
 <link
   rel="stylesheet"
   type="text/css"
   href="{{ url_for('static', filename='css/contacto.css') }}"
 />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
+
 {% endblock %} {% block content %}
 
 <!-- MODAL MESSAGE SENDED -->
@@ -61,61 +70,95 @@
 <!-- END MODAL MESSAGE SENDED -->
 
 <!-- SECCION PRINCIPAL -->
-<main id="container">
-  <div class="base-main">
-    <!-- AREA PRINCIPAL -->
-    <section class="dataUser">
-      <!-- search bar right align -->
-      <form class="form" action="/entry" method="POST">
-        <h2>Contáctanos</h2>
-        <p>
-          <label for="correo">Correo</label>
-          <input type="email" name="correo" id="correo" />
-        </p>
-        <p>
-          <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" id="nombre" />
-        </p>
-        <p>
-          <label for="apellido">Apellido</label>
-          <input type="text" name="apellido" id="apellido" />
-        </p>
-        <!-- <label for="fechaNacimiento">Fecha de Nacimiento</label>
+<!-- AREA PRINCIPAL -->
+<section class="dataUser">
+  <!-- search bar right align -->
+  <form class="form" action="/entry" method="POST">
+    <h2>Contáctanos</h2>
+    <p>
+      <label for="correo">Correo</label>
+      <span>
+        <i class="fa-solid fa-envelope"></i>
+        <input
+          type="email"
+          name="correo"
+          id="correo"
+          placeholder="e.g. mi_correo@esclavosmintic.com"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="nombre">Nombre Completo</label>
+      <span>
+        <i class="fa-solid fa-person"></i>
+        <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          placeholder="e.g. Fulanito"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="apellido">Apellido</label>
+      <span>
+        <i class="fa-solid fa-person"></i>
+        <input
+          type="text"
+          name="apellido"
+          id="apellido"
+          placeholder="e.g. De Tal"
+        />
+      </span>
+    </p>
+    <!-- <label for="fechaNacimiento">Fecha de Nacimiento</label>
           <input type="date" name="fechaNacimiento" id="fechaNacimiento">
           <br> -->
-        <p>
-          <label for="asunto">Asunto</label>
-          <input type="text" name="asunto" id="asunto" />
-        </p>
-        <p>
-          <label for="mensaje">Mensaje</label>
-          <textarea
-            name="mensaje"
-            id="mensaje"
-            maxlength="630"
-            cols="30"
-            rows="10"
-          ></textarea>
-        </p>
-        <!-- <br>
+    <p>
+      <label for="asunto">Asunto</label>
+      <span>
+        <i class="fa-solid fa-book"></i>
+        <input
+          type="text"
+          name="asunto"
+          id="asunto"
+          placeholder="PQR-Sugerencia-Consulta"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="mensaje">Mensaje</label>
+      <span>
+        <i class="fa-solid fa-book-open"></i>
+        <textarea
+          name="mensaje"
+          id="mensaje"
+          maxlength="630"
+          cols="30"
+          rows="10"
+          placeholder="Desahógate Aquí"
+        ></textarea>
+      </span>
+    </p>
+    <!-- <br>
           <label for="estado">Estado</label>
           <select name="estado" id="estado">
             <option value="a">Activo</option>
             <option value="i">Inactivo</option>
           </select> -->
-        <p>
-          <input
-            class="btnEnviar"
-            type="submit"
-            name="botonEnviar"
-            value="Enviar"
-            onclick="document.getElementById('modal-id02').style.display='block'"
-            data-open="modal-id02"
-          />
-        </p>
-      </form>
-    </section>
-  </div>
-</main>
+    <p>
+      <div class="btn-submit-group">
+        <input
+          class="btn-submit btn-submit-blue btnEnviar"
+          type="submit"
+          name="botonEnviar"
+          value="Enviar"
+          onclick="document.getElementById('modal-id02').style.display='block'"
+          data-open="modal-id02"
+        />
+      </div>
+    </p>
+  </form>
+</section>
 
 {% endblock %}

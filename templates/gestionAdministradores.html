@@ -1,10 +1,25 @@
-  {% extends "base.html" %}
-
-{% block head %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gestionAdministradores.css') }}" />
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block head %}
+<!-- <link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/gestionAdministradores.css') }}"
+/> -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-tables.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
+{% endblock %} {% block content %}
 
 <!-- MODAL SAVE DATA-ADMIN -->
 <div id="modal-id04" class="modal">
@@ -34,13 +49,24 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id04').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
     </div>
@@ -49,100 +75,186 @@
   </form>
 </div>
 <!-- END MODAL SAVE DATA-ADMIN -->
-<main class="container">
-  <!-- SECCION PRINCIPAL -->
-  <div id="main">
-    <div class="base-main">
-      <!-- AREA PRINCIPAL -->
-      <section class="dataUser">
-        <h2>Datos del Administrador</h2>
-        <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button>
-        <div class="form_dataUser" id="form_dataUser">
-          <h4>Crear Nuevo Administrador</h4>
+<!-- AREA PRINCIPAL -->
+<section class="dataUser">
+  <h2>Gestión de Administradores</h2>
+  <button
+    class="btn-submit btn-submit-blue btnAgregarAdmin"
+    id="btnAgregarAdmin"
+  >
+    Agregar Administrador
+  </button>
+  <section class="form_dataUser" id="form_dataUser">
+    <form action="/addAdmin" class="form inputs_dataUser" method="POST">
+      <h2>Crear Nuevo Administrador</h2>
+      <p>
+        <label for="cedula">Cédula</label>
+        <span>
+          <input
+            type="text"
+            class="input_user"
+            name="Cedula"
+            id="cedula"
+            placeholder="Cédula"
+          />
+        </span>
+      </p>
+      <p>
+        <label for="nombre">Nombre</label>
+        <span>
+          <input
+            type="text"
+            class="input_user"
+            name="Nombre"
+            id="nombre"
+            placeholder="Nombre"
+          />
+        </span>
+      </p>
+      <p>
+        <label for="apellido">Apellido</label>
+        <span>
+          <input
+            type="text"
+            class="input_user"
+            name="Apellidos"
+            id="apellido"
+            placeholder="Apellido"
+          />
+        </span>
+      </p>
+      <p>
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <span>
+          <input
+            type="date"
+            class="input_user"
+            name="Fecha_Nacimiento"
+            id="fechaNacimiento"
+          />
+        </span>
+      </p>
+      <p>
+        <label for="correo">Correo Electrónico</label>
+        <span>
+          <input
+            type="email"
+            class="input_user"
+            name="Correo"
+            id="correo"
+            placeholder="Correo"
+          />
+        </span>
+      </p>
+      <p>
+        <label for="celular">Celular</label>
+        <span>
+          <input
+            type="phone"
+            class="input_user"
+            name="Celular"
+            id="celular"
+            placeholder="Celular"
+          />
+        </span>
+      </p>
+      <p>
+        <label for="tipoUsuario">Tipo de Usuario</label>
+        <span>
+          <input
+            type="text"
+            class="input_user"
+            name="Tipo_Usuario"
+            id="tipoUsuario"
+            value="2"
+            readonly
+          />
+        </span>
+      </p>
 
-          <form action="/addAdmin" class="inputs_dataUser" method="POST">
-            <label for="cedula">Cédula</label>
-            <input type="text" class="input_user" name="Cedula" id="cedula" placeholder="Cédula" />
-
-            <label for="nombre">Nombre</label>
-            <input type="text" class="input_user" name="Nombre" id="nombre" placeholder="Nombre" />
-
-            <label for="apellido">Apellido</label>
-            <input type="text" class="input_user" name="Apellidos" id="apellido" placeholder="Apellido" />
-
-            <label for="fechaNacimiento">Fecha de Nacimiento</label>
-            <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" />
-
-            <label for="correo">Correo Electrónico</label>
-            <input type="email" class="input_user" name="Correo" id="correo" placeholder="Correo" />
-
-            <label for="celular">Celular</label>
-            <input type="phone" class="input_user" name="Celular" id="celular" placeholder="Celular" />
-            
-            <label for="tipoUsuario">Tipo de Usuario</label>
-            <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value="2" readonly/>
-            
-            <!-- <label for="anteriorContrasena">Anterior Contraseña</label>
+      <!-- <label for="anteriorContrasena">Anterior Contraseña</label>
             <input type="password" class="input_user" name="Anterior_Contrasena" id="anteriorContrasena" placeholder="Anterior Contraseña" /> -->
-            
-            <label for="nuevaContrasena">Nueva Contraseña</label>
-            <input type="password" class="input_user" name="Nueva_Contrasena" id="nuevaContrasena" placeholder="Nueva Contraseña" />
-            
-            <!-- <label for="confirmarContrasena">Contraseña</label>
-            <input type="password" class="input_user" name="Confirmar_Contrasena" id="confirmarContrasena" placeholder="Confirmar Contraseña" /> -->
-           
-            <div>
-              <input type="submit" name="gestion_admin" value="Crear Admin">
-              <input type="submit" name="gestion_admin" id="cancel_user" value="Cancelar Admin">
-            </div>
-          </form>
+      <p>
+        <label for="nuevaContrasena">Nueva Contraseña</label>
+        <span>
+          <input
+            type="password"
+            class="input_user"
+            name="Nueva_Contrasena"
+            id="nuevaContrasena"
+            placeholder="Nueva Contraseña"
+          />
+        </span>
+      </p>
 
-        </div>
-        <table class="table_admins" id="table_admins">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Cédula</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Celular</th>
-              <th>Editar/Eliminar</th>
-              <!-- <th>
+      <!-- <label for="confirmarContrasena">Contraseña</label>
+            <input type="password" class="input_user" name="Confirmar_Contrasena" id="confirmarContrasena" placeholder="Confirmar Contraseña" /> -->
+
+      <div class="btn-submit-group">
+        <input
+          class="btn-submit btn-submit-blue"
+          type="submit"
+          name="gestion_admin"
+          value="Crear Admin"
+        />
+        <input
+          class="btn-submit btn-submit-gray"
+          type="submit"
+          name="gestion_admin"
+          id="cancel_user"
+          value="Cancelar Admin"
+        />
+      </div>
+    </form>
+  </section>
+  <section>
+    <table class="tables table_admins" id="table_admins">
+      <h2>Lista de Administradores</h2>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Cédula</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Celular</th>
+          <th>Gestionar</th>
+          <!-- <th>
                   All<input type="checkbox" name="check[]" value="0" id="chk0" />
                 </th> -->
-            </tr>
-          </thead>
-          <tbody>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in range(usuarios|length) %}
 
-          {% for i in range(usuarios|length) %}
-
-            <tr>
-              <!-- <tbody style="cursor: pointer">
+        <tr>
+          <!-- <tbody style="cursor: pointer">
               <tr onclick="seleccionar(this,1)"> -->
-              <td>{{ usuarios[i][0] }}</td>
-              <td>{{ usuarios[i][1] }}</td>
-              <td>{{ usuarios[i][2] }}</td>
-              <td>{{ usuarios[i][3] }}</td>
-              <td>{{ usuarios[i][6] }}</td>
-              <td>
-                <a href="/editarAdmin/{{usuarios[i][0]}}" class="btnEditar" id="btnEditarAdmin">Editar</a>
-                <!-- <a href="/eliminarAdmin/{{usuarios[i][0]}}" class="btnEliminar">Eliminar</a> -->
-              </td>
-              <!-- <td onclick="seleccionar(this,1)">
+          <td>{{ usuarios[i][0] }}</td>
+          <td>{{ usuarios[i][1] }}</td>
+          <td>{{ usuarios[i][2] }}</td>
+          <td>{{ usuarios[i][3] }}</td>
+          <td>{{ usuarios[i][6] }}</td>
+          <td>
+            <a
+              href="/editarAdmin/{{usuarios[i][0]}}"
+              class="btn-submit btn-submit-blue btnEditar"
+              id="btnEditarAdmin"
+              >Gestionar</a
+            >
+            <!-- <a href="/eliminarAdmin/{{usuarios[i][0]}}" class="btnEliminar">Eliminar</a> -->
+          </td>
+          <!-- <td onclick="seleccionar(this,1)">
                   <input type="checkbox" name="check[]" value="1" id="chk1" />
                 </td> -->
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
 
-
-        <!-- <input class="btnGuardar" type="submit" name="botonGuardar" value="Guardar"
+  <!-- <input class="btnGuardar" type="submit" name="botonGuardar" value="Guardar"
           onclick="document.getElementById('modal-id04').style.display='block'" data-open="modal-id04" /> -->
-      </section>
-    </div>
-  </div>
-</main>
+</section>
 
 <script>
   // function seleccionar(tr, value) {
@@ -150,8 +262,6 @@
   // }
 </script>
 
-{% endblock %}
-
-{% block scripts %}
-<script src={{ url_for('static', filename='js/agregarAdmin.js' ) }}></script>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/agregarAdmin.js' ) }}"></script>
 {% endblock %}

@@ -1,51 +1,30 @@
-:root {
-  --blue: #005596;
-  --white: #f8f8f2;
-  --grey: #d9d9d9;
-  --black1: #282a36;
-  --black2: #999;
+.base-main {
+  background-color: var(--blue);
 }
 
-.dataUser form {
-  display: flex;
-  flex-direction: column;
-  margin: auto auto auto 20%;
+.dataUser {
+  background-image: url("../img/img-habitacion/230031199.jpg");
+  background-repeat: no-repeat;
+  background-color: var(--blue);
+  background-size: cover;
 }
 
-.dataUser h2 {
-  margin-top: 10rem;
-  margin-bottom: 1rem;
-}
-
-.dataUser label {
-  width: 8rem;
-  display: flex;
-  flex-direction: column;
-  margin-right: 1rem;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-.dataUser textarea {
-  resize: none;
-  width: 40rem;
-  height: 8rem;
-  margin-bottom: 1rem;
-}
-
-.dataUser input {
-  width: 24rem;
-  height: 2rem;
-}
-
-.dataUser .btnEnviar {
-  background-color: #005596;
-  color: #f2f2f2;
+/* .dataUser .btnEnviar {
+  background-color: var(--blue);
+  color: var(--white);
   border: none;
   width: 8rem;
   height: 2.5rem;
   margin-left: auto;
   font-weight: bold;
   font-size: 1rem;
+  border-radius: 1.75rem;
   margin-bottom: 6rem;
   cursor: pointer;
 }
+
+.dataUser .btnEnviar:hover {
+  background-color: var(--white);
+  border: var(--blue) solid 1px;
+  color: var(--blue);
+} */

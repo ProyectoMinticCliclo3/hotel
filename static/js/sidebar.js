@@ -25,7 +25,7 @@
 
 function openNav() {
   document.getElementById("mySidebar").style.width = "16rem";
-  document.getElementById("mainContent").style.marginLeft = "16rem";
+  document.getElementById("main").style.marginLeft = "16rem";
   document.getElementById("footer").style.marginLeft = "16rem";
 }
 
@@ -41,6 +41,6 @@ function openOrClose(x) {
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "5rem";
-  document.getElementById("mainContent").style.marginLeft = "5rem";
+  document.getElementById("main").style.marginLeft = "5rem";
   document.getElementById("footer").style.marginLeft = "5rem";
 }

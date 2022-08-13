@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/>
+ 
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
     {% block head %}
     <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/> -->
@@ -31,12 +31,11 @@
       src="{{ url_for('static', filename='js/modal.js') }}"
       async
     ></script>
-
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/>
     <title>Hotel Rose Ryhaan by Rotana</title>
   </head>
 
   <body>
-    <div id="mainContainer">
       <header class="topbar">
         <div class="logo-top">
           <a href={{ url_for("home") }}>
@@ -114,7 +113,7 @@
               </a>
             </li>
             <li>
-              <a href={{ url_for("about") }}>
+              <a href='https://www.rotana.com/aboutrotana'>
                 <span class="icon">
                   <i class="fa-solid fa-id-badge"></i>
                 </span>
@@ -179,26 +178,27 @@
 
           <div class="modal-container-button">
             <div>
-              <button type="submit" class="modal-confirmbtn">
+              <button type="submit" class="modal-confirmbtn btn-blue">
                 Confirmar
-                <img
+                <!-- <img
                   src="{{ url_for('static', filename='img/svg/fa/check-solid.svg') }}"
                   alt="icono logout"
                   height="30"
-                />
+                /> -->
               </button>
             </div>
             <div>
               <button
                 type="button"
                 onclick="closeModal()"
-                class="modal-cancelbtn text-button"
+                class="modal-cancelbtn btn-red"
               >
-                Cancelar<img
+                Cancelar
+                <!-- <img
                   src="{{ url_for('static', filename='img/svg/fa/xmark-solid.svg') }}"
                   alt="icono logout"
                   height="30"
-                />
+                /> -->
               </button>
             </div>
           </div>
@@ -209,9 +209,13 @@
         </form>
       </div>
       <!-- END MODAL BOX -->
-      <div id="mainContent">
+      
+        <main id="main">
+          <div class="base-main">
         {% block content %} {% endblock %}
-      </div>
+          </div>
+        </main>
+      
 
       <footer id="footer">
         <div id="nav-footer">
@@ -291,7 +295,6 @@
         </div>
       </footer>
 
-    </div>
 
   </body>
   {% block scripts %}

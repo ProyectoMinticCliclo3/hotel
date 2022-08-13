@@ -1,44 +1,103 @@
 {% extends "base.html" %} {% block head %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gestionUsuarios.css') }}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
 {% endblock %} {% block content %}
 
+<section class="dataUser">
+  <!-- AREA PRINCIPAL -->
+  <!-- <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button> -->
+  <!-- <h4>Editar Administrador</h4> -->
 
-<main class="container">
-    <!-- SECCION PRINCIPAL -->
-    <div id="main">
-      <div class="base-main">
-        <!-- AREA PRINCIPAL -->
-        <section class="eliminar_review">
-          <h2>Eliminar Comentario</h2>
-          <!-- <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button> -->
-          <div class="" id="">
-            <!-- <h4>Editar Administrador</h4> -->
-  
-            <form action="/eliminarReviewAdmin/{{ comentario[0] }}" class="inputs_review" method="post">
-              <label for="id">Id Comentario</label>
-              <input type="text" class="input_review" name="id_comentario" id="id_comentario" value={{ comentario[0] }} readonly>
-  
-              <label for="id_usuario">Id del Usuario</label>
-              <input type="text" class="input_review" name="id_usuario" id="id_usuario" value={{ comentario[1] }} readonly>
-  
-              <label for="fecha">Fecha Publicación</label>
-              <input type="date" class="input_review" name="fecha" id="fecha" value={{ comentario[2] }} readonly>
-  
-              <label for="comentario">Comentario</label>
-              <textarea type="text" class="textarea_review" name="comentario" id="comentario" readonly>{{ comentario[3] }}</textarea>
-              
-              <div>
-                <!-- <input type="submit" name="gestion_usuario" value="Editar Usuario"> -->
-                <input type="submit" class="btnEliminar" name="gestion_comentario_admin" value="Eliminar Comentario">
-                <input type="submit" class="btnEditar" name="gestion_comentario_admin" id="cancel_user" value="Cancelar">
-              </div>
-            </form>
-  
-          </div>
-  
-         </section>
-      </div>
+  <form
+    action="/eliminarReviewAdmin/{{ comentario[0] }}"
+    class="form inputs_review"
+    method="post"
+  >
+    <h2>Eliminar Comentario</h2>
+    <p>
+      <label for="id">Id Comentario</label>
+      <span>
+        <input
+          type="text"
+          class="input_review"
+          name="id_comentario"
+          id="id_comentario"
+          value="{{
+          comentario[0]
+        }}"
+          readonly
+        />
+      </span>
+    </p>
+    <p>
+      <label for="id_usuario">Id del Usuario</label>
+      <span>
+        <input
+          type="text"
+          class="input_review"
+          name="id_usuario"
+          id="id_usuario"
+          value="{{
+      comentario[1]
+    }}"
+          readonly
+        />
+      </span>
+    </p>
+    <p>
+      <span>
+        <label for="fecha">Fecha Publicación</label>
+        <input
+          type="date"
+          class="input_review"
+          name="fecha"
+          id="fecha"
+          value="{{
+    comentario[2]
+  }}"
+          readonly
+        />
+      </span>
+    </p>
+    <p>
+      <label for="comentario">Comentario</label>
+      <span>
+        <textarea
+          type="text"
+          class="textarea_review"
+          name="comentario"
+          id="comentario"
+          readonly
+        >
+  {{ comentario[3] }}</textarea
+        >
+      </span>
+    </p>
+    <div class="btn-submit-group">
+      <!-- <input type="submit" name="gestion_usuario" value="Editar Usuario"> -->
+      <input
+        type="submit"
+        class="btn-submit btn-submit-red btnEliminar"
+        name="gestion_comentario_admin"
+        value="Eliminar Comentario"
+      />
+      <input
+        type="submit"
+        class="btn-submit btn-submit-gray btnEditar"
+        name="gestion_comentario_admin"
+        id="cancel_user"
+        value="Cancelar"
+      />
     </div>
-  </main>
+  </form>
+</section>
 
 {% endblock %}
