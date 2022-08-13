@@ -9,20 +9,15 @@ Los tipos de usuarios que debe manejar el sistema son `superadministrador`, `adm
 Un `usuario final`
 de la plataforma debe estar en la capacidad de poder:
 
--[] **registrarse**,
--[] **buscar** una habitación,
--[] **calificar** una habitación,
--[] **realizar la reserva** por una _cantidad fija de días_ y
--[] **gestionar sus comentarios** sobre las habitaciones.
+-[x] **registrarse**, -[x] **buscar** una habitación, -[x] **calificar** una habitación, -[ ] **realizar la reserva** por una _cantidad fija de días_ y -[ ] **gestionar sus comentarios** sobre las habitaciones.
 
 Un `administrador` se encarga de:
 
--[] **gestionar los usuarios finales** y de
--[] **agregar habitaciones al sistema** para que el usuario final las pueda visualizar.
+-[x] **gestionar los usuarios finales** y de -[ ] **agregar habitaciones al sistema** para que el usuario final las pueda visualizar.
 
 Un `superadministrador` ejerce el:
 
--[] **control total de la plataforma (`usuarios` & `habitaciones`)**.
+-[x] **control total de la plataforma (`usuarios` & `habitaciones`)**.
 
 **_Los datos suministrados por los `usuarios` deben cumplir la _**política de privacidad de datos vigente**_._**
 

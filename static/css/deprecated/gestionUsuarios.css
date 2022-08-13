@@ -1,0 +1,44 @@
+/* .dataUser {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: auto 50% auto auto;
+  padding: 5rem 0 5rem 5rem;
+  min-width: fit-content;
+} */
+
+/* .dataUser .form p span {
+  display: flex;
+  justify-content: flex-end;
+  width: 35rem;
+  gap: 1rem;
+  align-items: center;
+} */
+
+/* .dataUser form {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: auto 50% auto auto;
+  padding: 5rem 0 5rem 5rem;
+  min-width: fit-content;
+} */
+/* .dataUser form {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: auto 50% auto auto;
+  padding: 5rem 0 5rem 5rem;
+  min-width: fit-content;
+} */
+/* .dataUser label {
+  margin-left: 5rem;
+  font-weight: bold;
+} */
+
+/* .dataUser input {
+  width: 24rem;
+  height: 2rem;
+} */

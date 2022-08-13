@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Be Vietnam Pro", sans-serif;
+  font-family: Fjalla One, Noto Sans, "Be Vietnam Pro", sans-serif;
   /* border: none; */
 }
 
@@ -13,6 +13,24 @@
   --grey: #d9d9d9;
   --black1: #282a36;
   --black2: #999;
+  --red: firebrick;
+}
+.dataUser {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* gap: 1rem; */
+  /* margin: auto 25% auto 25%; */
+  padding: 5rem 5rem 5rem 5rem;
+  width: 50rem;
+  min-width: fit-content;
+  /* border: var(--white) solid 2rem; */
+}
+
+.du-background {
+  background-image: url("../img/img-habitacion/230031199.jpg");
+  background-repeat: no-repeat;
+  background-color: var(--blue);
+  background-size: cover;
 }
 
 body {
@@ -21,19 +39,34 @@ body {
   background-color: var(--white);
 }
 
+main {
+  /* position: inherit; */
+  /* width: calc(100% - 18rem); */
+  /* left: 5%; */
+  /* margin-left: 5rem; */
+  /* margin-top: 1rem; */
+  /* FIXME min-height ¿será necesaria?*/
+  /* min-height: 100vh; */
+  padding: 1.68rem 1.68rem 1.68rem 1.68rem;
+
+  background: var(--white);
+  transition: 0.5s;
+  margin-left: 5rem;
+}
+
+main.active {
+  /* width: calc(100% -5rem); */
+  /* left: 5rem; */
+}
 header {
-  position:fixed;
+  position: fixed;
   margin-top: 0;
   display: flex;
   width: 100%;
   padding: 0 1.75rem;
-  /* max-width: 100%; */
-  /* width: 100%; */
-  /* justify-content: flex-end; */
   justify-content: space-between;
   align-items: center;
   background-color: var(--white);
-  /* box-sizing: border-box; */
 }
 
 .topbar .logo-top img {
@@ -65,19 +98,6 @@ header {
 .sidebar.active {
   width: 80px;
 }
-
-/* .sidebar ul {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-} */
-
-/* .sidebar ul li:nth-child(1) {
-  position: absolute;
-  left: 14rem;
-  font-size: 25px;
-} */
 
 /* Al quitar el boton de cerrar el siguiente estilo
 pasó de nth-child(2) a nth-child(1) */
@@ -119,12 +139,6 @@ pasó de nth-child(2) a nth-child(1) */
   /* line-height: 3.75rem; */
   overflow: hidden;
 }
-
-/* IMAGENES SIDEBAR */
-/* .sidebar ul li a i {
-  height: 1.75rem;
-  max-width: 1.75rem;
-} */
 
 .sidebar ul li:hover a,
 .sidebar ul li.hovered a {
@@ -182,28 +196,10 @@ pasó de nth-child(2) a nth-child(1) */
 }
 /* TODO REVISAR MAIN QUE NO DEJA HACER BORDES OTRA VEZ */
 /* MAIN */
-#mainContent {
-  /* position: fixed; */
-  position: inherit;
-  /* width: calc(100% - 18rem); */
-  /* left: 5%; */
-  margin-left: 5rem;
-  /* margin-top: 1rem; */
-  /* FIXME min-height ¿será necesaria?*/
-  /* min-height: 100vh; */
-  background: var(--white);
-  transition: 0.5s;
-  margin-left:5rem;
-}
-
-#mainContent.active {
-  width: calc(100% -5rem);
-  /* left: 5rem; */
-}
 
 /*FIXME ALL BUTTONS HOVER*/
 
-.toggle:hover{
+.toggle:hover {
   text-decoration: none;
 }
 
@@ -211,7 +207,7 @@ button:hover {
   /* opacity: 0.8; */
   text-decoration: underline;
 }
-.toggle{
+.toggle {
   display: flex;
   position: relative;
   width: 2.5rem;
@@ -250,8 +246,11 @@ button:hover {
 /* FOOTER */
 /* SOCIAL MEDIA */
 footer {
-  margin: 5rem auto 1rem auto;
+  /* FIXME funciona bien la animación sin el margin */
+  /* margin: 5rem auto 1rem auto; */
   /* color: black; */
+  /* FIXME testing overflow */
+  /* overflow: hidden; */
   transition: 0.5s;
 }
 .social-media {
@@ -492,37 +491,70 @@ footer div h5 {
 
 /*set extra style for the cancel button*/
 /* BOTON CANCELAR LOGIN */
-.modal-container-button button {
-  /* width: auto; */
-  /* margin: 1rem 1rem; */
+/* .modal-container-button button {
   background-color: #d9d9d9;
-  /* background-color: none; */
   border: none;
   border-radius: 0.5rem;
-  /* justify-content: center; */
-  /* margin: 0.5rem; */
-  /* padding: 1rem 3rem; */
   color: #005596;
   padding: 0.78rem 1rem;
   font-weight: bold;
-}
+} */
 
 /* .modal-container-button button:hover {
   background-color: #005596;
   color: #f8f8f2;
   text-decoration: underline;
 } */
+.modal-container-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.btn-blue {
+  text-decoration: none;
+  background-color: var(--blue);
+  color: var(--white);
+  /* border: 1px solid var(--white); */
+  padding: 0.4rem 3em;
+  border-radius: 1rem;
+}
 
-.modal-container-button .modal-confirmbtn {
+.btn-blue:hover {
+  background-color: var(--white);
+  /* border: 1px solid var(--blue); */
+  color: var(--blue);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-red {
+  background-color: var(--red);
+  color: var(--white);
+  /* border: 1.1px solid var(--white); */
+  padding: 0.4rem 3em;
+  border-radius: 1rem;
+}
+
+.btn-red:hover {
+  background-color: var(--white);
+  /* border: 1px solid var(--red); */
+  color: var(--red);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* .modal-container-button .modal-confirmbtn {
   background-color: #005596;
   color: #f8f8f2;
 }
-
+.modal-container-button .modal-confirmbtn:hover {
+  background-color: var(--white);
+  border: var(--blue) solid 1px;
+  color: var(--blue);
+} */
+/* 
 .modal-container-button .modal-cancelbtn:hover {
-  /* background-color: #005596; */
-  /* border-style: dotted; */
   color: #282a36;
-}
+} */
 
 /*centre the display image inside the container*/
 
@@ -549,6 +581,7 @@ img.modal-avatar {
   color: #005596;
   justify-content: center;
   padding: 1rem;
+  text-decoration: none;
 }
 
 .modal .modal-psw a:hover {

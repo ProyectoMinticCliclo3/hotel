@@ -23,50 +23,60 @@
   <title>Hotel Rose Ryhaan by Rotana</title>
 </head>
 
-<body>
-  <div id="mainContainer">
-    <header class="topbar">
-      <div class="logo-top">
-        <a href={{ url_for("home") }}>
-          <span class="icon">
-            <img src="{{ url_for('static', filename='img/svg/logo-ryhaan.svg') }}" alt="Logo-Ryhaan" />
-          </span>
-        </a>
-      </div>
-      <div class="logo-top">
-        <a href={{ url_for("home") }}>
-          <img src="{{ url_for('static', filename='img/svg/logo-ryhaan_dubai.svg') }}" alt="Rose Ryhaan Dubai" />
-        </a>
-      </div>
-      <!-- search bar right align -->
-      <div class="search">
-        <form action="#">
-          <input type="text" placeholder="Buscar" name="search" />
-          <button type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-      </div>
-      <!--agregar login-->
-    </header>
-    <!-- MENU SIDEBAR -->
-    <nav id="mySidebar" class="sidebar">
-      <div class="sidebar-content">
-        <ul>
-          <!-- SIDEBAR - BOTON OPEN -->
-          <button class="toggle" onclick="openOrClose(value)" value="0" id="openbtn">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <!-- ENLACES SIDEBAR -->
-          <li>
-            <a href={{ url_for("home") }}>
-              <span class="icon">
-                <i class="fa-solid fa-hotel"></i>
-              </span>
-              <span class="title">Inicio</span>
-            </a>
-          </li>
-          <!-- <li>
+  <body>
+      <header class="topbar">
+        <div class="logo-top">
+          <a href={{ url_for("home") }}>
+            <span class="icon">
+              <img
+                src="{{ url_for('static', filename='img/svg/logo-ryhaan.svg') }}"
+                alt="Logo-Ryhaan"
+              />
+            </span>
+          </a>
+        </div>
+        <div class="logo-top">
+          <a href={{ url_for("home") }}>
+            <img
+              src="{{ url_for('static', filename='img/svg/logo-ryhaan_dubai.svg') }}"
+              alt="Rose Ryhaan Dubai"
+            />
+          </a>
+        </div>
+        <!-- search bar right align -->
+        <div class="search">
+          <form action="#">
+            <input type="text" placeholder="Buscar" name="search" />
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <!--agregar login-->
+      </header>
+      <!-- MENU SIDEBAR -->
+      <nav id="mySidebar" class="sidebar">
+        <div class="sidebar-content">
+          <ul>
+            <!-- SIDEBAR - BOTON OPEN -->
+            <button
+              class="toggle"
+              onclick="openOrClose(value)"
+              value="0"
+              id="openbtn"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- ENLACES SIDEBAR -->
+            <li>
+              <a href={{ url_for("home") }}>
+                <span class="icon">
+                  <i class="fa-solid fa-hotel"></i>
+                </span>
+                <span class="title">Inicio</span>
+              </a>
+            </li>
+            <!-- <li>
               <a href={{ url_for("rooms") }}>
                 <span class="icon">
                   <i class="fa-solid fa-bed"></i>
@@ -234,7 +244,6 @@
       </div>
     </footer>
 
-  </div>
 
 </body>
 {% block scripts %}

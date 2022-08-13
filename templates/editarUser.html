@@ -1,12 +1,21 @@
 {% extends "base.html" %} {% block head %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gestionUsuarios.css') }}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
 {% endblock %} {% block content %}
 <!-- MODAL EDIT REVIEW -->
 <div id="modal-id02" class="modal">
   <form class="modal-content animate" action="/action_page.php">
     <div class="modal-container">
       <label>
-        <h1>Edición de Comentario</h1>
+        <h2>Edición de Comentario</h1>
       </label>
       <label><b>ID del Comentario</b></label>
       <input type="text" disabled />
@@ -15,7 +24,13 @@
       <input type="date" class="campo-modal" disabled />
 
       <label><b>Comentario</b></label>
-      <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10"></textarea>
+      <textarea
+        class="campo-modal"
+        placeholder="Comentario"
+        maxlength="630"
+        cols="30"
+        rows="10"
+      ></textarea>
       <!-- <input type="text" placeholder="Comentario" /> -->
 
       <!-- <input type="checkbox" checked="checked" /> Recordarme -->
@@ -25,13 +40,24 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id02').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id02').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
     </div>
@@ -55,7 +81,14 @@
       <input type="date" class="campo-modal" disabled />
 
       <label><b>Comentario</b></label>
-      <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10" disabled></textarea>
+      <textarea
+        class="campo-modal"
+        placeholder="Comentario"
+        maxlength="630"
+        cols="30"
+        rows="10"
+        disabled
+      ></textarea>
       <!-- <input type="text" placeholder="Comentario" /> -->
 
       <!-- <input type="checkbox" checked="checked" /> Recordarme -->
@@ -65,13 +98,24 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id03').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id03').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
     </div>
@@ -108,13 +152,24 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id04').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
     </div>
@@ -124,60 +179,150 @@
 </div>
 <!-- END MODAL SAVE DATA-USERS -->
 
-<main class="container">
-    <!-- SECCION PRINCIPAL -->
-    <div id="main">
-      <div class="base-main">
-        <!-- AREA PRINCIPAL -->
-        <section class="dataUser">
-          <h2>Editar Usuario-Cliente</h2>
-          <!-- <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button> -->
-          <div class="" id="">
-            <!-- <h4>Editar Administrador</h4> -->
+<!-- SECCION PRINCIPAL -->
+<!-- AREA PRINCIPAL -->
+<section class="dataUser">
   
-            <form action="/editarUser/{{ usuario[0] }}" class="inputs_dataUser" method="post">
-              <label for="cedula">Cédula</label>
-              <input type="text" class="input_user" name="Cedula" id="cedula" value="{{ usuario[1] }}" >
-  
-              <label for="nombre">Nombre</label>
-              <input type="text" class="input_user" name="Nombre" id="nombre" value="{{ usuario[2] }}" >
-  
-              <label for="apellido">Apellido</label>
-              <input type="text" class="input_user" name="Apellidos" id="apellido" value="{{ usuario[3] }}" >
-  
-              <label for="fechaNacimiento">Fecha de Nacimiento</label>
-              <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" value={{ usuario[4] }}>
-  
-              <label for="correo">Correo Electrónico</label>
-              <input type="email" class="input_user" name="Correo" id="correo" value={{ usuario[5] }} >
-  
-              <label for="celular">Celular</label>
-              <input type="phone" class="input_user" name="Celular" id="celular" value={{ usuario[6] }} >
-              
-              <label for="tipoUsuario">Tipo de Usuario</label>
-              <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value={{ usuario[7] }} readonly/>
-              
-              <!-- <label for="anteriorContrasena">Anterior Contraseña</label>
+  <form
+  action="/editarUser/{{ usuario[0] }}"
+  class="form"
+  method="POST"
+  >
+    <h2>Editar Usuario-Cliente</h2>
+    <p>
+      <label for="cedula">Cédula</label>
+      <span>
+        <i class="fa-solid fa-id-card"></i>
+        <input
+          type="text"
+          class="input_user"
+          name="Cedula"
+          id="cedula"
+          value="{{ usuario[1] }}"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="nombre">Nombre</label>
+      <span>
+        <i class="fa-solid fa-person"></i>
+        <input
+          type="text"
+          class="input_user"
+          name="Nombre"
+          id="nombre"
+          value="{{ usuario[2] }}"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="apellido">Apellido</label>
+      <span>
+        <i class="fa-solid fa-person"></i>
+        <input
+          type="text"
+          class="input_user"
+          name="Apellidos"
+          id="apellido"
+          value="{{ usuario[3] }}"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="fechaNacimiento">Fecha de Nacimiento</label>
+      <span>
+        <i class="fa-solid fa-cake-candles"></i>
+        <input
+          type="date"
+          class="input_user"
+          name="Fecha_Nacimiento"
+          id="fechaNacimiento"
+          value="{{
+      usuario[4]
+    }}"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="correo">Correo Electrónico</label>
+      <span>
+        <i class="fa-solid fa-envelope"></i>
+        <input
+          type="email"
+          class="input_user"
+          name="Correo"
+          id="correo"
+          value="{{
+    usuario[5]
+  }}"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="celular">Celular</label>
+      <span>
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <input
+          type="phone"
+          class="input_user"
+          name="Celular"
+          id="celular"
+          value="{{
+        usuario[6]
+      }}"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="tipoUsuario">Tipo de Usuario</label>
+      <span>
+        <i class="fa-solid fa-ranking-star"></i>
+        <input
+          type="text"
+          class="input_user"
+          name="Tipo_Usuario"
+          id="tipoUsuario"
+          value="{{
+    usuario[7]
+  }}"
+          readonly
+        />
+      </span>
+    </p>
+
+    <!-- <label for="anteriorContrasena">Anterior Contraseña</label>
               <input type="password" class="input_user" name="Anterior_Contrasena" id="anteriorContrasena" placeholder="Anterior Contraseña" /> -->
-              
-              <label for="nuevaContrasena">Nueva Contraseña</label>
-              <input type="password" class="input_user" name="Nueva_Contrasena" id="nuevaContrasena" value={{ usuario[8] }} />
-              
-              <!-- <label for="confirmarContrasena">Contraseña</label>
+    <p>
+      <label for="nuevaContrasena">Nueva Contraseña</label>
+      <span>
+        <i class="fa-solid fa-key"></i>
+        <input
+          type="password"
+          class="input_user"
+          name="Nueva_Contrasena"
+          id="nuevaContrasena"
+          value="{{
+          usuario[8]
+        }}"
+        />
+      </span>
+    </p>
+
+    <!-- <label for="confirmarContrasena">Contraseña</label>
               <input type="password" class="input_user" name="Confirmar_Contrasena" id="confirmarContrasena" placeholder="Confirmar Contraseña" /> -->
-              
-              <div>
-                <input type="submit" name="gestion_usuario" value="Editar Usuario">
-                <input type="submit" name="gestion_usuario" value="Eliminar Usuario">
-                <input type="submit" name="gestion_usuario" id="cancel_user" value="Cancelar">
-              </div>
-            </form>
-  
-          </div>
-  
-         </section>
-      </div>
+
+    <div class="btn-submit-group">
+      <input class="btn-submit btn-submit-blue" type="submit" name="gestion_usuario" value="Editar" />
+      <input class="btn-submit btn-submit-red" type="submit" name="gestion_usuario" value="Eliminar" />
+      <input
+      class="btn-submit btn-submit-gray"
+        type="submit"
+        name="gestion_usuario"
+        id="cancel_user"
+        value="Cancelar"
+      />
     </div>
-  </main>
+  </form>
+</section>
 
 {% endblock %}

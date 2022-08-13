@@ -1,0 +1,48 @@
+.btn-submit-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.btn-submit {
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 1.75rem;
+  padding: 0.25rem 2rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-submit-blue {
+  background-color: var(--blue);
+  border: var(--blue) solid 1px;
+  color: var(--white);
+}
+
+.btn-submit-red {
+  background-color: var(--red);
+  border: var(--red) solid 1px;
+  color: var(--white);
+}
+.btn-submit-gray {
+  background-color: var(--black2);
+  border: var(--gray) solid 1px;
+  color: var(--white);
+}
+
+.btn-submit-blue:hover {
+  background-color: var(--white);
+  color: var(--blue);
+  border: var(--blue) solid 1px;
+}
+.btn-submit-red:hover {
+  background-color: var(--white);
+  color: var(--red);
+  border: var(--red) solid 1px;
+}
+.btn-submit-gray:hover {
+  background-color: var(--white);
+  color: var(--black2);
+  border: var(--black1) solid 1px;
+}

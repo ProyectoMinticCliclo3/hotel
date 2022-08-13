@@ -1,4 +1,4 @@
-.dataUser form {
+/* .dataUser form {
   display: flex;
   flex-direction: column;
   margin: auto auto 3rem 10%;
@@ -11,49 +11,45 @@
 .dataUser h2{
   margin: 0 0 2rem 10%;
   padding-top: 9rem;
-}
+} */
 /* textarea{
   margin-left: 20%;
   float:right;
   resize: none;
 } */
 
-.btnAgregarAdmin{
+/* .btnAgregarAdmin {
   width: 8rem;
   margin: 0 0 1rem 10%;
-  /* float: right; */
   background-color: #005596;
   color: #f2f2f2;
   border: none;
   height: 2.5rem;
-  /* font-weight: bold; */
   font-size: 0.85rem;
-}
-.dataUser h4{
+} */
+/* .dataUser h4 {
   margin: 0 0 1rem 10%;
-}
+} */
 
-.dataUser label {
+/* .dataUser label {
   width: 16rem;
-  /* display: flex;
-  flex-direction: column; */
   font-size: 0.85rem;
   font-weight: bold;
-}
+} */
 
-.input_user {
+/* .input_user {
   width: 20rem;
   height: 1.75rem;
   margin-bottom: 1rem;
   font-size: 0.75rem;
-}
-#cancel_user,
+} */
+/* #cancel_user,
 .inputs_dataUser input[type="submit"] {
   display: inline-block;
   width: 8rem;
   height: 1.5rem;
   margin: 0 1rem 1rem 1rem;
-}
+} */
 
 table {
   margin-left: 10%;
@@ -63,11 +59,11 @@ table {
   margin-bottom: 0.4rem;
 }
 th:nth-child(1) {
-  width:auto;
+  width: auto;
   padding: 0 1rem 1rem 1rem;
 }
 th {
-  width:auto;
+  width: auto;
   min-width: 1rem;
   padding: 0 2rem 1rem 2rem;
   text-align: center;
@@ -100,7 +96,6 @@ td {
   color: #f2f2f2;
   cursor: pointer;
 } */
-
 
 /* .inputs_dataUser {
   margin-left: 30%;
@@ -142,27 +137,3 @@ select {
   margin-top: 1.5rem;
   margin-bottom: 6rem;
 } */
-
-.btnEditar {
-  background-color: rgb(131, 176, 42);
-  color: #f2f2f2;
-  border: none;
-  width: 3.5rem;
-  height: 1.5rem;
-  font-weight: bold;
-  margin-right: 0.5rem;
-  padding:0.25rem;
-  /* border-radius: 50%; */
-  /* font-size: 1rem; */
-}
-.btnEliminar {
-  background-color: rgb(191, 12, 12);
-  color: #f2f2f2;
-  border: none;
-  border-radius: 50%;
-  height: 1.5rem;
-  font-weight: bold;
-  padding:0.25rem;
-  /* font-size: 1rem; */
-}
-

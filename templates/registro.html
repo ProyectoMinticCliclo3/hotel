@@ -2,134 +2,149 @@
 <link
   rel="stylesheet"
   type="text/css"
-  href="{{ url_for('static', filename='css/registro.css') }}"
+  href="{{ url_for('static', filename='css/base-backgrounds.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
 />
 {% endblock %} {% block content %}
+<!-- <div class="galeria-img">
+  <div class="img-numero">1 / 7</div>
+  <img
+    src="{{ url_for('static',
+          filename='img/img-habitacion/230031199.jpg') }}"
+    alt="Galeria CSS 1"
+    style="width: 100%"
+  />
+</div> -->
+<!-- AREA PRINCIPAL -->
+<div class="bg-img"></div>
+<div class="dataUser du-background">
+  <form class="form" action="/registerNew" method="POST">
+    <h2>Registro de Usuario</h2>
+    <p>
+      <label class="texto" for="cedula"> Cédula: </label>
+      <span>
+        <i class="fa-solid fa-id-card"></i>
+        <input
+          type="text"
+          name="Cedula"
+          id="cedula"
+          placeholder="e.g. 123456789"
+        />
+      </span>
+    </p>
+    <p>
+      <label class="texto" for="nombre">Nombre: </label>
+      <span>
+        <i class="fa-solid fa-person"></i>
+        <input
+          type="text"
+          name="Nombre"
+          id="nombre"
+          placeholder="e.g. Fulanito"
+        />
+      </span>
+    </p>
+    <p>
+      <label class="texto" for="apellido"> Apellidos: </label>
+      <span>
+        <i class="fa-solid fa-person"></i>
+        <input
+          type="text"
+          name="Apellidos"
+          id="apellido"
+          placeholder="e.g. De Tal"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="correo">Correo Electrónico: </label>
+      <span>
+        <i class="fa-solid fa-envelope"></i>
+        <input
+          type="email"
+          name="Correo"
+          id="correo"
+          placeholder="e.g. mi_correo@esclavosmintic.com"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="celular">Celular: </label>
+      <span>
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <input
+          type="phone"
+          name="Celular"
+          id="celular"
+          placeholder="e.g. 3001234567"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+      <span>
+        <i class="fa-solid fa-cake-candles"></i>
+        <input type="date" name="Fecha_Nacimiento" id="fechaNacimiento" />
+      </span>
+    </p>
 
-<main id="main">
-  <div class="base-main">
-    <!-- AREA PRINCIPAL -->
-    <section class="dataUser">
-      <form class="form" action="/registerNew" method="POST">
-        <h2>Registro de Usuario</h2>
-        <p>
-          <label class="texto" for="cedula"> Cédula: </label>
-          <span>
-            <i class="fa-solid fa-id-card"></i>
-            <input
-              type="text"
-              name="Cedula"
-              id="cedula"
-              placeholder="e.g. 123456789"
-            />
-          </span>
-        </p>
-        <p>
-          <label class="texto" for="nombre">Nombre: </label>
-          <span>
-            <i class="fa-solid fa-person"></i>
-            <input
-              type="text"
-              name="Nombre"
-              id="nombre"
-              placeholder="e.g. Fulanito"
-            />
-          </span>
-        </p>
-        <p>
-          <label class="texto" for="apellido"> Apellidos: </label>
-          <span>
-            <i class="fa-solid fa-person"></i>
-            <input
-              type="text"
-              name="Apellidos"
-              id="apellido"
-              placeholder="e.g. De Tal"
-            />
-          </span>
-        </p>
-        <p>
-          <label for="correo">Correo Electrónico: </label>
-          <span>
-            <i class="fa-solid fa-envelope"></i>
-            <input
-              type="email"
-              name="Correo"
-              id="correo"
-              placeholder="e.g. mi_correo@esclavosmintic.com"
-            />
-          </span>
-        </p>
-        <p>
-          <label for="celular">Celular: </label>
-          <span>
-            <i class="fa-solid fa-mobile-screen-button"></i>
-            <input
-              type="phone"
-              name="Celular"
-              id="celular"
-              placeholder="e.g. 3001234567"
-            />
-          </span>
-        </p>
-        <p>
-          <label for="fechaNacimiento">Fecha de Nacimiento: </label>
-          <span>
-            <i class="fa-solid fa-cake-candles"></i>
-            <input type="date" name="Fecha_Nacimiento" id="fechaNacimiento" />
-          </span>
-        </p>
-
-        <p>
-          <label for="pw">Contraseña: </label>
-          <span>
-            <i class="fa-solid fa-key"></i>
-            <input
-              type="password"
-              name="Nueva_Contrasena"
-              id="nuevaContrasena"
-              placeholder="e.g. q_wFyxs._2brjKqsTo"
-            />
-          </span>
-        </p>
-        <p>
-          <label for="pw-validar">Confirmar Contraseña: </label>
-          <span>
-            <i class="fa-solid fa-key"></i>
-            <input
-              type="password"
-              name="Nueva_Contrasena_Validar"
-              id="validarNuevaContrasena"
-              placeholder="e.g. q_wFyxs._2brjKqsTo"
-            />
-          </span>
-        </p>
-        <p>
-          <!-- <label for="tipoUsuario">Tipo de Usuario: </label>
+    <p>
+      <label for="pw">Contraseña: </label>
+      <span>
+        <i class="fa-solid fa-key"></i>
+        <input
+          type="password"
+          name="Nueva_Contrasena"
+          id="nuevaContrasena"
+          placeholder="e.g. q_wFyxs._2brjKqsTo"
+        />
+      </span>
+    </p>
+    <p>
+      <label for="pw-validar">Confirmar Contraseña: </label>
+      <span>
+        <i class="fa-solid fa-key"></i>
+        <input
+          type="password"
+          name="Nueva_Contrasena_Validar"
+          id="validarNuevaContrasena"
+          placeholder="e.g. q_wFyxs._2brjKqsTo"
+        />
+      </span>
+    </p>
+    <p>
+      <!-- <label for="tipoUsuario">Tipo de Usuario: </label>
           <i class="fa-solid fa-ranking-star"></i> -->
-          <input
-            type="hidden"
-            class="input_user"
-            name="Tipo_Usuario"
-            id="tipoUsuario"
-            value="1"
-            readonly
-          />
-        </p>
-        <p>
-          <span>
-            <input
-              class="btnConfirm"
-              type="submit"
-              name="botonConfirm"
-              value="Confirmar"
-              onclick="document.getElementById('modal-id04').style.display='block'"
-              data-open="modal-id04"
-            />
-          </span>
-        </p>
-      </form>
-    </section>
-  </div>
-</main>
+      <input
+        type="hidden"
+        class="input_user"
+        name="Tipo_Usuario"
+        id="tipoUsuario"
+        value="1"
+        readonly
+      />
+    </p>
+    <p>
+      <div class="btn-submit-group">
+        <input
+          class="btn-submit btn-submit-blue btnConfirm"
+          type="submit"
+          name="botonConfirm"
+          value="Confirmar"
+          onclick="document.getElementById('modal-id04').style.display='block'"
+          data-open="modal-id04"
+        />
+      </div>
+    </p>
+  </form>
+</div>
 {% endblock %}
