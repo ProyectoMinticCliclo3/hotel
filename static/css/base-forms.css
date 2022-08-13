@@ -4,6 +4,8 @@ h2 {
   padding: 1rem 0 1rem 0;
 }
 
+.dataUser {
+}
 .form {
   /* background-color: #f8f8f299; */
   background-color: var(--white);
@@ -12,24 +14,32 @@ h2 {
   gap: 1rem;
   /* margin: auto 50% auto auto; */
   padding: 1rem;
-  /* background-color: mediumpurple; */
 }
 
-.form label {
-  margin-left: 5rem;
+.form p label {
+  /* padding-left: 5rem; */
   font-weight: bold;
+  padding: 0.5rem;
 }
 
 .form span input {
+  /* background-color: mediumpurple; */
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
   width: 24rem;
-  height: 2rem;
+  height: 2.5rem;
+  /* width: 100%; */
+  padding: 12px 20px;
+  /* margin: 8px 0; */
+  display: flex;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .form p {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-right: 5rem;
+  /* padding-right: 5rem; */
   /* background-color: chocolate; */
 }
 .form p span {
@@ -50,4 +60,6 @@ h2 {
   width: 24rem;
   height: 8rem;
   margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  padding: 12px 20px;
 }

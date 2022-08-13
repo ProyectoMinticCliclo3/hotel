@@ -3,69 +3,97 @@
 <link
   rel="stylesheet"
   type="text/css"
-  href="{{ url_for('static', filename='css/reservas.css') }}"
+  href="{{ url_for('static', filename='css/base-tables.css') }}"
 />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
+
 <link
   rel="stylesheet"
   type="text/css"
   href="{{ url_for('static', filename='css/reviews.css') }}"
 />
-{% endblock %} {% block content %}
+{% endblock %} 
 
-<div class="page_title">
-  <h2>Reservas</h2>
-</div>
-<section>
-  <h1>Comentanos tu experiencia</h1>
-  <form class="form" method="POST">
-    <p class="star-rating">
-      <input type="radio" id="star5" name="rate" value="5" />
-      <label for="star5" title="text">5 stars</label>
-      <input type="radio" id="star4" name="rate" value="4" />
-      <label for="star4" title="text">4 stars</label>
-      <input type="radio" id="star3" name="rate" value="3" />
-      <label for="star3" title="text">3 stars</label>
-      <input type="radio" id="star2" name="rate" value="2" />
-      <label for="star2" title="text">2 stars</label>
-      <input type="radio" id="star1" name="rate" value="1" />
-      <label for="star1" title="text">1 star</label>
-    </p>
+{% block content %}
 
-    <p class="form__input">
-      <label for="entry" class="form__label">Escribe aquí:</label>
-      <textarea
-        name="review-content"
-        id="entry"
-        class="form__textarea"
-      ></textarea>
-    </p>
-    <button type="submit" class="form__submit">Enviar</button>
-  </form>
-</section>
-<section>
-  <h1>Comentarios Recientes</h1>
-  {% for entry in review_entries %}
-  <article class="entry">
-    <div>
-      <h2 class="entry__title">
-        {{ entry[1] | truncate(30, true) }} •
-        <span>
-          {% if entry[0] == '1' %}
-          <font color="orange">★</font>★★★★ {% elif entry[0] == '2' %}
-          <font color="orange">★★</font>★★★ {% elif entry[0] == '3' %}
-          <font color="orange">★★★</font>★★ {% elif entry[0] == '4' %}
-          <font color="orange">★★★★</font>★ {% elif entry[0] == '5' %}
-          <font color="orange">★★★★★</font>
-          {% else %} ★★★★★ {% endif %}
-        </span>
-      </h2>
-      <time class="entry__date" datetime="{{ entry[2] }}">
-        • {{ entry[3] }}
-      </time>
-    </div>
-    <p class="entry__content">{{ entry[1] }}</p>
-  </article>
-  {% endfor %}
-</section>
+  <section class="dataUser">
+    <section class="booking form">
+        <h2>Reservas</h2>
+    </section>
+    <section>
+      <section>
 
+      <form class="form" method="POST">
+        <h2>Evalúa tu experiencia</h2>
+          <div class="star-rating" id="star-rating">
+
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+          </div>
+
+        <p class="form__input">
+          <label for="entry" class="form__label">Escribe aquí:</label>
+          <span>
+            <i class="fa-solid fa-book-open"></i>
+            <textarea
+            name="review-content"
+            id="entry"
+            class="form__textarea"
+            placeholder="Adelante... desahogate aquí persona subyugada por la sociedad opresora"
+            ></textarea>
+          </span>
+            <div class="btn-submit-group">
+              <button type="submit" class="btn-submit btn-submit-blue form__submit">Enviar</button>
+            </div>
+        </p>
+      </form>
+      </section>
+    <section>
+
+
+        <h2 class="form">Comentarios Recientes</h2>
+        {% for entry in review_entries %}
+          <section class="form entry">
+            <div>
+              <h3 class="entry__title">
+                {{ entry[1] | truncate(30, true) }} •
+                <span class=>
+                  {% if entry[0] == '1' %}
+                    <font color="orange">★</font>★★★★ {% elif entry[0] == '2' %}
+                    <font color="orange">★★</font>★★★ {% elif entry[0] == '3' %}
+                    <font color="orange">★★★</font>★★ {% elif entry[0] == '4' %}
+                    <font color="orange">★★★★</font>★ {% elif entry[0] == '5' %}
+                    <font color="orange">★★★★★</font>
+                  {% else %} ★★★★★ 
+                  {% endif %}
+                </span>
+              </h3>
+              <time class="entry__date" datetime="{{ entry[2] }}">
+                Usuario • {{ entry[3] }}
+              </time>
+            </div>
+            <p class="entry__content">{{ entry[1] }}</p>
+          </section>
+        {% endfor %}
+    </section>
+    
+
+  </section>
 {% endblock %}

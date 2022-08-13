@@ -25,6 +25,14 @@
   min-width: fit-content;
   /* border: var(--white) solid 2rem; */
 }
+
+.du-background {
+  background-image: url("../img/img-habitacion/230031199.jpg");
+  background-repeat: no-repeat;
+  background-color: var(--blue);
+  background-size: cover;
+}
+
 body {
   min-height: 100vh;
   overflow-x: hidden;
