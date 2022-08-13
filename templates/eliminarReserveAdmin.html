@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gestionUsuarios.css') }}" />
+{% endblock %} {% block content %}
+
+
+<main class="container">
+    <!-- SECCION PRINCIPAL -->
+    <div id="main">
+      <div class="base-main">
+        <!-- AREA PRINCIPAL -->
+        <section class="eliminar_reserve">
+          <h2>Eliminar Reserva</h2>
+          <!-- <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button> -->
+          <div class="" id="">
+            <!-- <h4>Editar Administrador</h4> -->
+  
+            <form action="/eliminarReserveAdmin/{{ reserva[0] }}" class="inputs_review" method="post">
+              <label for="id">Id Reserva</label>
+              <input type="text" class="input_reserve" name="id_comentario" id="id_comentario" value={{ reserva[0] }} readonly>
+  
+              <label for="id_usuario">Id del Usuario</label>
+              <input type="text" class="input_reserve" name="id_usuario" id="id_usuario" value={{ reserva[1] }} readonly>
+              
+              <label for="precio">Valor Total</label>
+              <input type="text" class="input_reserve" name="precio" id="precio" value={{ reserva[2] }} readonly>
+
+              <label for="fecha_entrada">Fecha de Entrada</label>
+              <input type="date" class="input_reserve" name="fechaEntrada" id="fechaEntrada" value={{ reserva[3] }} readonly>
+
+              <label for="fecha_salida">Fecha de Salida</label>
+              <input type="date" class="input_reserve" name="fechaSalida" id="fechaSalida" value={{ reserva[4] }} readonly>
+              
+              <div>
+                <!-- <input type="submit" name="gestion_usuario" value="Editar Usuario"> -->
+                <input type="submit" class="btnEliminar" name="gestion_reserva_admin" value="Eliminar Reserva">
+                <input type="submit" class="btnEditar" name="gestion_reserva_admin" id="cancel_user" value="Cancelar">
+              </div>
+            </form>
+  
+          </div>
+  
+         </section>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}
