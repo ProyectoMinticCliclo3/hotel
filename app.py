@@ -2,12 +2,13 @@
 import datetime
 import sqlite3
 import db.scripts as scripts
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
-from flask import Flask, jsonify, render_template, request, redirect, url_for
-
+from flask import Flask, jsonify, render_template, request, redirect, url_for, session, escape
 
 app = Flask(__name__, static_url_path='/static')
+app.secret_key = 'palabra clave'
+
 
 # Almacenamiento temporal de datos de reserva
 booking_entries = []
@@ -18,10 +19,43 @@ review_entries = []
 def hello():
     return "<h1>Hello, Esclavos del grupo 05 de MinTic Uninorte!!</h1>"
 
+@app.before_request
+def before_request():
+    print (scripts.tipo_usuario_sesion_abierta)
+    # print(scripts.tipo_usuario_sesion_abierta==1)
+    if 'usuario' not in session and request.endpoint in ['users', 'admin_users', 'editUser', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
+        return redirect('/')
+    elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==1) and request.endpoint in ['users', 'admin_users', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
+        return redirect('/')
 
 @app.route('/base/')
 def base():
     return render_template("base.html")
+
+@app.route('/login', methods=['POST'])
+def login():
+    usuario = request.form.to_dict(flat=True)
+    # print(usuario)
+    usuario_bd = scripts.obtener_usuario_login(usuario)
+    if usuario_bd:
+        valid_pass = check_password_hash(usuario_bd[8], usuario['contrasena'])
+        if valid_pass:
+            session['usuario'] = usuario_bd
+            
+            # print("el tipo de usuario es: "+str(scripts.tipo_usuario_sesion_abierta))
+            scripts.tipo_usuario_sesion_abierta = usuario_bd[7]
+            return redirect('/')
+        else:
+            return redirect('/admin-users')
+    else:
+        return redirect('/admin-admins')
+
+@app.route('/cerrar-sesion')
+def cerrar_sesion():
+    session.pop('usuario', None)
+    scripts.tipo_usuario_sesion_abierta = 0
+    # print(scripts.tipo_usuario_sesion_abierta)
+    return redirect('/')
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -71,6 +105,7 @@ def booking():
 
 @ app.route('/user/')
 def user():
+
     return render_template("users.html")
 
 

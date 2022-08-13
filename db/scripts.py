@@ -20,6 +20,22 @@ def insertar_usuario(usuario):
     conexion.commit()
     conexion.close()
 
+tipo_usuario_sesion_abierta=0
+# Para el login
+def obtener_usuario_login(usuario):
+    query = "select * from User where Correo='{}';".format(usuario['correo'])
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    cursorObj.execute(query)
+    usuario = cursorObj.fetchone()
+    conexion.commit()
+    conexion.close()
+    # print(usuarios)
+    tipo_usuario_sesion_abierta = usuario[7]
+    print ('el tipo de usuario es: '+str(tipo_usuario_sesion_abierta))
+    return usuario
+
 # Funciona para administradores y clientes gracias al parámetro tipo
 
 
