@@ -84,7 +84,7 @@
   >
     Agregar Administrador
   </button>
-  <section class="form_dataUser" id="form_dataUser">
+  <section class="form_dataUser" id="form_dataUser" display="none">
     <form action="/addAdmin" class="form inputs_dataUser" method="POST">
       <h2>Crear Nuevo Administrador</h2>
       <p>
@@ -171,18 +171,27 @@
           />
         </span>
       </p>
-
-      <!-- <label for="anteriorContrasena">Anterior Contraseña</label>
-            <input type="password" class="input_user" name="Anterior_Contrasena" id="anteriorContrasena" placeholder="Anterior Contraseña" /> -->
       <p>
-        <label for="nuevaContrasena">Nueva Contraseña</label>
+        <label for="anteriorContrasena">Contraseña</label>
+        <span>
+          <input
+            type="password"
+            class="input_user"
+            name="Anterior_Contrasena"
+            id="anteriorContrasena"
+            placeholder="Contraseña"
+          />
+        </span>
+      </p>
+      <p>
+        <label for="nuevaContrasena">Repetir Contraseña</label>
         <span>
           <input
             type="password"
             class="input_user"
             name="Nueva_Contrasena"
             id="nuevaContrasena"
-            placeholder="Nueva Contraseña"
+            placeholder="Repetir Contraseña"
           />
         </span>
       </p>
@@ -209,8 +218,8 @@
   </section>
   <section id="table_admins">
     <table class="tables table_admins">
+      <h2>Lista de Administradores</h2>
       <thead>
-        <h2>Lista de Administradores</h2>
         <tr>
           <th>Id</th>
           <th>Cédula</th>

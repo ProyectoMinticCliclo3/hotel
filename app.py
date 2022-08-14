@@ -15,18 +15,19 @@ booking_entries = []
 review_entries = []
 
 
+
 @app.route('/test/')
 def hello():
     return "<h1>Hello, Esclavos del grupo 05 de MinTic Uninorte!!</h1>"
 
 @app.before_request
 def before_request():
-    print (scripts.tipo_usuario_sesion_abierta)
-    # print(scripts.tipo_usuario_sesion_abierta==1)
-    if 'usuario' not in session and request.endpoint in ['users', 'admin_users', 'editUser', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
+    if 'usuario' not in session and request.endpoint in ['user', 'users', 'admin_users', 'editUser', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
         return redirect('/')
-    elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==1) and request.endpoint in ['users', 'admin_users', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
-        return redirect('/')
+    elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==1) and request.endpoint in ['admin_users', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
+        return redirect('/user')
+    elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==2) and request.endpoint in ['admin_admins']:
+        return redirect('/admin-rooms')
 
 @app.route('/base/')
 def base():
@@ -35,26 +36,24 @@ def base():
 @app.route('/login', methods=['POST'])
 def login():
     usuario = request.form.to_dict(flat=True)
-    # print(usuario)
     usuario_bd = scripts.obtener_usuario_login(usuario)
     if usuario_bd:
         valid_pass = check_password_hash(usuario_bd[8], usuario['contrasena'])
         if valid_pass:
             session['usuario'] = usuario_bd
-            
-            # print("el tipo de usuario es: "+str(scripts.tipo_usuario_sesion_abierta))
+            scripts.id_usuario_sesion = usuario_bd[0]
             scripts.tipo_usuario_sesion_abierta = usuario_bd[7]
-            return redirect('/')
+            return redirect('/admin-admins')
         else:
-            return redirect('/admin-users')
+            return redirect('/')
     else:
-        return redirect('/admin-admins')
+        return redirect('/')
 
 @app.route('/cerrar-sesion')
 def cerrar_sesion():
     session.pop('usuario', None)
     scripts.tipo_usuario_sesion_abierta = 0
-    # print(scripts.tipo_usuario_sesion_abierta)
+    scripts.id_usuario_sesion=0
     return redirect('/')
 
 
@@ -103,10 +102,32 @@ def booking():
     return render_template("reservas.html", review_entries=entries_with_date)
 
 
-@ app.route('/user/')
+@ app.route('/user/', methods=['POST', 'GET'])
 def user():
+    if request.method == 'GET':
+        usuario = scripts.obtener_usuario_id(scripts.id_usuario_sesion)
+        reservas = scripts.obtener_reservas_tabla_usuarioId(scripts.id_usuario_sesion)
+        comentarios = scripts.obtener_comentarios_tabla_usuarioId(scripts.id_usuario_sesion)
+        return render_template("users.html", usuario=usuario, reservas=reservas, comentarios=comentarios)
+    else:
+        usuario = request.form.to_dict(flat=True)
+        usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
+        scripts.editar_usuario(scripts.id_usuario_sesion, usuario)
+        return redirect('/user/')
 
-    return render_template("users.html")
+# Edición de comentario user
+@ app.route('/editarReview/<int:id>', methods=['POST', 'GET'])
+def editReview(id):
+    if request.method == 'GET':
+        comentario = scripts.obtener_comentario_admin_id(id)
+        return render_template('editarReview.html', comentario=comentario)
+    else:
+        comentario = request.form.to_dict(flat=True)
+        if request.form['gestion_comentario_admin'] == 'Editar Comentario':
+            scripts.editar_comentario_admin_id(id, comentario)
+        elif request.form['gestion_comentario_admin'] == 'Eliminar Comentario':
+            scripts.eliminar_comentario_admin_id(id)
+        return redirect('/user')
 
 
 @ app.route('/admin-users/')
@@ -125,11 +146,10 @@ def editUser(id):
         return render_template('editarUser.html', usuario=usuario)
     else:
         usuario = request.form.to_dict(flat=True)
-        if request.form['gestion_usuario'] == 'Editar Usuario':
-            # usuario=request.form.to_dict(flat=True)
+        if request.form['gestion_usuario'] == 'Editar':
+            usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
             scripts.editar_usuario(id, usuario)
-        elif request.form['gestion_usuario'] == 'Eliminar Usuario':
-            # usuario=request.form.to_dict(flat=True)
+        elif request.form['gestion_usuario'] == 'Eliminar':
             scripts.eliminar_usuario(id)
         return redirect('/admin-users')
 
@@ -188,10 +208,11 @@ def editAdmin(id):
         return render_template('editarAdmin.html', usuario=usuario)
     else:
         usuario = request.form.to_dict(flat=True)
-        if request.form['gestion_usuario'] == 'Editar Admin':
+        if request.form['gestion_usuario'] == 'Editar':
             # usuario=request.form.to_dict(flat=True)
+            usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
             scripts.editar_usuario(id, usuario)
-        elif request.form['gestion_usuario'] == 'Eliminar Admin':
+        elif request.form['gestion_usuario'] == 'Eliminar':
             # usuario=request.form.to_dict(flat=True)
             scripts.eliminar_usuario(id)
         return redirect('/admin-admins')

@@ -20,15 +20,12 @@
   
               <label for="id_usuario">Id del Usuario</label>
               <input type="text" class="input_reserve" name="id_usuario" id="id_usuario" value={{ reserva[1] }} readonly>
+
+              <label for="fecha_entrada">Check-in</label>
+              <input type="date" class="input_reserve" name="fechaEntrada" id="fechaEntrada" value={{ reserva[2] }} readonly>
               
-              <label for="precio">Valor Total</label>
-              <input type="text" class="input_reserve" name="precio" id="precio" value={{ reserva[2] }} readonly>
-
-              <label for="fecha_entrada">Fecha de Entrada</label>
-              <input type="date" class="input_reserve" name="fechaEntrada" id="fechaEntrada" value={{ reserva[3] }} readonly>
-
-              <label for="fecha_salida">Fecha de Salida</label>
-              <input type="date" class="input_reserve" name="fechaSalida" id="fechaSalida" value={{ reserva[4] }} readonly>
+              <label for="fecha_salida">Check-out</label>
+              <input type="date" class="input_reserve" name="fechaSalida" id="fechaSalida" value={{ reserva[3] }} readonly>
               
               <div>
                 <!-- <input type="submit" name="gestion_usuario" value="Editar Usuario"> -->
