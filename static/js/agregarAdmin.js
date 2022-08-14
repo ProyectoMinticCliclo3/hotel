@@ -25,3 +25,13 @@ btn_cancelarAgregarAdmin.addEventListener('click', () =>{
     
 // })
 
+
+const btn_cerrarSesion = document.getElementById('cerrar_sesion')
+if (btn_cerrarSesion){
+    btn_cerrarSesion.addEventListener('click', () =>{
+        console.log("holaaaaa")
+        fetch('/cerrar-sesion')
+        .then(res => window.location.href = "/")
+        .catch(error => console.log(error))
+    })
+}

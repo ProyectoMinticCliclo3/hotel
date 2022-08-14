@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
-    {% block head %}
-    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/> -->
-    {% endblock %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}" />
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
+  {% block head %}
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/> -->
+  {% endblock %}
 
     <!-- FONTAWESOME OK -->
     <link
@@ -158,25 +159,28 @@
               >
             </a>
           </li>
+          <li>
+            <a href={{ url_for("cerrar_sesion") }}>
+              <span class="icon">
+                <i class="fa-solid fa-id-badge"></i>
+              </span>
+              <span class="title" id="cerrar_sesion">Cerrar Sesión</span>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
 
     <!-- MODAL LOGIN BOX -->
     <div id="modal-id01" class="modal">
-      <form class="modal-content animate" action="/action_page.php">
+      <form class="modal-content animate" action="/login" method="post">
         <div class="modal-container">
           <label> Login </label>
           <label>Usuario</label>
-          <input
-            type="text"
-            placeholder="Nombre de Usuario"
-            name="uname"
-            required
-          />
+          <input type="text" placeholder="Nombre de Usuario" name="correo" required />
 
           <label>Contraseña</label>
-          <input type="password" placeholder="Contraseña" name="psw" required />
+          <input type="password" placeholder="Contraseña" name="contrasena" required />
           <input type="checkbox" checked="checked" /> Recordarme
         </div>
 
