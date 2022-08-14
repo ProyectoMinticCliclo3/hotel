@@ -78,28 +78,54 @@ def home():
     return render_template("index.html", booking_entries=booking_entries)
 
 
-@ app.route('/booking/', methods=["GET", "POST"])
+@ app.route('/booking/', methods=["POST"])
 def booking():
-    if request.method == "POST":
-        review = request.form.get("review-content")
-        rating = request.form.get("rate")
-        formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
-        review_entries.append((rating, review, formatted_date))
+    # if request.method == 'GET':
+    #     reserva = request.form.to_dict(flat=True)
+    #     print(reserva)
+    #     # comentario = scripts.obtener_comentario_admin_id(id)
+    #     return render_template('reservas.html', reserva=reserva)
+    # else:
+    reserva = request.form.to_dict(flat=True)
+    # print(reserva['check-in'])
+    # if request.form['botonReservar'] == 'Reservar':
+    # elif request.form['gestion_comentario_admin'] == 'Eliminar Comentario':
+    #     scripts.eliminar_comentario_admin_id(id)
+    return render_template("reservas.html", reserva=reserva)
+    
+@ app.route('/successful-booking/', methods=["POST"])
+def successful_Booking():
+    reserva = request.form.to_dict(flat=True)
+    if request.form['gestion_usuario'] == 'Reservar':
+        print(scripts.id_usuario_sesion)
+        scripts.reservar(scripts.id_usuario_sesion, reserva)
+        # detalle_reserva = scripts.reservar_detalle(reserva_realizada, reserva)
+        return render_template("successfulBooking.html")
+    else:
+        return redirect('/')
+    
 
-    entries_with_date = [
-        (
-            entry[0],
-            entry[1],
-            entry[2],
-            datetime.datetime.strptime(
-                entry[2], "%Y-%m-%d").strftime("%b %d")
-        )
-        for entry in review_entries
-    ]
 
-    print(entries_with_date)
+    # if request.method == "POST":
+    #     review = request.form.get("review-content")
+    #     rating = request.form.get("rate")
+    #     formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
+    #     review_entries.append((rating, review, formatted_date))
 
-    return render_template("reservas.html", review_entries=entries_with_date)
+    # entries_with_date = [
+    #     (
+    #         entry[0],
+    #         entry[1],
+    #         entry[2],
+    #         datetime.datetime.strptime(
+    #             entry[2], "%Y-%m-%d").strftime("%b %d")
+    #     )
+    #     for entry in review_entries
+    # ]
+
+    # print(entries_with_date)
+
+    # return render_template("reservas.html", review_entries=entries_with_date)
 
 
 @ app.route('/user/', methods=['POST', 'GET'])
