@@ -4,8 +4,10 @@ h2 {
   padding: 1rem 0 1rem 0;
 }
 
-.dataUser {
+.form_dataUser {
+  display: none;
 }
+
 .form {
   /* background-color: #f8f8f299; */
   background-color: var(--white);
