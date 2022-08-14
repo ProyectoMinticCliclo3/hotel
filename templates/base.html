@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-buttons.css') }}" />
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
-  {% block head %}
-  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/> -->
-  {% endblock %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/base-buttons.css') }}"
+    />
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
+    {% block head %}
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}"/> -->
+    {% endblock %}
 
     <!-- FONTAWESOME OK -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
       integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -126,7 +141,7 @@
           <li>
             <a href="https://www.rotana.com/aboutrotana">
               <span class="icon">
-                <i class="fa-solid fa-id-badge"></i>
+                <i class="fa-solid fa-briefcase"></i>
               </span>
               <span class="title">Sobre Nosotros</span>
             </a>
@@ -161,9 +176,9 @@
             </a>
           </li>
           <li>
-            <a href={{ url_for("cerrar_sesion") }}>
-              <span class="icon">
-                <i class="fa-solid fa-id-badge"></i>
+            <a href="{{ url_for('cerrar_sesion') }}">
+              <span class="icon modal-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
               </span>
               <span class="title" id="cerrar_sesion">Cerrar Sesión</span>
             </a>
@@ -178,10 +193,20 @@
         <div class="modal-container">
           <label> Login </label>
           <label>Usuario</label>
-          <input type="text" placeholder="Nombre de Usuario" name="correo" required />
+          <input
+            type="text"
+            placeholder="Nombre de Usuario"
+            name="correo"
+            required
+          />
 
           <label>Contraseña</label>
-          <input type="password" placeholder="Contraseña" name="contrasena" required />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            name="contrasena"
+            required
+          />
           <input type="checkbox" checked="checked" /> Recordarme
         </div>
 

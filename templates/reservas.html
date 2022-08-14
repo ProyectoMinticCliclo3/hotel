@@ -3,6 +3,11 @@
 <link
   rel="stylesheet"
   type="text/css"
+  href="{{ url_for('static', filename='css/base-backgrounds.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
   href="{{ url_for('static', filename='css/base-tables.css') }}"
 />
 <link
@@ -19,13 +24,13 @@
 <link
   rel="stylesheet"
   type="text/css"
-  href="{{ url_for('static', filename='css/reviews.css') }}"
+  href="{{ url_for('static', filename='css/reservas.css') }}"
 />
 {% endblock %} 
 
 {% block content %}
 
-  <section class="dataUser">
+  <section class="dataUser du-background">
     <section class="booking form">
         <h2>Reservas</h2>
     </section>
@@ -95,5 +100,6 @@
     </section>
     
 
+  </section>
   </section>
 {% endblock %}

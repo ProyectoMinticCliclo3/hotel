@@ -1,3 +1,11 @@
 .base-main {
   background-color: var(--blue);
 }
+.du-background {
+  background-image: url("../img/img-habitacion/230031199.jpg");
+  /* background-repeat: no-repeat; */
+  /* background-color: var(--blue); */
+  background-size: contain;
+  /* object-fit: contain; */
+  /* filter: blur(8px); */
+}

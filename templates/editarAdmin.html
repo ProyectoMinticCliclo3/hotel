@@ -1,8 +1,16 @@
 {% extends "base.html" %} {% block head %}
 
 <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gestionAdministradores.css') }}" /> -->
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-forms.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-buttons.css') }}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
 
 {% endblock %} {% block content %}
 
@@ -34,13 +42,24 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id04').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
     </div>
@@ -51,68 +70,142 @@
 <!-- END MODAL SAVE DATA-ADMIN -->
 <!-- AREA PRINCIPAL -->
 <section class="dataUser">
-  <form action="/editarAdmin/{{ usuario[0] }}" class="form inputs_dataUser" method="POST">
+  <form
+    action="/editarAdmin/{{ usuario[0] }}"
+    class="form inputs_dataUser"
+    method="POST"
+  >
     <h2>Editar Administrador</h2>
     <p>
       <label for="cedula">Cédula</label>
       <span>
-        <input type="text" class="input_user" name="Cedula" id="cedula" value="{{ usuario[1] }}" />
+        <i class="fa-solid fa-id-card"></i>
+        <input
+          type="text"
+          class="input_user"
+          name="Cedula"
+          id="cedula"
+          value="{{ usuario[1] }}"
+        />
       </span>
     </p>
     <p>
       <label for="nombre">Nombre</label>
       <span>
-        <input type="text" class="input_user" name="Nombre" id="nombre" value="{{ usuario[2] }}" />
+        <i class="fa-solid fa-person"></i>
+        <input
+          type="text"
+          class="input_user"
+          name="Nombre"
+          id="nombre"
+          value="{{ usuario[2] }}"
+        />
       </span>
     </p>
     <p>
       <label for="apellido">Apellido</label>
       <span>
-        <input type="text" class="input_user" name="Apellidos" id="apellido" value="{{ usuario[3] }}" />
+        <i class="fa-solid fa-person"></i>
+        <input
+          type="text"
+          class="input_user"
+          name="Apellidos"
+          id="apellido"
+          value="{{ usuario[3] }}"
+        />
       </span>
     </p>
 
     <p>
       <label for="fechaNacimiento">Fecha de Nacimiento</label>
       <span>
-        <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" value="{{ usuario[4] }}" />
+        <i class="fa-solid fa-cake-candles"></i>
+        <input
+          type="date"
+          class="input_user"
+          name="Fecha_Nacimiento"
+          id="fechaNacimiento"
+          value="{{ usuario[4] }}"
+        />
       </span>
     </p>
     <p>
       <label for="correo">Correo Electrónico</label>
       <span>
-        <input type="email" class="input_user" name="Correo" id="correo" value="{{ usuario[5] }}" />
+        <i class="fa-solid fa-envelope"></i>
+        <input
+          type="email"
+          class="input_user"
+          name="Correo"
+          id="correo"
+          value="{{ usuario[5] }}"
+        />
       </span>
     </p>
     <p>
       <label for="celular">Celular</label>
       <span>
-        <input type="phone" class="input_user" name="Celular" id="celular" value="{{ usuario[6] }}" />
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <input
+          type="phone"
+          class="input_user"
+          name="Celular"
+          id="celular"
+          value="{{ usuario[6] }}"
+        />
       </span>
     </p>
     <p>
       <label for="tipoUsuario">Tipo de Usuario</label>
       <span>
-        <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value="{{ usuario[7] }}" readonly />
+        <i class="fa-solid fa-ranking-star"></i>
+        <input
+          type="text"
+          class="input_user"
+          name="Tipo_Usuario"
+          id="tipoUsuario"
+          value="{{ usuario[7] }}"
+          readonly
+        />
       </span>
     </p>
     <p>
       <label for="anteriorContrasena">Anterior Contraseña</label>
       <span>
-        <input type="password" class="input_user" name="Anterior_Contrasena" id="anteriorContrasena" placeholder="Anterior Contraseña" />
+        <i class="fa-solid fa-key"></i>
+        <input
+          type="password"
+          class="input_user"
+          name="Anterior_Contrasena"
+          id="anteriorContrasena"
+          placeholder="Anterior Contraseña"
+        />
       </span>
     </p>
     <p>
       <label for="nuevaContrasena">Nueva Contraseña</label>
       <span>
-        <input type="password" class="input_user" name="Nueva_Contrasena" id="nuevaContrasena" placeholder="Nueva Contraseña" />
+        <i class="fa-solid fa-key"></i>
+        <input
+          type="password"
+          class="input_user"
+          name="Nueva_Contrasena"
+          id="nuevaContrasena"
+          placeholder="Nueva Contraseña"
+        />
       </span>
     </p>
     <p>
       <label for="nuevaContrasena">Repetir Contraseña</label>
       <span>
-        <input type="password" class="input_user" name="Repetir_Contrasena" id="repetirContrasena"
-          placeholder="Repetir Contraseña" />
+        <i class="fa-solid fa-key"></i>
+        <input
+          type="password"
+          class="input_user"
+          name="Repetir_Contrasena"
+          id="repetirContrasena"
+          placeholder="Repetir Contraseña"
+        />
       </span>
     </p>
 
@@ -120,10 +213,25 @@
             <input type="password" class="input_user" name="Confirmar_Contrasena" id="confirmarContrasena" placeholder="Confirmar Contraseña" /> -->
 
     <div class="btn-submit-group">
-      <input class="btn-submit btn-submit-blue" type="submit" name="gestion_usuario" value="Editar" />
-      <input class="btn-submit btn-submit-red" type="submit" name="gestion_usuario" value="Eliminar" />
-      <input class="btn-submit btn-submit-gray" type="submit" name="gestion_usuario" id="cancel_user"
-        value="Cancelar" />
+      <input
+        class="btn-submit btn-submit-blue"
+        type="submit"
+        name="gestion_usuario"
+        value="Editar"
+      />
+      <input
+        class="btn-submit btn-submit-red"
+        type="submit"
+        name="gestion_usuario"
+        value="Eliminar"
+      />
+      <input
+        class="btn-submit btn-submit-gray"
+        type="submit"
+        name="gestion_usuario"
+        id="cancel_user"
+        value="Cancelar"
+      />
     </div>
   </form>
 </section>

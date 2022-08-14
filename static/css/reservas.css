@@ -1,30 +1,7 @@
-.dataUser {
-  background-image: url("../img/img-habitacion/230031199.jpg");
-  background-position: center;
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
+.entry__content {
+  max-width: 60ch;
 }
 
-/* .form {
-  background-color: var(--white);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-} */
-/* .galeria-img {
-  padding: 0 1.68rem 1.68rem 1.68rem;
-  vertical-align: center;
-  width: 100%;
-  object-fit: contain;
-  position: sticky;
-} */
-.base-main {
-  background-color: var(--blue);
-}
-.dataUser {
-  /* color: firebrick; */
-}
 .star-rating {
   float: left;
   /* height: 46px; */
@@ -42,7 +19,7 @@
   white-space: nowrap;
   cursor: pointer;
   font-size: 30px;
-  /* color: #ccc; */
+  color: var(--blue);
 }
 .star-rating:not(:checked) > label:before {
   content: "★ ";

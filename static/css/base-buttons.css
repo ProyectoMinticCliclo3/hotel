@@ -1,7 +1,7 @@
 .btn-submit-group {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .btn-submit {
@@ -12,6 +12,11 @@
   padding: 0.25rem 2rem;
   text-decoration: none;
   cursor: pointer;
+  margin: 1rem;
+}
+
+.btn-submit:hover {
+  text-decoration: none;
 }
 
 .btn-submit-blue {
