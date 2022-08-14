@@ -1,0 +1,81 @@
+{% extends "base.html" %} {% block head %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-tables.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-forms.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-buttons.css') }}" />
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reviews.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+<section class="dataUser">
+  <section class="booking form">
+    <h2>Reserva Realizada Exitosamente</h2>
+    <!-- <form action="/" class="form" method="POST">
+      <p>
+        <label for="check-in">Check-In</label>
+        <span>
+          <i class="fa-solid fa-id-card"></i>
+          <input type="date" class="input_booking" name="Check-In" id="Check-In-Booking" value="{{ reserva['check-in'] }}" readonly/>
+        </span>
+      </p>
+      <p>
+        <label for="check-out">Check-Out</label>
+        <span>
+          <i class="fa-solid fa-person"></i>
+          <input type="date" class="input_booking" name="Check-Out" id="Check-Out-Booking" value="{{ reserva['check-out'] }}" readonly/>
+        </span>
+      </p>
+      <p>
+        <label for="huespedes">Huéspedes</label>
+        <span>
+          <i class="fa-solid fa-person"></i>
+          <input type="number" class="input_booking" name="Huespedes" id="Huespedes" value="{{ reserva['huespedes'] }}" readonly/>
+        </span>
+      </p>
+      <p>
+        <label for="habitaciones">Cantidad Habitaciones</label>
+        <span>
+          <i class="fa-solid fa-cake-candles"></i>
+          <input type="number" class="input_booking" name="Habitaciones" id="Habitaciones" value="{{ reserva['habitaciones'] }}" readonly/>
+        </span>
+      </p>
+      <p>
+        <label for="cantidadNoches">Cantidad de Noches</label>
+        <span>
+          <i class="fa-solid fa-cake-candles"></i>
+          <input type="text" class="input_booking" name="CantidadNoches" id="CantidadNoches" value="" readonly/>
+        </span>
+      </p>
+      <p>
+        <label for="precioTotalHabitacion">Precio por Habitacion</label>
+        <span>
+          <i class="fa-solid fa-cake-candles"></i>
+          <input type="text" class="input_booking" name="PrecioTotalHabitacion" id="PrecioTotalHabitacion" value="" readonly/>
+        </span>
+      </p>
+      <p>
+        <label for="valorTotal">Valor Total</label>
+        <span>
+          <i class="fa-solid fa-cake-candles"></i>
+          <input type="text" class="input_booking" name="ValorTotal" id="ValorTotal" value="" readonly/>
+        </span>
+      </p>
+
+      <div class="btn-submit-group">
+        <input class="btn-submit btn-submit-blue" type="submit" name="VerCuenta" id = "VerCuenta" value="Ver mi cuenta" />
+        <input class="btn-submit btn-submit-red" type="submit" name="gestion_usuario" value="Eliminar" />
+        <input class="btn-submit btn-submit-gray" type="submit" name="Regresar" id="Regresar" value="Pagina de Inicio" />
+      </div>
+    </form> -->
+    <!-- <input class="btn-submit btn-submit-blue" type="submit" name="gestion_usuario" id = "verDisponibilidad" value="Ver Disponibilidad" /> -->
+        
+  </section>
+
+
+</section>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

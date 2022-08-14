@@ -1,9 +1,5 @@
 {% extends "base.html" %} {% block head %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename='css/index.css') }}"
-/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
 {% endblock %} {% block content %}
 <section>
   <!-- CONTENEDOR DE GALERIA -->
@@ -11,61 +7,38 @@
     <!-- IMAGENES CON NUMERACION -->
     <div class="galeria-img">
       <div class="img-numero">1 / 7</div>
-      <img
-        src="{{ url_for('static',
-              filename='img/img-habitacion/230031199.jpg') }}"
-        alt="Galeria CSS 1"
-        style="width: 100%"
-      />
+      <img src="{{ url_for('static',
+              filename='img/img-habitacion/230031199.jpg') }}" alt="Galeria CSS 1" style="width: 100%" />
     </div>
     <div class="galeria-img">
       <div class="img-numero">2 / 7</div>
-      <img
-        src="{{ url_for('static', filename='img/img-habitacion/230031947.jpg') }}"
-        alt="Galeria CSS 2"
-        style="width: 100%"
-      />
+      <img src="{{ url_for('static', filename='img/img-habitacion/230031947.jpg') }}" alt="Galeria CSS 2"
+        style="width: 100%" />
     </div>
     <div class="galeria-img">
       <div class="img-numero">3 / 7</div>
-      <img
-        src="{{ url_for('static', filename='img/img-habitacion/233120309.jpg') }}"
-        alt="Galeria CSS 3"
-        style="width: 100%"
-      />
+      <img src="{{ url_for('static', filename='img/img-habitacion/233120309.jpg') }}" alt="Galeria CSS 3"
+        style="width: 100%" />
     </div>
     <div class="galeria-img">
       <div class="img-numero">4 / 7</div>
-      <img
-        src="{{ url_for('static', filename='img/img-habitacion/230032549.jpg') }}"
-        alt="Galeria CSS 4"
-        style="width: 100%"
-      />
+      <img src="{{ url_for('static', filename='img/img-habitacion/230032549.jpg') }}" alt="Galeria CSS 4"
+        style="width: 100%" />
     </div>
     <div class="galeria-img">
       <div class="img-numero">5 / 7</div>
-      <img
-        src="{{ url_for('static', filename='img/img-habitacion/230049217.jpg') }}"
-        alt="Galeria CSS 5"
-        style="width: 100%"
-      />
+      <img src="{{ url_for('static', filename='img/img-habitacion/230049217.jpg') }}" alt="Galeria CSS 5"
+        style="width: 100%" />
     </div>
     <div class="galeria-img">
       <div class="img-numero">6 / 7</div>
-      <img
-        src="{{ url_for('static', filename='img/img-habitacion/230203324.jpg') }}"
-        alt="Galeria CSS 6"
-        style="width: 100%"
-      />
+      <img src="{{ url_for('static', filename='img/img-habitacion/230203324.jpg') }}" alt="Galeria CSS 6"
+        style="width: 100%" />
     </div>
     <div class="galeria-img">
       <div class="img-numero">7 / 7</div>
-      <img
-        src="{{ url_for('static',
-              filename='img/img-habitacion/230203934.jpg') }}"
-        alt="Galeria CSS 7"
-        style="width: 100%"
-      />
+      <img src="{{ url_for('static',
+              filename='img/img-habitacion/230203934.jpg') }}" alt="Galeria CSS 7" style="width: 100%" />
     </div>
     <!-- BOTONES DE SIGUIENTE Y ANTERIOR -->
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -78,7 +51,7 @@
     <div class="booking">
       <!-- <h3>Reservar</h3> -->
       <!-- FIXME no funciona bien llamando action ya que no lee el POST <form action="{{ url_for('booking') }}" method="POST"> -->
-      <form method="POST">
+      <form action="/booking/" method="POST">
         <div class="booking-left">
           <div class="check-in-out">
             <label for="check-in">Check-In:</label>
@@ -89,37 +62,17 @@
           </div>
           <div class="select-hab">
             <label for="huespedes">Huespedes:</label>
-            <input
-              class="little-input"
-              name="huespedes"
-              type="number"
-              id="huespedes"
-              value="1"
-              min="1"
-              max="30"
-            />
+            <input class="little-input" name="huespedes" type="number" id="huespedes" value="1" min="1" max="30" />
             <!-- Habitaciones -->
             <label for="habitaciones">Habitaciones:</label>
-            <input
-              class="little-input"
-              name="habitaciones"
-              type="number"
-              id="habitaciones"
-              value="1"
-              min="1"
-              max="30"
-            />
+            <input class="little-input" name="habitaciones" type="number" id="habitaciones" value="1" min="1"
+              max="30" />
           </div>
         </div>
         <div class="booking-right">
           <span>$450.000,00 COP/noche</span>
           <!-- Boton Reservar -->
-          <input
-            class="btn-booking"
-            type="submit"
-            name="botonReservar"
-            value="Reservar"
-          />
+          <input class="btn-booking" type="submit" name="botonReservar" value="Reservar" />
         </div>
       </form>
       <!--Boton Compartir-->
