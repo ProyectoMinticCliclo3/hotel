@@ -20,6 +20,7 @@ def insertar_usuario(usuario):
     conexion.commit()
     conexion.close()
 
+id_usuario_sesion=0
 tipo_usuario_sesion_abierta=0
 # Para el login
 def obtener_usuario_login(usuario):
@@ -31,9 +32,6 @@ def obtener_usuario_login(usuario):
     usuario = cursorObj.fetchone()
     conexion.commit()
     conexion.close()
-    # print(usuarios)
-    tipo_usuario_sesion_abierta = usuario[7]
-    print ('el tipo de usuario es: '+str(tipo_usuario_sesion_abierta))
     return usuario
 
 # Funciona para administradores y clientes gracias al parámetro tipo
@@ -123,6 +121,15 @@ def eliminar_comentario_admin_id(id):
     conexion.commit()
     conexion.close()
 
+def editar_comentario_admin_id(id, comentario):
+    query = "update Reviews set Comentario='{}' where id = {};".format(comentario['comentario'], id)
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    cursorObj.execute(query)
+    conexion.commit()
+    conexion.close()
+
 
 def obtener_reservas_tabla():
     query = 'select * from Reserva;'
@@ -155,6 +162,30 @@ def eliminar_reserva_admin_id(id):
     cursorObj.execute(query)
     conexion.commit()
     conexion.close()
+
+def obtener_reservas_tabla_usuarioId(id_usuario):
+    query = 'select * from Reserva where Id_User={};'.format(id_usuario)
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    reservas = cursorObj.execute(query)
+    reservas = cursorObj.fetchall()
+    conexion.commit()
+    conexion.close()
+    # print(usuarios)
+    return reservas
+
+def obtener_comentarios_tabla_usuarioId(id_usuario):
+    query = 'select Id, Id_User, Fecha, Comentario from Reviews where Id_User={};'.format(id_usuario)
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    comentarios = cursorObj.execute(query)
+    comentarios = cursorObj.fetchall()
+    conexion.commit()
+    conexion.close()
+    # print(usuarios)
+    return comentarios
 
 
 # Funciona para administradores y clientes gracias al parámetro tipo

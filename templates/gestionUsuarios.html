@@ -264,7 +264,6 @@
         <tr>
           <th>Id</th>
           <th>Id Usuario</th>
-          <th>Precio Total</th>
           <th>Check-in</th>
           <th>Check-out</th>
           <th>Ver/Eliminar</th>
@@ -283,13 +282,9 @@
           <td>{{ reservas[i][1] }}</td>
           <td>{{ reservas[i][2] }}</td>
           <td>{{ reservas[i][3] }}</td>
-          <td>{{ reservas[i][4] }}</td>
           <td>
             <!-- <a href="/editarReview/{{reservas[i][0]}}" class="btnEditar" id="btnEditarComentario">Editar</a> -->
-            <a
-              href="/eliminarReserveAdmin/{{reservas[i][0]}}"
-              class="btnEliminar"
-              >Eliminar</a
+            <a href="/eliminarReserveAdmin/{{reservas[i][0]}}" class="btnEliminar btn-submit btn-submit-red">Eliminar</a
             >
           </td>
           <!-- <td onclick="seleccionar(this,1)">
@@ -353,8 +348,6 @@
   </section>
 </section>
 <script>
-  function seleccionar(tr, value) {
-    this.chk1.click();
-  }
+
 </script>
 {% endblock %}

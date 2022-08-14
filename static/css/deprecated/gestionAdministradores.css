@@ -51,6 +51,10 @@
   margin: 0 1rem 1rem 1rem;
 } */
 
+.form_dataUser{
+  display: none;
+}
+
 table {
   margin-left: 10%;
   border-collapse: separate;
