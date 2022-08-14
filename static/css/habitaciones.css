@@ -1,0 +1,44 @@
+.precio {
+  padding: 2rem;
+  margin: 1rem;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.booking {
+  display: flex;
+  flex-direction: row;
+}
+.booking-left {
+  justify-content: left;
+}
+
+.booking-right {
+  justify-content: right;
+}
+.list-characteristics {
+  display: flex;
+  color: var(--black1);
+  /* margin: 1rem 2rem; */
+  /* justify-content: flex-start; */
+  /* flex-wrap: wrap; */
+  /* flex-flow: column; */
+}
+.list-characteristics ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0.5rem 2.5rem;
+  /* list-style: circle; */
+  /* margin: 0 2.5rem; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+  /* flex-flow: column; */
+}
+
+.list-characteristics ul li::before {
+  content: "\2713"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--blue); /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
