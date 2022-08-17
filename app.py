@@ -22,7 +22,7 @@ def hello():
 
 @app.before_request
 def before_request():
-    if 'usuario' not in session and request.endpoint in ['user', 'users', 'admin_users', 'editUser', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
+    if 'usuario' not in session and request.endpoint in ['user', 'realizar_Comentario', 'booking', 'users', 'admin_users', 'editUser', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
         return redirect('/')
     elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta == 1) and request.endpoint in ['admin_users', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
         return redirect('/user')
@@ -44,6 +44,7 @@ def login():
         if valid_pass:
             session['usuario'] = usuario_bd
             scripts.id_usuario_sesion = usuario_bd[0]
+            print(scripts.id_usuario_sesion)
             scripts.tipo_usuario_sesion_abierta = usuario_bd[7]
             return redirect('/admin-admins')
         else:
@@ -63,6 +64,7 @@ def cerrar_sesion():
 @app.route('/', methods=["GET", "POST"])
 def home():
     if request.method == "POST":
+        print(scripts.id_usuario_sesion)
         # Obtiene fecha de hoy para referencia
         formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
         check_in = request.form.get("check-in")
@@ -90,11 +92,26 @@ def booking():
     #     return render_template('reservas.html', reserva=reserva)
     # else:
     reserva = request.form.to_dict(flat=True)
+    print(scripts.id_usuario_sesion)
+    # review = request.form.get("review-content")
+    # rating = request.form.get("rate")
+    # formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
+    # review_entries.append((rating, review, formatted_date))
 
-    # print(reserva['check-in'])
-    # if request.form['botonReservar'] == 'Reservar':
-    # elif request.form['gestion_comentario_admin'] == 'Eliminar Comentario':
-    #     scripts.eliminar_comentario_admin_id(id)
+    # entries_with_date = [
+    #     (
+    #         entry[0],
+    #         entry[1],
+    #         entry[2],
+    #         datetime.datetime.strptime(
+    #             entry[2], "%Y-%m-%d").strftime("%b %d")
+    #     )
+    #     for entry in review_entries
+    # ]
+
+    # print(entries_with_date)
+
+    # return render_template("reservas.html", reserva=reserva, review_entries=entries_with_date)
     return render_template("reservas.html", reserva=reserva)
 
 
@@ -102,17 +119,40 @@ def booking():
 def successful_Booking():
     reserva = request.form.to_dict(flat=True)
     if request.form['gestion_usuario'] == 'Reservar':
-        print(scripts.id_usuario_sesion)
+        # print(scripts.id_usuario_sesion)
         scripts.reservar(scripts.id_usuario_sesion, reserva)
-        # detalle_reserva = scripts.reservar_detalle(reserva_realizada, reserva)
+
+        ultimoIdReserva = (scripts.obtener_ultima_reserva())[0]
+        print(ultimoIdReserva)
+
+        for i in range(int(reserva['Habitaciones'])):
+            scripts.reservar_detalle(
+                i+1, ultimoIdReserva, reserva['PrecioTotalHabitacion'])
+            # print(i+1)
+
+        # for i=1 range(numero de habitaciones+1)
+        #     scripts.reservar_detalle(id_room, id_reserva, precio_total_por_habitacion)
+        #     scripts.reservar_detalle(i, ultimoIdReserva, reserva['PrecioTotalHabitacion'])
+
         return render_template("successfulBooking.html")
     else:
         return redirect('/')
 
-    # if request.method == "POST":
-    #     review = request.form.get("review-content")
-    #     rating = request.form.get("rate")
-    #     formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
+
+@ app.route('/realizarComentario/', methods=["POST", "GET"])
+def realizar_Comentario():
+    if request.method == "GET":
+        return render_template("comentarios.html")
+    else:
+        comentario = request.form.to_dict(flat=True)
+        # review = request.form.get("review-content")
+        # rating = request.form.get("rate")
+        formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
+        scripts.insertar_comentario(
+            scripts.id_usuario_sesion, formatted_date, comentario)
+        # print(formatted_date)
+        # print(scripts.id_usuario_sesion)
+        # print(comentario)
     #     review_entries.append((rating, review, formatted_date))
 
     # entries_with_date = [
@@ -128,7 +168,8 @@ def successful_Booking():
 
     # print(entries_with_date)
 
-    # return render_template("reservas.html", review_entries=entries_with_date)
+    # return render_template("comentarios.html", review_entries=entries_with_date)
+        return redirect("/realizarComentario/")
 
 
 @ app.route('/user/', methods=['POST', 'GET'])
@@ -280,10 +321,20 @@ def rooms():
     return render_template("habitaciones.html")
 
 
-@ app.route('/admin-rooms/')
+@ app.route('/admin-rooms/', methods=["POST", "GET"])
 def admins_home():
-    habitaciones = scripts.obtener_habitacion_tabla()
-    return render_template("gestionHabitaciones.html", habitaciones=habitaciones)
+    if request.method == 'GET':
+        habitaciones = scripts.obtener_habitacion_tabla()
+        return render_template("gestionHabitaciones.html", habitaciones=habitaciones)
+    else:
+        cantidad_habitaciones = int(request.form['numero_habitaciones'])
+        for i in range(cantidad_habitaciones):
+            scripts.agregar_habitacion()
+
+        return redirect('/admin-rooms')
+
+        # for i in range(int(reserva['Habitaciones'])):
+        #     scripts.reservar_detalle(i+1, ultimoIdReserva, reserva['PrecioTotalHabitacion'])
 
 
 # @ app.route('/addRoom', methods=['POST'])
@@ -297,7 +348,8 @@ def admins_home():
 
 @app.route('/register')
 def register():
-    return render_template("registro.html")
+    usuarios = scripts.obtener_usuario_tabla(2)
+    return render_template("registro.html", usuarios=usuarios)
 
 
 @ app.route('/registerNew', methods=['POST'])

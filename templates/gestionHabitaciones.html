@@ -190,13 +190,18 @@
 
 <!-- MODAL ADDING ROOM -->
 <div id="modal-id05" class="modal">
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="/admin-rooms" method="POST">
     <div class="modal-container">
       <label>
-        <h1>¿Cuántas habitaciones nuevas de tipo Estándar se van a crear?</h1>
+        <h2>¿Cuántas habitaciones nuevas de tipo Estándar se van a crear?</h2>
       </label>
-      <label><b>Valor de las Habitaciones</b></label>
-      <input type="number" class="campo-modal" min="1" />
+      <label><b>Cantidad Habitaciones</b></label>
+      <input
+        type="number"
+        class="campo-modal"
+        min="1"
+        name="numero_habitaciones"
+      />
 
       <!-- <label><b>Fecha</b></label>
           <input type="date" class="campo-modal" disabled /> -->
