@@ -21,7 +21,7 @@ def insertar_usuario(usuario):
     conexion.close()
 
 
-id_usuario_sesion=0
+id_usuario_sesion = 0
 tipo_usuario_sesion_abierta = 0
 # Para el login
 
@@ -193,6 +193,7 @@ def insertar_comentario(id_usuario, fecha, comentario):
     conexion.commit()
     conexion.close()
 
+
 def obtener_comentarios_tabla_usuarioId(id_usuario):
     query = 'select * from Reviews where Id_User={};'.format(
         id_usuario)
@@ -244,6 +245,7 @@ def reservar_detalle(id_room, id_reserva, precio_total_habitacion):
     conexion.commit()
     conexion.close()
 
+
 def obtener_ultima_reserva():
     query = 'SELECT * FROM Reserva ORDER BY Id DESC LIMIT 1;'
     # print(query)
@@ -256,8 +258,10 @@ def obtener_ultima_reserva():
     # print(usuarios)
     return reserva
 
+
 def agregar_habitacion():
-    query = "insert into Room (Capacidad, Precio) values ('{}','{}');".format(4, 450000)
+    query = "insert into Room (Capacidad, Precio) values ('{}','{}');".format(
+        4, 450000)
     # print(query)
     conexion = conexion_bd()
     # print(conexion)

@@ -10,8 +10,25 @@
   type="text/css"
   href="{{ url_for('static', filename='css/base-tables.css') }}"
 />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-menuAdmin.css') }}"
+/>
 
 {% endblock %} {% block content %}
+<div class="admin-navbar">
+  <div class="subnav">
+    <button class="subnavbtn btn-submit btn-submit-blue">
+      MENÚ ADMIN <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="subnav-content">
+      <a href="{{ url_for('admins_home') }}">Gestión Habitaciones</a>
+      <a href="{{ url_for('admin_users') }}">Gestión Usuarios</a>
+      <a href="{{ url_for('admin_admins') }}">Gestión Admins (SA)</a>
+    </div>
+  </div>
+</div>
 <!-- MODAL EDIT REVIEW -->
 <div id="modal-id02" class="modal">
   <form class="modal-content animate" action="/action_page.php">
@@ -284,7 +301,10 @@
           <td>{{ reservas[i][3] }}</td>
           <td>
             <!-- <a href="/editarReview/{{reservas[i][0]}}" class="btnEditar" id="btnEditarComentario">Editar</a> -->
-            <a href="/eliminarReserveAdmin/{{reservas[i][0]}}" class="btnEliminar btn-submit btn-submit-red">Eliminar</a
+            <a
+              href="/eliminarReserveAdmin/{{reservas[i][0]}}"
+              class="btnEliminar btn-submit btn-submit-red"
+              >Eliminar</a
             >
           </td>
           <!-- <td onclick="seleccionar(this,1)">
@@ -347,7 +367,5 @@
     </div>
   </section>
 </section>
-<script>
-
-</script>
+<script></script>
 {% endblock %}

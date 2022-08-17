@@ -5,16 +5,22 @@
   font-size: xx-large;
 }
 
-.booking {
+/* .booking {
   display: flex;
   flex-direction: row;
-}
-.booking-left {
+} */
+/* .booking-left {
   justify-content: left;
-}
+} */
 
-.booking-right {
+/* .booking-right {
   justify-content: right;
+} */
+.list-characteristics-block {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: 1rem;
 }
 .list-characteristics {
   display: flex;
@@ -23,6 +29,10 @@
   /* justify-content: flex-start; */
   /* flex-wrap: wrap; */
   /* flex-flow: column; */
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  /* margin: auto auto auto 50%; */
 }
 .list-characteristics ul {
   list-style: none; /* Remove default bullets */

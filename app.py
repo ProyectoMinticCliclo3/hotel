@@ -30,9 +30,9 @@ def before_request():
         return redirect('/admin-rooms')
 
 
-@app.route('/base/')
-def base():
-    return render_template("base.html")
+# @app.route('/base/')
+# def base():
+#     return render_template("base.html")
 
 
 @app.route('/login', methods=['POST'])
