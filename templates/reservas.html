@@ -1,15 +1,38 @@
 {% extends "base.html" %} {% block head %}
 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-tables.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-forms.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-buttons.css') }}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-backgrounds.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-tables.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reviews.css') }}" />
-{% endblock %}
-
-{% block content %}
-
-<section class="dataUser">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/reservas.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/habitaciones.css') }}"
+/>
+{% endblock %} {% block content %}
+<section class="dataUser du-background">
   <section class="booking form">
     <h2>Confirmar Reserva</h2>
     <form action="/successful-booking/" class="booking form" method="POST"  onsubmit="return completar_datos_reserva()">
@@ -64,21 +87,81 @@
       </p>
 
       <div class="btn-submit-group">
-        <input class="btn-submit btn-submit-blue" type="submit" name="gestion_usuario" id = "Reservar-Booking" value="Reservar" />
+        <input
+          class="btn-submit btn-submit-blue"
+          type="submit"
+          name="gestion_usuario"
+          id="Reservar-Booking"
+          value="Reservar"
+        />
         <!-- <input class="btn-submit btn-submit-red" type="submit" name="gestion_usuario" value="Eliminar" /> -->
         <input class="btn-submit btn-submit-gray" type="submit" name="gestion_usuario" id="cancelar_reserva"
           value="Cancelar" formnovalidate/>
       </div>
     </form>
-    <input class="btn-submit btn-submit-blue" type="submit" name="gestion_usuario" id = "verDisponibilidad" value="Ver Disponibilidad" />
-        
+    <p>
+      <span>
+        <input
+          class="btn-submit btn-submit-blue"
+          type="submit"
+          name="gestion_usuario"
+          id="verDisponibilidad"
+          value="Ver Disponibilidad"
+        />
+      </span>
+    </p>
   </section>
 
-  
+  <div class="galeria-img form">
+    <h2>Habitaciones</h2>
+    <!-- <div class="img-numero">1 / 7</div> -->
+    <img
+      src="{{ url_for('static',
+                filename='img/img-habitacion/230203934.jpg') }}"
+      alt="Galeria CSS 1"
+      style="width: 100%"
+    />
+  </div>
 
+  <section class="list-characteristics-block">
+    <h2>Características</h2>
+    <section class="list-characteristics">
+      <span class="precio">$450,000.00 COP/noche</span>
+      <!-- <ul>
+        <li></li>
+      </ul> -->
+      <ul>
+        <li>28m<sup>2</sup></li>
+        <li>Artículos de aseo gratis</li>
+        <li>Albornoz</li>
+        <li>Caja fuerte</li>
+        <li>Bidet</li>
+      </ul>
+      <ul>
+        <li>WC</li>
+        <li>Bañera o ducha</li>
+        <li>Toallas</li>
+        <li>Ropa de cama</li>
+        <li>Enchufe cerca de la cama</li>
+      </ul>
+      <ul>
+        <li>Zona de estar</li>
+        <li>TV de pantalla plana</li>
+        <li>Nevera</li>
+        <li>Microondas</li>
+        <li>Secador de pelo</li>
+      </ul>
+      <ul>
+        <li>Zona de cocina</li>
+        <li>Armario</li>
+        <li>Escritorio</li>
+        <li>Aire acondicionado individual para cada alojamiento</li>
+        <li>Canales por cable</li>
+      </ul>
+    </section>
+  </section>
+
+  {% endblock %} {% block scripts %}
+  <script src="{{ url_for('static', filename='js/agregarAdmin.js' ) }}"></script>
+  {% endblock %}
 </section>
-{% endblock %}
-
-{% block scripts %}
-<script src="{{ url_for('static', filename='js/agregarAdmin.js' ) }}"></script>
-{% endblock %}

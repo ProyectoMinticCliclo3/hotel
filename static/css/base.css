@@ -16,21 +16,14 @@
   --red: firebrick;
 }
 .dataUser {
-  /* display: flex; */
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   /* gap: 1rem; */
   /* margin: auto 25% auto 25%; */
   padding: 5rem 5rem 5rem 5rem;
-  width: 50rem;
+  /* width: 50rem; */
   min-width: fit-content;
   /* border: var(--white) solid 2rem; */
-}
-
-.du-background {
-  background-image: url("../img/img-habitacion/230031199.jpg");
-  background-repeat: no-repeat;
-  background-color: var(--blue);
-  background-size: cover;
 }
 
 body {
@@ -505,7 +498,7 @@ footer div h5 {
   color: #f8f8f2;
   text-decoration: underline;
 } */
-.modal-container-button {
+/* .modal-container-button {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -514,14 +507,12 @@ footer div h5 {
   text-decoration: none;
   background-color: var(--blue);
   color: var(--white);
-  /* border: 1px solid var(--white); */
   padding: 0.4rem 3em;
   border-radius: 1rem;
 }
 
 .btn-blue:hover {
   background-color: var(--white);
-  /* border: 1px solid var(--blue); */
   color: var(--blue);
   cursor: pointer;
   text-decoration: none;
@@ -529,18 +520,16 @@ footer div h5 {
 .btn-red {
   background-color: var(--red);
   color: var(--white);
-  /* border: 1.1px solid var(--white); */
   padding: 0.4rem 3em;
   border-radius: 1rem;
 }
 
 .btn-red:hover {
   background-color: var(--white);
-  /* border: 1px solid var(--red); */
   color: var(--red);
   cursor: pointer;
   text-decoration: none;
-}
+} */
 
 /* .modal-container-button .modal-confirmbtn {
   background-color: #005596;

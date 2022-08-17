@@ -1,23 +1,36 @@
 {% extends "base.html" %} {% block head %}
 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-tables.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-forms.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-buttons.css') }}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-backgrounds.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-tables.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
 
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reviews.css') }}" />
-{% endblock %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/reviews.css') }}"
+/>
+{% endblock %} {% block content %}
 
-{% block content %}
-
-<section class="dataUser">
+<section class="dataUser du-background">
   <section class="booking form">
     <h2>Reserva Realizada Exitosamente</h2>
-    
   </section>
-
-
 </section>
-{% endblock %}
-
-{% block scripts %}
-{% endblock %}
+{% endblock %} {% block scripts %} {% endblock %}

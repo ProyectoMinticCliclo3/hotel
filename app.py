@@ -15,23 +15,25 @@ booking_entries = []
 review_entries = []
 
 
-
 @app.route('/test/')
 def hello():
     return "<h1>Hello, Esclavos del grupo 05 de MinTic Uninorte!!</h1>"
 
+
 @app.before_request
 def before_request():
-    if 'usuario' not in session and request.endpoint in ['user','realizar_Comentario', 'booking', 'users', 'admin_users', 'editUser', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
+    if 'usuario' not in session and request.endpoint in ['user', 'realizar_Comentario', 'booking', 'users', 'admin_users', 'editUser', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
         return redirect('/')
     elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==1) and request.endpoint in ['admin_users', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
         return redirect('/user')
     elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==2) and request.endpoint in ['user','admin_admins']:
         return redirect('/admin-rooms')
 
+
 # @app.route('/base/')
 # def base():
 #     return render_template("base.html")
+
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -50,11 +52,12 @@ def login():
     else:
         return redirect('/')
 
+
 @app.route('/cerrar-sesion')
 def cerrar_sesion():
     session.pop('usuario', None)
     scripts.tipo_usuario_sesion_abierta = 0
-    scripts.id_usuario_sesion=0
+    scripts.id_usuario_sesion = 0
     return redirect('/')
 
 
@@ -80,7 +83,7 @@ def home():
     return render_template("index.html", booking_entries=booking_entries)
 
 
-@ app.route('/booking/', methods=["POST", "GET"])
+@ app.route('/booking/', methods=["GET", "POST"])
 def booking():
     # if request.method == 'GET':
     #     reserva = request.form.to_dict(flat=True)
@@ -110,21 +113,22 @@ def booking():
 
     # return render_template("reservas.html", reserva=reserva, review_entries=entries_with_date)
     return render_template("reservas.html", reserva=reserva)
-    
+
+
 @ app.route('/successful-booking/', methods=["POST"])
 def successful_Booking():
     reserva = request.form.to_dict(flat=True)
     if request.form['gestion_usuario'] == 'Reservar':
         # print(scripts.id_usuario_sesion)
         scripts.reservar(scripts.id_usuario_sesion, reserva)
-        
+
         ultimoIdReserva = (scripts.obtener_ultima_reserva())[0]
         print(ultimoIdReserva)
-        
-        for i in range(int(reserva['Habitaciones'])):
-            scripts.reservar_detalle(i+1, ultimoIdReserva, reserva['PrecioTotalHabitacion'])
-            # print(i+1)
 
+        for i in range(int(reserva['Habitaciones'])):
+            scripts.reservar_detalle(
+                i+1, ultimoIdReserva, reserva['PrecioTotalHabitacion'])
+            # print(i+1)
 
         # for i=1 range(numero de habitaciones+1)
         #     scripts.reservar_detalle(id_room, id_reserva, precio_total_por_habitacion)
@@ -133,11 +137,9 @@ def successful_Booking():
         return render_template("successfulBooking.html")
     else:
         return redirect('/')
-    
 
 
-
-@ app.route('/realizarComentario/', methods=["POST","GET"])
+@ app.route('/realizarComentario/', methods=["POST", "GET"])
 def realizar_Comentario():
     if request.method == "GET":
         return render_template("comentarios.html")
@@ -146,7 +148,8 @@ def realizar_Comentario():
         # review = request.form.get("review-content")
         # rating = request.form.get("rate")
         formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
-        scripts.insertar_comentario(scripts.id_usuario_sesion, formatted_date, comentario)
+        scripts.insertar_comentario(
+            scripts.id_usuario_sesion, formatted_date, comentario)
         # print(formatted_date)
         # print(scripts.id_usuario_sesion)
         # print(comentario)
@@ -168,12 +171,15 @@ def realizar_Comentario():
     # return render_template("comentarios.html", review_entries=entries_with_date)
         return redirect("/realizarComentario/")
 
+
 @ app.route('/user/', methods=['POST', 'GET'])
 def user():
     if request.method == 'GET':
         usuario = scripts.obtener_usuario_id(scripts.id_usuario_sesion)
-        reservas = scripts.obtener_reservas_tabla_usuarioId(scripts.id_usuario_sesion)
-        comentarios = scripts.obtener_comentarios_tabla_usuarioId(scripts.id_usuario_sesion)
+        reservas = scripts.obtener_reservas_tabla_usuarioId(
+            scripts.id_usuario_sesion)
+        comentarios = scripts.obtener_comentarios_tabla_usuarioId(
+            scripts.id_usuario_sesion)
         return render_template("users.html", usuario=usuario, reservas=reservas, comentarios=comentarios)
     else:
         usuario = request.form.to_dict(flat=True)
@@ -182,6 +188,8 @@ def user():
         return redirect('/user/')
 
 # Edición de comentario user
+
+
 @ app.route('/editarReview/<int:id>', methods=['POST', 'GET'])
 def editReview(id):
     if request.method == 'GET':
@@ -220,6 +228,8 @@ def editUser(id):
         return redirect('/admin-users')
 
 # Edición de reserva cliente
+
+
 @ app.route('/eliminarReserveAdmin/<int:id>', methods=['POST', 'GET'])
 def editReserveAdmin(id):
     if request.method == 'GET':
@@ -237,6 +247,8 @@ def editReserveAdmin(id):
         return redirect('/admin-users')
 
 # Edición de comentario admin
+
+
 @ app.route('/eliminarReviewAdmin/<int:id>', methods=['POST', 'GET'])
 def editReviewAdmin(id):
     if request.method == 'GET':
@@ -315,21 +327,22 @@ def admins_home():
         cantidad_habitaciones = int(request.form['numero_habitaciones'])
         for i in range(cantidad_habitaciones):
             scripts.agregar_habitacion()
-           
+
         return redirect('/admin-rooms')
 
 
 @app.route('/register')
 def register():
-    return render_template("registro.html")
+    usuarios = scripts.obtener_usuario_tabla(2)
+    return render_template("registro.html", usuarios=usuarios)
 
 
 @ app.route('/registerNew', methods=['POST'])
 def register_new():
     if request.form['botonConfirm'] == 'Confirmar':
         usuario = request.form.to_dict(flat=True)
-        # usuario['nuevaContrasena'] = generate_password_hash(usuario['nuevaContrasena'])
-        # scripts.insertar_usuario(usuario)
+        usuario['nuevaContrasena'] = generate_password_hash(usuario['nuevaContrasena'])
+        scripts.insertar_usuario(usuario)
     return redirect("/booking/")
 
 

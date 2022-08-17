@@ -5,12 +5,36 @@
   type="text/css"
   href="{{ url_for('static', filename='css/gestionHabitaciones.css') }}"
 /> -->
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-tables.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-buttons.css') }}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-tables.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-menuAdmin.css') }}"
+/>
 
 {% endblock %} {% block content %}
 <!-- MODAL DESCRIPTION AND VALUE EDITION -->
-
+<div class="admin-navbar">
+  <div class="subnav">
+    <button class="subnavbtn btn-submit btn-submit-blue">
+      MENÚ ADMIN <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="subnav-content">
+      <a href="{{ url_for('admins_home') }}">Gestión Habitaciones</a>
+      <a href="{{ url_for('admin_users') }}">Gestión Usuarios</a>
+      <a href="{{ url_for('admin_admins') }}">Gestión Admins (SA)</a>
+    </div>
+  </div>
+</div>
 <div id="modal-id02" class="modal">
   <form class="modal-content animate" action="/action_page.php">
     <div class="modal-container">
@@ -24,7 +48,13 @@
           <input type="date" class="campo-modal" disabled /> -->
 
       <label><b>Descripción</b></label>
-      <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10"></textarea>
+      <textarea
+        class="campo-modal"
+        placeholder="Comentario"
+        maxlength="630"
+        cols="30"
+        rows="10"
+      ></textarea>
       <!-- <input type="text" placeholder="Comentario" /> -->
 
       <!-- <input type="checkbox" checked="checked" /> Recordarme -->
@@ -32,15 +62,20 @@
 
     <div class="modal-container-button">
       <div>
-        <button type="submit" class="modal-confirmbtn">
+        <button
+          type="submit"
+          class="modal-confirmbtn btn-submit btn-submit-blue"
+        >
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id02').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id02').style.display='none'"
+          class="modal-cancelbtn btn-submit btn-submit-red"
+        >
+          Cancelar
         </button>
       </div>
     </div>
@@ -64,7 +99,14 @@
       <input type="date" class="campo-modal" disabled />
 
       <label><b>Comentario</b></label>
-      <textarea class="campo-modal" placeholder="Comentario" maxlength="630" cols="30" rows="10" disabled></textarea>
+      <textarea
+        class="campo-modal"
+        placeholder="Comentario"
+        maxlength="630"
+        cols="30"
+        rows="10"
+        disabled
+      ></textarea>
       <!-- <input type="text" placeholder="Comentario" /> -->
 
       <!-- <input type="checkbox" checked="checked" /> Recordarme -->
@@ -72,15 +114,20 @@
 
     <div class="modal-container-button">
       <div>
-        <button type="submit" class="modal-confirmbtn">
+        <button
+          type="submit"
+          class="modal-confirmbtn btn-submit btn-submit-blue"
+        >
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id03').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id03').style.display='none'"
+          class="modal-cancelbtn btn-submit btn-submit-red"
+        >
+          Cancelar
         </button>
       </div>
     </div>
@@ -116,15 +163,20 @@
 
     <div class="modal-container-button">
       <div>
-        <button type="submit" class="modal-confirmbtn">
+        <button
+          type="submit"
+          class="modal-confirmbtn btn-submit btn-submit-blue"
+        >
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id04').style.display='none'"
+          class="modal-cancelbtn btn-submit btn-submit-red"
+        >
+          Cancelar
         </button>
       </div>
     </div>
@@ -142,7 +194,12 @@
         <h2>¿Cuántas habitaciones nuevas de tipo Estándar se van a crear?</h2>
       </label>
       <label><b>Cantidad Habitaciones</b></label>
-      <input type="number" class="campo-modal" min="1" name="numero_habitaciones" />
+      <input
+        type="number"
+        class="campo-modal"
+        min="1"
+        name="numero_habitaciones"
+      />
 
       <!-- <label><b>Fecha</b></label>
           <input type="date" class="campo-modal" disabled /> -->
@@ -157,15 +214,20 @@
 
     <div class="modal-container-button">
       <div>
-        <button type="submit" class="modal-confirmbtn">
+        <button
+          type="submit"
+          class="modal-confirmbtn btn-submit btn-submit-blue"
+        >
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id05').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id05').style.display='none'"
+          class="modal-cancelbtn btn-submit btn-submit-red"
+        >
+          Cancelar
         </button>
       </div>
     </div>
@@ -201,13 +263,24 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id06').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id06').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
     </div>
@@ -256,8 +329,12 @@
             <td>{{ habitaciones[i][1] }}</td>
             <td>{{ habitaciones[i][2] }}</td>
             <td>
-              <a href="/eliminarRoom/{{habitaciones[i][0]}}" class="btn-submit btn-submit-red btnEliminar"
-                id="btnEliminarRoom">Eliminar</a>
+              <a
+                href="/eliminarRoom/{{habitaciones[i][0]}}"
+                class="btn-submit btn-submit-red btnEliminar"
+                id="btnEliminarRoom"
+                >Eliminar</a
+              >
             </td>
           </tr>
           {% endfor %}
@@ -265,8 +342,14 @@
       </table>
     </div>
     <div class="btn-submit-group">
-      <input class="btn-submit btn-submit-blue btnEditar" type="submit" name="botonEditar" value="Agregar Habitación"
-        onclick="document.getElementById('modal-id05').style.display='block'" data-open="modal-id05" />
+      <input
+        class="btn-submit btn-submit-blue btnEditar"
+        type="submit"
+        name="botonEditar"
+        value="Agregar Habitación"
+        onclick="document.getElementById('modal-id05').style.display='block'"
+        data-open="modal-id05"
+      />
       <!-- <br />
             <select name="estado" id="estado">
               <option value="d">Desocupada</option>
@@ -291,8 +374,6 @@
     </div>
   </section>
 </section>
-<script>
-
-</script>
+<script></script>
 
 {% endblock %}

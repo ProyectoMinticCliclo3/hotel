@@ -4,13 +4,25 @@
   type="text/css"
   href="{{ url_for('static', filename='css/habitaciones.css') }}"
 />
-{% endblock %} {% block content %}
-<h2>Habitaciones</h2>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
 
-<main id="main">
-  <section id="room-pics">
+{% endblock %} {% block content %}
+
+<div class="dataUser">
+  <h2>Habitaciones</h2>
+
+  <section>
     <div class="galeria-img">
-      <div class="img-numero">1 / 7</div>
+      <!-- <div class="img-numero">1 / 7</div> -->
       <img
         src="{{ url_for('static',
               filename='img/img-habitacion/230203934.jpg') }}"
@@ -19,50 +31,100 @@
       />
     </div>
   </section>
+  <h2>Características</h2>
+  <section class="list-characteristics">
+    <span class="precio">$450,000.00 COP/noche</span>
+    <!-- <ul>
+      <li></li>
+    </ul> -->
+    <ul>
+      <li>28m<sup>2</sup></li>
+      <li>Artículos de aseo gratis</li>
+      <li>Albornoz</li>
+      <li>Caja fuerte</li>
+      <li>Bidet</li>
+    </ul>
+    <ul>
+      <li>WC</li>
+      <li>Bañera o ducha</li>
+      <li>Toallas</li>
+      <li>Ropa de cama</li>
+      <li>Enchufe cerca de la cama</li>
+    </ul>
+    <ul>
+      <li>Zona de estar</li>
+      <li>TV de pantalla plana</li>
+      <li>Nevera</li>
+      <li>Microondas</li>
+      <li>Secador de pelo</li>
+    </ul>
+    <ul>
+      <li>Zona de cocina</li>
+      <li>Armario</li>
+      <li>Escritorio</li>
+      <li>Aire acondicionado individual para cada alojamiento</li>
+      <li>Canales por cable</li>
+    </ul>
+  </section>
   <section id="banner-booking">
     <!-- INPUT RESERVAS -->
     <div class="booking-principal">
       <div class="booking">
         <!-- <h3>Reservar</h3> -->
         <!-- FIXME no funciona bien llamando action ya que no lee el POST <form action="{{ url_for('booking') }}" method="POST"> -->
-        <form method="POST">
+        <form class="form" method="POST">
           <div class="booking-left">
             <div class="check-in-out">
-              <label for="check-in">Check-In:</label>
-              <input type="date" id="check-in" name="check-in" />
-              <label for="check-out">Check-Out:</label>
-              <input type="date" id="check-out" name="check-out" />
+              <p>
+                <label for="check-in">Check-In:</label>
+                <span>
+                  <input type="date" id="check-in" name="check-in" />
+                </span>
+              </p>
+              <p>
+                <label for="check-out">Check-Out:</label>
+                <span>
+                  <input type="date" id="check-out" name="check-out" />
+                </span>
+              </p>
               <!-- Huespedes -->
             </div>
             <div class="select-hab">
-              <label for="huespedes">Huespedes:</label>
-              <input
-                class="little-input"
-                name="huespedes"
-                type="number"
-                id="huespedes"
-                value="1"
-                min="1"
-                max="30"
-              />
+              <p>
+                <label for="huespedes">Huespedes:</label>
+                <span>
+                  <input
+                    class="little-input"
+                    name="huespedes"
+                    type="number"
+                    id="huespedes"
+                    value="1"
+                    min="1"
+                    max="30"
+                  />
+                </span>
+              </p>
               <!-- Habitaciones -->
-              <label for="habitaciones">Habitaciones:</label>
-              <input
-                class="little-input"
-                name="habitaciones"
-                type="number"
-                id="habitaciones"
-                value="1"
-                min="1"
-                max="30"
-              />
+              <p>
+                <label for="habitaciones">Habitaciones:</label>
+                <span>
+                  <input
+                    class="little-input"
+                    name="habitaciones"
+                    type="number"
+                    id="habitaciones"
+                    value="1"
+                    min="1"
+                    max="30"
+                  />
+                </span>
+              </p>
             </div>
           </div>
           <div class="booking-right">
-            <span>$450.000,00 COP/noche</span>
             <!-- Boton Reservar -->
             <input
-              class="btn-booking"
+              class="btn-booking btn-submit btn-submit-red"
               type="submit"
               name="botonReservar"
               value="Reservar"
@@ -73,37 +135,13 @@
       </div>
     </div>
   </section>
-  <section>
-    <h2>$450,000.00 COP/noche</h2>
-    <ul class="room-characteristics">
-      <li>28m<sup>2</sup></li>
-      <li>Artículos de aseo gratis</li>
-      <li>Albornoz</li>
-      <li>Caja fuerte</li>
-      <li>Bidet</li>
-      <li>WC</li>
-      <li>Bañera o ducha</li>
-      <li>Toallas</li>
-      <li>Ropa de cama</li>
-      <li>Enchufe cerca de la cama</li>
-      <li>Zona de estar</li>
-      <li>TV de pantalla plana</li>
-      <li>Nevera</li>
-      <li>Microondas</li>
-      <li>Secador de pelo</li>
-      <li>Zona de cocina</li>
-      <li>Armario</li>
-      <li>Escritorio</li>
-      <li>Aire acondicionado individual para cada alojamiento</li>
-      <li>Canales por cable</li>
-    </ul>
-  </section>
-  <!-- 
+</div>
+
+<!-- 
   Trona Plancha para pantalones Zapatillas Teléfono Equipo de planchado Canales
   vía satélite Tetera / cafetera Plancha para ropa Aseo adicional Servicio de
   despertador / alarma Hervidor eléctrico Servicio de despertador Acceso a pisos
   superiores en ascensor Papel higiénico Desinfectante de manos Detector de
   monóxido de carbono -->
-</main>
 
 {% endblock %}

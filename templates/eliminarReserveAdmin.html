@@ -1,44 +1,102 @@
 {% extends "base.html" %} {% block head %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gestionUsuarios.css') }}" />
+<!-- <link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/gestionUsuarios.css') }}"
+/> -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
 {% endblock %} {% block content %}
 
+<section class="dataUser eliminar_reserve">
+  <h2>Eliminar Reserva</h2>
+  <!-- <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button> -->
+  <div class="" id="">
+    <!-- <h4>Editar Administrador</h4> -->
 
-<main class="container">
-    <!-- SECCION PRINCIPAL -->
-    <div id="main">
-      <div class="base-main">
-        <!-- AREA PRINCIPAL -->
-        <section class="eliminar_reserve">
-          <h2>Eliminar Reserva</h2>
-          <!-- <button class="btnAgregarAdmin" id="btnAgregarAdmin">Agregar Administrador</button> -->
-          <div class="" id="">
-            <!-- <h4>Editar Administrador</h4> -->
-  
-            <form action="/eliminarReserveAdmin/{{ reserva[0] }}" class="inputs_review" method="post">
-              <label for="id">Id Reserva</label>
-              <input type="text" class="input_reserve" name="id_comentario" id="id_comentario" value={{ reserva[0] }} readonly>
-  
-              <label for="id_usuario">Id del Usuario</label>
-              <input type="text" class="input_reserve" name="id_usuario" id="id_usuario" value={{ reserva[1] }} readonly>
+    <form
+      action="/eliminarReserveAdmin/{{ reserva[0] }}"
+      class="form inputs_review"
+      method="post"
+    >
+      <p>
+        <label for="id">Id Reserva</label>
+        <span>
+          <i class="fa-solid fa-table-list"></i>
+          <input
+            type="text"
+            class="input_reserve"
+            name="id_comentario"
+            id="id_comentario"
+            value="{{ reserva[0] }}"
+            readonly
+          />
+        </span>
+      </p>
+      <p>
+        <label for="id_usuario">Id del Usuario</label>
+        <span>
+          <i class="fa-solid fa-id-card"></i>
+          <input
+            type="text"
+            class="input_reserve"
+            name="id_usuario"
+            id="id_usuario"
+            value="{{ reserva[1] }}"
+            readonly
+          />
+        </span>
+      </p>
+      <p>
+        <label for="fecha_entrada">Check-in</label>
+        <span>
+          <i class="fa-solid fa-calendar-week"></i>
+          <input
+            type="date"
+            class="input_reserve"
+            name="fechaEntrada"
+            id="fechaEntrada"
+            value="{{ reserva[2] }}"
+            readonly
+          />
+        </span>
+      </p>
+      <p>
+        <label for="fecha_salida">Check-out</label>
+        <span>
+          <i class="fa-solid fa-calendar-week"></i>
+          <input
+            type="date"
+            class="input_reserve"
+            name="fechaSalida"
+            id="fechaSalida"
+            value="{{reserva[3]}}"
+            readonly
+          />
+        </span>
+      </p>
 
-              <label for="fecha_entrada">Check-in</label>
-              <input type="date" class="input_reserve" name="fechaEntrada" id="fechaEntrada" value={{ reserva[2] }} readonly>
-              
-              <label for="fecha_salida">Check-out</label>
-              <input type="date" class="input_reserve" name="fechaSalida" id="fechaSalida" value={{ reserva[3] }} readonly>
-              
-              <div>
-                <!-- <input type="submit" name="gestion_usuario" value="Editar Usuario"> -->
-                <input type="submit" class="btnEliminar" name="gestion_reserva_admin" value="Eliminar Reserva">
-                <input type="submit" class="btnEditar" name="gestion_reserva_admin" id="cancel_user" value="Cancelar">
-              </div>
-            </form>
-  
-          </div>
-  
-         </section>
+      <div>
+        <!-- <input type="submit" name="gestion_usuario" value="Editar Usuario"> -->
+        <input
+          type="submit"
+          class="btnEliminar btn-submit btn-submit-red"
+          name="gestion_reserva_admin"
+          value="Eliminar Reserva"
+        />
+        <input
+          type="submit"
+          class="btnEditar btn-submit btn-submit-gray"
+          name="gestion_reserva_admin"
+          id="cancel_user"
+          value="Cancelar"
+        />
       </div>
-    </div>
-  </main>
+    </form>
+  </div>
+</section>
 
 {% endblock %}

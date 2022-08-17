@@ -4,11 +4,39 @@
   type="text/css"
   href="{{ url_for('static', filename='css/gestionAdministradores.css') }}"
 /> -->
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-forms.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-tables.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-buttons.css') }}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-tables.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-menuAdmin.css') }}"
+/>
 {% endblock %} {% block content %}
-
+<div class="admin-navbar">
+  <div class="subnav">
+    <button class="subnavbtn btn-submit btn-submit-blue">
+      MENÚ ADMIN <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="subnav-content">
+      <a href="{{ url_for('admins_home') }}">Gestión Habitaciones</a>
+      <a href="{{ url_for('admin_users') }}">Gestión Usuarios</a>
+      <a href="{{ url_for('admin_admins') }}">Gestión Admins (SA)</a>
+    </div>
+  </div>
+</div>
 <!-- MODAL SAVE DATA-ADMIN -->
 <div id="modal-id04" class="modal">
   <form class="modal-content animate" action="/action_page.php">
@@ -37,13 +65,24 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id04').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
     </div>
@@ -55,9 +94,16 @@
 <!-- AREA PRINCIPAL -->
 <section class="dataUser">
   <h2>Gestión de Administradores</h2>
-  <button class="btn-submit btn-submit-blue btnAgregarAdmin" id="btnAgregarAdmin">
-    Agregar Administrador
-  </button>
+  <p>
+    <span>
+      <button
+        class="btn-submit btn-submit-blue btnAgregarAdmin"
+        id="btnAgregarAdmin"
+      >
+        Agregar Administrador
+      </button>
+    </span>
+  </p>
   <section class="form_dataUser" id="form_dataUser" display="none">
     <form action="/addAdmin" class="form inputs_dataUser" method="POST">
       <h2>Crear Nuevo Administrador</h2>
@@ -100,7 +146,15 @@
       <p hidden>
         <label for="tipoUsuario">Tipo de Usuario</label>
         <span>
-          <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value="2" readonly />
+          <i class="fa-solid fa-ranking-star"></i>
+          <input
+            type="text"
+            class="input_user"
+            name="Tipo_Usuario"
+            id="tipoUsuario"
+            value="2"
+            readonly
+          />
         </span>
       </p>
       <p>
@@ -156,8 +210,12 @@
           <td>{{ usuarios[i][3] }}</td>
           <td>{{ usuarios[i][6] }}</td>
           <td>
-            <a href="/editarAdmin/{{usuarios[i][0]}}" class="btn-submit btn-submit-blue btnEditar"
-              id="btnEditarAdmin">Gestionar</a>
+            <a
+              href="/editarAdmin/{{usuarios[i][0]}}"
+              class="btn-submit btn-submit-blue btnEditar"
+              id="btnEditarAdmin"
+              >Gestionar</a
+            >
             <!-- <a href="/eliminarAdmin/{{usuarios[i][0]}}" class="btnEliminar">Eliminar</a> -->
           </td>
           <!-- <td onclick="seleccionar(this,1)">

@@ -1,0 +1,68 @@
+/* The navigation menu */
+.admin-navbar {
+  overflow: hidden;
+  /* background-color: var(--blue); */
+}
+
+/* Navigation links */
+.admin-navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The subnavigation menu */
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+  /* font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0; */
+}
+
+/* Add a --blue background color to navigation links on hover */
+.admin-navbar a:hover {
+  /* background-color: var(--blue); */
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  display: none;
+  position: absolute;
+  /* left: 10rem; */
+  background-color: var(--blue);
+  /* width: 100%; */
+  z-index: 1;
+  border-radius: 2rem;
+  /* border: 1px solid var(--blue); */
+}
+
+/* Style the subnav links */
+.subnav-content a {
+  float: left;
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+  display: block;
+}

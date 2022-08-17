@@ -1,8 +1,16 @@
 {% extends "base.html" %} {% block head %}
 
 <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gestionAdministradores.css') }}" /> -->
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-forms.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base-buttons.css') }}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-forms.css') }}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='css/base-buttons.css') }}"
+/>
 
 {% endblock %} {% block content %}
 
@@ -34,13 +42,24 @@
       <div>
         <button type="submit" class="modal-confirmbtn">
           Confirmar
-          <img src="img/svg/fa/check-solid.svg" alt="icono logout" height="30" />
+          <img
+            src="img/svg/fa/check-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
       <div>
-        <button type="button" onclick="document.getElementById('modal-id04').style.display='none'"
-          class="modal-cancelbtn">
-          Cancelar<img src="img/svg/fa/xmark-solid.svg" alt="icono logout" height="30" />
+        <button
+          type="button"
+          onclick="document.getElementById('modal-id04').style.display='none'"
+          class="modal-cancelbtn"
+        >
+          Cancelar<img
+            src="img/svg/fa/xmark-solid.svg"
+            alt="icono logout"
+            height="30"
+          />
         </button>
       </div>
     </div>
@@ -51,7 +70,11 @@
 <!-- END MODAL SAVE DATA-ADMIN -->
 <!-- AREA PRINCIPAL -->
 <section class="dataUser">
-  <form action="/editarAdmin/{{ usuario[0] }}" class="form inputs_dataUser" method="POST">
+  <form
+    action="/editarAdmin/{{ usuario[0] }}"
+    class="form inputs_dataUser"
+    method="POST"
+  >
     <h2>Editar Administrador</h2>
     <p>
       <label for="cedula">Cédula</label>
@@ -94,7 +117,15 @@
     <p hidden>
       <label for="tipoUsuario">Tipo de Usuario</label>
       <span>
-        <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value="{{ usuario[7] }}" readonly />
+        <i class="fa-solid fa-ranking-star"></i>
+        <input
+          type="text"
+          class="input_user"
+          name="Tipo_Usuario"
+          id="tipoUsuario"
+          value="{{ usuario[7] }}"
+          readonly
+        />
       </span>
     </p>
     <p>
