@@ -48,7 +48,6 @@ const cantidadHabitaciones = document.getElementById('Habitaciones')
 const precioTotalHabitacion = document.getElementById('PrecioTotalHabitacion')
 if (btn_verDisponibilidad){
     btn_verDisponibilidad.addEventListener('click', () =>{
-        console.log(btn_fechaCheckOut.value)
         var fechaCheckIn = new Date(btn_fechaCheckIn.value).getTime();
         var fechaCheckOut= new Date(btn_fechaCheckOut.value).getTime(); 
         var cantidad_dias = (fechaCheckOut-fechaCheckIn)/(1000*60*60*24);
@@ -57,3 +56,38 @@ if (btn_verDisponibilidad){
         valorTotal.value = (cantidad_dias*450000)*cantidadHabitaciones.value;
     })
 }
+function completar_datos_reserva(){
+    var fechaCheckIn = new Date(btn_fechaCheckIn.value).getTime();
+    var fechaCheckOut= new Date(btn_fechaCheckOut.value).getTime(); 
+    var cantidad_dias = (fechaCheckOut-fechaCheckIn)/(1000*60*60*24);
+    cantidadNoches.value = cantidad_dias
+    precioTotalHabitacion.value = (cantidad_dias*450000)
+    valorTotal.value = (cantidad_dias*450000)*cantidadHabitaciones.value;
+}
+
+
+// function validaciones_contrasena(){
+    
+//     const nuevaContrasena = document.getElementById('nuevaContrasenaR').value
+//     const repetirContrasena = document.getElementById('repetirContrasenaR').value
+
+//     const comprobacion={
+//         nuevaContrasena,
+//         repetirContrasena
+//     }
+//     console.log(comprobacion);
+//     const modal_validacion_contrasena = document.getElementById('abrir_modal_pass')
+
+//     if (!nuevaContrasena) return mensaje_modal(modal_validacion_contrasena, 'El campo contraseña no puede estar vacío')
+//     if (!repetirContrasena) return mensaje_modal(modal_validacion_contrasena, 'El campo confirmar contraseña no puede estar vacío')
+//     if (!(nuevaContrasena === repetirContrasena)) return mensaje_modal(modal_validacion_contrasena, 'Las constraseñas no coinciden')
+//     return true
+// }
+
+// function mensaje_modal(modal, mensaje){
+//     console.log("hola2")
+//     const mensaje_mostrar = document.getElementById('modal-body')
+//     mensaje_mostrar.innerHTML = mensaje
+//     modal.click();
+//     return false
+// }

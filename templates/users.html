@@ -142,76 +142,74 @@
         <label for="cedula">Cédula</label>
         <span>
           <i class="fa-solid fa-id-card"></i>
-          <input type="text" class="input_user" name="Cedula" id="cedula" value="{{ usuario[1] }}" />
+          <input type="text" class="input_user" name="Cedula" id="cedula" value="{{ usuario[1] }}" required/>
         </span>
       </p>
       <p>
         <label for="nombre">Nombre</label>
         <span>
           <i class="fa-solid fa-person"></i>
-          <input type="text" class="input_user" name="Nombre" id="nombre" value="{{ usuario[2] }}" />
+          <input type="text" class="input_user" name="Nombre" id="nombre" value="{{ usuario[2] }}" required/>
         </span>
       </p>
       <p>
         <label for="apellido">Apellido</label>
         <span>
           <i class="fa-solid fa-person"></i>
-          <input type="text" class="input_user" name="Apellidos" id="apellido" value="{{ usuario[3] }}" />
+          <input type="text" class="input_user" name="Apellidos" id="apellido" value="{{ usuario[3] }}" required/>
         </span>
       </p>
       <p>
         <label for="fechaNacimiento">Fecha de Nacimiento</label>
         <span>
           <i class="fa-solid fa-cake-candles"></i>
-          <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" value="{{ usuario[4] }}" />
+          <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" value="{{ usuario[4] }}" required/>
         </span>
       </p>
       <p>
         <label for="correo">Correo Electrónico</label>
         <span>
           <i class="fa-solid fa-envelope"></i>
-          <input type="email" class="input_user" name="Correo" id="correo" value="{{ usuario[5] }}" />
+          <input type="email" class="input_user" name="Correo" id="correo" value="{{ usuario[5] }}" required/>
         </span>
       </p>
       <p>
         <label for="celular">Celular</label>
         <span>
           <i class="fa-solid fa-mobile-screen-button"></i>
-          <input type="phone" class="input_user" name="Celular" id="celular" value="{{ usuario[6] }}" />
+          <input type="phone" class="input_user" name="Celular" id="celular" value="{{ usuario[6] }}" required/>
         </span>
       </p>
-      <p>
+      <p hidden>
         <label for="tipoUsuario">Tipo de Usuario</label>
         <span>
           <i class="fa-solid fa-ranking-star"></i>
-          <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value="{{ usuario[7] }}"
-            readonly />
+          <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value="{{ usuario[7] }}" readonly />
         </span>
       </p>
       <p>
         <label for="anteriorContrasena">Anterior Contraseña</label>
         <span>
-          <input type="password" class="input_user" name="Anterior_Contrasena" id="anteriorContrasena"
-            placeholder="Anterior Contraseña" />
+          <input type="password" class="input_user" name="anteriorContrasena" id="anteriorContrasena"
+            placeholder="Anterior Contraseña" required/>
         </span>
       </p>
       <p>
         <label for="nuevaContrasena">Nueva Contraseña</label>
         <span>
-          <input type="password" class="input_user" name="Nueva_Contrasena" id="nuevaContrasena"
-            placeholder="Nueva Contraseña" />
+          <input type="password" class="input_user" name="nuevaContrasena" id="nuevaContrasena"
+            placeholder="Nueva Contraseña" required/>
         </span>
       </p>
       <p>
         <label for="repetirContrasena">Repetir Contraseña</label>
         <span>
-          <input type="password" class="input_user" name="Repetir_Contrasena" id="repetirContrasena"
-            placeholder="Repetir Contraseña" />
+          <input type="password" class="input_user" name="repetirContrasena" id="repetirContrasena"
+            placeholder="Repetir Contraseña" required/>
         </span>
       </p>
       <p>
-        <input class="btn-submit btn-submit-blue btnGuardar" type="submit" name="botonGuardar" value="Guardar"
-          onclick="document.getElementById('modal-id04').style.display='block'" data-open="modal-id04" />
+        <input class="btn-submit btn-submit-blue btnGuardar" type="submit" name="botonGuardar" value="Guardar"/>
       </p>
     </form>
   </section>

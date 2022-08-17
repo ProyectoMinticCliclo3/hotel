@@ -64,56 +64,57 @@
       <p>
         <label for="cedula">Cédula</label>
         <span>
-          <input type="text" class="input_user" name="Cedula" id="cedula" placeholder="Cédula" />
+          <input type="text" class="input_user" name="Cedula" id="cedula" placeholder="Cédula" required />
         </span>
       </p>
       <p>
         <label for="nombre">Nombre</label>
         <span>
-          <input type="text" class="input_user" name="Nombre" id="nombre" placeholder="Nombre" />
+          <input type="text" class="input_user" name="Nombre" id="nombre" placeholder="Nombre" required />
         </span>
       </p>
       <p>
         <label for="apellido">Apellido</label>
         <span>
-          <input type="text" class="input_user" name="Apellidos" id="apellido" placeholder="Apellido" />
+          <input type="text" class="input_user" name="Apellidos" id="apellido" placeholder="Apellido" required />
         </span>
       </p>
       <p>
         <label for="fechaNacimiento">Fecha de Nacimiento</label>
         <span>
-          <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" />
+          <input type="date" class="input_user" name="Fecha_Nacimiento" id="fechaNacimiento" required />
         </span>
       </p>
       <p>
         <label for="correo">Correo Electrónico</label>
         <span>
-          <input type="email" class="input_user" name="Correo" id="correo" placeholder="Correo" />
+          <input type="email" class="input_user" name="Correo" id="correo" placeholder="Correo" required />
         </span>
       </p>
       <p>
         <label for="celular">Celular</label>
         <span>
-          <input type="phone" class="input_user" name="Celular" id="celular" placeholder="Celular" />
+          <input type="phone" class="input_user" name="Celular" id="celular" placeholder="Celular" required />
         </span>
       </p>
-      <p>
+      <p hidden>
         <label for="tipoUsuario">Tipo de Usuario</label>
         <span>
           <input type="text" class="input_user" name="Tipo_Usuario" id="tipoUsuario" value="2" readonly />
         </span>
       </p>
       <p>
-        <label for="anteriorContrasena">Contraseña</label>
+        <label for="nuevaContrasena">Contraseña</label>
         <span>
-          <input type="password" class="input_user" name="Anterior_Contrasena" id="anteriorContrasena" placeholder="Contraseña" />
+          <input type="password" class="input_user" name="nuevaContrasena" id="nuevaContrasena"
+            placeholder="Contraseña" required />
         </span>
       </p>
       <p>
-        <label for="nuevaContrasena">Repetir Contraseña</label>
+        <label for="repetirContrasena">Repetir Contraseña</label>
         <span>
-          <input type="password" class="input_user" name="Nueva_Contrasena" id="nuevaContrasena"
-            placeholder="Repetir Contraseña" />
+          <input type="password" class="input_user" name="repetirContrasena" id="repetirContrasena"
+            placeholder="Repetir Contraseña" required/>
         </span>
       </p>
 
@@ -123,7 +124,7 @@
       <div class="btn-submit-group">
         <input class="btn-submit btn-submit-blue" type="submit" name="gestion_admin" value="Crear Admin" />
         <input class="btn-submit btn-submit-gray" type="submit" name="gestion_admin" id="cancel_user"
-          value="Cancelar Admin" />
+          value="Cancelar Admin" formnovalidate/>
       </div>
     </form>
   </section>

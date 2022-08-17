@@ -24,9 +24,9 @@ def hello():
 def before_request():
     if 'usuario' not in session and request.endpoint in ['user','realizar_Comentario', 'booking', 'users', 'admin_users', 'editUser', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
         return redirect('/')
-    elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==1) and request.endpoint in ['admin_users', 'editReserveAdmin', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
+    elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==1) and request.endpoint in ['admin_users', 'editReviewAdmin', 'admin_admins', 'addAdmin', 'editAdmin', 'admins_home']:
         return redirect('/user')
-    elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==2) and request.endpoint in ['admin_admins']:
+    elif 'usuario' in session and (scripts.tipo_usuario_sesion_abierta==2) and request.endpoint in ['user','admin_admins']:
         return redirect('/admin-rooms')
 
 # @app.route('/base/')
@@ -177,7 +177,7 @@ def user():
         return render_template("users.html", usuario=usuario, reservas=reservas, comentarios=comentarios)
     else:
         usuario = request.form.to_dict(flat=True)
-        usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
+        usuario['nuevaContrasena'] = generate_password_hash(usuario['nuevaContrasena'])
         scripts.editar_usuario(scripts.id_usuario_sesion, usuario)
         return redirect('/user/')
 
@@ -213,7 +213,7 @@ def editUser(id):
     else:
         usuario = request.form.to_dict(flat=True)
         if request.form['gestion_usuario'] == 'Editar':
-            usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
+            usuario['nuevaContrasena'] = generate_password_hash(usuario['nuevaContrasena'])
             scripts.editar_usuario(id, usuario)
         elif request.form['gestion_usuario'] == 'Eliminar':
             scripts.eliminar_usuario(id)
@@ -232,6 +232,7 @@ def editReserveAdmin(id):
         #     scripts.editar_usuario(id, usuario)
         if request.form['gestion_reserva_admin'] == 'Eliminar Reserva':
             # usuario=request.form.to_dict(flat=True)
+            scripts.eliminar_detalle_admin_id(id)
             scripts.eliminar_reserva_admin_id(id)
         return redirect('/admin-users')
 
@@ -260,7 +261,7 @@ def admin_admins():
 def addAdmin():
     if request.form['gestion_admin'] == 'Crear Admin':
         usuario = request.form.to_dict(flat=True)
-        usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
+        usuario['nuevaContrasena'] = generate_password_hash(usuario['nuevaContrasena'])
         scripts.insertar_usuario(usuario)
         # return jsonify(usuario)
     return redirect('/admin-admins')
@@ -276,7 +277,7 @@ def editAdmin(id):
         usuario = request.form.to_dict(flat=True)
         if request.form['gestion_usuario'] == 'Editar':
             # usuario=request.form.to_dict(flat=True)
-            usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
+            usuario['nuevaContrasena'] = generate_password_hash(usuario['nuevaContrasena'])
             scripts.editar_usuario(id, usuario)
         elif request.form['gestion_usuario'] == 'Eliminar':
             # usuario=request.form.to_dict(flat=True)
@@ -317,19 +318,6 @@ def admins_home():
            
         return redirect('/admin-rooms')
 
-        # for i in range(int(reserva['Habitaciones'])):
-        #     scripts.reservar_detalle(i+1, ultimoIdReserva, reserva['PrecioTotalHabitacion'])
-           
-
-
-# @ app.route('/addRoom', methods=['POST'])
-# def add_room():
-#     if request.form['gestion_admin'] == 'Crear Admin':
-#         usuario = request.form.to_dict(flat=True)
-#         scripts.insertar_usuario(usuario)
-#         # return jsonify(usuario)
-#     return redirect('/admin-rooms')
-
 
 @app.route('/register')
 def register():
@@ -340,18 +328,10 @@ def register():
 def register_new():
     if request.form['botonConfirm'] == 'Confirmar':
         usuario = request.form.to_dict(flat=True)
-        usuario['Nueva_Contrasena'] = generate_password_hash(usuario['Nueva_Contrasena'])
-        scripts.insertar_usuario(usuario)
+        # usuario['nuevaContrasena'] = generate_password_hash(usuario['nuevaContrasena'])
+        # scripts.insertar_usuario(usuario)
     return redirect("/booking/")
 
-
-# @ app.route('/addAdmin', methods=['POST'])
-# def addAdmin():
-#     if request.form['gestion_admin'] == 'Crear Admin':
-#         usuario = request.form.to_dict(flat=True)
-#         scripts.insertar_usuario(usuario)
-#         # return jsonify(usuario)
-#     return redirect('/admin-admins')
 
 
 @app.errorhandler(404)

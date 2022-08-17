@@ -11,7 +11,7 @@ def conexion_bd():
 
 def insertar_usuario(usuario):
     query = "insert into User (Cedula, Nombre, Apellidos, Fecha_Nacimiento, Correo, Celular, Tipo_Usuario, Contrasena) values ('{}','{}','{}','{}','{}','{}','{}','{}');".format(
-        usuario['Cedula'], usuario['Nombre'], usuario['Apellidos'], usuario['Fecha_Nacimiento'], usuario['Correo'], usuario['Celular'], usuario['Tipo_Usuario'], usuario['Nueva_Contrasena'])
+        usuario['Cedula'], usuario['Nombre'], usuario['Apellidos'], usuario['Fecha_Nacimiento'], usuario['Correo'], usuario['Celular'], usuario['Tipo_Usuario'], usuario['nuevaContrasena'])
     # print(query)
     conexion = conexion_bd()
     # print(conexion)
@@ -69,7 +69,7 @@ def obtener_usuario_id(id):
 
 def editar_usuario(id, usuario):
     query = "update User set Cedula='{}', Nombre='{}', Apellidos='{}', Fecha_Nacimiento='{}', Correo='{}', Celular='{}', Tipo_Usuario='{}', Contrasena='{}' where id = {};".format(
-        usuario['Cedula'], usuario['Nombre'], usuario['Apellidos'], usuario['Fecha_Nacimiento'], usuario['Correo'], usuario['Celular'], usuario['Tipo_Usuario'], usuario['Nueva_Contrasena'], id)
+        usuario['Cedula'], usuario['Nombre'], usuario['Apellidos'], usuario['Fecha_Nacimiento'], usuario['Correo'], usuario['Celular'], usuario['Tipo_Usuario'], usuario['nuevaContrasena'], id)
     # print(query)
     conexion = conexion_bd()
     cursorObj = conexion.cursor()
@@ -163,6 +163,15 @@ def obtener_reserva_admin_id(id):
 
 def eliminar_reserva_admin_id(id):
     query = "delete from Reserva where id = {};".format(id)
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    cursorObj.execute(query)
+    conexion.commit()
+    conexion.close()
+
+def eliminar_detalle_admin_id(id):
+    query = "delete from Detalle where Id_Reserva = {};".format(id)
     # print(query)
     conexion = conexion_bd()
     cursorObj = conexion.cursor()

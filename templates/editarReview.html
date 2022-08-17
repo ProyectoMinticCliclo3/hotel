@@ -31,7 +31,7 @@
         <p>
             <label for="comentario">Comentario</label>
             <span>
-                <textarea type="text" class="textarea_review" name="comentario" id="comentario" >{{ comentario[3] }}</textarea>
+                <textarea type="text" class="textarea_review" name="comentario" id="comentario" required>{{ comentario[3] }}</textarea>
             </span>
         </p>
         <div class="btn-submit-group">
@@ -40,7 +40,7 @@
             <input type="submit" class="btn-submit btn-submit-red btnEliminar" name="gestion_comentario_admin"
                 value="Eliminar Comentario" />
             <input type="submit" class="btn-submit btn-submit-gray btnEditar" name="gestion_comentario_admin"
-                id="cancel_user" value="Cancelar" />
+                id="cancel_user" value="Cancelar" formnovalidate/>
         </div>
     </form>
 </section>
