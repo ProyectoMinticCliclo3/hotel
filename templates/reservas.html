@@ -30,7 +30,7 @@
 
 {% block content %}
 
-<section class="dataUser">
+<section class="dataUser du-background">
   <section class="booking form">
     <h2>Confirmar Reserva</h2>
     <form action="/successful-booking/" class="form" method="POST">
@@ -91,7 +91,12 @@
           value="Cancelar" />
       </div>
     </form>
-    <input class="btn-submit btn-submit-blue" type="submit" name="gestion_usuario" id = "verDisponibilidad" value="Ver Disponibilidad" />
+    <p>
+      <span>
+        <input class="btn-submit btn-submit-blue" type="submit" name="gestion_usuario" id = "verDisponibilidad" value="Ver Disponibilidad" />
+
+      </span>
+    </p>
         
   </section>
 

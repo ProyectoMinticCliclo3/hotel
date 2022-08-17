@@ -18,3 +18,5 @@ db/dbHotel.db.bak
 /dbHotel.db
 .vscode
 /settings.json
+.bak
+db/dbHotel.db.bak
