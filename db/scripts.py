@@ -21,7 +21,7 @@ def insertar_usuario(usuario):
     conexion.close()
 
 
-id_usuario_sesion = 0
+id_usuario_sesion=0
 tipo_usuario_sesion_abierta = 0
 # Para el login
 
@@ -91,7 +91,7 @@ def eliminar_usuario(id):
 
 
 def obtener_comentarios_tabla():
-    query = 'select Id, Id_User, Fecha, Comentario from Reviews;'
+    query = 'select * from Reviews;'
     # print(query)
     conexion = conexion_bd()
     cursorObj = conexion.cursor()
@@ -184,8 +184,17 @@ def obtener_reservas_tabla_usuarioId(id_usuario):
     return reservas
 
 
+def insertar_comentario(id_usuario, fecha, comentario):
+    query = "insert into Reviews (Id_User, Fecha, Comentario, Calificacion) values ('{}','{}','{}','{}');".format(
+        id_usuario, fecha, comentario['review-content'], comentario['rate'])
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    cursorObj.execute(query)
+    conexion.commit()
+    conexion.close()
+
 def obtener_comentarios_tabla_usuarioId(id_usuario):
-    query = 'select Id, Id_User, Fecha, Comentario from Reviews where Id_User={};'.format(
+    query = 'select * from Reviews where Id_User={};'.format(
         id_usuario)
     # print(query)
     conexion = conexion_bd()
@@ -213,7 +222,7 @@ def obtener_habitacion_tabla():
     # print(usuarios)
     return habitaciones
 
-# falta corregir lo que se inserta
+
 def reservar(id_user, reserva):
     query = "insert into Reserva (Id_User, Fecha_Entrada, Fecha_Salida, CantidadPersonas) values ('{}','{}','{}','{}');".format(
         id_user, reserva['Check-In'], reserva['Check-Out'], reserva['Huespedes'])
@@ -224,14 +233,35 @@ def reservar(id_user, reserva):
     conexion.commit()
     conexion.close()
 
-# falta corregir lo que se inserta
-# def reservar_detalle(reserva_realizada, reserva):
-#     query = "insert into Detalle (Id_Room, Id_Reserva, Precio_Total_Room) values ('{}','{}','{}');".format(
-#         1, reserva_realizada['Id'], reserva['PrecioTotalHabitacion'])
-#     conexion = conexion_bd()
-#     cursorObj = conexion.cursor()
-#     detalle_reserva = cursorObj.execute(query)
-#     detalle_reserva = cursorObj.fetchone()
-#     conexion.commit()
-#     conexion.close()
-#     return detalle_reserva
+
+def reservar_detalle(id_room, id_reserva, precio_total_habitacion):
+    query = "insert into Detalle (Id_Room, Id_Reserva, Precio_Total_Room) values ('{}','{}','{}');".format(
+        id_room, id_reserva, precio_total_habitacion)
+    conexion = conexion_bd()
+    # print(conexion)
+    cursorObj = conexion.cursor()
+    cursorObj.execute(query)
+    conexion.commit()
+    conexion.close()
+
+def obtener_ultima_reserva():
+    query = 'SELECT * FROM Reserva ORDER BY Id DESC LIMIT 1;'
+    # print(query)
+    conexion = conexion_bd()
+    cursorObj = conexion.cursor()
+    reserva = cursorObj.execute(query)
+    reserva = cursorObj.fetchone()
+    conexion.commit()
+    conexion.close()
+    # print(usuarios)
+    return reserva
+
+def agregar_habitacion():
+    query = "insert into Room (Capacidad, Precio) values ('{}','{}');".format(4, 450000)
+    # print(query)
+    conexion = conexion_bd()
+    # print(conexion)
+    cursorObj = conexion.cursor()
+    cursorObj.execute(query)
+    conexion.commit()
+    conexion.close()

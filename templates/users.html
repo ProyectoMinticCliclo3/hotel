@@ -226,6 +226,7 @@
           <th>Check-in</th>
           <th>Check-out</th>
           <th>Ver/Eliminar</th>
+          <th>Evaluar</th>
           <!-- <th>
               All<input type="checkbox" name="check[]" value="0" id="chk0" />
             </th> -->
@@ -245,6 +246,11 @@
             <!-- <a href="/editarReview/{{reservas[i][0]}}" class="btnEditar" id="btnEditarComentario">Editar</a> -->
             <a href="/eliminarReserveAdmin/{{reservas[i][0]}}"
               class="btnEliminar btn-submit btn-submit-red">Eliminar</a>
+          </td>
+          <td>
+            <!-- <a href="/editarReview/{{reservas[i][0]}}" class="btnEditar" id="btnEditarComentario">Editar</a> -->
+            <a href="/realizarComentario/"
+              class="btnEliminar btn-submit btn-submit-blue">Evaluar</a>
           </td>
           <!-- <td onclick="seleccionar(this,1)">
               <input type="checkbox" name="check[]" value="1" id="chk1" />
@@ -288,7 +294,8 @@
             <td>{{ comentarios[i][0] }}</td>
             <td>{{ comentarios[i][1] }}</td>
             <td>{{ comentarios[i][2] }}</td>
-            <td>{{ comentarios[i][3] }}</td>
+            <td>{{ comentarios[i][3] }} <strong> Calificación: {{ comentarios[i][4] }}</strong></td>
+            
             <td>
               <!-- <a href="/editarReview/{{comentarios[i][0]}}" class="btnEditar" id="btnEditarComentario">Editar</a> -->
               <a href="/editarReview/{{comentarios[i][0]}}" class="btn-submit btn-submit-blue">Editar</a>
